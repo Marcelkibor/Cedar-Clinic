@@ -1,0 +1,36 @@
+.navigation-inactive {
+  position: absolute;
+  width: 100%;
+  background-color: transparent;
+  z-index: 1;
+}
+.navigation-active{
+  position:fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #fff;
+}
+.home-bt{
+  border-radius: 20px;
+  margin: 0% 2% 0% 2%;
+  padding: 2% 5%;
+  background-color: #fff;
+  width: 120px;
+  font-weight: 600;
+  
+}
+.home-bt:hover{
+background-color: #06aa06;
+color: #fff;
+}
+.service-card{
+  width: 300px;
+}
+.service-icon-div{
+  height: 100px;
+  background-color: #06aa06;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
