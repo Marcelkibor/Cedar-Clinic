@@ -28,7 +28,6 @@ return (
     <Container>
         <Nav className="me-auto">
           <Nav.Link href="#home">Home</Nav.Link>
-        <Nav.Link href="#profile">About us</Nav.Link>
       <Nav.Link href="#projects">Services</Nav.Link>
       <Nav.Link href="#projects">Doctors</Nav.Link>
       <Nav.Link href="#projects">Contact</Nav.Link>

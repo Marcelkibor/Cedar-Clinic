@@ -18,13 +18,14 @@ color: #fff;
 }
 .landing-details{
   position: absolute;
-  top: 20%;
+  top: 40%;
   left:5%;
 }
 .navigation-inactive {
   position: absolute;
   width: 100%;
-  background-color: transparent;
+  height: 70px;
+  background-color: #00c056e5;
   z-index: 1;
 }
 .navigation-active{
@@ -32,7 +33,7 @@ color: #fff;
   top: 0;
   width: 100%;
   z-index: 9999;
-  background: #fff;
+  background-color: white;
 }
 .service-card{
   width: 350px;
@@ -52,9 +53,11 @@ color: #fff;
   margin-left: 3%;
 }
 .service-icon-div{
-  height: 100px;
+  height: fit-content;
   background-color: #00a72ae5;
   width: 350px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   display: flex;
   position: relative;
   align-items:center ;
@@ -73,18 +76,18 @@ color: #fff;
   margin-top: 20%;
 }
 .service-card{
-  width: 100vw;
-  height: 40vh !important;
+  width: 270px;
+  height: fit-content !important;
 }
 .service-icon-div{
-  width: 100vw;
+  width: 270px;
 }
 }
 @media(max-width:600px){
   .service-card{
-    width: 100vw !important;
+    width: 95vw !important;
   }
   .service-icon-div{
-    width: 100vw;
+    width: 95vw;
   }
 }
