@@ -26,11 +26,11 @@ return (
 <div className={scrolled ? 'navigation-active': 'navigation-inactive'}>
   <Navbar>
     <Container>
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#projects">Services</Nav.Link>
-      <Nav.Link href="#projects">Doctors</Nav.Link>
-      <Nav.Link href="#projects">Contact</Nav.Link>
+        <Nav className = 'me-auto'>
+          <Nav.Link  href="#home">Home</Nav.Link>
+      <Nav.Link  href="#projects">Services</Nav.Link>
+      <Nav.Link   href="#projects">Doctors</Nav.Link>
+      <Nav.Link  href="#projects">Contact</Nav.Link>
     </Nav>
   </Container>
    </Navbar>

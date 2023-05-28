@@ -1,4 +1,5 @@
 import DoctorsPage from "./DoctorsPage"
+import Footer from "./Footer"
 import LandingPage from "./LandingPage"
 import MedicalServices from "./MedicalServices"
 import Navigation from "./NavigationBar"
@@ -21,6 +22,9 @@ const Home = () => {
         </section>
         <section id="feedback">
         <Testimonials/>
+        </section>
+        <section id = 'footer'>
+          <Footer/>
         </section>
     </div>
   )
