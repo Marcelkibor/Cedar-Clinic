@@ -4,7 +4,10 @@ import { FaHandHoldingMedical, FaHands, FaHeart, FaMicroscope, FaRadiation, FaRu
 const MedicalServices = () => {
   return (
     <div className = 'services-div'>
-        <h1 style = {{margin:'5%'}}>Our Services</h1>
+        <div style={{textAlign:'center', height:'30vh', marginTop:'5%'}}>
+        <h1 >Our Services</h1>
+     <h5>Medical Services Offered</h5>
+        </div>
      <div className="service-rows">
      <Row>
      <Col>
