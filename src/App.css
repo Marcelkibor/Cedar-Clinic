@@ -3,6 +3,21 @@
   padding-bottom: 5%;
   padding-top:5%;
 }
+.intro-cards{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.intro-cards:hover {
+  transform: translateY(5px) scale(1.1); /* Adjust the values for desired effect */
+  top: -5px;
+  transition: transform 0.9s, top 0.9s;
+  color: #2ed573;
+}
+.col-hov :hover{
+  background: #f1f2f6;
+}
 .home-bt{
   border-radius: 20px;
   margin: 0% 2% 0% 2%;
@@ -159,6 +174,6 @@ margin: 0;
     margin-left: 2%;
   }
   .teams-img{
-    left: 20%;
+    left: 25%;
   }
 }

@@ -1,6 +1,6 @@
-import { Card } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import Img from '../assets/doc.png';
-import { FaClinicMedical } from 'react-icons/fa';
+import { FaClinicMedical, FaPills } from 'react-icons/fa';
 const LandingPage = () => {
     return (
   <div>
@@ -16,6 +16,37 @@ const LandingPage = () => {
                     <button className='home-bt'>Services</button>
                 </div>   
         </div>
+    </div>
+    <div style={{width:'100vw',height:'10vw',background:'#7bed9f',position:'relative'}}>
+      <p style={{maxWidth:'800px',position:'absolute',textAlign:'left', top:'30%',left:'3%'}}>We look forward to providing you with an unforgettable experience. Book your appointment today and let us take care of your health.</p>
+      <button style={{width:'200px',color:'white',fontWeight:'bolder',background:'#ff7f50',height:'60px',top:'32%',right:'10%',position:'absolute'}}>
+        Book Appointment
+        </button>
+    </div>
+    <div style={{marginTop:'8px',marginLeft:'2%',marginRight:'2%'}}>
+      <Row>
+        <Col className='col-hov'>
+        <div className='intro-cards'>
+        <FaPills size = {150}/>
+        </div>
+     
+        </Col>
+        <Col className='col-hov'>
+        <div className='intro-cards'>
+        <FaPills size = {150}/>
+        </div>
+        </Col>
+        <Col className='col-hov'>
+        <div className='intro-cards'>
+        <FaPills size = {150}/>
+        </div>
+        </Col>
+        <Col className='col-hov'>
+        <div className='intro-cards'>
+        <FaPills size = {150}/>
+        </div>
+        </Col>
+      </Row>
     </div>
   </div>
     )
