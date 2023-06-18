@@ -1,3 +1,36 @@
+.slick-prev:before,
+.slick-next:before {
+  background-color: #746d6d;
+  font-size: 40px !important;
+}
+.slick-prev {
+  left: -5% !important;
+}
+.ip-intro{
+  text-align: center;
+  font-size: x-large;
+  margin-top: 5%;
+  color: black;
+  font-weight: 800;
+}
+.slick-next {
+  right: -3% !important;
+}
+.slick-main-div{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  background-color:#16a085/* Change background color to green on hover */
+}
+.slick-item{
+  height: 15vh;
+  width: 20vw !important;
+}
 .footer-main{
   background: #16a085;
   padding-bottom: 5%;
@@ -48,6 +81,9 @@ color: #fff;
   background-color: #00c056e5;
   z-index: 1;
 }
+.items{
+  background-color: rebeccapurple !important;
+}
 .navigation-inactive .nav-link{
   color: white !important;
   font-weight: 600;
@@ -79,7 +115,17 @@ color: #fff;
   margin-left: 7%;
   margin-right: 15px;
 }
-
+.slick-arrow{
+  width: 60px; /* Adjust the size as needed */
+  height: 60px; /* Adjust the size as needed */
+  border-radius: 50%;
+  border: 2px solid rgb(160, 157, 157);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2ed573;
+  color: white
+}
 .service-icon-div{
   height: fit-content;
   background-color: #00a72ae5;
@@ -91,53 +137,8 @@ color: #fff;
   align-items:center ;
   justify-content: center;
 }
-.testi-div{
-  margin-left: 7%;
-  margin-right: 7%;
-}
-.testi-cards{
-  width: fit-content !important;
-  height: 500px !important;
-  margin-top: 20px;
-}
-.teams-card{
-  text-align: left;
-  margin-top: 20px;
-  width: 400px;
-}
-.teams-row{
-  margin-left: 6%;
-}
-.teams-card-bg{
-  width: 400px;
-  position: relative;
-  display: flex;
-  height: 200px;
-}
-.teams-img{
-  position: absolute;
-  top: -30px;
-  left: 20%;
-  height: 150px;
-  width: 250px;
-  transform: scale(1.5);
-}
 /* smaller devices */
 @media(max-width:968px){
-  .testi-cards{
-    width: 90vw !important;
-    height: fit-content !important;
-  }
-  .testi-div{
-margin: 0;
-  }
-  .teams-card{
-    width: 90vw;
-  }
-  .teams-card-bg{
-    width: 90vw;
-    height: 300px;
-  }
   .teams-img{
     left: 30%;
   }
@@ -159,9 +160,6 @@ margin: 0;
 .service-icon-div{
   width: 90vw;
 }
-.teams-row{
-  margin-left: 5%;
-}
 }
 @media(max-width:600px){
   .service-card{
@@ -172,8 +170,5 @@ margin: 0;
   }
   .services-div{
     margin-left: 2%;
-  }
-  .teams-img{
-    left: 25%;
   }
 }

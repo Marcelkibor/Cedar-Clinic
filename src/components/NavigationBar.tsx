@@ -30,7 +30,7 @@ return (
           <Nav.Link  href="#home">Home</Nav.Link>
       <Nav.Link  href="#projects">Services</Nav.Link>
       <Nav.Link   href="#projects">Doctors</Nav.Link>
-      <Nav.Link  href="#projects">Contact</Nav.Link>
+      <Nav.Link  href="#projects">Contacts</Nav.Link>
     </Nav>
   </Container>
    </Navbar>

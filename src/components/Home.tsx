@@ -1,9 +1,8 @@
-import DoctorsPage from "./DoctorsPage"
 import Footer from "./Footer"
+import InsuranceProviders from "./InsuranceProviders"
 import LandingPage from "./LandingPage"
 import MedicalServices from "./MedicalServices"
 import Navigation from "./NavigationBar"
-import Testimonials from "./Testimonials"
 
 const Home = () => {
   return (
@@ -16,16 +15,14 @@ const Home = () => {
         </section>
         <section id = "#services">
             <MedicalServices/>
+        </section>
+        <section id = 'providers'>
+      <InsuranceProviders/>
         </section>   
-        <section id="doctors">
-        <DoctorsPage/>
-        </section>
-        <section id="feedback">
-        <Testimonials/>
-        </section>
         <section id = 'footer'>
           <Footer/>
         </section>
+      
     </div>
   )
 }
