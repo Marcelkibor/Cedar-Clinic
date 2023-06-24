@@ -1,7 +1,12 @@
+.all-sv-row{
+  margin-top: 150px !important;
+  margin-left: 1% !important;
+  color: wheat;
+  font-weight: bold;
+}
 .slick-prev:before,
 .slick-next:before {
-  background-color: #746d6d;
-  font-size: 40px !important;
+ display:none
 }
 .slick-prev {
   left: -5% !important;
@@ -9,10 +14,14 @@
 .ip-intro{
   text-align: center;
   font-size: x-large;
-  margin-top: 5%;
+  margin-top: 10%;
   color: black;
   font-weight: 800;
 }
+.rotate-icon:hover {
+  transform: rotateY(180deg) !important;
+}
+
 .slick-next {
   right: -3% !important;
 }
@@ -75,7 +84,7 @@ color: #fff;
   left:5%;
 }
 .navigation-inactive {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 70px;
   background-color: #00c056e5;
@@ -115,17 +124,6 @@ color: #fff;
   margin-left: 7%;
   margin-right: 15px;
 }
-.slick-arrow{
-  width: 60px; /* Adjust the size as needed */
-  height: 60px; /* Adjust the size as needed */
-  border-radius: 50%;
-  border: 2px solid rgb(160, 157, 157);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2ed573;
-  color: white
-}
 .service-icon-div{
   height: fit-content;
   background-color: #00a72ae5;
@@ -141,6 +139,9 @@ color: #fff;
 @media(max-width:968px){
   .teams-img{
     left: 30%;
+  }
+  .all-sv-row{
+    display: none !important;
   }
   .landing-img-div{
   display: none !important;
@@ -162,6 +163,9 @@ color: #fff;
 }
 }
 @media(max-width:600px){
+ .all-sv-row{
+  display: none !important;
+ }
   .service-card{
     width: 95vw !important;
   }

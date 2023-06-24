@@ -3,6 +3,7 @@ import InsuranceProviders from "./InsuranceProviders"
 import LandingPage from "./LandingPage"
 import MedicalServices from "./MedicalServices"
 import Navigation from "./NavigationBar"
+import Services from "./Services"
 
 const Home = () => {
   return (
@@ -14,7 +15,7 @@ const Home = () => {
             <LandingPage/>
         </section>
         <section id = "#services">
-            <MedicalServices/>
+            <Services/>
         </section>
         <section id = 'providers'>
       <InsuranceProviders/>
