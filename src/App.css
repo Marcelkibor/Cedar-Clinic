@@ -1,8 +1,16 @@
 .all-sv-row{
+  margin-left: -30% !important;
+  margin-top:150px !important;
+}
+.all-sv-banner{
   margin-top: 150px !important;
   margin-left: 1% !important;
   color: wheat;
   font-weight: bold;
+}
+.all-sv-card{
+  width: 320px;
+  height:250px !important
 }
 .slick-prev:before,
 .slick-next:before {
@@ -136,11 +144,17 @@ color: #fff;
   justify-content: center;
 }
 /* smaller devices */
-@media(max-width:968px){
+@media(max-width:1108px){
+ .all-sv-row{
+  margin-left: 0% !important;
+ }
   .teams-img{
     left: 30%;
   }
-  .all-sv-row{
+  .all-sv-card{
+    width: 350px !important;
+  }
+  .all-sv-banner{
     display: none !important;
   }
   .landing-img-div{
@@ -162,9 +176,12 @@ color: #fff;
   width: 90vw;
 }
 }
-@media(max-width:600px){
- .all-sv-row{
+@media(max-width:851px){
+ .all-sv-banner{
   display: none !important;
+ }
+ .all-sv-card{
+  width: 90vw !important;
  }
   .service-card{
     width: 95vw !important;
