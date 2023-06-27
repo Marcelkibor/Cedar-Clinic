@@ -1,16 +1,56 @@
 .all-sv-row{
-  margin-left: -30% !important;
+  margin-left: -37% !important;
   margin-top:150px !important;
+}
+.all-sv-card {
+  position: relative;
+}
+
+.all-sv-icons-div {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30%;
+  left: 3%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid silver;
+  transition: background-color 0.5s;
+}
+
+.all-sv-card:hover .all-sv-icons-div {
+  background-color: #218c74;
+  border: #218c74
+}
+.all-sv-card:hover .all-sv-icons-div svg{
+  color: white !important;
+}
+.active-page{
+  background-color: #00b894;
+  color: white;
+}
+.inactive-page{
+  background-color: rgb(184, 183, 183);
+  color:  #00b894;
+}
+.inactive-page :hover{
+  background-color: #00b894;
+  color: white;
 }
 .all-sv-banner{
   margin-top: 150px !important;
   margin-left: 1% !important;
-  color: wheat;
+  color: white;
   font-weight: bold;
 }
 .all-sv-card{
-  width: 320px;
-  height:250px !important
+  width: 350px;
+  height:250px !important;
+  position: relative
+}
+.all-sv-card :hover svg{
+  color: #00b894;
 }
 .slick-prev:before,
 .slick-next:before {
@@ -151,8 +191,11 @@ color: #fff;
   .teams-img{
     left: 30%;
   }
+  .all-sv-row{
+    margin-left: 2% !important;
+  }
   .all-sv-card{
-    width: 350px !important;
+    width: 400px !important;
   }
   .all-sv-banner{
     display: none !important;
@@ -176,12 +219,12 @@ color: #fff;
   width: 90vw;
 }
 }
-@media(max-width:851px){
+@media(max-width:880px){
  .all-sv-banner{
   display: none !important;
  }
  .all-sv-card{
-  width: 90vw !important;
+  width: 93vw !important;
  }
   .service-card{
     width: 95vw !important;
@@ -191,5 +234,8 @@ color: #fff;
   }
   .services-div{
     margin-left: 2%;
+  }
+  .all-sv-row{
+    margin-left: 0% !important;
   }
 }

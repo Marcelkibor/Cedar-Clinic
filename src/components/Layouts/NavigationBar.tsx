@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
-import '../App.css'
+import '../../App.css'
 import { useEffect, useState } from 'react';
 const Navigation = () => {
 const[scrolled,isScrolled] = useState(false);

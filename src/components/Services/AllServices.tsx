@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Navigation from '../NavigationBar';
+import Navigation from '../Layouts/NavigationBar';
 import { BsArrowRightCircleFill } from 'react-icons/bs';
 import { Card, Col, Row } from 'react-bootstrap';
-import Services from '../Services';
+import {FaRadiation,FaSyringe,FaMicroscope,FaHands} from 'react-icons/fa'
 import Pagination from './Pagination';
+import { IconType } from 'react-icons';
 
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,11 +15,21 @@ const AllServices = () => {
     { id: 2, title: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
     { id: 3, title: 'Histopathology', description: 'New radiology services' },
     { id: 4, title: 'Palliative Care', description: 'New radiology services' },
-    { id: 5, title: 'Radiology', description: 'New radiology services' },
-    { id: 6, title: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
-    { id: 7, title: 'Histopathology', description: 'New radiology services' },
-    { id: 8, title: 'Palliative Care', description: 'New radiology services' },
+    { id: 5, title: 'Renal Services', description: 'New radiology services' },
+    { id: 6, title: 'Tuberculosis (TB)', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
+    { id: 7, title: 'Lab Services', description: 'New radiology services' },
   ];
+  const serviceIcons: { [key: number]: IconType } = {
+    1: FaRadiation,
+    2: FaSyringe,
+    3: FaMicroscope,
+    4: FaHands,
+    5: FaRadiation,
+    6: FaSyringe,
+    7: FaMicroscope,
+    8: FaHands,
+  };
+  
 
   const lastServiceIndex = currentPage * servicePerPage;
   const firstLocationIndex = lastServiceIndex - servicePerPage;
@@ -28,10 +39,12 @@ const AllServices = () => {
     <>
       <Navigation />
       <div style={{ display: 'flex', width: '100vw', height: '20vh', background: '#00b894', position: 'relative', top: '70px' }}>
-        <BsArrowRightCircleFill style={{ top: '25%', left: '7%', color: 'white', position: 'absolute' }} size={50} />
-        <div style={{display:'flex', position:'absolute',top:'28%',left:'12%',outline:'no-outline'}}>
-        <a href='/'>Home</a>
-        <a style = {{marginLeft:'20px'}}href='/services'>All Services</a>
+        <div style={{position:'absolute', display:'flex',top:'30%',left:'2%'}}>
+        <BsArrowRightCircleFill color = 'white' size={30} />
+        <div style={{outline:'no-outline'}}>
+        <a style = {{color:"white", marginLeft:'10px'}} href='/'>Home</a>
+        <a style = {{color:'white',marginLeft:'10px'}}href='/services'>All Services</a>
+        </div>
       </div>
       </div>
     
@@ -50,12 +63,17 @@ const AllServices = () => {
           <Row className = 'all-sv-row'>
             {displayServices.map(service => (
               <Col key={service.id} style={{ marginBottom: '10px' }}>
-                <Card className = 'all-sv-card'>
-                  <Card.Body>
-                    <Card.Title>{service.title}</Card.Title>
-                    <Card.Text>{service.description}</Card.Text>
-                  </Card.Body>
-                </Card>
+                <Card className="all-sv-card">
+      <div className="all-sv-icons-div">
+      {React.createElement(serviceIcons[service.id], { style: { width: '70%', height: '70%', color:'#218c74' } })}
+      </div>
+      <div style={{ marginLeft: '20%' }}>
+        <Card.Body>
+          <Card.Title style={{ color: '#218c74' }}>{service.title}</Card.Title>
+          <Card.Text>{service.description}</Card.Text>
+        </Card.Body>
+      </div>
+    </Card>
               </Col>
             ))}
           </Row>
