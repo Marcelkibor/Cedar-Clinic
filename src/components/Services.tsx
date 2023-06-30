@@ -1,140 +1,88 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Card } from "react-bootstrap";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import {FaRadiation,FaSyringe,FaMicroscope,FaHands} from 'react-icons/fa'
+import { Card, Col } from "react-bootstrap";
+import {GiKidneys,GiCancer} from 'react-icons/gi'
+import {FaRadiation,FaMicroscope,FaHands,FaHeadSideCough} from 'react-icons/fa'
+import { IconType } from "react-icons";
 const Services = () => {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const [slidesToScroll, setSlidesToScroll] = useState(3);
+  useEffect(() => {
+    const updateSliderSettings = () => {
+      const midScreen = 1108;
+      const smallScreen = 880;
 
-  const handleMouseEnter = (card: string) => {
-    setHoveredCard(card);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredCard(null);
-  };
-  const handleServices = ()=>{
-    window.location.href = "/services"
-  }
-  const getIconStyle = (card: string): React.CSSProperties => {
-    return {
-      transform: hoveredCard === card ? "rotateY(180deg)" : "rotateY(0deg)",
-      transition: "transform 0.5s ease",
+      if (window.innerWidth <= smallScreen) {
+        setSlidesToShow(1);
+        setSlidesToScroll(1);
+      } else if (window.innerWidth <= midScreen) {
+        setSlidesToShow(2);
+        setSlidesToScroll(2);
+      } else {
+        setSlidesToShow(3);
+        setSlidesToScroll(3);
+      }
     };
-  };
 
+    updateSliderSettings();
+    window.addEventListener('resize', updateSliderSettings);
+
+    return () => {
+      window.removeEventListener('resize', updateSliderSettings);
+    };
+  }, []);
   const settings = {
     dots: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 4500,
     speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToScroll
   };
-
+  const services = [
+    { id: 1, title: 'Radiology', description: 'Experience exceptional radiation therapy at our clinic: compassionate care, and remarkable outcomes.' },
+    { id: 2, title: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
+    { id: 3, title: 'Histopathology', description: 'New radiology services' },
+    { id: 4, title: 'Palliative Care', description: 'New radiology services' },
+    { id: 5, title: 'Renal Services', description: 'Our clinic offers specialized renal services to support and manage kidney-related conditions and treatments.' },
+    { id: 6, title: 'Tuberculosis (TB)', description: 'Our clinic provides diagnosis, treatment, and management services for tuberculosis (TB) to ensure the health and well-being of our patients.' },
+  ];
+  const serviceIcons: { [key: number]: IconType } = {
+    1: FaRadiation,
+    2: GiCancer,
+    3: FaMicroscope,
+    4: FaHands,
+    5: GiKidneys,
+    6: FaHeadSideCough,
+  };
   return (
-    <div style = {{position:'relative'}}>
+    <div className = 'sv-slide-div'>
       <div className="ip-intro">
       <h1>Explore Our Services </h1>
       </div>
   <div className = 'slick-main-div'>
      <div style={{width:'80vw'}}>
      <Slider {...settings}>
+     {services.map(service => (
+              <Col key={service.id} style={{ marginBottom: '10px' }}>
+                <Card>
+      <div className="all-sv-icons-div">
+      {React.createElement(serviceIcons[service.id], { style: { width: '70%', height: '70%', color:'#218c74' } })}
+      </div>
+      <div style={{ marginLeft: '20%' }}>
+        <Card.Body>
+          <Card.Title style={{ color: '#218c74' }}>{service.title}</Card.Title>
+          <Card.Text>{service.description}</Card.Text>
+        </Card.Body>
+      </div>
+    </Card>
+              </Col>
+            ))}
      <div>
-  <Card className="service-card">
-    <div className="service-icon-div"
-         onMouseEnter={() => handleMouseEnter("radiation")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('radiation')}>
-      <FaRadiation color="white" size={40} />
-    </div>
-    <Card.Title>Radiation Therapy</Card.Title>
-    <Card.Body>
-      Experience exceptional radiation therapy at our clinic: compassionate care, and remarkable outcomes.
-    </Card.Body>
-    <button className="home-bt">Learn More</button>
-  </Card>
-</div>
-
-        <div>
-        <Card className="service-card">
-                <div className="service-icon-div" onMouseEnter={() => handleMouseEnter("vaccine")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('vaccine')}>
-                <FaSyringe color = 'white' size = {40}/>
-                </div>
-                <Card.Title>
-                    Vaccine Therapy
-                </Card.Title>
-                <Card.Body>
-                Discover the transformative power of vaccine therapy at our clinic: compassionate guidance, and remarkable results.                </Card.Body>
-                <button className="home-bt">Learn More</button>
-            </Card>
-        </div>
-        <div>
-        <Card className="service-card">
-                <div className="service-icon-div"  onMouseEnter={() => handleMouseEnter("histo")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('histo')}>
-                <FaMicroscope color = 'white' size = {40}/>
-                </div>
-                <Card.Title>
-                Histopathology
-                </Card.Title>
-                <Card.Body>
-                Unleash the potential of histopathology at our clinic: expert analysis, precise diagnoses, and effective treatment strategies.                </Card.Body>
-                <button className="home-bt">Learn More</button>
-            </Card>
-        </div>
-        <div>
-        <Card className="service-card">
-                <div className="service-icon-div"  onMouseEnter={() => handleMouseEnter("pal")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('pal')}>
-                <FaHands color = 'white' size = {40} />
-                </div>
-                <Card.Title>
-                Palliative care
-                </Card.Title>
-                <Card.Body>
-                Experience compassionate palliative care at our clinic: dedicated support, enhanced comfort, and meaningful moments for patients and their families.                   </Card.Body>
-                <button className="home-bt">Learn More</button>
-            </Card>
-        </div>
-        <div>
-        <Card className="service-card">
-                <div className="service-icon-div"  onMouseEnter={() => handleMouseEnter("his")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('his')}>
-                <FaRadiation color = 'white' size = {40} />
-                </div>
-                <Card.Title>
-                Histopathology
-                </Card.Title>
-                <Card.Body>
-                Unleash the potential of histopathology at our clinic: expert analysis, precise diagnoses, and effective treatment strategies.                </Card.Body>
-                <button className="home-bt">Learn More</button>
-
-            </Card>
-        </div>
-        <div>
-        <Card className="service-card">
-                <div className="service-icon-div"  onMouseEnter={() => handleMouseEnter("his")}
-         onMouseLeave={handleMouseLeave} style = {getIconStyle('his')}>
-                <FaRadiation color = 'white' size = {40} />
-                </div>
-                <Card.Title>
-                Histopathology
-                </Card.Title>
-                <Card.Body>
-                Unleash the potential of histopathology at our clinic: expert analysis, precise diagnoses, and effective treatment strategies.                </Card.Body>
-                <button className="home-bt">Learn More</button>
-
-            </Card>
-        </div>
-        <div>
-        </div>
-      </Slider>
+  </div>
+</Slider>
      </div>
-    </div>
-    <div style={{marginTop:'2%',position:'absolute',top:'100%',left:'50%',transform:'translate(-50%.-50%)'}}>
-      <button onClick={handleServices} style = {{width:'150px',height:'50px',color:'white',fontWeight:'500',borderRadius:'25px',backgroundColor:'#00a72ae5'}}>More Services</button>
     </div>
     </div>
   

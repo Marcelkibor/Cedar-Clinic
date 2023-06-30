@@ -9,19 +9,6 @@ import br from '../assets/britam.png'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const InsuranceProviders = () => {
-    const sliderRef = useRef<Slider>(null);
-
-    const handlePrev = () => {
-      if (sliderRef.current) {
-        sliderRef.current.slickPrev();
-      }
-    };
-  
-    const handleNext = () => {
-      if (sliderRef.current) {
-        sliderRef.current.slickNext();
-      }
-    };
   const settings = {
     dots: true,
     infinite: true,
@@ -41,22 +28,22 @@ const InsuranceProviders = () => {
      <div style={{width:'80vw'}}>
      <Slider {...settings}>
         <div className="slick-item">
-          <img style={{height:'100%',width:'100%'}} src = {apa}/>
+          <img style={{height:'100%',width:'70%'}} src = {apa}/>
         </div>
         <div className="slick-item">
-        <img style={{height:'100%',width:'100%'}} src = {cic}/>
+        <img style={{height:'100%',width:'70%'}} src = {cic}/>
         </div>
         <div className="slick-item">
-        <img style={{height:'100%',width:'100%'}} src = {nh}/>
+        <img style={{height:'100%',width:'70%'}} src = {nh}/>
         </div>
         <div className="slick-item">
-        <img style={{height:'100%',width:'100%'}} src = {jb}/>
+        <img style={{height:'100%',width:'70%'}} src = {jb}/>
         </div>
         <div className="slick-item">
-        <img style={{height:'100%',width:'100%'}} src = {md}/>
+        <img style={{height:'100%',width:'70%'}} src = {md}/>
         </div>
         <div className="slick-item">
-        <img style={{height:'100%', width:'100%'}} src = {br}/>
+        <img style={{height:'100%', width:'70%'}} src = {br}/>
         </div>
       </Slider>
      </div>

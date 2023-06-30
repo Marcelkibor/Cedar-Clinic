@@ -5,7 +5,12 @@
 .all-sv-card {
   position: relative;
 }
-
+.ceda-intro{
+  position: absolute;
+  top: 33%;
+  left: 5%;
+  right: 5%;
+}
 .all-sv-icons-div {
   width: 60px;
   height: 60px;
@@ -18,7 +23,9 @@
   border: 3px solid silver;
   transition: background-color 0.5s;
 }
-
+.sv-slide-div{
+  position:relative;
+}
 .all-sv-card:hover .all-sv-icons-div {
   background-color: #218c74;
   border: #218c74
@@ -85,8 +92,12 @@
   background-color:#16a085/* Change background color to green on hover */
 }
 .slick-item{
-  height: 15vh;
-  width: 20vw !important;
+  height: 10vh;
+  width: 15vw !important;
+  justify-content: center;
+  display:flex;
+  margin-left: 30% !important;
+  align-items: center;
 }
 .footer-main{
   background: #16a085;
@@ -127,9 +138,9 @@ color: #fff;
   position: relative !important;
 }
 .landing-details{
-  position: absolute;
-  top: 40%;
+  position: relative;
   left:5%;
+  top: 35%;
 }
 .navigation-inactive {
   position: fixed;
@@ -188,6 +199,16 @@ color: #fff;
  .all-sv-row{
   margin-left: 0% !important;
  }
+ .sv-slide-div{
+  margin-top: 70vh;
+ }
+ .ceda-intro{
+  margin-top: 10%;
+  width: 100vw;
+  height: 70vh;
+  position: absolute;
+  margin-left: 2%;
+ }
   .teams-img{
     left: 30%;
   }
@@ -222,6 +243,12 @@ color: #fff;
 @media(max-width:880px){
  .all-sv-banner{
   display: none !important;
+ }
+ .sv-slide-div{
+  margin-top: 70vh;
+ }
+ .ceda-intro{
+  margin-top: 100px !important;
  }
  .all-sv-card{
   width: 93vw !important;
