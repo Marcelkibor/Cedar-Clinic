@@ -28,8 +28,8 @@ return (
     <Container>
         <Nav className = 'me-auto'>
           <Nav.Link  href="#home">Home</Nav.Link>
-      <Nav.Link  href="#projects">Services</Nav.Link>
-      <Nav.Link   href="#projects">Doctors</Nav.Link>
+      <Nav.Link  href="#projects">About Us</Nav.Link>
+      <Nav.Link   href="#projects">Services</Nav.Link>
       <Nav.Link  href="#projects">Contacts</Nav.Link>
     </Nav>
   </Container>

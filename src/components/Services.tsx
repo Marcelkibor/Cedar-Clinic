@@ -7,6 +7,7 @@ import { IconType } from "react-icons";
 const Services = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
+  
   useEffect(() => {
     const updateSliderSettings = () => {
       const midScreen = 1108;
@@ -40,6 +41,9 @@ const Services = () => {
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll
   };
+  const getServices = ()=>{
+    window.location.href = "/services"
+  }
   const services = [
     { id: 1, title: 'Radiology', description: 'Experience exceptional radiation therapy at our clinic: compassionate care, and remarkable outcomes.' },
     { id: 2, title: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
@@ -57,18 +61,18 @@ const Services = () => {
     6: FaHeadSideCough,
   };
   return (
-    <div className = 'sv-slide-div'>
+    <div className="main-services">
       <div className="ip-intro">
       <h1>Explore Our Services </h1>
       </div>
-  <div className = 'slick-main-div'>
-     <div style={{width:'80vw'}}>
+  <div>
      <Slider {...settings}>
      {services.map(service => (
               <Col key={service.id} style={{ marginBottom: '10px' }}>
-                <Card>
-      <div className="all-sv-icons-div">
-      {React.createElement(serviceIcons[service.id], { style: { width: '70%', height: '70%', color:'#218c74' } })}
+                
+                <Card className="main-service-card">
+      <div className="main-sv-icons-div">
+      {React.createElement(serviceIcons[service.id],{ style: { width: '70%', height: '70%', color:'#218c74' }})}
       </div>
       <div style={{ marginLeft: '20%' }}>
         <Card.Body>
@@ -79,11 +83,9 @@ const Services = () => {
     </Card>
               </Col>
             ))}
-     <div>
-  </div>
 </Slider>
      </div>
-    </div>
+     <div style={{display:'flex',justifyContent:'center',alignItems:'center', marginTop:'10px'}}><button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={getServices}>More Services</button></div>
     </div>
   
   );

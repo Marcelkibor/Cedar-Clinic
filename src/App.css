@@ -1,10 +1,16 @@
-.all-sv-row{
-  margin-left: -37% !important;
-  margin-top:150px !important;
+
+.main-service-card{
+  height: 300px !important;
+  margin-left: 10px !important;
+  margin-right: 20px !important;
+  transition: transform 0.5s ease;
 }
-.all-sv-card {
-  position: relative;
+.main-service-card:hover .main-sv-icons-div{
+  transition: transform 0.8s ease;
+  transform: rotateY(360deg) !important;
+  background-color: rgb(0, 73, 122) !important;
 }
+
 .ceda-intro{
   position: absolute;
   top: 33%;
@@ -23,6 +29,23 @@
   border: 3px solid silver;
   transition: background-color 0.5s;
 }
+.main-sv-icons-div {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30%;
+  color: white;
+  left: 3%;
+  background-color: #00b894;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  transition: background-color 0.5s;
+}
+.main-sv-icons-div svg{
+  color: white !important;
+}
 .sv-slide-div{
   position:relative;
 }
@@ -37,6 +60,15 @@
   background-color: #00b894;
   color: white;
 }
+.all-sv-main-div{
+  position: absolute;
+  margin-top: 8% !important;
+  margin-left: 30% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px;
+  width: fit-content !important;
+}
 .inactive-page{
   background-color: rgb(184, 183, 183);
   color:  #00b894;
@@ -46,15 +78,16 @@
   color: white;
 }
 .all-sv-banner{
-  margin-top: 150px !important;
-  margin-left: 1% !important;
+  margin-top: 8% !important;
   color: white;
-  font-weight: bold;
+  margin-left: 1%;
+  position: absolute;
 }
 .all-sv-card{
-  width: 350px;
+  width: 350px !important;
   height:250px !important;
-  position: relative
+  position: relative;
+  flex: 0 0 calc(50% - 10px);
 }
 .all-sv-card :hover svg{
   color: #00b894;
@@ -199,6 +232,9 @@ color: #fff;
  .all-sv-row{
   margin-left: 0% !important;
  }
+ .main-services{
+  margin-top: 55% !important;
+ }
  .sv-slide-div{
   margin-top: 70vh;
  }
@@ -219,7 +255,10 @@ color: #fff;
     width: 400px !important;
   }
   .all-sv-banner{
-    display: none !important;
+    margin-top: 80% !important;
+  }
+  .all-sv-main-div{
+    margin: 10% 0% 0% 2% !important;
   }
   .landing-img-div{
   display: none !important;
@@ -244,6 +283,12 @@ color: #fff;
  .all-sv-banner{
   display: none !important;
  }
+ .main-services{
+  margin-top: 80% !important;
+ }
+ .all-sv-main-div{
+  margin-top: 15% !important;
+ }
  .sv-slide-div{
   margin-top: 70vh;
  }
@@ -251,13 +296,21 @@ color: #fff;
   margin-top: 100px !important;
  }
  .all-sv-card{
-  width: 93vw !important;
+ flex: initial;
+ width: 100vw !important;
  }
   .service-card{
     width: 95vw !important;
   }
   .service-icon-div{
     width: 95vw;
+  }
+  .slick-item{
+    display: flex;
+    height: 200px !important;
+    width: 250px !important;
+    margin-left: 15% !important;
+    margin-right: 30% !important;
   }
   .services-div{
     margin-left: 2%;
