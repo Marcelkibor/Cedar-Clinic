@@ -3,7 +3,7 @@ import InsuranceProviders from "./InsuranceProviders"
 import LandingPage from "./LandingPage"
 import MedicalServices from "./MedicalServices"
 import Navigation from "./Layouts/NavigationBar"
-import Services from "./Services"
+import Services from '../components/Services/Services'
 
 const Home = () => {
   return (

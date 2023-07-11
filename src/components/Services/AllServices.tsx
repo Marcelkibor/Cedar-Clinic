@@ -8,6 +8,7 @@ import { TbVaccine } from 'react-icons/tb';
 import { GiKidneys, GiCancer } from 'react-icons/gi';
 import Pagination from './Pagination';
 import { IconType } from 'react-icons';
+import ServicesHeader from './ServicesHeader';
 
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,34 +41,12 @@ const AllServices = () => {
 
   return (
     <>
-      <div>
-        <Navigation />
-        <div style={{ display: 'flex', width: '100vw', height: '20vh', background: '#00b894', position: 'relative', top: '70px' }}>
-          <div style={{ position: 'absolute', display: 'flex', top: '30%', left: '2%' }}>
-            <BsArrowRightCircleFill color='white' size={30} />
-            <div style={{ outline: 'no-outline' }}>
-              <a style={{ color: "white", marginLeft: '10px' }} href='/'>Home</a>
-              <a style={{ color: 'white', marginLeft: '10px' }} href='/services'>All Services</a>
-            </div>
-          </div>
-        </div>
-        <div style={{position:'relative',width:'100vw'}}>
-        <Row>
-          <div className = 'all-sv-banner'>
-          <Col>
-            <div style={{ width: '370px', height: '60px', background: '#218c74', display: 'flex', alignItems: 'center' }}>
-              <h5 style={{ marginLeft: '20px' }}>All Services</h5>
-            </div>
-            {services.map(service => (
-              <div key={service.id} style={{ width: '350px', height: '60px', background: '#218c74', display: 'flex', alignItems: 'center', marginTop: '10px', marginLeft: '20px' }}>
-                <h5 style={{ marginLeft: '20px' }}>{service.title}</h5>
-              </div>
-            ))}
-          </Col>
-          </div>
-          <div  className = 'all-sv-main-div'>
+    <div style = {{position:'relative', height:'fit-content'}}>
+      <Navigation/>
+      <ServicesHeader/>
+        <div  className = 'all-sv-main-div'>
   {displayServices.map(service => (
-    <Card key={service.id}className="all-sv-card" >
+    <Card key={service.id} className="all-sv-card" >
       <div className="all-sv-icons-div">
         {React.createElement(serviceIcons[service.id], { style: { width: '70%', height: '70%', color: '#218c74' } })}
       </div>
@@ -81,10 +60,20 @@ const AllServices = () => {
   ))}
   <Pagination allServices={services} servicePerPage={servicePerPage} setCurrentPage={setCurrentPage} />
 </div>
-   </Row>
+<div className = 'all-sv-banner'>
+        <Col>
+          <div style={{ width: '320px', height: '60px', background: '#218c74', display: 'flex', alignItems: 'center' }}>
+            <h5 style={{ marginLeft: '20px' }}>All Services</h5>
+          </div>
+          {services.map(service => (
+            <div key={service.id} style={{ width: '300px', height: '60px', background: '#218c74', display: 'flex', alignItems: 'center', marginTop: '10px', marginLeft: '20px' }}>
+              <h5 style={{ marginLeft: '20px' }}>{service.title}</h5>
+            </div>
+          ))}
+        </Col>
         </div>
-       
-      </div>
+
+    </div>
     </>
   );
 };
