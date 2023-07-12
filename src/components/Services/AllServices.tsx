@@ -13,7 +13,7 @@ import ServicesHeader from './ServicesHeader';
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [servicePerPage, setServicePerPage] = useState(4);
-
+  const locationPath = window.location.pathname;
   const services = [
     { id: 1, title: 'Radiology', description: 'Experience exceptional radiation therapy at our clinic: compassionate care, and remarkable outcomes.' },
     { id: 2, title: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
@@ -43,7 +43,7 @@ const AllServices = () => {
     <>
     <div style = {{position:'relative', height:'fit-content'}}>
       <Navigation/>
-      <ServicesHeader/>
+     {locationPath && <ServicesHeader pathname = {locationPath}/>}
         <div  className = 'all-sv-main-div'>
   {displayServices.map(service => (
     <Card key={service.id} className="all-sv-card" >

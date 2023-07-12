@@ -5,12 +5,16 @@ import "slick-carousel/slick/slick-theme.css";
 import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
 import Home from './components/Home';
 import AllServices from './components/Services/AllServices';
+import AboutUs from './components/AboutUs';
+import Contacts from './components/Contacts';
 function App() {
   return (
     <Router>
       <Routes>
         <Route element = {<Home/>} path='/'/>
         <Route element = {<AllServices/>} path='/services'/>
+        <Route path = '/about-us' element = {<AboutUs/>}/>
+        <Route path='/contacts' element = {<Contacts/>}/>
       </Routes>
     </Router>
   )

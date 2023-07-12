@@ -27,10 +27,10 @@ return (
   <Navbar>
     <Container>
         <Nav className = 'me-auto'>
-          <Nav.Link  href="#home">Home</Nav.Link>
-      <Nav.Link  href="#projects">About Us</Nav.Link>
-      <Nav.Link   href="#projects">Services</Nav.Link>
-      <Nav.Link  href="#projects">Contacts</Nav.Link>
+          <Nav.Link  href="/">Home</Nav.Link>
+      <Nav.Link  href="/about-us">About Us</Nav.Link>
+      <Nav.Link   href="/services">Services</Nav.Link>
+      <Nav.Link  href="/contacts">Contacts</Nav.Link>
     </Nav>
   </Container>
    </Navbar>
