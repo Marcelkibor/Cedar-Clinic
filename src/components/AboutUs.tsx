@@ -98,7 +98,7 @@ const AboutUs = () => {
                 <p>To provide you with quality care of all your health needs</p>
             </div>
             </Row>
-            <div style={{marginLeft:'5%',width:'90vw',height:'fit-content',background:'white'}}>
+            <div style={{marginBottom:'5%',marginLeft:'5%',width:'90vw',height:'fit-content',background:'white'}}>
             <Row style={{padding:'5% 0% 0% 5%'}}>
                         <Col>
                         <div style = {{margin:'12% 0% 0% 5%', display:'flex'}}>
