@@ -1,9 +1,9 @@
-import React from 'react'
-import Navigation from './Layouts/NavigationBar'
-import ServicesHeader from './Services/ServicesHeader'
-import Pic from '../assets/doc.png'
-import { Row,Col } from 'react-bootstrap'
-import Footer from './Layouts/Footer'
+import { FaHandHolding,FaSyringe,FaSpeakerDeck,FaWalking,FaBroadcastTower,FaAddressCard,FaAccessibleIcon, FaClinicMedical,FaAngular } from 'react-icons/fa';
+import Navigation from './Layouts/NavigationBar';
+import ServicesHeader from './Services/ServicesHeader';
+import Pic from '../assets/doc.png';
+import { Row,Col } from 'react-bootstrap';
+import Footer from './Layouts/Footer';
 const AboutUs = () => {
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
   return (
@@ -49,34 +49,162 @@ const AboutUs = () => {
                 <h1>Why Choose Us</h1>
                 <p> Our experienced team will ensure that your health and well-being are our top priorities.</p>
             </div>
-            <Row style = {{margin:'5% 0% 0% 5%', color:'white'}}>
+            <Row style = {{margin:'10% 0% 0% 5%', color:'white'}}>
               <Col>
-              <h4>
-              Comprehensive <br></br> Care
-              </h4>
+                    <div style={{ textAlign: 'left', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div style={{ marginTop:'-20%',display: 'block', textAlign: 'center' }}>
+                        <FaHandHolding size={70} />
+                        <h4 style={{ textAlign: 'center' }}>Comprehensive Care</h4>
+                    </div>
+                    <div style={{ marginLeft: '10%', width: '2px', backgroundColor: 'white', height: '70px' }}></div>
+                    </div>            
               </Col> 
               <Col>
+              <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
+              <div style={{ marginTop:'-20%',display: 'block', textAlign: 'center' }}>
+                <FaBroadcastTower size={70}/>
               <h4>
-              Patient-Centric <br></br> Approach
+              Patient-Centric Approach
               </h4>
+              </div>
+            
+              <div style={{marginLeft:'10%',width:'2px', backgroundColor:'white',height:'70px'}}></div>
+              </div>
               </Col>      
               <Col>
+              <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
+              <div style={{ marginTop:'-20%',display: 'block', textAlign: 'center' }}>
+                <FaAccessibleIcon size={70}/>
               <h4>
-              Expert Medical<br></br> Team
+              Expert Medical Team
               </h4>
+              </div>
+              
+              <div style={{marginLeft:'10%',width:'2px', backgroundColor:'white',height:'70px'}}></div>
+              </div>
               </Col> 
               <Col>
+              <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
+              <div style={{ marginTop:'-20%',display: 'block', textAlign: 'center' }}>
+              <FaAccessibleIcon size={70}/>
               <h4>
-              Seamless <br></br> Operation
+              Seamless Operation
               </h4>
+              </div>
+              <div style={{marginLeft:'10%',width:'2px', backgroundColor:'white',height:'70px'}}></div>
+              </div>
               </Col> 
-            </Row>
-            <div style = {{color:'white',textAlign:'center',margin:'10% 0% 0% 0%'}}>
+              <div style = {{color:'white',textAlign:'center',margin:'10% 0% 0% 0%'}}>
                 <p>To provide you with quality care of all your health needs</p>
             </div>
+            </Row>
+            <div style={{marginLeft:'5%',width:'90vw',height:'fit-content',background:'white'}}>
+            <Row style={{padding:'5% 0% 0% 5%'}}>
+                        <Col>
+                        <div style = {{margin:'12% 0% 0% 5%', display:'flex'}}>
+                        <FaClinicMedical color = '' size = {70}/>
+                        <div style = {{display:'block',margin:'5%'}}>
+                            <h2 >20+</h2>
+                        <h5>Specialized Services</h5>
+                        </div>
+                      
+                        </div>
+                        </Col>
+                        <Col>
+                        <div style = {{margin:'12% 0% 0% 5%', display:'flex'}}>
+                        <FaClinicMedical color = '' size = {70}/>
+                        <div style = {{display:'block',margin:'5%'}}>
+                            <h2 >20+</h2>
+                        <h5>Specialized Services</h5>
+                        </div>
+                        </div>
+                        </Col>
+                        <Col>
+                        <div style = {{margin:'12% 0% 0% 5%', display:'flex'}}>
+                        <FaClinicMedical color = '' size = {70}/>
+                        <div style = {{display:'block',margin:'5%'}}>
+                            <h2 >20+</h2>
+                        <h5>Specialized Services</h5>
+                        </div>
+                        </div>
+                        </Col>
+                        <Col>
+                        <div style = {{margin:'12% 0% 0% 5%', display:'flex'}}>
+                        <FaClinicMedical color = '' size = {70}/>
+                        <div style = {{display:'block',margin:'5%'}}>
+                            <h2 >20+</h2>
+                        <h5>Specialized Services</h5>
+                        </div>
+                        </div>
+                        </Col>
+                    </Row>
+                <div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
+                    <h1>Our Clinical Process</h1>
+                </div>
+                <Row style={{margin:'8% 0% 0% 5%'}}>
+                <Col>
+  <div className='rotating-div'>
+    <div className='rotating-border'></div>
+   <FaAddressCard size = {50} color = '#00c056e5'/>
+  </div>
+  <div style={{textAlign:'center',margin:'10% 0% 0% -40%'}}>
+    <h5 style={{color:'#00c056e5'}}>Check-In</h5>
+    <p>Walk into the clinic</p>
+  </div>
+</Col>
+
+  <Col>
+    <div className='rotating-div'>
+        <div className='rotating-border'>
         </div>
-        <Footer/>
+        <FaAngular size = {50} color = '#00c056e5'/>
     </div>
+    <div style={{textAlign:'center',margin:'10% 0% 0% -40%'}}>
+    <h5 style={{color:'#00c056e5'}}>Vital Assesment</h5>
+    <p>Checking vitals:<br></br>Pulse,Weight e.t.c</p>
+  </div>
+  </Col>
+  <Col>
+    <div className='rotating-div'>
+    <div className='rotating-border'>
+    </div>
+    <FaSpeakerDeck size = {50} color = '#00c056e5'/>
+    </div>
+    <div style={{textAlign:'center',margin:'10% 0% 0% -40%'}}>
+    <h5 style={{color:'#00c056e5'}}>Consultation</h5>
+    <p>Explain your issue<br></br> to a doctor</p>
+  </div>
+  </Col>
+  <Col>
+    <div className='rotating-div'>
+    <div className='rotating-border'>
+    </div>
+    <FaSyringe size = {50} color = '#00c056e5'/>
+    </div>
+    <div style={{textAlign:'center',margin:'10% 0% 0% -40%'}}>
+    <h5 style={{color:'#00c056e5'}}>Treatment</h5>
+    <p>Recieve treatment <br></br>and prescription(s)</p>
+  </div>
+  </Col>
+  <Col>
+    <div className='rotating-div'>
+    <div className='rotating-border'>
+    </div>
+    <FaWalking size = {50} color = '#00c056e5' />
+    </div>
+    <div style={{textAlign:'center',margin:'10% 0% 0% -40%'}}>
+    <h5 style={{color:'#00c056e5'}}>Discharge</h5>
+    <p>Leave the clinic</p>
+  </div>
+  </Col>
+</Row>
+
+                </div>
+                <Footer/>
+            </div>
+         
+        </div>
+        
   )
 }
 
