@@ -6,6 +6,14 @@
   width: 120px;
   height: 120px;
 }
+.map-div{
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  margin-top: 15%;
+  right: 10%;
+  background-color: black;
+}
 .rotating-parent{
   width: fit-content;
 }
@@ -305,11 +313,14 @@ color: #fff;
   align-items:center ;
   justify-content: center;
 }
-/* smaller devices */
-@media(max-width:830px){
+/* mid-devices */
+@media(max-width:930px){
   .why-choose-icons{
     width: 100vw;
     margin-top: 10%;
+  }
+  .map-div{
+    
   }
   .rotating-parent{
     width: 100vw;
