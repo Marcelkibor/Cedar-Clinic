@@ -154,7 +154,6 @@
 }
 .inactive-page{
   background-color: rgb(184, 183, 183);
-  color:  #00b894;
 }
 .inactive-page :hover{
   background-color: #00b894;
@@ -181,6 +180,11 @@
 }
 .slick-prev {
   left: -5% !important;
+}
+.map-col{
+  margin-left: 5% !important;
+  background-color: black;
+  height: 100px;
 }
 .ip-intro{
   text-align: center;
@@ -319,8 +323,8 @@ color: #fff;
     width: 100vw;
     margin-top: 10%;
   }
-  .map-div{
-    
+  .map-col{
+    margin-left: -4% !important;
   }
   .rotating-parent{
     width: 100vw;
