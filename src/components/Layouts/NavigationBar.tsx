@@ -3,15 +3,21 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
 
   const handleHover = (event:any) => {
     const linkText = event.target.innerText;
     setHoveredLink(linkText);
+    setShowLinks(true);
   };
 
   const handleLeave = () => {
     setHoveredLink(null);
+  };
+
+  const handleLinkClick = () => {
+    setShowLinks(false);
   };
 
   useEffect(() => {
@@ -31,18 +37,20 @@ const Navigation = () => {
         <Container>
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <div className="about-us-wrapper">
+            <div
+              className="about-us-wrapper"
+              onMouseLeave={() => setShowLinks(false)}
+            >
               <Nav.Link
                 href="/about-us"
                 onMouseEnter={handleHover}
-                onMouseLeave={handleLeave}
               >
                 About Us
               </Nav.Link>
-              {hoveredLink && (
+              {hoveredLink === 'About Us' && showLinks && (
                 <div className="additional-links">
-                  <Nav.Link href="/directors">Directors</Nav.Link>
-                  <Nav.Link href="/who-we-are">Who We Are</Nav.Link>
+                  <Nav.Link href="/about-us" onClick={handleLinkClick}>Who We Are</Nav.Link>
+                  <Nav.Link href="/our-team" onClick={handleLinkClick}>Our Team</Nav.Link>
                 </div>
               )}
             </div>

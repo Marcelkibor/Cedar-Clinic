@@ -15,10 +15,13 @@
   top: 100%;
   left: 0;
   z-index: 9999; 
-  width: 150px;
+  width: 250px;
   background-color:white;
   color: black !important;
   padding: 10px;
+}
+.additional-links .nav-link:hover{
+  background-color:#00c056e5;
 }
 .additional-links .nav-link{
   color: black !important;
