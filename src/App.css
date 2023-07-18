@@ -6,6 +6,26 @@
   width: 120px;
   height: 120px;
 }
+.about-us-wrapper {
+  position: relative;
+}
+
+.additional-links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 9999; 
+  width: 150px;
+  background-color:white;
+  color: black !important;
+  padding: 10px;
+}
+.additional-links .nav-link{
+  color: black !important;
+}
+.navigation-active .nav-link {
+  color: black !important;
+}
 .map-div{
   position: absolute;
   width: 600px;
@@ -273,7 +293,7 @@ color: #fff;
   background-color: rebeccapurple !important;
 }
 .navigation-inactive .nav-link{
-  color: white !important;
+  color: white;
   font-weight: 600;
 }
 .navigation-active .nav-link{

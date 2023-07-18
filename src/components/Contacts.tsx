@@ -4,7 +4,7 @@ import ServicesHeader from './Services/ServicesHeader'
 import {Row,Col} from 'react-bootstrap';
 import Doc from '../assets/doc.png'
 import {FaMailBulk,FaAddressBook,FaWalking,FaPhone} from 'react-icons/fa'
-import Footer from './Layouts/Footer';
+import Footer from './Layouts/Footer'
 const Contacts = () => {
   return (
     <>
@@ -36,7 +36,7 @@ const Contacts = () => {
         <h5>Call Us</h5>
         <p>0712345678</p>
         </div>
-      </div>
+      </div>import './Map.css'; // Import your custom CSS file
       <div style={{display:'flex',marginTop:'50px'}}>
         <FaWalking size = {30}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
@@ -45,11 +45,6 @@ const Contacts = () => {
         </div>
       </div>
       </>
-      </Col>
-      <Col className = 'map-col'md={6} sm={12} lg={6}>
-      <div>
-
-      </div>
       </Col>
     </Row>
     <Row>
