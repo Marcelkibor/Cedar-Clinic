@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
 const Navigation = () => {
@@ -30,37 +30,35 @@ const Navigation = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
   return (
-    <div className={`navigation ${scrolled ? 'navigation-active' : 'navigation-inactive'}`}>
-      <Navbar>
-        <Container>
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <div
-              className="about-us-wrapper"
-              onMouseLeave={() => setShowLinks(false)}
-            >
-              <Nav.Link
-                href="/about-us"
-                onMouseEnter={handleHover}
-              >
-                About Us
-              </Nav.Link>
-              {hoveredLink === 'About Us' && showLinks && (
-                <div className="additional-links">
-                  <Nav.Link href="/about-us" onClick={handleLinkClick}>Who We Are</Nav.Link>
-                  <Nav.Link href="/our-team" onClick={handleLinkClick}>Our Team</Nav.Link>
-                </div>
-              )}
-            </div>
-            <Nav.Link href="/services">Services</Nav.Link>
-            <Nav.Link href="/contacts">Contacts</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </div>
+<div className={`navigation ${scrolled ? 'navigation-active' : 'navigation-inactive'}`}>
+<Navbar>
+  <Container>
+    <Nav className="me-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <div
+        className="about-us-wrapper"
+        onMouseLeave={() => setShowLinks(false)}
+      >
+        <Nav.Link
+          href="/about-us"
+          onMouseEnter={handleHover}
+        >
+          About Us
+        </Nav.Link>
+        {hoveredLink === 'About Us' && showLinks && (
+          <div className="additional-links">
+            <Nav.Link href="/about-us" onClick={handleLinkClick}>Who We Are</Nav.Link>
+            <Nav.Link href="/our-team" onClick={handleLinkClick}>Our Team</Nav.Link>
+          </div>
+        )}
+      </div>
+      <Nav.Link href="/services">Services</Nav.Link>
+      <Nav.Link href="/contacts">Contacts</Nav.Link>
+    </Nav>
+  </Container>
+</Navbar>
+</div>
   );
 };
-
 export default Navigation;

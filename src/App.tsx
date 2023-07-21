@@ -7,6 +7,8 @@ import Home from './components/Home';
 import AllServices from './components/Services/AllServices';
 import AboutUs from './components/AboutUs';
 import Contacts from './components/Contacts';
+import OurTeam from './components/OurTeam';
+
 function App() {
   return (
     <Router>
@@ -15,6 +17,7 @@ function App() {
         <Route element = {<AllServices/>} path='/services'/>
         <Route path = '/about-us' element = {<AboutUs/>}/>
         <Route path='/contacts' element = {<Contacts/>}/>
+        <Route path = '/our-team' element = {<OurTeam/>}/>
       </Routes>
     </Router>
   )
