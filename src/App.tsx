@@ -8,6 +8,7 @@ import AllServices from './components/Services/AllServices';
 import AboutUs from './components/AboutUs';
 import Contacts from './components/Contacts';
 import OurTeam from './components/OurTeam';
+import TeamSelect from './components/TeamSelect';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path = '/about-us' element = {<AboutUs/>}/>
         <Route path='/contacts' element = {<Contacts/>}/>
         <Route path = '/our-team' element = {<OurTeam/>}/>
+        <Route path="/our-team/:id" element={<TeamSelect/>}/>
       </Routes>
     </Router>
   )

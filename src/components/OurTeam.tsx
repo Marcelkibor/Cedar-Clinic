@@ -1,8 +1,9 @@
-import { Card, Col, Row } from "react-bootstrap"
+import { Card, Col, NavLink, Row } from "react-bootstrap"
 import Navigation from "./Layouts/NavigationBar"
 import ServicesHeader from "./Services/ServicesHeader"
 import Doc from '../assets/doc.png'
-import clinicMembers from "./BulkItems/ClinicMembers"
+import clinicMembers from "./DataFiles/ClinicMembers"
+import Footer from "./Layouts/Footer"
 
 const OurTeam = () => {
   return (
@@ -13,7 +14,7 @@ const OurTeam = () => {
     <div style={{width:'600px',height:'350px', textAlign:'center'}}>
     <img src={Doc} style={{height:'100%',width:'100%'}}/>
     <div style={{marginTop:'15px'}}>
-    <h4>Dr Jakait</h4>
+    <h4><NavLink href = 'our-team/1'>Dr Jakait</NavLink></h4>
     <p>Head Doctor</p>
     </div>
     </div>
@@ -25,13 +26,16 @@ const OurTeam = () => {
                 <div>
                     <img style = {{width:'100%',height:'100%'}}src={item.src}/>
                 </div>
-                <div style={{paddingTop:'10px', backgroundColor:'white'}}>
-                    <h5>{item.name}</h5>
-                    <p>{item.title}</p>
+                <div style={{paddingTop:'10px', backgroundColor:'white',outline:'outline'}}>
+                <h6>
+                    <NavLink href = {`/our-team/${encodeURIComponent(item.id)}`}>{item.name}</NavLink>
+                </h6>
+                <p>{item.title}</p>
                 </div>
                 </div></Col>
             ))}
         </Row>
+        <Footer/>
     </div>
   )
 }

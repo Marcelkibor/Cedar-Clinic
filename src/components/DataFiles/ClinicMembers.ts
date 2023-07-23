@@ -1,5 +1,12 @@
 import Doc from '../../assets/doc.png'
-const clinicMembers = [
+type clinicMember = {
+    id:number,
+    name:string,
+    src:string,
+    title:string
+    divColor:string
+}
+const clinicMembers:clinicMember[] = [
 {id:1,name:'Dr. Jakait',src:Doc,title:'Head Doctor',divColor:'#55efc4'},
 {id:2,name:'Dr. Linda',src:Doc,title:'Doctor',divColor:'#55efc4'},
 {id:3,name:'Mr. Allan Waswa',src:Doc,title:'Lab Technician',divColor:'#55efc4'},
