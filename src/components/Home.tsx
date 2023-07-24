@@ -1,9 +1,8 @@
 import Footer from "./Layouts/Footer"
 import InsuranceProviders from "./InsuranceProviders"
 import LandingPage from "./LandingPage"
-import MedicalServices from "./MedicalServices"
 import Navigation from "./Layouts/NavigationBar"
-import Services from '../components/Services/Services'
+import SliderServices from './Services/SliderServices'
 
 const Home = () => {
   return (
@@ -15,7 +14,7 @@ const Home = () => {
             <LandingPage/>
         </section>
         <section id = "#services">
-            <Services/>
+            <SliderServices/>
         </section>
         <section id = 'providers'>
       <InsuranceProviders/>

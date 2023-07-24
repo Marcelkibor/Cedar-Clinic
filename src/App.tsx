@@ -9,6 +9,7 @@ import AboutUs from './components/AboutUs';
 import Contacts from './components/Contacts';
 import OurTeam from './components/OurTeam';
 import TeamSelect from './components/TeamSelect';
+import ServiceExpand from './components/ServiceExpand';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/contacts' element = {<Contacts/>}/>
         <Route path = '/our-team' element = {<OurTeam/>}/>
         <Route path="/our-team/:id" element={<TeamSelect/>}/>
+        <Route path = '/services/:id' element ={<ServiceExpand/>}/>
       </Routes>
     </Router>
   )

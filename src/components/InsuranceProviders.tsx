@@ -1,16 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import apa from '../assets/apa.png'
-import cic from '../assets/cic.png'
-import nh from '../assets/nhif.png'
-import jb from '../assets/jubilee.png'
-import md from '../assets/madison.png' 
-import br from '../assets/britam.png'
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import apa from '../assets/apa.png';
+import britam from '../assets/britam.png';
+import cic from '../assets/cic.png';
+import jubilee from '../assets/jubilee.png';
+import madison from '../assets/madison.png';
+import nhif from '../assets/nhif.png';
+
+import { Row, Col } from "react-bootstrap";
 
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
+
   useEffect(() => {
     const updateSliderSettings = () => {
       const midScreen = 1108;
@@ -35,47 +38,43 @@ const InsuranceProviders = () => {
       window.removeEventListener('resize', updateSliderSettings);
     };
   }, []);
+
+  const Iproviders = [
+    { id: 1, src: apa },
+    { id: 2, src: britam },
+    { id: 3, src: cic },
+    { id: 4, src: jubilee },
+    { id: 5, src: madison },
+    { id: 6, src: nhif },
+  ];
+
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     autoplay: false,
     autoplaySpeed: 3000,
     speed: 1000,
     slidesToShow: slidesToShow,
-    slidesToScroll: slidesToScroll
+    slidesToScroll: slidesToScroll,
   };
 
   return (
     <div>
       <div className="ip-intro">
-      <h1>Our Insurance Providers</h1>
+        <h1>Our Insurance Providers</h1>
       </div>
-  <div className = 'slick-main-div'>
-     <div style={{width:'80vw'}}>
-     <Slider {...settings}>
-        <div className="slick-item">
-          <img style={{height:'100v',width:'70%'}} src = {apa}/>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ width: '80vw' }}>
+          <Slider {...settings}>
+            {Iproviders.map((provider) => (
+              <div key={provider.id} className="slick-item">
+                <img style={{ height: '100%', width: '70%' }} src={provider.src} alt={`Provider ${provider.id}`} />
+              </div>
+            ))}
+          </Slider>
         </div>
-        <div className="slick-item">
-        <img style={{height:'100%',width:'70%'}} src = {cic}/>
-        </div>
-        <div className="slick-item">
-        <img style={{height:'100%',width:'70%'}} src = {nh}/>
-        </div>
-        <div className="slick-item">
-        <img style={{height:'100%',width:'70%'}} src = {jb}/>
-        </div>
-        <div className="slick-item">
-        <img style={{height:'100%',width:'70%'}} src = {md}/>
-        </div>
-        <div className="slick-item">
-        <img style={{height:'100%', width:'70%'}} src = {br}/>
-        </div>
-      </Slider>
-     </div>
+      </div>
     </div>
-    </div>
-  
   );
 };
 

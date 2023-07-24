@@ -5,17 +5,18 @@ type clinicMember = {
     src:string,
     title:string
     divColor:string
+    description:string
 }
 const clinicMembers:clinicMember[] = [
-{id:1,name:'Dr. Jakait',src:Doc,title:'Head Doctor',divColor:'#55efc4'},
-{id:2,name:'Dr. Linda',src:Doc,title:'Doctor',divColor:'#55efc4'},
-{id:3,name:'Mr. Allan Waswa',src:Doc,title:'Lab Technician',divColor:'#55efc4'},
-{id:4,name:'Mr. Brian Chumba',src:Doc,title:'Accountant',divColor:'#ffeaa7'},
-{id:5,name:'Ms. Lilian Wanjiku',src:Doc,title:'Accountant',divColor:'#ffeaa7'},
-{id:6,name:'Mr. Cleophas Onyango',src:Doc,title:'Pharmacist',divColor:'#ffeaa7'},
-{id:7,name:'Mr. John Doe',src:Doc,title:'Head Nurse',divColor:'#74b9ff'},
-{id:8,name:'Mr. Eliazar Magut',src:Doc,title:'Nurse',divColor:'#74b9ff'},
-{id:9,name:'Mrs. Jenna Hassan',src:Doc,title:'Nurse',divColor:'#74b9ff'}
+{id:1,name:'Dr. Jakait',src:Doc,title:'Head Doctor',divColor:'#55efc4',description:'Dr. Jakait is an exceptional and compassionate medical professional with a wealth of experience. Dedicated to the well-being of his patients, he approaches every case with unwavering commitment and a keen sense of empathy. Throughout his illustrious career, Dr. Jakait has demonstrated a remarkable ability to diagnose and treat complex medical conditions, earning the trust and admiration of his patients and colleagues alike. His unwavering passion for medicine, combined with his innate ability to connect with patients, makes him an invaluable asset to the healthcare community. Dr. Jakait clinical expertise and genuine care have left a lasting impact on countless lives, and he continues to be an inspiring role model for aspiring healthcare professionals worldwide.'},
+{id:2,name:'Dr. Linda',src:Doc,title:'Doctor',divColor:'#55efc4',description:''},
+{id:3,name:'Mr. Allan Waswa',src:Doc,title:'Lab Technician',divColor:'#55efc4',description:''},
+{id:4,name:'Mr. Brian Chumba',src:Doc,title:'Accountant',divColor:'#ffeaa7',description:''},
+{id:5,name:'Ms. Lilian Wanjiku',src:Doc,title:'Accountant',divColor:'#ffeaa7',description:''},
+{id:6,name:'Mr. Cleophas Onyango',src:Doc,title:'Pharmacist',divColor:'#ffeaa7',description:''},
+{id:7,name:'Mr. John Doe',src:Doc,title:'Head Nurse',divColor:'#74b9ff',description:''},
+{id:8,name:'Mr. Eliazar Magut',src:Doc,title:'Nurse',divColor:'#74b9ff',description:''},
+{id:9,name:'Mrs. Jenna Hassan',src:Doc,title:'Nurse',divColor:'#74b9ff',description:''}
 ]
 
 export default clinicMembers;

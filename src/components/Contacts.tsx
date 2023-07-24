@@ -10,7 +10,7 @@ const Contacts = () => {
     <>
       <div>
         <Navigation/>
-        <ServicesHeader/>
+        <ServicesHeader pathname = {window.location.pathname}/>
       </div>
      <Row style = {{marginTop:'90px',marginLeft:'5%'}}>
       <h2>Contact Us</h2>
@@ -36,7 +36,7 @@ const Contacts = () => {
         <h5>Call Us</h5>
         <p>0712345678</p>
         </div>
-      </div>import './Map.css'; // Import your custom CSS file
+      </div>
       <div style={{display:'flex',marginTop:'50px'}}>
         <FaWalking size = {30}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
