@@ -8,14 +8,16 @@ import Doc from '../assets/doc.png'
 import { Row,Col } from "react-bootstrap";
 import Footer from "./Layouts/Footer";
 const TeamSelect = () => {
-  const { id } = useParams<{ id?: string }>(); // Provide type for id to handle undefined
-
-  if (!id) {
+  const { name } = useParams<{ name?:string }>();
+  if (!name) {
     return <div>No team member selected</div>;
   }
-  const memberId = parseInt(id);
-  const selectedMember = clinicMembers.find((item:any) => item.id === memberId);
-  return (
+  const capitalizeFirstLetter = (word:string)=>{
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+const firstName = capitalizeFirstLetter(name.split(" ")[0]);
+const selectedMember = clinicMembers.find((member)=>member.name.split(" ")[0]===firstName)
+    return (
     <div>
       <Navigation/>
       <ServicesHeader pathname = {window.location.pathname}/>

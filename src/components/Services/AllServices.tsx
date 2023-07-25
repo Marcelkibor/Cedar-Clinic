@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 import Pagination from './Pagination';
 import ServicesHeader from './ServicesHeader';
 import {Mservice,serviceIcons} from '../DataFiles/Mservices';
-import { NavLink } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [servicePerPage, setServicePerPage] = useState(4);
@@ -13,6 +13,11 @@ const AllServices = () => {
   const lastServiceIndex = currentPage * servicePerPage;
   const firstLocationIndex = lastServiceIndex - servicePerPage;
   const displayServices = Mservice.slice(firstLocationIndex, lastServiceIndex);
+  const formatNames = (name:string)=>{
+    const splitName = name.split(".");
+    const formattedName = splitName && splitName.length > 1 && splitName[splitName.length - 1].trim().toLowerCase();
+    return formattedName || name.toLowerCase();
+  }
   return (
     <>
     <div style = {{position:'relative', height:'fit-content'}}>
@@ -27,7 +32,7 @@ const AllServices = () => {
       <div style={{ marginLeft: '20%' }}>
         <Card.Body>
           <Card.Title style={{ color: '#218c74' }}>
-          <NavLink href={`/services/${encodeURIComponent(service.id)}`}>{service.name}</NavLink>
+          <NavLink to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
             </Card.Title>
           <Card.Text>{service.description}</Card.Text>
         </Card.Body>
