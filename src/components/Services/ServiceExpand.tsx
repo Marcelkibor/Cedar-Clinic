@@ -22,7 +22,7 @@ const ServiceExpand = () => {
     <>
     <Navigation/>
     <ServicesHeader pathname = {window.location.pathname}/>
-    <Row lg = {3}style={{margin:'80px 3% 0% 3%'}}>
+    <Row lg = {3}style={{margin:'10% 3% 0% 3%', height:'60vh'}}>
         <Col>
         <div>{selectedService&&<>
     <h4>{selectedService.name}</h4>
