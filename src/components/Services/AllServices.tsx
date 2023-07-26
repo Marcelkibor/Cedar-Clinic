@@ -5,6 +5,7 @@ import Pagination from './Pagination';
 import ServicesHeader from './ServicesHeader';
 import {Mservice,serviceIcons} from '../DataFiles/Mservices';
 import { NavLink } from 'react-router-dom';
+import { FaArrowRight } from 'react-icons/fa';
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [servicePerPage, setServicePerPage] = useState(4);
@@ -17,6 +18,9 @@ const AllServices = () => {
     const splitName = name.split(".");
     const formattedName = splitName && splitName.length > 1 && splitName[splitName.length - 1].trim().toLowerCase();
     return formattedName || name.toLowerCase();
+  }
+  const navigate = (service:any)=>{
+    window.location.href =`services/${encodeURIComponent(formatNames(service))}`
   }
   return (
     <>
@@ -47,8 +51,12 @@ const AllServices = () => {
             <h5 style={{ marginLeft: '20px' }}>All Services</h5>
           </div>
           {Mservice.map((service:any) => (
-            <div key={service.id} style={{ width: '300px', height: '60px', background: '#218c74', display: 'flex', alignItems: 'center', marginTop: '10px', marginLeft: '20px' }}>
+           
+    <div onClick ={()=>{navigate(service.name)}} key={service.id} style={{ display:'flex',justifyContent:'space-between',width: '300px', height: '60px', background: '#218c74',alignItems: 'center', marginTop: '10px', marginLeft: '20px' }}>
               <h5 style={{ marginLeft: '20px' }}>{service.name}</h5>
+              <div style={{margin:'0 3% 0% 0%'}}>
+              <FaArrowRight color = 'white'/>
+            </div>
             </div>
           ))}
         </Col>

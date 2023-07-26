@@ -9,7 +9,7 @@ interface ServicesHeaderProps {
 const ServicesHeader: React.FC<ServicesHeaderProps> = ({ pathname }) => {
   const [newPath, setNewPath] = useState<React.ReactNode | null>(null);
 
-  const formatString = (input: string): string[] => {
+  const formatUrlString = (input: string): string[] => {
     const parts = input.split("/");
     const formattedParts = parts.map((part) => part.trim());
     return formattedParts;
@@ -23,20 +23,15 @@ const ServicesHeader: React.FC<ServicesHeaderProps> = ({ pathname }) => {
 
   useEffect(() => {
     if (pathname) {
-      const formatUrl = formatString(pathname);
+      const formatUrl = formatUrlString(pathname);
       if (formatUrl.length >= 2) {
         const firstPart = capitalizeFirstLetter(decodeURIComponent(formatUrl[formatUrl.length - 2]));
         const secondPart = capitalizeFirstLetter(decodeURIComponent(formatUrl[formatUrl.length - 1]));
         setNewPath(
           <>
             <NavLink style={{ color: "white" }} to={`/${formatUrl[formatUrl.length - 2]}`}>{firstPart}</NavLink> -{" "}
-            <NavLink style={{ color: "white" }} to={`/${formatUrl[formatUrl.length - 2]}/${formatUrl[formatUrl.length - 1]}`}>{secondPart}</NavLink>
+            <NavLink style={{ color: "white" }} to={`/${formatUrl[formatUrl.length - 1]}`}>{secondPart}</NavLink>
           </>
-        );
-      } else if (formatUrl.length === 1) {
-        const part = capitalizeFirstLetter(decodeURIComponent(formatUrl[formatUrl.length - 1]));
-        setNewPath(
-          <NavLink style={{ color: "white" }} to={`/${formatUrl[formatUrl.length - 1]}`}>{part}</NavLink>
         );
       }
     }
