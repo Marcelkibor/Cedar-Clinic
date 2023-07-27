@@ -6,6 +6,10 @@
   width: 120px;
   height: 120px;
 }
+.why-choose-col{
+  display: flex;
+  margin-left: 30% !important;
+}
 .about-us-wrapper {
   position: relative;
 }
@@ -112,6 +116,9 @@
   text-align: center;
 }
 
+.counter-col{
+ width: fit-content;
+}
 
 .main-service-card{
   height: 300px !important;
@@ -363,10 +370,17 @@ color: #fff;
   margin-left: 20px;
 }
 /* mid-devices */
-@media(max-width:930px){
+@media(max-width:900px){
   .why-choose-icons{
     width: 100vw;
     margin-top: 10%;
+  }
+  .counter-col{
+    min-width: 100vw !important;
+    margin-top: 5% !important;
+  }
+  .why-choose-col{
+    margin-left: 25% !important;
   }
   .service-expand{
     margin-top: 20% !important;
@@ -456,9 +470,12 @@ color: #fff;
   align-items: center;
 }
 }
-@media(max-width:880px){
+@media(max-width:550px){
  .main-services{
   margin-top: 80% !important;
+ }
+ .why-choose-col{
+  margin-left: 15% !important;
  }
  .service-expand{
   margin-top: 25% !important;

@@ -10,63 +10,60 @@ import React from 'react';
 const AboutUs = () => {
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
   return (
-    <div>
+<div>
   <Navigation/>
-  <ServicesHeader pathname = {window.location.pathname}/>
-  <Row style={{marginTop:'100px'}}>
+    <ServicesHeader pathname = {window.location.pathname}/>
+      <Row style={{marginTop:'100px'}}>
       <Col>
-      <div style={{marginLeft:'10%', marginTop:'10%'}}>
+       <div style={{marginLeft:'10%', marginTop:'10%'}}>
       <h2>About Us</h2>
-      <p>
-      Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
-      <br></br><br></br><p>
-      With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
-      </p>
-      </p>
-      </div>
+    <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
+<br></br><br></br><p>
+With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
+</p>
+  </p>
+    </div>
       </Col>
       <Col>
       <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
-      </Col>
+    </Col>
   </Row>
-  <Row style = {{margin:'2% 0% 0% 5% '}}>
-    <Col>
+<Row style = {{margin:'2% 0% 0% 5% '}}>
+  <Col>
     <div className='about-mvv'>
-    <h2>Mission</h2>
-      <p>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
-    </div>
-    
-      </Col>
+     <h2>Mission</h2>
+    <p>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
+  </div>
+    </Col>
       <Col>
       <div className='about-mvv'>
-      <h2>Vision</h2>
+        <h2>Vision</h2>
       <p>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
       </div>
-     
-      </Col>
-      <Col>
-      <h2>Values</h2>
+    </Col>
+  <Col>
+    <h2>Values</h2>
       {coreValues.map((value)=>(
-          <ul>
+        <ul>
       <li>{value}</li>
-          </ul>
-      ))}
-      </Col>
-  </Row>
-<div style = {{position:'relative',height:'fit-content',backgroundColor:'#00c056e5'}}>
-  <div style={{textAlign:'center', color:'white',paddingTop:'4%'}}>
+    </ul>
+    ))}
+  </Col>
+</Row>
+<div style = {{height:'fit-content',backgroundColor:'#00c056e5'}}>
+  <div style={{color:'white',padding:'5% 0% 1% 0%',textAlign:'center'}}>
       <h1>Why Choose Us</h1>
-      <p> Our experienced team will ensure that your health and well-being are our top priorities.</p>
+      <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>
   </div>
   {whyChoose.map((item:any)=>(
-    <Row className='why-choose-row'>
-    <Col key={item.id}>
-    <div style={{ textAlign: 'left', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <div className = 'why-choose-icons'>
+    <Row style={{height:'fit-content',margin:'1% 0% 0% 0%', paddingBottom:'0%'}}>
+    <Col className = 'why-choose-col' key={item.id}>
+          <div style={{margin:'0% 0% 0% 5%',padding:'0% 2% 5% 0%'}}>
           {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
-              <h4 style={{ textAlign: 'center' }}>{item.title}</h4>
-          </div>
-          </div>       
+             </div>
+             <div style={{margin:'13px 0% 5% 0%', color:'white'}}>
+              <h4>{item.title}</h4>
+          </div>      
     </Col>
     </Row>
   ))
@@ -74,9 +71,9 @@ const AboutUs = () => {
   <div style={{width:'100vw',height:'100%',background:'white'}}>
     <Row className='counter-row'>
     {clinicalNumbers.map((item:any)=>(
-      <Col key={item.id}>
-        {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'60px',height:'60px'}})}
-        <h2>{`${item.number} +`}</h2>
+      <Col className='counter-col'key={item.id}>
+        {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
+        <h3>{`${item.number} +`}</h3>
         <h5>{item.title}</h5>
       </Col>
     ))}

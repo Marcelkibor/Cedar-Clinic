@@ -44,7 +44,7 @@ const processIcons:{[key:number]:IconType} = {
     5:FaWalking
 };
 const whyChooseIcons:{[key:number]:IconType} = {
-    1:FaHandHolding,
+    1:FaBroadcastTower,
     2:FaBroadcastTower,
     3:FaAccessibleIcon,
     4:FaAccessibleIcon
