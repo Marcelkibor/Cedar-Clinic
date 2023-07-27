@@ -1,10 +1,12 @@
 import {FaHandHolding,FaSyringe,FaSpeakerDeck,FaWalking,FaBroadcastTower,FaAddressCard,FaAccessibleIcon, FaClinicMedical,FaAngular } from 'react-icons/fa';
 import Navigation from './Layouts/NavigationBar';
+import { whyChoose,whyChooseIcons,clinicalProcess,processIcons, clinicalNumbers, numberIcons } from './DataFiles/ClinicalProcess';
 import {AiOutlineSwapRight} from 'react-icons/ai'
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
 import Footer from './Layouts/Footer';
+import React from 'react';
 const AboutUs = () => {
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
   return (
@@ -51,185 +53,63 @@ const AboutUs = () => {
       ))}
       </Col>
   </Row>
-  <div style = {{position:'relative',height:'fit-content',backgroundColor:'#00c056e5'}}>
-      <div style={{textAlign:'center', color:'white',paddingTop:'4%'}}>
-          <h1>Why Choose Us</h1>
-          <p> Our experienced team will ensure that your health and well-being are our top priorities.</p>
-      </div>
-      <Row className='why-choose-row'>
-        <Col>
-              <div style={{ textAlign: 'left', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <div className = 'why-choose-icons'>
-                  <FaHandHolding size={70} />
-                  <h4 style={{ textAlign: 'center' }}>Comprehensive Care</h4>
-              </div>
-              </div>            
-        </Col> 
-        <Col>
-        <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
-        <div className = 'why-choose-icons'>
-          <FaBroadcastTower size={70}/>
-        <h4>
-        Patient-Centric Approach
-        </h4>
-        </div>
-      
-
-        </div>
-        </Col>      
-        <Col>
-        <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
-        <div className = 'why-choose-icons'>
-          <FaAccessibleIcon size={70}/>
-        <h4>
-        Expert Medical Team
-        </h4>
-        </div>
-        
-
-        </div>
-        </Col> 
-        <Col>
-        <div style = {{display:'flex',justifyContent:'center',alignItems:'center'}}>
-        <div className = 'why-choose-icons'>
-        <FaAccessibleIcon size={70}/>
-        <h4>
-        Seamless Operation
-        </h4>
-        </div>
-
-        </div>
-        </Col> 
-        <div style = {{color:'white',textAlign:'center',margin:'10% 0% 0% 0%'}}>
-          <p>To provide you with quality care of all your health needs</p>
-      </div>
-      </Row>
-      <div style={{width:'100vw',height:'100%',background:'white'}}>
-<Row className='counter-row'>
-    <Col>
-    <div className='counter-item'>
-    <FaClinicMedical  color = '#00c056e5' size = {70}/>
-   <h2 >20+</h2>
-    <h5>Specialized Services</h5>
-    </div>
+<div style = {{position:'relative',height:'fit-content',backgroundColor:'#00c056e5'}}>
+  <div style={{textAlign:'center', color:'white',paddingTop:'4%'}}>
+      <h1>Why Choose Us</h1>
+      <p> Our experienced team will ensure that your health and well-being are our top priorities.</p>
+  </div>
+  {whyChoose.map((item:any)=>(
+    <Row className='why-choose-row'>
+    <Col key={item.id}>
+    <div style={{ textAlign: 'left', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div className = 'why-choose-icons'>
+          {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
+              <h4 style={{ textAlign: 'center' }}>{item.title}</h4>
+          </div>
+          </div>       
     </Col>
-    <Col>
-    <div className='counter-item'>
-    <FaClinicMedical  color = '#00c056e5' size = {70}/>
-        <h2 >20+</h2>
-    <h5>Specialized Services</h5>
-    </div>
-    </Col>
-    <Col>
-    <div className='counter-item'>
-    <FaClinicMedical  color = '#00c056e5' size = {70}/>
-        <h2 >20+</h2>
-    <h5>Specialized Services</h5>
-    </div>
-    </Col>
-    <Col>
-    <div className='counter-item'>
-    <FaClinicMedical  color = '#00c056e5' size = {70}/>
-        <h2 >20+</h2>
-    <h5>Specialized Services</h5>
-    </div>
-    </Col>
-</Row>
+    </Row>
+  ))
+  }
+  <div style={{width:'100vw',height:'100%',background:'white'}}>
+    <Row className='counter-row'>
+    {clinicalNumbers.map((item:any)=>(
+      <Col key={item.id}>
+        {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'60px',height:'60px'}})}
+        <h2>{`${item.number} +`}</h2>
+        <h5>{item.title}</h5>
+      </Col>
+    ))}
+    </Row>
 <div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
 <h1>Our Clinical Process</h1>
 </div>
-<Row >
-<Col>
-<div className = 'rotating-parent'>
-<div className='rotating-div'>
-    <div className='rotating-border' ></div>
-    <div >
-    <div className='circle'>
-    <span className='number'>01</span>
-  </div>
-    <FaAddressCard size = {50} color = '#00c056e5'/>
-    </div>
-  </div>
-  <div>
-    <h5 style={{color:'#00c056e5'}}>Check-In</h5>
-    <p>Walk into the clinic</p>
-  </div>
-</div>
-
-</Col>
-  <Col>
+<Row style={{margin:'5% 3% 0% 10%',paddingBottom:'10%'}}>
+  {clinicalProcess.map((item:any)=>(
+<Col key={item.id}>
   <div className = 'rotating-parent'>
-  <div className='rotating-div'>
-        <div className='rotating-border'>
+    <div className='rotating-div'>
+      <div className='rotating-border' >
+</div>
+  <div >
+    <div className='circle'>
+      <span className='number'>{`0${item.id}`}</span>
+      </div>
+      {React.createElement(processIcons[item.id],{style:{color:'#00c056e5',height:'50px',width:'50px'}})}
+    </div>
+</div>
+<div>
+  <h5 style={{color:'#00c056e5'}}>{item.name}</h5>
+    <p>{item.description}</p>
+    </div>
         </div>
-        <div className='circle'>
-    <span className='number'>02</span>
-  </div>
-        <FaAngular size = {50} color = '#00c056e5'/>
-    </div>
-    <div>
-    <h5 style={{color:'#00c056e5'}}>Vital Assesment</h5>
-    <p>Checking vitals:<br></br>Pulse,Weight e.t.c</p>
-  </div>
-  </div>
   </Col>
-  <Col>
-  <div className = 'rotating-parent'>
-  <div className='rotating-div'>
-    <div className='rotating-border'>
-    </div>
-    <div className='circle'>
-    <span className='number'>03</span>
-  </div>
-    <FaSpeakerDeck size = {50} color = '#00c056e5'/>
-    </div>
-    <div>
-    <h5 style={{color:'#00c056e5'}}>Consultation</h5>
-    <p>Explain your health issue<br></br> to a doctor</p>
-  </div>
-  </div>
-  </Col>
-  <Col>
-  <div className = 'rotating-parent'>
-  <div className='rotating-div'>
-    <div className='rotating-border'>
-    </div>
-    <div className='circle'>
-    <span className='number'>04</span>
-  </div>
-    <FaSyringe size = {50} color = '#00c056e5'/>
-    </div>
-    <div>
-    <h5 style={{color:'#00c056e5'}}>Treatment</h5>
-    <p>Recieve treatment <br></br>and prescription(s)</p>
-  </div>
-  </div>
-  </Col>
-  <Col>
-  <div className = 'rotating-parent'>
-  <div className='rotating-div'>
-    <div className='rotating-border'>
-    </div>
-    <div className='circle'>
-    <span className='number'>05</span>
-  </div>
-    <FaWalking size = {50} color = '#00c056e5' />
-    </div>
-    <div>
-    <h5 style={{color:'#00c056e5'}}>Discharge</h5>
-    <p>Leave the clinic</p>
-  </div>
-  </div>
-
-  </Col>
+))}
 </Row>
-</div>
-  <Footer/>
+  </div>
+    <Footer/>
     </div>
-  
 </div>
-        
   )
 }
-
 export default AboutUs
