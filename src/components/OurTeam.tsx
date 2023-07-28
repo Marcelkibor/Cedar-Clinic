@@ -37,9 +37,9 @@ return (
 <Navigation />
 <ServicesHeader pathname={window.location.pathname} />
 <Row style={{ margin: '8% 0% 0% 0%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-<div style={{ width: '600px', height: '350px', textAlign: 'center' }}>
-<img src={Doc} style={{ height: '100%', width: '100%' }} />
-<div style={{ marginTop: '15px' }}>
+<div style={{ width: 'fit-content', height: 'fit-content', textAlign: 'center',marginTop:'20px' }}>
+<img src={Doc} style={{ height: '300px', width: 'auto' }} />
+<div style={{ marginTop: '10px' }}>
     {headDoctor && <>
         <h4 style={{ textDecoration: 'underline', color: '#1B1464' }}>
             <NavLink to={`${encodeURIComponent(formatName(headDoctor.name))}`}>
@@ -51,7 +51,7 @@ return (
 </div>
 </div>
 </Row>
-<Row style={{ margin: '10% 3% 0% 3%', textAlign: 'center' }}>
+<Row style={{ margin: '2% 3% 0% 3%', textAlign: 'center' }}>
 {clinicMembers.map((item, index) => (
 item.id !== 1 ? (
     <Col lg={4} md={6} sm={6} key={index}>

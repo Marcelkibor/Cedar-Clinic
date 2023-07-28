@@ -13,9 +13,9 @@ const AboutUs = () => {
 <div>
   <Navigation/>
     <ServicesHeader pathname = {window.location.pathname}/>
-      <Row style={{marginTop:'100px'}}>
+      <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>
-       <div style={{marginLeft:'10%', marginTop:'10%'}}>
+       <div>
       <h2>About Us</h2>
     <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
 <br></br><br></br><p>
@@ -24,7 +24,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </p>
     </div>
       </Col>
-      <Col>
+      <Col md = {12} lg={7} className='about-img'>
       <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
     </Col>
   </Row>
@@ -50,24 +50,32 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     ))}
   </Col>
 </Row>
-<div style = {{height:'fit-content',backgroundColor:'#00c056e5'}}>
-  <div style={{color:'white',padding:'5% 0% 1% 0%',textAlign:'center'}}>
+<div style = {{minHeight:'70vh',backgroundColor:'#00c056e5'}}>
+  <div style={{color:'white',textAlign:'center'}}>
       <h1>Why Choose Us</h1>
       <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>
   </div>
-  {whyChoose.map((item:any)=>(
-    <Row style={{height:'fit-content',margin:'1% 0% 0% 0%', paddingBottom:'0%'}}>
-    <Col className = 'why-choose-col' key={item.id}>
-          <div style={{margin:'0% 0% 0% 5%',padding:'0% 2% 5% 0%'}}>
+    <Row>
+     {whyChoose.map((item:any)=>(
+    <Col sm={12} md={12} lg={3}>
+      <div style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
+     
+      <div style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
           {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
              </div>
-             <div style={{margin:'13px 0% 5% 0%', color:'white'}}>
-              <h4>{item.title}</h4>
-          </div>      
+             <div style={{color:'white', textAlign:'center'}} >
+        <h4>{item.title}</h4>
+  
+      </div>
+  
+       
+      </div>
+  
     </Col>
-    </Row>
   ))
   }
+  </Row>
+  </div>
   <div style={{width:'100vw',height:'100%',background:'white'}}>
     <Row className='counter-row'>
     {clinicalNumbers.map((item:any)=>(
@@ -81,9 +89,9 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
 <h1>Our Clinical Process</h1>
 </div>
-<Row style={{margin:'5% 3% 0% 10%',paddingBottom:'10%'}}>
+<Row style={{paddingBottom:'10%',backgroundColor:'wheat'}}>
   {clinicalProcess.map((item:any)=>(
-<Col key={item.id}>
+<Col className = 'rotating-col'key={item.id}>
   <div className = 'rotating-parent'>
     <div className='rotating-div'>
       <div className='rotating-border' >
@@ -95,17 +103,18 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
       {React.createElement(processIcons[item.id],{style:{color:'#00c056e5',height:'50px',width:'50px'}})}
     </div>
 </div>
-<div>
+  </div>
+<div className='process-text'>
   <h5 style={{color:'#00c056e5'}}>{item.name}</h5>
     <p>{item.description}</p>
     </div>
-        </div>
+
   </Col>
 ))}
 </Row>
   </div>
     <Footer/>
-    </div>
+   
 </div>
   )
 }

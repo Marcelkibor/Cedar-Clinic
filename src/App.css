@@ -1,3 +1,8 @@
+.about-img{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+}
 .rotating-div {
   position: relative;
   display: flex;
@@ -5,10 +10,6 @@
   justify-content: center;
   width: 120px;
   height: 120px;
-}
-.why-choose-col{
-  display: flex;
-  margin-left: 30% !important;
 }
 .about-us-wrapper {
   position: relative;
@@ -329,6 +330,9 @@ color: #fff;
   z-index: 9999;
   background-color: white;
 }
+.process-text{
+  text-align: left !important;
+}
 .service-card{
   width: 350px;
   display: flex;
@@ -369,11 +373,26 @@ color: #fff;
   margin-top: 10px;
   margin-left: 20px;
 }
+.rotating-col{
+  margin: 5% 0% 0% 5% !important;
+}
+.why-choose-col{
+  margin: 5% 5% 5% 5% !important;
+  display: flex;
+  justify-content: center;
+}
 /* mid-devices */
 @media(max-width:900px){
   .why-choose-icons{
     width: 100vw;
     margin-top: 10%;
+  }
+
+  .rotating-col{
+    margin:0% !important;
+  }
+  .process-text{
+    text-align: center !important;
   }
   .counter-col{
     min-width: 100vw !important;
@@ -477,6 +496,9 @@ color: #fff;
  .why-choose-col{
   margin-left: 15% !important;
  }
+ .about-img{
+  display: none !important;
+}
  .service-expand{
   margin-top: 25% !important;
 }
