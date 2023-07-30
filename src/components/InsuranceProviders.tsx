@@ -8,7 +8,7 @@ import jubilee from '../assets/jubilee.png';
 import madison from '../assets/madison.png';
 import nhif from '../assets/nhif.png';
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -59,22 +59,24 @@ const InsuranceProviders = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="ip-intro">
         <h1>Our Insurance Providers</h1>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ width: '80vw' }}>
-          <Slider {...settings}>
+      <Row className="slider-row">
+        <div>
+        <Col >
+          <Slider  {...settings}>
             {Iproviders.map((provider) => (
-              <div key={provider.id} className="slick-item">
-                <img style={{ height: '100%', width: '70%' }} src={provider.src} alt={`Provider ${provider.id}`} />
-              </div>
+              <Card className = 'provider-div'key={provider.id}> 
+                <img style={{ height: '100%', width: '100%' }} src={provider.src} alt={`Provider ${provider.id}`} />
+              </Card>
             ))}
           </Slider>
+        </Col>
         </div>
-      </div>
-    </div>
+      </Row>
+    </>
   );
 };
 

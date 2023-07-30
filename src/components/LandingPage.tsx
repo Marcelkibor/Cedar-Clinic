@@ -23,25 +23,4 @@ const LandingPage = () => {
     </div>
     )
   }
-  
   export default LandingPage
-//   <div style={{position:'absolute',top:'100%'}}>
-//   <Row>
-//   <Col className='col-hov'>
-//   <div className='intro-cards'>
-//   <FaPills size = {150}/>
-//   </div>
-
-//   </Col>
-//   <Col className='col-hov'>
-//   <div className='intro-cards'>
-//   <FaPills size = {150}/>
-//   </div>
-//   </Col>
-//   <Col className='col-hov'>
-//   <div className='intro-cards'>
-//   <FaPills size = {150}/>
-//   </div>
-//   </Col>
-// </Row>
-//   </div>

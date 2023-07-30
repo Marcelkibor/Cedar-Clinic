@@ -68,11 +68,35 @@
   text-align: center;
   margin-left: 5%;
 }
+.provider-card{
+  height: 100px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100px !important;
+}
+.provider-div{
+ height: 180px !important;
+ width: 180px !important;
+ outline: none !important;
+ background-color: #f1f2f6;
+
+}
+.slider-row{
+  margin-left: 15%!important;
+  padding:5% 0% 5% 0% !important;
+}
 .about-mvv{
   width: fit-content;
 }
 .number{
   font-weight: bolder;
+}
+.slider-main{
+  display: flex !important;
+  justify-content:center !important;
+  align-items: center !important;
+
 }
 .circle {
   position: absolute;
@@ -387,7 +411,14 @@ color: #fff;
     width: 100vw;
     margin-top: 10%;
   }
+  .slider-row{
+    margin-left: 33% !important;
 
+  }
+.provider-div{
+  height: 220px !important;
+  width: 220px !important;
+}
   .rotating-col{
     margin:0% !important;
   }
@@ -495,6 +526,9 @@ color: #fff;
  }
  .why-choose-col{
   margin-left: 15% !important;
+ }
+ .slider-row{
+  margin-left: 20% !important;
  }
  .about-img{
   display: none !important;
