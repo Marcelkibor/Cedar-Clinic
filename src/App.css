@@ -1,3 +1,38 @@
+/* Home.css */
+
+/* Common styles for all images */
+.image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.slide-in.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in {
+  opacity: 0;
+}
+.fade-in.active {
+  opacity: 1;
+}
+.zoom-in {
+  opacity: 0;
+  transform: scale(0);
+}
+.zoom-in.active {
+  opacity: 1;
+  transform: scale(1);
+}
 .about-img{
   width: fit-content;
   display: flex;
@@ -25,6 +60,7 @@
   color: black !important;
   padding: 10px;
 }
+
 .additional-links .nav-link:hover{
   background-color:#00c056e5;
 }
@@ -520,7 +556,7 @@ color: #fff;
   align-items: center;
 }
 }
-@media(max-width:550px){
+@media(max-width:580px){
  .main-services{
   margin-top: 80% !important;
  }

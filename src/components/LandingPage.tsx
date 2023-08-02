@@ -1,25 +1,26 @@
 import { Col, Row } from 'react-bootstrap';
 import Img from '../assets/doc.png';
 import { FaClinicMedical, FaPills } from 'react-icons/fa';
+import { Carousel } from 'react-responsive-carousel';
 const LandingPage = () => {
     return (
   <div>
     <Row>
-    <div style={{position:'relative'}}>
-    <div className = 'landing-img-div'>
-        <img style={{height:'100vh'}} src={Img}/>
-    </div>
-    <div className = 'ceda-intro'>
-            <h1><FaClinicMedical  color = 'green'size={20}/><br></br>Cedar Clinic</h1>
-                <p>Providing complete healthcare support</p>
-                <div style={{display:'flex'}}>
-                    <button className='home-bt'>Read More</button>
-                    <button className='home-bt'>Services</button>
-                </div>   
-        </div>
-    </div>
+    <Carousel>
+      <div>
+          <img src="assets/1.jpeg" />
+          <p className="legend">Legend 1</p>
+      </div>
+      <div>
+          <img src="assets/2.jpeg" />
+          <p className="legend">Legend 2</p>
+      </div>
+      <div>
+          <img src="assets/3.jpeg" />
+          <p className="legend">Legend 3</p>
+      </div>
+  </Carousel>
     </Row>
-
     </div>
     )
   }
