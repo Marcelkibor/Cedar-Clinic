@@ -1,9 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { FaClinicMedical, FaPills } from 'react-icons/fa';
 import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import BgLanding from './DataFiles/BgLanding';
 
 const LandingPage = () => {

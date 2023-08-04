@@ -51,9 +51,10 @@ const InsuranceProviders = () => {
   const settings = {
     dots: false,
     infinite: true,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    speed: 1000,
+    autoplay: true,
+    fade:true,
+    autoplaySpeed: 6000,
+    speed: 3000,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll,
   };
