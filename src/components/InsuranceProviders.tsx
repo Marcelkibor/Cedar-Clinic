@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import apa from '../assets/apa.png';
-import britam from '../assets/britam.png';
-import cic from '../assets/cic.png';
-import jubilee from '../assets/jubilee.png';
-import madison from '../assets/madison.png';
-import nhif from '../assets/nhif.png';
-
+import Iproviders from "./DataFiles/IProviders";
 import { Row, Col, Card } from "react-bootstrap";
 
 const InsuranceProviders = () => {
@@ -38,45 +32,35 @@ const InsuranceProviders = () => {
       window.removeEventListener('resize', updateSliderSettings);
     };
   }, []);
-
-  const Iproviders = [
-    { id: 1, src: apa },
-    { id: 2, src: britam },
-    { id: 3, src: cic },
-    { id: 4, src: jubilee },
-    { id: 5, src: madison },
-    { id: 6, src: nhif },
-  ];
-
   const settings = {
     dots: false,
     infinite: true,
     autoplay: true,
-    fade:true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 9000,
     speed: 3000,
     slidesToShow: slidesToShow,
-    slidesToScroll: slidesToScroll,
+    slidesToScroll: slidesToScroll
   };
-
   return (
     <>
       <div className="ip-intro">
         <h1>Our Insurance Providers</h1>
       </div>
-      <Row className="slider-row">
-        <div>
-        <Col >
-          <Slider  {...settings}>
-            {Iproviders.map((provider) => (
-              <Card className = 'provider-div'key={provider.id}> 
-                <img style={{ height: '100%', width: '100%' }} src={provider.src} alt={`Provider ${provider.id}`} />
-              </Card>
-            ))}
-          </Slider>
-        </Col>
-        </div>
-      </Row>
+      <div>
+      <Slider {...settings}>
+  {Iproviders.map((prov:any) => (
+  <Col key={prov.id} className ='insurance-col'>  
+            <div  style={{height:'300px',width:'300px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+  <div style={{ marginLeft: '20%' }}>
+    <div>
+      <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src}/>
+    </div>
+  </div>
+</div>
+</Col>
+))}
+</Slider>
+      </div>
     </>
   );
 };
