@@ -19,28 +19,36 @@
   justify-content: center !important;
   align-items: center !important;
 }
-.slide-in {
-  opacity: 0;
-  transform: translateX(-100%);
+/* animations.css */
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
-.slide-in.active {
-  opacity: 1;
-  transform: translateX(0);
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-.fade-in {
-  opacity: 0;
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.fade-in.active {
-  opacity: 1;
-}
-.zoom-in {
-  opacity: 0;
-  transform: scale(0);
-}
-.zoom-in.active {
-  opacity: 1;
-  transform: scale(1);
-}
+
 .about-img{
   width: fit-content;
   display: flex;
@@ -568,9 +576,6 @@ color: #fff;
 @media(max-width:580px){
  .main-services{
   margin-top: -50px !important;
- }
- .insurance-col{
-  margin-left: -10% !important;
  }
  .why-choose-col{
   margin-left: 15% !important;

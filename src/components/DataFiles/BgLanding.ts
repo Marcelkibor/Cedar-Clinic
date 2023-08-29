@@ -5,11 +5,12 @@ type ImageProfile = {
     id:number,
     text:string,
     src:string,
-    animation:string
+    animation:string,
+    color:string
 }
 const BgLanding:ImageProfile[] = [
-    {id:1,text:'Your Health Is Our Priority',src:Doc,animation:'slide-in'},
-    {id:2,text:'Comprehensive Care',src:Box,animation:'zoom-out'},
-    {id:3,text:'Insurance Payment Options',src:Wall,animation:'fade-in'},
+    {id:1,text:'Your Health Is Our Priority',src:Doc,animation:'slide-in',color:'black'},
+    {id:2,text:'Comprehensive Care',src:Box,animation:'zoom-out', color:'white'},
+    {id:3,text:'Insurance Payment Options',src:Wall,animation:'fade-in',color:'white'},
 ]
 export default BgLanding;
