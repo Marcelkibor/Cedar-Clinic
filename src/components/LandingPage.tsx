@@ -64,7 +64,7 @@ const settings = {
         <img style={{ height: '100%', width: '100%' }} src={bg.src} alt={`Slide ${bg.id}`}/>
         {display && currentBgIndex === index && (
           <div className={`animated ${bg.animation}`}style={{position: 'absolute',top: '30%', left: '10%',width: '320px'}}>
-            <h1 style={{ color: `${bg.color}` }}>{bg.text}</h1>
+            <p className = 'bg-text'style={{ color: `${bg.color}` }}>{bg.text}</p>
           </div>
         )}
       </div>

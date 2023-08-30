@@ -47,7 +47,7 @@ const SliderServices = () => {
   <div className="ip-intro">
   <h1>Explore Our Services </h1>
   </div>
-<div>
+<div style={{marginTop:'30px'}}>
   <Slider {...settings}>
   {Mservice.map(service => (
   <Col key={service.id} style={{ marginBottom: '10px' }}>
@@ -67,7 +67,8 @@ const SliderServices = () => {
 ))}
 </Slider>
   </div>
-  <div style={{display:'flex',justifyContent:'center',alignItems:'center', marginTop:'10px'}}><button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={getServices}>More Services</button></div>
+  <div style={{display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
+    <button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={getServices}>More Services</button></div>
 </div>
   );
 };

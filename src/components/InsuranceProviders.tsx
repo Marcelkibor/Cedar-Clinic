@@ -50,7 +50,7 @@ const InsuranceProviders = () => {
       <Slider {...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
-            <div  style={{height:'300px',width:'300px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div  style={{height:'280px',width:'280px',display:'flex',justifyContent:'center',alignItems:'center'}}>
     <div>
       <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src}/>
     </div>
