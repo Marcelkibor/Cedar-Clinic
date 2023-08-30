@@ -1,8 +1,6 @@
-import React from 'react'
 import Navigation from './Layouts/NavigationBar'
 import ServicesHeader from './Services/ServicesHeader'
 import {Row,Col} from 'react-bootstrap';
-import Doc from '../assets/doc.png'
 import {FaMailBulk,FaAddressBook,FaWalking,FaPhone} from 'react-icons/fa'
 import Footer from './Layouts/Footer'
 const Contacts = () => {

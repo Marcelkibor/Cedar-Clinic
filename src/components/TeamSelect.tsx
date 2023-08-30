@@ -1,6 +1,4 @@
-// TeamSelect.js
-import React from "react";
-import { useParams } from "react-router-dom"; // Import useParams
+import { useParams } from "react-router-dom";
 import clinicMembers from "./DataFiles/ClinicMembers";
 import Navigation from "./Layouts/NavigationBar";
 import ServicesHeader from "./Services/ServicesHeader";

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Iproviders from "./DataFiles/IProviders";
-import { Row, Col, Card } from "react-bootstrap";
+import { Col} from "react-bootstrap";
 
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface ServicesHeaderProps {
   pathname: string;

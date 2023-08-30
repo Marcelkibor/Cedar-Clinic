@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Pagination = (props: any) => {
   const { servicePerPage, allServices, setCurrentPage, currentPage } = props;
   const pages = [];
@@ -15,7 +13,6 @@ const Pagination = (props: any) => {
     <div>
       {pages.map((page, index) => {
         const isActive = page === currentPage;
-        const isFirstPage = page === 1;
 
         const buttonStyle = {
           marginLeft: '7px',

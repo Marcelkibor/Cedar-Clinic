@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import {SiGmail} from 'react-icons/si';

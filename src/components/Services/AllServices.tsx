@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navigation from '../Layouts/NavigationBar';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col} from 'react-bootstrap';
 import Pagination from './Pagination';
 import ServicesHeader from './ServicesHeader';
 import {Mservice,serviceIcons} from '../DataFiles/Mservices';
@@ -9,7 +9,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../Layouts/Footer';
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [servicePerPage, setServicePerPage] = useState(4);
+  const [servicePerPage] = useState(4);
   const locationPath = window.location.pathname;
 
   const lastServiceIndex = currentPage * servicePerPage;

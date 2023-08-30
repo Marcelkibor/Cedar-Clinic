@@ -12,10 +12,6 @@ const Navigation = () => {
     setShowLinks(true);
   };
 
-  const handleLeave = () => {
-    setHoveredLink(null);
-  };
-
   const handleLinkClick = () => {
     setShowLinks(false);
   };

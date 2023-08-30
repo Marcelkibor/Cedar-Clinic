@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Navigation from "./Layouts/NavigationBar";
 import ServicesHeader from "./Services/ServicesHeader";
