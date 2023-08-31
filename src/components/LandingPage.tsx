@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
-import Bg from '../assets/bg.jpg';
+import Bg from '../assets/bg.mp4';
 
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -30,11 +30,11 @@ const LandingPage = () => {
   return (
     <div className = 'bg-main'>
 <div className='home-bg'>
-<img style={{ height: '100%', width: '100%' }} src={Bg}/>
+<video style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg} autoPlay loop muted/>
   </div>
   <div className='home-bg-text'>
-    <h1>Cedar Clinic</h1>
-    <p>Your Health<br></br>Is Our Priority</p>
+    <h1 data-text='Cedar-Clinic'>Cedar Clinic</h1>
+    <h3>Your Health<br></br>Is Our Priority</h3>
   </div>
     </div>
 

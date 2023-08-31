@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-
+import {motion,useScroll,useSpring} from 'framer-motion'
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   const handleHover = (event:any) => {
     const linkText = event.target.innerText;
     setHoveredLink(linkText);

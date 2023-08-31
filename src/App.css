@@ -17,9 +17,10 @@
   position:relative;
   height: 110vh;
 }
-.name{
+h1{
   font-size: 35px;
-  -webkit-text-stroke: 0.3vw #00b894;
+  color: white;
+  -webkit-text-stroke: 0.3vw white;
   text-transform: uppercase;
 }
 .home-bg{
@@ -27,8 +28,6 @@
   width: 100vw;
   height:100%;
 }
-
-/* Common styles for all images */
 .image-col {
   display: flex;
   justify-content: center;
@@ -47,7 +46,6 @@
   justify-content: center !important;
   align-items: center !important;
 }
-/* animations.css */
 @keyframes slide-in {
   0% {
     transform: translateX(-100%);
@@ -413,7 +411,7 @@ color: #fff;
   position: fixed;
   width: 100%;
   height: 70px;
-  background-color: #20bf6b;
+  background-color: #007c61;
   z-index: 1;
 }
 .items{
