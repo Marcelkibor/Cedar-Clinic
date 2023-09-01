@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import {motion,useScroll,useSpring} from 'framer-motion'
+import Menu from '../Menu';
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const [menuActive,setMenuActive] = useState(false)
   const handleHover = (event:any) => {
     const linkText = event.target.innerText;
     setHoveredLink(linkText);
@@ -25,16 +20,27 @@ const Navigation = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-
+    const handleWidth = ()=>{
+      const smallScreen = 720;
+      if(window.innerWidth<=smallScreen){
+        setMenuActive(true);
+      }
+      else{
+        setMenuActive(false);
+      }
+    }
+    window.addEventListener('resize',handleWidth);
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize',handleWidth);
     };
   }, []);
   return (
 <div className={`navigation ${scrolled ? 'navigation-active' : 'navigation-inactive'}`}>
 <Navbar>
   <Container>
+    {menuActive?<div><Menu/></div>:<div>
     <Nav className="me-auto">
       <Nav.Link href="/">Home</Nav.Link>
       <div
@@ -57,6 +63,7 @@ const Navigation = () => {
       <Nav.Link href="/services">Services</Nav.Link>
       <Nav.Link href="/contacts">Contacts</Nav.Link>
     </Nav>
+      </div>}
   </Container>
 </Navbar>
 </div>
