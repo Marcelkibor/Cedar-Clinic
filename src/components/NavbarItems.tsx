@@ -69,16 +69,18 @@ const Navbar = (isToggled:any) => {
           );
         }if(item === 'Services'){
           return (
-            <div key={item}>
+            <motion.div key={item}
+            style={{ margin: '5% 0% 10% 20%', width: '100px' }}>
               <Nav.Link href={`/services`}>{item}</Nav.Link>
-            </div>
+            </motion.div>
           );
         }
         if(item === 'Contacts'){
           return (
-            <div key={item}>
+            <motion.div key={item}
+            style={{ margin: '5% 0% 10% 20%', width: '100px' }}>
               <Nav.Link href={`/contacts`}>{item}</Nav.Link>
-            </div>
+            </motion.div>
           );
         }
       })}

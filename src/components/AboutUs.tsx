@@ -48,7 +48,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     ))}
   </Col>
 </Row>
-<div style = {{minHeight:'70vh',backgroundColor:'#00c056e5'}}>
+<div className = 'choice-div'>
   <div style={{color:'white',textAlign:'center'}}>
       <h1>Why Choose Us</h1>
       <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>

@@ -7,6 +7,12 @@
   font-size: 35px !important;
   width: 200px !important;
 }
+.menu-active{
+  position: fixed !important;
+  z-index: 9999 !important;
+  top: 0 !important;
+  width: 100% !important;
+}
 .home-bg-text{
   position: absolute;
   top:35%;
@@ -17,10 +23,26 @@
   position:relative;
   height: 110vh;
 }
+.home-bg-text h1{
+  font-size: 35px;
+  color: #00b894;
+  -webkit-text-stroke: 0.3vw white;
+  text-transform: uppercase;
+}
+.choice-div{
+  min-height: 70vh !important;
+background-color: #00c056e5 !important;
+}
+.choice-div h1{
+  font-size: 35px;
+  color: #00b894;
+  padding-top: 20px;
+  -webkit-text-stroke: 0.3vw white;
+  text-transform: uppercase;
+}
 h1{
   font-size: 35px;
-  color: white;
-  -webkit-text-stroke: 0.3vw white;
+  -webkit-text-stroke: 0.3vw #007c61;
   text-transform: uppercase;
 }
 .home-bg{

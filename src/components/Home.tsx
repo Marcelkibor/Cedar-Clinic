@@ -7,12 +7,21 @@ import { useEffect,useState } from "react"
 import Menu from "./Menu"
 const Home = () => {
 const [menuActive,setMenuActive] = useState(false)
+const[sroll,setScroll] = useState(false)
 useEffect(()=>{
   if(window.innerWidth<=720){
     setMenuActive(true);
   }
   else{
     setMenuActive(false);
+  }
+  const isScrolled =()=>{
+    if(window.scrollY>20){
+      setScroll(true)
+    }
+    else{
+      setScroll(false);
+    }
   }
 const getWidth = ()=>{
   const h = window.innerWidth
@@ -23,14 +32,16 @@ setMenuActive(true)
   }
 }
 window.addEventListener('resize',getWidth)
+window.addEventListener('scroll',isScrolled)
 return ()=>{
   window.removeEventListener('resize',getWidth)
+  window.removeEventListener('scroll',isScrolled)
 }
 },[])
   return (
     <div>
         <section id='#navbar'>
-          {menuActive?<div><Menu/></div>:<div><Navigation/></div>}
+          {menuActive?<div><Menu/></div>:<Navigation/>}
         </section>
         <section id = "#home">
             <LandingPage/>
