@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import Bg from '../assets/bg.mp4';
-
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
   const autoplayInterval = 6000
@@ -29,6 +28,8 @@ const LandingPage = () => {
 
   return (
     <div className = 'bg-main'>
+     <div style={{position:'absolute',height:'100%',width:'100%'}}> 
+      </div>
 <div className='home-bg'>
 <video style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg} autoPlay loop muted/>
   </div>
