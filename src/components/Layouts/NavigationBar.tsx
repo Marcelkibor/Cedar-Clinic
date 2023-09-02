@@ -5,6 +5,7 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
+  const [menuActive,setMenuActive] = useState(false)
   const handleHover = (event:any) => {
     const linkText = event.target.innerText;
     setHoveredLink(linkText);
@@ -36,17 +37,19 @@ const Navigation = () => {
         onMouseLeave={() => setShowLinks(false)}
       >
         <Nav.Link
-          href="/about-us"
           onMouseEnter={handleHover}
         >
           About Us
         </Nav.Link>
+        <div>
         {hoveredLink === 'About Us' && showLinks && (
           <div className="additional-links">
             <Nav.Link href="/about-us" onClick={handleLinkClick}>Who We Are</Nav.Link>
             <Nav.Link href="/our-team" onClick={handleLinkClick}>Our Team</Nav.Link>
           </div>
         )}
+        </div>
+  
       </div>
       <Nav.Link href="/services">Services</Nav.Link>
       <Nav.Link href="/contacts">Contacts</Nav.Link>

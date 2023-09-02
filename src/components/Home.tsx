@@ -8,6 +8,12 @@ import Menu from "./Menu"
 const Home = () => {
 const [menuActive,setMenuActive] = useState(false)
 useEffect(()=>{
+  if(window.innerWidth<=720){
+    setMenuActive(true);
+  }
+  else{
+    setMenuActive(false);
+  }
 const getWidth = ()=>{
   const h = window.innerWidth
   if(h<=720){

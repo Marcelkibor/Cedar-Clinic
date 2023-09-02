@@ -7,7 +7,6 @@ const Menu = () => {
 
   const navContainer = {
     visible: {
-      //x: 0,
       opacity: 1,
       transition: {
         x: { velocity: 100 },
@@ -15,7 +14,6 @@ const Menu = () => {
       }
     },
     hidden: {
-      //x: -250,
       opacity: 0,
       transition: {
         x: { velocity: 100 },

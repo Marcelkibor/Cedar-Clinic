@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Nav } from "react-bootstrap";
 
 const Navbar = (isToggled:any) => {
-  const items = ["Home", "Products", "Services", "About"];
+  const items = ["Home", "Services", "About Us", "Contacts"];
 
   const navList = {
     visible: {
@@ -40,19 +41,48 @@ const Navbar = (isToggled:any) => {
 
   return (
     <>
-      <motion.ul
+      <motion.div
         className="navList"
         initial="hidden"
         animate="visible"
         exit="hidden"
         variants={navList}
       >
-        {items.map(item => (
-          <motion.li className="nav-item" variants={navItem} key={item}>
-            <p>{item}</p>
-          </motion.li>
-        ))}
-      </motion.ul>
+      {items.map(item => {
+        if (item === 'About Us') {
+          return (
+            <motion.div
+              style={{ margin: '5% 0% 10% 20%', width: '100px' }}
+              key={item}
+            >
+              <Nav.Link href={`/about-us`}>{item}</Nav.Link>
+            </motion.div>
+          );
+        }if (item === 'Home') {
+          return (
+            <motion.div
+              style={{ margin: '5% 0% 10% 20%', width: '100px' }}
+              key={item}
+            >
+              <Nav.Link href={`/`}>{item}</Nav.Link>
+            </motion.div>
+          );
+        }if(item === 'Services'){
+          return (
+            <div key={item}>
+              <Nav.Link href={`/services`}>{item}</Nav.Link>
+            </div>
+          );
+        }
+        if(item === 'Contacts'){
+          return (
+            <div key={item}>
+              <Nav.Link href={`/contacts`}>{item}</Nav.Link>
+            </div>
+          );
+        }
+      })}
+      </motion.div>
     </>
   );
 };
