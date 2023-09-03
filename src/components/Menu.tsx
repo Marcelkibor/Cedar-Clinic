@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import {useState } from "react";
 import NavbarItems from "../components/NavbarItems";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -36,7 +36,7 @@ const Menu = () => {
             exit="hidden"
             variants={navContainer}
           >
-            <NavbarItems isToggled={isToggled} />
+            <NavbarItems/>
           </motion.div>
         )}
       </AnimatePresence>

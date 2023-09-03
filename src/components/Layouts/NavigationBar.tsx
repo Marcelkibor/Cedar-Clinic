@@ -5,14 +5,11 @@ import Menu from '../Menu';
 const Navigation: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
   const [menuActive, setMenuActive] = useState(false);
 
   const navigationRef = useRef<HTMLDivElement | null>(null);
 
-  const handleHover = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    const linkText = event.currentTarget.innerText;
-    setHoveredLink(linkText);
+  const handleHover = () => {
     setShowLinks(true);
   };
 
