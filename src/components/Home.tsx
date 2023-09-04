@@ -7,8 +7,7 @@ import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
 
 const Home: React.FC = () => {
-  const [sections, setSections] = useState<string[]>([
-    "home",
+  const [sections] = useState<string[]>([
     "services",
     "providers",
   ]);
@@ -65,7 +64,7 @@ const Home: React.FC = () => {
           className="services-container"
           initial={{ opacity: 0, y: 100 }}
           animate={controlsServices}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
           <SliderServices />
         </motion.div>
@@ -75,7 +74,7 @@ const Home: React.FC = () => {
           className="providers-container"
           initial={{ opacity: 0, y: 100 }}
           animate={controlsProviders}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
         >
           <InsuranceProviders />
         </motion.div>
