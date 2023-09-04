@@ -3,6 +3,7 @@ import { whyChoose,whyChooseIcons,clinicalProcess,processIcons, clinicalNumbers,
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
+import {motion} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import React from 'react';
 const AboutUs = () => {
@@ -13,17 +14,28 @@ const AboutUs = () => {
     <ServicesHeader pathname = {window.location.pathname}/>
       <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>
-       <div>
+       <motion.div
+       initial={{ opacity: 0, y: 100 }}
+       animate={{opacity:1,y:0}}
+       transition={{ duration: 0.5 }}
+       >
       <h2>About Us</h2>
     <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
 <br></br><br></br><p>
 With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
 </p>
   </p>
-    </div>
+    </motion.div>
       </Col>
       <Col md = {12} lg={7} className='about-img'>
-      <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
+        <motion.div style={{width:'100%',height:'100%'}}
+        initial={{opacity:0,y:100}}
+        animate={{opacity:1,y:0}}
+        transition={{duration:1}}
+        >
+        <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
+        </motion.div>
+    
     </Col>
   </Row>
 <Row style = {{margin:'2% 0% 0% 5% '}}>
