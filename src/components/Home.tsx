@@ -7,38 +7,51 @@ import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
 
 const Home: React.FC = () => {
-  const [isServicesVisible, setIsServicesVisible] = useState(false);
-  const controls = useAnimation();
-  const isInViewport = (element: HTMLElement | null, threshold = 200) => {
+  const [sections, setSections] = useState<string[]>([
+    "home",
+    "services",
+    "providers",
+  ]);
+
+  const controlsServices = useAnimation();
+  const controlsProviders = useAnimation();
+
+  const isInViewport = (element: HTMLElement | null, threshold = 0) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
     return rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold;
   };
+
   useEffect(() => {
-const handleScroll = () => {
-  const servicesSection = document.getElementById("services");
-  if (servicesSection) {
-    if (isInViewport(servicesSection)) {
-      if (!isServicesVisible) {
-        // Animate the services section when it becomes visible
-        controls.start({ opacity: 1, y: 0 });
-        setIsServicesVisible(true);
-      }
-    } else {
-      if (isServicesVisible) {
-        // Reset animation when the section goes out of the viewport
-        controls.start({ opacity: 0, y: 100 });
-        setIsServicesVisible(false);
-      }
-    }
-  }
-};
-window.addEventListener("scroll", handleScroll);
-handleScroll();
-return () => {
-  window.removeEventListener("scroll", handleScroll);
-};
-}, [controls, isServicesVisible]);
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        const isVisible = isInViewport(element, 200);
+
+        if (section === "services") {
+          if (isVisible) {
+            controlsServices.start({ opacity: 1, y: 0 });
+          } else {
+            controlsServices.start({ opacity: 0, y: 100 });
+          }
+        } else if (section === "providers") {
+          if (isVisible) {
+            controlsProviders.start({ opacity: 1, y: 0 });
+          } else {
+            controlsProviders.start({ opacity: 0, y: 100 });
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sections, controlsServices, controlsProviders]);
+
   return (
     <div>
       <section id="navbar">
@@ -51,14 +64,21 @@ return () => {
         <motion.div
           className="services-container"
           initial={{ opacity: 0, y: 100 }}
-          animate={controls}
-          transition={{ duration: 0.3 }}
+          animate={controlsServices}
+          transition={{ duration: 0.5 }}
         >
           <SliderServices />
         </motion.div>
       </section>
       <section id="providers">
-        <InsuranceProviders />
+        <motion.div
+          className="providers-container"
+          initial={{ opacity: 0, y: 100 }}
+          animate={controlsProviders}
+          transition={{ duration: 0.5 }}
+        >
+          <InsuranceProviders />
+        </motion.div>
       </section>
       <section id="footer">
         <Footer />
