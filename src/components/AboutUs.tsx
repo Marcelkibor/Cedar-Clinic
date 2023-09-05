@@ -5,16 +5,22 @@ import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
 import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
+import CountUp from 'react-countup'
 import React, { useEffect, useState } from 'react';
 import { fadeRight,fadeLeft, popUp } from './Effects/AnimationsPack';
+import ScrollTrigger from 'react-scroll-trigger'
+
+
 const AboutUs = () => {
   const mVV = useAnimation();
   const [sections] = useState<string[]>([
     "mission",
     "values",
     "vision",
-    "icons"
+    "icons",
+    "count"
   ])
+  const[count,setCount] = useState(false);
   const isInViewport = (element: HTMLElement | null, threshold = 100) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
@@ -160,8 +166,10 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     {clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
         {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
-        <h3>{`${item.number} +`}</h3>
+        <h2><CountUp start={0} end={item.number} delay={0.2}/></h2>
         <h5>{item.title}</h5>
+        <div id ='count'>
+        </div>
       </Col>
     ))}
     </Row>
