@@ -6,9 +6,54 @@ import { Row,Col } from 'react-bootstrap';
 import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import React, { useEffect, useState } from 'react';
-import { fadeRight } from './Effects/AnimationsPack';
+import { fadeRight,fadeLeft, popUp } from './Effects/AnimationsPack';
 const AboutUs = () => {
+  const mVV = useAnimation();
+  const [sections] = useState<string[]>([
+    "mission",
+    "values",
+    "vision",
+    "icons"
+  ])
+  const isInViewport = (element: HTMLElement | null, threshold = 100) => {
+    if (!element) return false;
+    const rect = element.getBoundingClientRect();
+    return rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold;
+  };
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
+  useEffect(() => {
+    const handleScroll = () => {
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        const isVisible = isInViewport(element, 100);
+        if (section === "mission") {
+          if (isVisible) {
+            mVV.start('visible');
+          }
+        }
+        if (section === "icons") {
+          if (isVisible) {
+            mVV.start('visible');
+          }
+        }
+        if(section==="values"){
+          if (isVisible) {
+            mVV.start('visible');
+          }
+        }
+        if(section==="vision"){
+          if (isVisible) {
+            mVV.start('visible');
+          }
+        }
+      });
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [sections, mVV]);
   return (
 <div>
   <Navigation/>
@@ -16,9 +61,9 @@ const AboutUs = () => {
       <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>
        <motion.div
-       variants={fadeRight}
-       initial='initial'
-       animate='animate'
+       variants={fadeLeft}
+       initial='hidden'
+       animate='visible'
        >
       <h2>About Us</h2>
     <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
@@ -35,29 +80,43 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </div>
     </Col>
   </Row>
-<Row id='mvv' style = {{margin:'2% 0% 0% 5% '}}>
+<Row style = {{margin:'2% 0% 0% 5% '}}>
   <Col>
-  <div className='about-mvv'
-    >
+  <motion.div id = 'mission'  
+  initial='hidden'
+  variants={fadeRight}
+  animate={mVV}
+  className='about-mvv'
+>
      <h2>Mission</h2>
     <p>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
-  </div>
+  </motion.div>
     </Col>
       <Col>
-      <motion.div className='about-mvv'>
+      <motion.div className='about-mvv'
+      id='values'
+        initial='hidden'
+        variants={popUp(1)}
+        animate={mVV}
+      >
         <h2>Vision</h2>
       <p>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
       </motion.div>
     </Col>
   <Col>
-  <div>
+  <motion.div
+  id='vision'
+  initial='hidden'
+  variants={fadeLeft}
+  animate={mVV}
+  >
   <h2>Values</h2>
       {coreValues.map((value)=>(
         <ul>
       <li>{value}</li>
     </ul>
     ))}
-  </div>
+  </motion.div>
   </Col>
 </Row>
 <div className = 'choice-div'>
@@ -68,15 +127,25 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Row>
      {whyChoose.map((item:any)=>(
     <Col sm={12} md={12} lg={3}>
-      <div style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
-     
-      <div style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
+      <div
+      style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
+      <motion.div
+       animate={mVV}
+       initial='hidden'
+       variants={popUp(3)}
+       id='icons'
+      style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
           {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
-             </div>
-             <div style={{color:'white', textAlign:'center'}} >
+             </motion.div>
+             <motion.div 
+              animate={mVV}
+              initial='hidden'
+              variants={popUp(3)}
+              id='icons'
+             style={{color:'white', textAlign:'center'}} >
         <h4>{item.title}</h4>
   
-      </div>
+      </motion.div>
   
        
       </div>

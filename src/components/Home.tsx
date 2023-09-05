@@ -30,14 +30,10 @@ const Home: React.FC = () => {
         if (section === "services") {
           if (isVisible) {
             controlsServices.start({ opacity: 1, y: 0 });
-          } else {
-            controlsServices.start({ opacity: 0, y: 100 });
           }
         } else if (section === "providers") {
           if (isVisible) {
             controlsProviders.start({ opacity: 1, y: 0 });
-          } else {
-            controlsProviders.start({ opacity: 0, y: 100 });
           }
         }
       });

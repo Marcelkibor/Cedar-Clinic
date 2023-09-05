@@ -1,23 +1,23 @@
 export const fadeRight = {
-    initial: {
-      opacity: 0,
-      x: -100,
+  hidden: {
+    opacity: 0,
+    x: -100,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 1,
     },
-    animate: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        duration: 1,
-      },
-    },
+  },
   };
   export const fadeLeft = {
-    initial: {
+    hidden: {
       opacity: 0,
       x: 100,
     },
-    animate: {
+    visible: {
       opacity: 1,
       x: 0,
       transition: {
@@ -26,19 +26,21 @@ export const fadeRight = {
       },
     },
   };
-  export const popUp = {
-    initial: {
-      opacity: 0,
-      y: 100,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        duration: 1,
+  export const popUp=(duration:number) =>{
+    return{
+      hidden: {
+        opacity: 0,
+        y: 100,
       },
-    },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          duration: duration,
+        },
+      },
+    }
   };
   export const zoomIn = (delay:any, duration:any) => {
     return {
