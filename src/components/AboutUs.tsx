@@ -3,9 +3,10 @@ import { whyChoose,whyChooseIcons,clinicalProcess,processIcons, clinicalNumbers,
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
-import {motion} from 'framer-motion'
+import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { fadeRight } from './Effects/AnimationsPack';
 const AboutUs = () => {
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
   return (
@@ -15,9 +16,9 @@ const AboutUs = () => {
       <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>
        <motion.div
-       initial={{ opacity: 0, y: 100 }}
-       animate={{opacity:1,y:0}}
-       transition={{ duration: 0.5 }}
+       variants={fadeRight}
+       initial='initial'
+       animate='animate'
        >
       <h2>About Us</h2>
     <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
@@ -26,38 +27,37 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 </p>
   </p>
     </motion.div>
-      </Col>
-      <Col md = {12} lg={7} className='about-img'>
-        <motion.div style={{width:'100%',height:'100%'}}
-        initial={{opacity:0,y:100}}
-        animate={{opacity:1,y:0}}
-        transition={{duration:1}}
-        >
-        <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
-        </motion.div>
-    
+  </Col>
+  <Col md = {12} lg={7} className='about-img'>
+    <div style={{width:'100%',height:'100%'}}
+   >
+    <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
+    </div>
     </Col>
   </Row>
-<Row style = {{margin:'2% 0% 0% 5% '}}>
+<Row id='mvv' style = {{margin:'2% 0% 0% 5% '}}>
   <Col>
-    <div className='about-mvv'>
+  <div className='about-mvv'
+    >
      <h2>Mission</h2>
     <p>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
   </div>
     </Col>
       <Col>
-      <div className='about-mvv'>
+      <motion.div className='about-mvv'>
         <h2>Vision</h2>
       <p>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
-      </div>
+      </motion.div>
     </Col>
   <Col>
-    <h2>Values</h2>
+  <div>
+  <h2>Values</h2>
       {coreValues.map((value)=>(
         <ul>
       <li>{value}</li>
     </ul>
     ))}
+  </div>
   </Col>
 </Row>
 <div className = 'choice-div'>
