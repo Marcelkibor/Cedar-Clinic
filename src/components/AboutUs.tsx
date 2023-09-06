@@ -8,20 +8,21 @@ import Footer from './Layouts/Footer';
 import CountUp from 'react-countup'
 import React, { useEffect, useState } from 'react';
 import { fadeRight,fadeLeft, popUp } from './Effects/AnimationsPack';
-import ScrollTrigger from 'react-scroll-trigger'
 
 
 const AboutUs = () => {
   const mVV = useAnimation();
+  const counterAnim  =useAnimation();
+  const [count,setCount] = useState(false)
+  const iconAnim = useAnimation();
   const [sections] = useState<string[]>([
     "mission",
     "values",
     "vision",
     "icons",
-    "count"
+    "counter"
   ])
-  const[count,setCount] = useState(false);
-  const isInViewport = (element: HTMLElement | null, threshold = 100) => {
+  const isInViewport = (element: HTMLElement | null, threshold = 0) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
     return rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold;
@@ -31,31 +32,38 @@ const AboutUs = () => {
     const handleScroll = () => {
       sections.forEach((section) => {
         const element = document.getElementById(section);
-        const isVisible = isInViewport(element, 100);
+        const isVisible = isInViewport(element, -20);
         if (section === "mission") {
           if (isVisible) {
             mVV.start('visible');
           }
         }
-        if (section === "icons") {
+        else if (section === "icons") {
+          if(isInViewport(element,-15)){
+            console.log(`section ${section} found`)
+            iconAnim.start('visible')
+          }
+         
+        }
+        else if(section==="values"){
           if (isVisible) {
             mVV.start('visible');
           }
         }
-        if(section==="values"){
+       else if(section==="vision"){
           if (isVisible) {
             mVV.start('visible');
           }
         }
-        if(section==="vision"){
-          if (isVisible) {
-            mVV.start('visible');
+        if(section ==="counter"){
+          if(isInViewport(element,-50)){
+            setCount(true)
+            counterAnim.start('visible')
           }
         }
       });
     };
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -133,46 +141,44 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Row>
      {whyChoose.map((item:any)=>(
     <Col sm={12} md={12} lg={3}>
-      <div
-      style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
       <motion.div
-       animate={mVV}
-       initial='hidden'
-       variants={popUp(3)}
-       id='icons'
+      animate={iconAnim}
+      variants={popUp(0.8)}
+      id='icons'
+      initial='hidden'
+      style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
+      <div
       style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
           {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
-             </motion.div>
-             <motion.div 
-              animate={mVV}
-              initial='hidden'
-              variants={popUp(3)}
-              id='icons'
+             </div>
+             <div
              style={{color:'white', textAlign:'center'}} >
         <h4>{item.title}</h4>
-  
-      </motion.div>
-  
-       
       </div>
-  
+      </motion.div>
     </Col>
   ))
   }
   </Row>
   </div>
-  <div style={{width:'100vw',height:'100%',background:'white'}}>
+  <section id = "counter">
+  <motion.div 
+  animate={counterAnim}
+  initial='hidden'
+  variants={popUp(0.8)}
+  style={{width:'100vw',height:'100%',background:'white'}} >
     <Row className='counter-row'>
-    {clinicalNumbers.map((item:any)=>(
+    {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
         {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
-        <h2><CountUp start={0} end={item.number} delay={0.2}/></h2>
+        <h2><CountUp start={0} end={item.number} delay={1}/>+</h2>
         <h5>{item.title}</h5>
-        <div id ='count'>
-        </div>
       </Col>
     ))}
     </Row>
+    </motion.div>
+  </section>
+ 
 <div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
 <h1>Our Clinical Process</h1>
 </div>
@@ -199,7 +205,6 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </Col>
 ))}
 </Row>
-  </div>
     <Footer/>
    
 </div>
