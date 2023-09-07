@@ -3,8 +3,8 @@ import {FaClinicMedical,FaWalking,FaCheck, FaComment, FaFileMedical,FaBroadcastT
 import { IconType } from "react-icons"
 type Process = {
     id:number,
-    title:string,
-    content:string
+    cardTitle:string,
+    cardSubtitle:string
 };
 type whychoose = {
     id:number,
@@ -23,11 +23,11 @@ const whyChoose:whychoose[]=[
     {id:4,title:'Seamless Operation'},
 ];
 const clinicalProcess:Process[]=[
-    {id:1,title:'Check-In', content:'Walk into the clinic'},
-    {id:2,title:'Vital Assesment', content:'Checking vitals: Pulse,Weight e.t.c'},
-    {id:3,title:'Consultation', content:'Explain your health issue to the doctor'},
-    {id:4,title:'Treatment', content:'Recieve treatment and prescription(s)'},
-    {id:5,title:'Discharge', content:'Leave the clinic'},
+    {id:1,cardTitle:'Check-In', cardSubtitle:'Walk into the clinic'},
+    {id:2,cardTitle:'Vital Assesment', cardSubtitle:'Checking vitals: Pulse,Weight e.t.c'},
+    {id:3,cardTitle:'Consultation', cardSubtitle:'Explain your health issue to the doctor'},
+    {id:4,cardTitle:'Treatment', cardSubtitle:'Recieve treatment and prescription(s)'},
+    {id:5,cardTitle:'Discharge', cardSubtitle:'Leave the clinic'},
 ];
 const clinicalNumbers:clinicNumber[]=[
     {id:1,number:30,title:'Specialized services'},

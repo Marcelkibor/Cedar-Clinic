@@ -1,5 +1,5 @@
 import Navigation from './Layouts/NavigationBar';
-import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers, numberIcons } from './DataFiles/ClinicalProcess';
+import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers,processIcons, numberIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
@@ -67,35 +67,13 @@ const AboutUs = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sections, mVV]);
-  const ChronoItem =(items:any)=>{
-    return(
-      <div style={{display:'flex', marginTop:'10%'}}>
-         <motion.div
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      style={{
-        width: '60px',
-        height: '60px',
-        borderRadius: '50%',
-        backgroundColor: '#16a085',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: '24px',
-        color: 'white',
-      }}
-    >
-      {items.value}
-    </motion.div>
-        <div style={{marginLeft:'20px'}}>
-        <h5 style={{color:'#16a085'}}>{items.title}</h5>
-        <p>{items.content}</p>
-      </div>
-      </div>
-      
-    )
-  }
+  const customTheme = {
+    primary: "#00b894",
+    lineColor: "#00b894",
+    itemWidth:'50px',
+    iconColor:'white'
+  };
+  
   return (
 <div>
   <Navigation/>
@@ -212,16 +190,15 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 </div>
 <Row style={{paddingBottom:'10%',backgroundColor:'white',marginLeft:'5%',marginRight:'5%'}}>
   <Col>
-  <Chrono 
+  <Chrono
+  theme={customTheme}
+  items={clinicalProcess}
   hideControls={true}
   mode="VERTICAL_ALTERNATING">
         {clinicalProcess.map((process) => (
-          <ChronoItem
-            key={process.id}
-            title={process.title}
-            content={process.content}
-            value={process.id}
-          />
+      <div className='chrono-icons' style={{width:'200px',height:'200px'}}>
+        {React.createElement(numberIcons[process.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
+      </div>  
         ))}
       </Chrono>
     </Col>
