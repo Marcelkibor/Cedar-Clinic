@@ -6,9 +6,10 @@ import { Row,Col } from 'react-bootstrap';
 import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup'
+import { Chrono } from 'react-chrono'
 import React, { useEffect, useState } from 'react';
-import { fadeRight,fadeLeft, popUp } from './Effects/AnimationsPack';
-
+import {fadeLeft, popUp } from './Effects/AnimationsPack';
+import {VerticalTimeline,VerticalTimelineElement} from 'react-vertical-timeline-component';
 
 const AboutUs = () => {
   const mVV = useAnimation();
@@ -22,6 +23,13 @@ const AboutUs = () => {
     "icons",
     "counter"
   ])
+const ClinicProcessEvents = (process:any)=>{
+  return(
+  <div>
+    <h6>{process.content}</h6>
+  </div> 
+  )
+}
   const isInViewport = (element: HTMLElement | null, threshold = 0) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
@@ -68,6 +76,35 @@ const AboutUs = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sections, mVV]);
+  const ChronoItem =(items:any)=>{
+    return(
+      <div style={{display:'flex', marginTop:'10%'}}>
+         <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      style={{
+        width: '60px',
+        height: '60px',
+        borderRadius: '50%',
+        backgroundColor: '#16a085',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: '24px',
+        color: 'white',
+      }}
+    >
+      {items.value}
+    </motion.div>
+        <div style={{marginLeft:'20px'}}>
+        <h5 style={{color:'#16a085'}}>{items.title}</h5>
+        <p>{items.content}</p>
+      </div>
+      </div>
+      
+    )
+  }
   return (
 <div>
   <Navigation/>
@@ -75,7 +112,7 @@ const AboutUs = () => {
       <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>
        <motion.div
-       variants={fadeLeft}
+       variants={popUp(0.8)}
        initial='hidden'
        animate='visible'
        >
@@ -98,7 +135,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   <Col>
   <motion.div id = 'mission'  
   initial='hidden'
-  variants={fadeRight}
+  variants={popUp(0.8)}
   animate={mVV}
   className='about-mvv'
 >
@@ -182,30 +219,23 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
 <h1>Our Clinical Process</h1>
 </div>
-<Row style={{paddingBottom:'10%',backgroundColor:'wheat'}}>
-  {clinicalProcess.map((item:any)=>(
-<Col className = 'rotating-col'key={item.id}>
-  <div className = 'rotating-parent'>
-    <div className='rotating-div'>
-      <div className='rotating-border' >
-</div>
-  <div >
-    <div className='circle'>
-      <span className='number'>{`0${item.id}`}</span>
-      </div>
-      {React.createElement(processIcons[item.id],{style:{color:'#00c056e5',height:'50px',width:'50px'}})}
-    </div>
-</div>
-  </div>
-<div className='process-text'>
-  <h5 style={{color:'#00c056e5'}}>{item.name}</h5>
-    <p>{item.description}</p>
-    </div>
-
-  </Col>
-))}
+<Row style={{paddingBottom:'10%',backgroundColor:'white',marginLeft:'5%',marginRight:'5%'}}>
+  <Col>
+  <Chrono 
+  hideControls={true}
+  mode="VERTICAL_ALTERNATING">
+        {clinicalProcess.map((process) => (
+          <ChronoItem
+            key={process.id}
+            title={process.title}
+            content={process.content}
+            value={process.id}
+          />
+        ))}
+      </Chrono>
+    </Col>
 </Row>
-    <Footer/>
+<Footer/>
    
 </div>
   )
