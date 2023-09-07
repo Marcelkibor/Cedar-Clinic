@@ -1,5 +1,5 @@
 import Navigation from './Layouts/NavigationBar';
-import { whyChoose,whyChooseIcons,clinicalProcess,processIcons, clinicalNumbers, numberIcons } from './DataFiles/ClinicalProcess';
+import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers, numberIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
@@ -9,8 +9,6 @@ import CountUp from 'react-countup'
 import { Chrono } from 'react-chrono'
 import React, { useEffect, useState } from 'react';
 import {fadeLeft, popUp } from './Effects/AnimationsPack';
-import {VerticalTimeline,VerticalTimelineElement} from 'react-vertical-timeline-component';
-
 const AboutUs = () => {
   const mVV = useAnimation();
   const counterAnim  =useAnimation();
@@ -23,13 +21,6 @@ const AboutUs = () => {
     "icons",
     "counter"
   ])
-const ClinicProcessEvents = (process:any)=>{
-  return(
-  <div>
-    <h6>{process.content}</h6>
-  </div> 
-  )
-}
   const isInViewport = (element: HTMLElement | null, threshold = 0) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
