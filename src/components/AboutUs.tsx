@@ -1,15 +1,18 @@
 import Navigation from './Layouts/NavigationBar';
-import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers,processIcons, numberIcons } from './DataFiles/ClinicalProcess';
+import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers,processIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
-import {motion, useAnimation} from 'framer-motion'
+import {color, motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup'
-import { Chrono } from 'react-chrono'
 import React, { useEffect, useState } from 'react';
 import {fadeLeft, popUp } from './Effects/AnimationsPack';
-const AboutUs = () => {
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import Timeline from './Timeline';
+
+const AboutUs=() => {
   const mVV = useAnimation();
   const counterAnim  =useAnimation();
   const [count,setCount] = useState(false)
@@ -21,6 +24,7 @@ const AboutUs = () => {
     "icons",
     "counter"
   ])
+
   const isInViewport = (element: HTMLElement | null, threshold = 0) => {
     if (!element) return false;
     const rect = element.getBoundingClientRect();
@@ -176,7 +180,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Row className='counter-row'>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
-        {React.createElement(numberIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
+        {React.createElement(whyChooseIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
         <h2><CountUp start={0} end={item.number} delay={1}/>+</h2>
         <h5>{item.title}</h5>
       </Col>
@@ -185,22 +189,12 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </motion.div>
   </section>
  
-<div style ={{textAlign:'center', paddingTop:'5%',color:'#00c056e5'}}>
+<div style ={{textAlign:'center', paddingTop:'5%',color:'black'}}>
 <h1>Our Clinical Process</h1>
 </div>
 <Row style={{paddingBottom:'10%',backgroundColor:'white',marginLeft:'5%',marginRight:'5%'}}>
   <Col>
-  <Chrono
-  theme={customTheme}
-  items={clinicalProcess}
-  hideControls={true}
-  mode="VERTICAL_ALTERNATING">
-        {clinicalProcess.map((process) => (
-      <div className='chrono-icons' style={{width:'200px',height:'200px'}}>
-        {React.createElement(numberIcons[process.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
-      </div>  
-        ))}
-      </Chrono>
+<Timeline/>
     </Col>
 </Row>
 <Footer/>

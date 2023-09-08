@@ -49,11 +49,6 @@ const whyChooseIcons:{[key:number]:IconType} = {
     3:FaAccessibleIcon,
     4:FaAccessibleIcon
 };
-const numberIcons:{[key:number]:IconType} = {
-    1:FaClinicMedical,
-    2:FaClinicMedical,
-    3:FaClinicMedical,
-    4:FaClinicMedical,
-};
 
-export {clinicalProcess,processIcons,whyChoose,whyChooseIcons,clinicalNumbers, numberIcons}
+
+export {clinicalProcess,processIcons,whyChoose,whyChooseIcons,clinicalNumbers}
