@@ -28,10 +28,12 @@ const Timeline: React.FC = () => {
         <VerticalTimelineElement
           key={item.id}
           date={item.cardTitle}
-          iconStyle={{ background: '#00b894', color: '#fff' }}
+          contentStyle={{ background: '#58B19F', color: '#fff',height:'180px' }}
+          contentArrowStyle={{ borderRight: '7px solid  #58B19F' }}
+          iconStyle={{ background: '#58B19F', color: '#fff' }}
           icon={numberIcons[item.id]}
         >
-          <h5 style={{color:'#00b894'}}>{item.cardTitle}</h5>
+          <h4 style={{color:'white'}}>{item.id}. <span>{item.cardTitle}</span></h4>
           <h6>{item.cardSubtitle}</h6>
         </VerticalTimelineElement>
       ))}

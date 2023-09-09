@@ -153,7 +153,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Col sm={12} md={12} lg={3}>
       <motion.div
       animate={iconAnim}
-      variants={popUp(0.8)}
+      variants={popUp(0.5)}
       id='icons'
       initial='hidden'
       style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
@@ -177,7 +177,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   initial='hidden'
   variants={popUp(0.8)}
   style={{width:'100vw',height:'100%',background:'white'}} >
-    <Row className='counter-row'>
+    <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
         {React.createElement(whyChooseIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
@@ -188,11 +188,10 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </Row>
     </motion.div>
   </section>
- 
-<div style ={{textAlign:'center', paddingTop:'5%',color:'black'}}>
+<Row style={{paddingBottom:'10%',backgroundColor:'#079992'}}>
+<div style ={{textAlign:'center', margin:'5% 0% 5% 0%',color:'white'}}>
 <h1>Our Clinical Process</h1>
 </div>
-<Row style={{paddingBottom:'10%',backgroundColor:'white',marginLeft:'5%',marginRight:'5%'}}>
   <Col>
 <Timeline/>
     </Col>

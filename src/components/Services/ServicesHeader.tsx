@@ -37,7 +37,7 @@ const ServicesHeader: React.FC<ServicesHeaderProps> = ({ pathname }) => {
   }, [pathname]);
 
   return (
-    <div style={{ color: 'white', display: 'flex', minWidth: '100vw', height: '20vh', background: '#00b894', position: 'relative', top: '70px' }}>
+    <div style={{ color: 'white', display: 'flex', minWidth: '100vw', height: '20vh', background: '#01a3a4', position: 'relative', top: '70px' }}>
       <div style={{ position: 'absolute', display: 'flex', top: '40%', left: '2%' }}>
       <NavLink style={{ color: "white" }} to={`/`}>Home</NavLink>
         <div style={{ color: 'white', marginLeft: '10px' }}>
