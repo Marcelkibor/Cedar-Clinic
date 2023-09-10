@@ -21,7 +21,7 @@ const Pagination = (props: any) => {
           borderRadius: '5px',
           color: isActive ? 'white' : '#218c74',
           background: isActive ? '#00b894' : 'white',
-          border: isActive ? 'none' : '1px solid #218c74',
+          border: isActive ? 'none' : '2px solid #218c74',
         };
 
         return (
