@@ -34,7 +34,7 @@ const LandingPage = () => {
 <video style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg} autoPlay loop muted/>
   </div>
   <div className='home-bg-text'>
-    <h1 data-text='Cedar-Clinic'>Cedar Clinic</h1>
+    <h1 data-text='Cedar-Clinic'>Cedars Clinic</h1>
     <h3>Your Health<br></br>Is Our Priority</h3>
   </div>
     </div>
