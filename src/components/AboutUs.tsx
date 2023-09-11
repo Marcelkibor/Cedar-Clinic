@@ -1,15 +1,13 @@
 import Navigation from './Layouts/NavigationBar';
-import { whyChoose,whyChooseIcons,clinicalProcess, clinicalNumbers,processIcons } from './DataFiles/ClinicalProcess';
+import { whyChoose,whyChooseIcons,clinicalNumbers } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
-import {color, motion, useAnimation} from 'framer-motion'
+import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup'
 import React, { useEffect, useState } from 'react';
 import {fadeLeft, popUp } from './Effects/AnimationsPack';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import Timeline from './Timeline';
 
 const AboutUs=() => {
@@ -71,13 +69,6 @@ const AboutUs=() => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sections, mVV]);
-  const customTheme = {
-    primary: "#00b894",
-    lineColor: "#00b894",
-    itemWidth:'50px',
-    iconColor:'white'
-  };
-  
   return (
 <div>
   <Navigation/>

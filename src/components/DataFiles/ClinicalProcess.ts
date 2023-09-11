@@ -1,4 +1,4 @@
-import {FaClinicMedical,FaWalking,FaCheck, FaComment, FaFileMedical,FaBroadcastTower,FaAccessibleIcon } from 'react-icons/fa';
+import {FaWalking,FaCheck, FaComment, FaFileMedical,FaBroadcastTower,FaAccessibleIcon } from 'react-icons/fa';
 
 import { IconType } from "react-icons"
 type Process = {
