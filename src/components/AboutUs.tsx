@@ -6,6 +6,7 @@ import { Row,Col } from 'react-bootstrap';
 import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup'
+import { isInViewport } from './utils/IsInViewPort';
 import React, { useEffect, useState } from 'react';
 import {fadeLeft, popUp } from './Effects/AnimationsPack';
 import Timeline from './Timeline';
@@ -23,11 +24,7 @@ const AboutUs=() => {
     "counter"
   ])
 
-  const isInViewport = (element: HTMLElement | null, threshold = 0) => {
-    if (!element) return false;
-    const rect = element.getBoundingClientRect();
-    return rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold;
-  };
+
     const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
   useEffect(() => {
     const handleScroll = () => {
