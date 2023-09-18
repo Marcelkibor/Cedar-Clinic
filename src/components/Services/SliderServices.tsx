@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Card, Col, Nav } from "react-bootstrap";
+import { Card, Col } from "react-bootstrap";
 import { Mservice,serviceIcons } from "../DataFiles/Mservices";
 import { NavLink } from "react-router-dom";
 const SliderServices = () => {
