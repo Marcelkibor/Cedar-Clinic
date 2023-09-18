@@ -27,7 +27,8 @@ const clinicalProcess:Process[]=[
     {id:2,cardTitle:'Vital Assesment', cardSubtitle:'Checking vitals: Pulse,Weight e.t.c'},
     {id:3,cardTitle:'Consultation', cardSubtitle:'Explain your health issue to the doctor'},
     {id:4,cardTitle:'Treatment', cardSubtitle:'Recieve treatment and prescription(s)'},
-    {id:5,cardTitle:'Discharge', cardSubtitle:'Leave the clinic'},
+    {id:5,cardTitle:'Collection & Billing',cardSubtitle:'Collect prescribed drugs and make payment'},
+    {id:6,cardTitle:'Discharge', cardSubtitle:'Leave the clinic'},
 ];
 const clinicalNumbers:clinicNumber[]=[
     {id:1,number:30,title:'Specialized services'},

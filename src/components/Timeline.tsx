@@ -19,6 +19,7 @@ const numberIcons: NumberIcons = {
   3: <FaClinicMedical />,
   4: <FaClinicMedical />,
   5: <FaClinicMedical />,
+  6: <FaClinicMedical />,
 };
 
 const Timeline: React.FC = () => {

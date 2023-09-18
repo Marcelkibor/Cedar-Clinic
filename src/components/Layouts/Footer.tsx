@@ -11,15 +11,6 @@ const Footer = () => {
       <div style = {{marginLeft:'2%',marginRight:'5%', color:"white"}}>
       <Row style = {{color:"white"}}>
         <Col>
-        <h4 >About Us </h4>
-        <hr style={{ minWidth:'480px', border: 'none', borderBottom: '1px solid white' }} />
-        <p style={{maxWidth:'480px', color:'white',fontSize:'16px'}}>
-        At Cedar Clinic, we prioritize your well-being and understand that each individual has unique healthcare needs. Our experienced medical professionals are committed to offering personalized treatment plans tailored to your specific requirements.
-        <br></br>
-         We believe in fostering long-lasting relationships built on trust and open communication, ensuring that you receive the highest quality of care throughout your medical journey.
-        </p>
-        </Col>
-        <Col>
         <h4>Contact Info</h4>
         <hr style={{ width:'300px', border: 'none', borderBottom: '1px solid white' }} />
           <div style = {{display:'flex', gap:'10px'}}>
