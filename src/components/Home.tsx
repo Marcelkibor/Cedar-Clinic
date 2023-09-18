@@ -5,7 +5,7 @@ import InsuranceProviders from "./InsuranceProviders";
 import LandingPage from "./LandingPage";
 import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
-import { isInViewport } from "./utils/IsInViewPort";
+import { isInViewport } from "./utils/Functions";
 const Home: React.FC = () => {
   const [sections] = useState<string[]>([
     "services",
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
           }
         } else if (section === "providers") {
           if (isInViewport(element,50)) {
-            controlsProviders.start({ opacity: 1, y: 1 });
+            controlsProviders.start({ opacity: 1, y: 0 });
           }
         }
       });
@@ -60,9 +60,9 @@ const Home: React.FC = () => {
       <section id="providers">
         <motion.div
           className="providers-container"
-          initial={{ opacity: 0, y: 1 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={controlsProviders}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
         >
           <InsuranceProviders />
         </motion.div>

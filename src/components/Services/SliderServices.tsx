@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import { Card, Col } from "react-bootstrap";
+import { Card, Col, Nav } from "react-bootstrap";
 import { Mservice,serviceIcons } from "../DataFiles/Mservices";
+import { NavLink } from "react-router-dom";
 const SliderServices = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
@@ -58,7 +59,9 @@ const SliderServices = () => {
   </div>
   <div style={{ marginLeft: '20%' }}>
     <Card.Body>
-      <Card.Title style={{ color: '#218c74' }}>{service.name}</Card.Title>
+      <h5>
+      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#218c74' }}>{service.name}</NavLink>
+      </h5>
       <Card.Text>{service.description}</Card.Text>
     </Card.Body>
   </div>

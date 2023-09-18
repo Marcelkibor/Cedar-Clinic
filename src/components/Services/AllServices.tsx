@@ -3,6 +3,7 @@ import Navigation from '../Layouts/NavigationBar';
 import { Card, Col} from 'react-bootstrap';
 import Pagination from './Pagination';
 import ServicesHeader from './ServicesHeader';
+import  {formatNames}  from '../utils/Functions';
 import {Mservice,serviceIcons} from '../DataFiles/Mservices';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
@@ -15,11 +16,7 @@ const AllServices = () => {
   const lastServiceIndex = currentPage * servicePerPage;
   const firstLocationIndex = lastServiceIndex - servicePerPage;
   const displayServices = Mservice.slice(firstLocationIndex, lastServiceIndex);
-  const formatNames = (name:string)=>{
-    const splitName = name.split(".");
-    const formattedName = splitName && splitName.length > 1 && splitName[splitName.length - 1].trim().toLowerCase();
-    return formattedName || name.toLowerCase();
-  }
+
   const navigate = (service:any)=>{
     window.location.href =`services/${encodeURIComponent(formatNames(service))}`
   }
