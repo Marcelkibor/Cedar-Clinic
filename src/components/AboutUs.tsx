@@ -1,5 +1,5 @@
 import Navigation from './Layouts/NavigationBar';
-import { whyChoose,whyChooseIcons,clinicalNumbers } from './DataFiles/ClinicalProcess';
+import { whyChoose,whyChooseIcons,clinicalNumbers,numberIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
@@ -168,7 +168,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
-        {React.createElement(whyChooseIcons[item.id],{style:{color:'#00c056e5', width:'40px',height:'40px'}})}
+        {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
         <h2><CountUp start={0} end={item.number} delay={0.5}/>+</h2>
         <h5>{item.title}</h5>
       </Col>

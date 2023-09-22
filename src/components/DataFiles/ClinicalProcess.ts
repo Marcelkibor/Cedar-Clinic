@@ -1,6 +1,8 @@
-import {FaWalking,FaCheck, FaComment, FaFileMedical,FaBroadcastTower,FaAccessibleIcon } from 'react-icons/fa';
-
+import {FaUserNurse,FaHandHoldingMedical,FaWalking,FaCheck, FaComment, FaFileMedical } from 'react-icons/fa';
 import { IconType } from "react-icons"
+import { FaPeopleArrows,FaFileMedicalAlt } from 'react-icons/fa';
+import {GiBoltDrop,GiLovers,GiHypodermicTest} from 'react-icons/gi'
+import {LiaMoneyCheckAltSolid}  from 'react-icons/lia'
 type Process = {
     id:number,
     cardTitle:string,
@@ -44,12 +46,18 @@ const processIcons:{[key:number]:IconType} = {
     4:FaFileMedical,
     5:FaWalking
 };
+const numberIcons:{[key:number]:IconType} = {
+    1:FaFileMedicalAlt,
+    2:LiaMoneyCheckAltSolid,
+    3:GiHypodermicTest,
+    4:FaPeopleArrows,
+};
 const whyChooseIcons:{[key:number]:IconType} = {
-    1:FaBroadcastTower,
-    2:FaBroadcastTower,
-    3:FaAccessibleIcon,
-    4:FaAccessibleIcon
+    1:FaHandHoldingMedical,
+    2:GiLovers,
+    3:FaUserNurse,
+    4:GiBoltDrop
 };
 
 
-export {clinicalProcess,processIcons,whyChoose,whyChooseIcons,clinicalNumbers}
+export {clinicalProcess,processIcons,whyChoose,whyChooseIcons,clinicalNumbers,numberIcons}
