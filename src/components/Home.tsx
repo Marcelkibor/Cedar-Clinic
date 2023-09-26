@@ -60,9 +60,6 @@ const Home: React.FC = () => {
       <section id="providers">
         <motion.div
           className="providers-container"
-          initial={{ opacity: 0, y: 50 }}
-          animate={controlsProviders}
-          transition={{ duration: 0.3 }}
         >
           <InsuranceProviders />
         </motion.div>

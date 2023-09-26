@@ -54,7 +54,7 @@ const AboutUs=() => {
           }
         }
         if(section ==="counter"){
-          if(isInViewport(element,-50)){
+          if(isInViewport(element,-20)){
             setCount(true)
             counterAnim.start('visible')
           }
@@ -163,7 +163,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   <motion.div 
   animate={counterAnim}
   initial='hidden'
-  variants={popUp(0.8)}
+  variants={popUp(0.5)}
   style={{width:'100vw',height:'100%',background:'white'}} >
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(

@@ -26,7 +26,14 @@
   position:relative;
   height: 110vh;
 }
-
+.doc-img{
+  display: flex !important;
+  justify-content: center !important; 
+  align-items: center !important;
+  width: 100vw !important;
+  height: fit-content !important;
+  margin-top: 20px;
+}
 .choice-div{
   min-height: 70vh !important;
 background-color: #01a3a4 !important;
@@ -676,7 +683,7 @@ color: #fff;
     margin-left: 0% !important;
   }
 }
-@media(max-width:700px){
+@media(max-width:600px){
   .bg-text{
     font-size: 22px !important;
     width: 38vw !important;
