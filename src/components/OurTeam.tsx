@@ -36,10 +36,10 @@ return (
 <div>
 <Navigation />
 <ServicesHeader pathname={window.location.pathname} />
-<Row style={{ margin: '8% 0% 0% 0%'}}>
-<div style={{width: 'fit-content', height: 'fit-content', textAlign: 'center',marginTop:'20px' }}>
-<div style={{marginLeft:'-20px',display:'flex',justifyContent:'center',alignItems:'center', width:'100vw',height:'fit-content'}}>
-<img src={Doc} style={{ maxHeight: '300px', width: 'auto' }} />
+<Row style={{ margin: '8% 0% 0% 0%',display:'flex',justifyContent:'center',alignItems:'center', width:'100vw',height:'fit-content'}}>
+<div style={{width: 'fit-content', height: 'fit-content', textAlign: 'center',marginTop:'50px' }}>
+<div style={{backgroundColor:'#22a6b3',display:'flex',justifyContent:'center',alignItems:'center'}}>
+<img src={Doc} style={{ maxHeight: '300px', width: 'auto'}} />
 </div>
 <div style={{ marginTop: '10px' }}>
     {headDoctor && <>
