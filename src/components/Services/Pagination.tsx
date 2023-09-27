@@ -19,9 +19,9 @@ const Pagination = (props: any) => {
           width: '50px',
           height: '50px',
           borderRadius: '5px',
-          color: isActive ? 'white' : '#218c74',
+          color: isActive ? 'white' : '#22a6b3',
           background: isActive ? '#00b894' : 'white',
-          border: isActive ? 'none' : '2px solid #218c74',
+          border: isActive ? 'none' : '2px solid #22a6b3',
         };
 
         return (

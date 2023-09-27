@@ -4,7 +4,14 @@ import Navigation from "../Layouts/NavigationBar";
 import ServicesHeader from "./ServicesHeader";
 import { Col, Row } from "react-bootstrap";
 import Footer from "../Layouts/Footer";
+import { useEffect } from "react";
 const ServiceExpand = () => {
+  useEffect(() => {
+    const nav = document.getElementById("navigation");
+    if(nav){
+      nav.scrollIntoView({behavior:'smooth'})
+    }
+    }, []);
   const {name} = useParams<{name:string}>();
   const capitalizeFirstLetter = (word:string)=>{
     return word.charAt(0).toUpperCase() + word.slice(1);
@@ -20,7 +27,9 @@ const ServiceExpand = () => {
   const selectedService = checkService(name)
   return (
     <>
+    <section id="navigation">
     <Navigation/>
+    </section>
     <ServicesHeader pathname = {window.location.pathname}/>
     <Row lg = {3} className="service-expand">
         <Col>

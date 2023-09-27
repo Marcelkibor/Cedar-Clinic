@@ -16,13 +16,15 @@ const AllServices = () => {
   const lastServiceIndex = currentPage * servicePerPage;
   const firstLocationIndex = lastServiceIndex - servicePerPage;
   const displayServices = Mservice.slice(firstLocationIndex, lastServiceIndex);
-
+  const handlePageChange =(page:any)=>{
+    setCurrentPage(page)
+  }
   const navigate = (service:any)=>{
     window.location.href =`services/${encodeURIComponent(formatNames(service))}`
   }
   return (
     <>
-    <div style = {{position:'relative', height:'fit-content'}}>
+    <div className='all-services'>
       <Navigation/>
      {locationPath && <ServicesHeader pathname = {locationPath}/>}
         <div style={{marginRight:'5%'}}  className = 'all-sv-main-div'>
@@ -34,14 +36,14 @@ const AllServices = () => {
       <div style={{ marginLeft: '20%' }}>
         <Card.Body>
           <Card.Title style={{ color: '#218c74' }}>
-          <NavLink to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
+          <NavLink  style={{color:'#22a6b3',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
             </Card.Title>
           <Card.Text>{service.description}</Card.Text>
         </Card.Body>
       </div>
     </Card>
   ))}
-  <Pagination allServices={Mservice} servicePerPage={servicePerPage} setCurrentPage={setCurrentPage} />
+  <Pagination allServices={Mservice} servicePerPage={servicePerPage} setCurrentPage={handlePageChange} currentPage={currentPage} />
 </div>
 <div className = 'all-sv-banner'>
         <Col>
@@ -51,7 +53,7 @@ const AllServices = () => {
           {Mservice.map((service:any) => (
            
     <div onClick ={()=>{navigate(service.name)}} key={service.id} className='service-header-items'>
-              <h5 style={{ marginLeft: '20px' }}>{service.name}</h5>
+              <h5 style={{ marginLeft: '20px',cursor:'pointer' }}>{service.name}</h5>
               <div style={{margin:'0 3% 0% 0%'}}>
               <FaArrowRight color = 'white'/>
             </div>

@@ -36,7 +36,7 @@ const InsuranceProviders = () => {
     infinite: true,
     autoplay: true,
     autoplaySpeed: 9000,
-    speed: 3000,
+    speed: 500,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll
   };

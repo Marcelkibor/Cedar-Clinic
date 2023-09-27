@@ -17,7 +17,6 @@ return (
 </>
 );
 }
-
 const formatName = (name:string) => {
 const nameParts = name.split(".");
 const formattedName = nameParts && nameParts.length > 1 && nameParts[nameParts.length - 1].trim().toLowerCase();
@@ -31,7 +30,6 @@ return (
 </>
 );
 }
-
 return (
 <div>
 <Navigation />

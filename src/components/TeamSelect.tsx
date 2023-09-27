@@ -5,8 +5,16 @@ import ServicesHeader from "./Services/ServicesHeader";
 import Doc from '../assets/doc.png'
 import { Row,Col } from "react-bootstrap";
 import Footer from "./Layouts/Footer";
+import { useEffect } from "react";
 const TeamSelect = () => {
   const { name } = useParams<{ name?:string }>();
+
+useEffect(() => {
+  const nav = document.getElementById("navigation");
+  if(nav){
+    nav.scrollIntoView({behavior:'smooth'})
+  }
+  }, []);
   if (!name) {
     return <div>No team member selected</div>;
   }
@@ -17,7 +25,9 @@ const firstName = capitalizeFirstLetter(name.split(" ")[0]);
 const selectedMember = clinicMembers.find((member)=>member.name.split(" ")[0]===firstName)
     return (
     <div>
+      <section id="navigation">
       <Navigation/>
+      </section>
       <ServicesHeader pathname = {window.location.pathname}/>
       <Row style = {{margin:'100px 0 0 0'}}>
         <Col style={{margin:'0% '}}sm = {12} md = {7}>
