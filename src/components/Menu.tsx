@@ -23,7 +23,7 @@ const Menu = () => {
   };
 
   return (
-    <>
+    <div style={{backgroundColor:'#58B19F',minHeight:'60px'}}>
       <button className="btn" onClick={() => setToggle(!isToggled)}>
         =
       </button>
@@ -36,11 +36,13 @@ const Menu = () => {
             exit="hidden"
             variants={navContainer}
           >
+            <section style={{color:'white', fontWeight:'bold'}}>
             <NavbarItems/>
+            </section>
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 

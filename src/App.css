@@ -3,7 +3,15 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
-
+.service-header-main{
+color: white !important;
+display: flex !important;
+min-width: 100vw !important;
+height: 20vh !important;;
+background:#01a3a4;
+position: relative !important;
+top: 70px;
+}
 .landing-col{
   height: 100% !important;
   padding-bottom: 7% !important;
@@ -648,6 +656,10 @@ color: #fff;
  }
  .why-choose-col{
   margin-left: 15% !important;
+ }
+ .service-header-main{
+  top: 60px !important;
+  height: 15vh !important;
  }
  .slider-row{
   margin-left: 20% !important;
