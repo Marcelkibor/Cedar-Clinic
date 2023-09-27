@@ -1,7 +1,7 @@
 import {useState } from "react";
 import NavbarItems from "../components/NavbarItems";
 import { motion, AnimatePresence } from "framer-motion";
-
+import {HiMenuAlt2} from 'react-icons/hi'
 const Menu = () => {
   const [isToggled, setToggle] = useState(false);
 
@@ -25,7 +25,7 @@ const Menu = () => {
   return (
     <div style={{backgroundColor:'#58B19F',minHeight:'60px'}}>
       <button className="btn" onClick={() => setToggle(!isToggled)}>
-        =
+        <HiMenuAlt2 size ={25}color='white'/>
       </button>
       <AnimatePresence>
         {isToggled && (
