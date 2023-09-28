@@ -10,6 +10,7 @@ import { isInViewport } from './utils/Functions';
 import React, { useEffect, useState } from 'react';
 import {fadeLeft, popUp } from './Effects/AnimationsPack';
 import Timeline from './Timeline';
+import ScrollMotion from './utils/ScrollMotion';
 
 const AboutUs=() => {
   const mVV = useAnimation();
@@ -69,6 +70,7 @@ const AboutUs=() => {
   return (
 <div>
   <Navigation/>
+  <ScrollMotion/>
     <ServicesHeader pathname = {window.location.pathname}/>
       <Row style={{margin:'100px 3% 5% 3%'}}>
       <Col>

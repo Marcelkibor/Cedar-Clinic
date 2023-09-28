@@ -6,20 +6,18 @@ import LandingPage from "./LandingPage";
 import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
 import { isInViewport } from "./utils/Functions";
+import ScrollMotion from "./utils/ScrollMotion";
 const Home: React.FC = () => {
   const [sections] = useState<string[]>([
     "services",
     "providers",
   ]);
-
   const controlsServices = useAnimation();
   const controlsProviders = useAnimation();
-
   useEffect(() => {
     const handleScroll = () => {
       sections.forEach((section) => {
         const element = document.getElementById(section);
-
         if (section === "services") {
           if (isInViewport(element, 200)){
             controlsServices.start({ opacity: 1, y: 0 });
@@ -38,9 +36,9 @@ const Home: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [sections, controlsServices, controlsProviders]);
-
   return (
     <div>
+      <ScrollMotion/>
       <section id="navbar">
         <Navigation />
       </section>

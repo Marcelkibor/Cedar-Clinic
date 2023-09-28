@@ -5,6 +5,7 @@ import ServicesHeader from "./Services/ServicesHeader";
 import Doc from '../assets/doc.png';
 import clinicMembers from "./DataFiles/ClinicMembers";
 import Footer from "./Layouts/Footer";
+import ScrollMotion from "./utils/ScrollMotion";
 
 const OurTeam = () => {
 const findDoctor = 1;
@@ -32,7 +33,8 @@ return (
 }
 return (
 <div>
-<Navigation />
+<Navigation/>
+<ScrollMotion/>
 <ServicesHeader pathname={window.location.pathname} />
 <Row style={{ margin: '8% 0% 0% 0%',display:'flex',justifyContent:'center',alignItems:'center', width:'100vw',height:'fit-content'}}>
 <div style={{width: 'fit-content', height: 'fit-content', textAlign: 'center',marginTop:'50px' }}>
