@@ -71,7 +71,8 @@ const SliderServices = () => {
 </Slider>
   </div>
   <div style={{display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
-    <button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={getServices}>More Services</button></div>
+    <button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={getServices}>More Services</button>
+    </div>
 </div>
   );
 };

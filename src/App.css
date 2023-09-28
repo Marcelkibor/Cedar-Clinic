@@ -3,6 +3,13 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.provider-col{
+  margin-bottom: 7%;
+}
+.extended-providers{
+  margin: 5% 3% 5% 14% !important;
+  text-align: center !important;
+}
 .service-header-main{
 color: white !important;
 display: flex !important;
@@ -529,6 +536,9 @@ color: #fff;
   .all-services{
     margin-bottom: 50px !important;
   }
+  .extended-providers{
+    margin-left: 21% !important;
+  }
   .slider-row{
     margin-left: 33% !important;
 
@@ -650,6 +660,13 @@ color: #fff;
 @media(max-width:580px){
  .main-services{
   margin-top: 0px !important;
+ }
+ .provider-col{
+  margin-bottom: 15% !important;
+ }
+ .extended-providers{
+  margin-top: 50px !important;
+  margin-left: 31% !important;
  }
  .landing-col{
   padding-bottom: 15%;

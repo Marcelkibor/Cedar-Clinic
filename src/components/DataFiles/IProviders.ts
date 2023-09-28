@@ -6,14 +6,15 @@ import madison from '../../assets/madison.png';
 import nhif from '../../assets/nhif.png';
 type Provider = {
     id:number,
-    src:string
+    src:string,
+    name:string
 }
 const Iproviders:Provider[]=[
-    { id: 1, src: apa },
-    { id: 2, src: britam },
-    { id: 3, src: cic },
-    { id: 4, src: jubilee },
-    { id: 5, src: madison },
-    { id: 6, src: nhif },
+    { id: 1, src: apa,name:'APA' },
+    { id: 2, src: britam,name:'Britam'},
+    { id: 3, src: cic,name:'CIC' },
+    { id: 4, src: jubilee,name:'Jubilee'},
+    { id: 5, src: madison,name:'Madison'},
+    { id: 6, src: nhif,name:'NHIF'},
 ]
 export default Iproviders;
