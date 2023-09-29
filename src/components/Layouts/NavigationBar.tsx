@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
             height: 'fit-content',
             position: 'fixed',
             zIndex: 9999,
-            width: '100%',
+            width: '100vw',
             top: 0,
             backgroundColor: 'white',
           }}

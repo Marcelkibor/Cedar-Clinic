@@ -50,7 +50,7 @@ top: 70px;
 }
 .bg-main{
   position:relative;
-  height: 110vh;
+  height: 100vh;
 }
 .doc-img{
   display: flex !important;
@@ -416,6 +416,8 @@ background-color: #01a3a4 !important;
 .footer-main{
   background: #006266;
   padding-bottom: 5%;
+  height: fit-content !important;
+  width: 110vw !important;
   padding-top:5%;
 }
 .intro-cards{
@@ -458,7 +460,7 @@ color: #fff;
 }
 .navigation-inactive {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 80px;
   background-color: #429685;
   z-index: 1;
@@ -673,7 +675,7 @@ color: #fff;
  }
  .scroll-motion{
   right:20%!important;
-  bottom: 35% !important;
+  bottom: 25% !important;
  }
  .provider-col{
   margin-bottom: 15% !important;
@@ -735,7 +737,7 @@ color: #fff;
   }
   @media(max-width:480px) {
     .scroll-motion{
-      right: 25% !important;
+      right: 30% !important;
     }
   }
  }
