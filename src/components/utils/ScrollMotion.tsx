@@ -18,8 +18,8 @@ const handleScroll =()=>{
 return (
 <>
 {scroller &&
-    <div  onClick={handleScroll}style={{position:'fixed',zIndex:9999,bottom:'30px',right:"20px"}} >
-    <BsArrowUpSquareFill style={{color:'#12CBC4',outline:'no-outline'}} size ={50}/>
+    <div  onClick={handleScroll}className='scroll-motion' >
+    <BsArrowUpSquareFill style={{color:'#12CBC4',outline:'no-outline'}} size ={40}/>
 </div>
 }
 </>

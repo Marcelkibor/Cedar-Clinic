@@ -3,6 +3,12 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.scroll-motion{
+  position: fixed !important;
+  z-index: 9999 !important;
+  bottom: 15% !important;
+  right: 5% !important;
+}
 .provider-col{
   margin-bottom: 7%;
 }
@@ -452,7 +458,7 @@ color: #fff;
 }
 .navigation-inactive {
   position: fixed;
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background-color: #429685;
   z-index: 1;
@@ -471,7 +477,7 @@ color: #fff;
 .navigation-active{
   position:fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 9999;
   background-color: rgb(189, 250, 225);
 }
@@ -529,6 +535,10 @@ color: #fff;
 /* mid-devices */
 
 @media(max-width:900px){
+  .scroll-motion{
+    bottom: 20% !important;
+    right:8% !important
+  }
   .why-choose-icons{
     width: 100vw;
     margin-top: 10%;
@@ -658,8 +668,12 @@ color: #fff;
 }
 }
 @media(max-width:580px){
- .main-services{
+  .main-services{
   margin-top: 0px !important;
+ }
+ .scroll-motion{
+  right:20%!important;
+  bottom: 35% !important;
  }
  .provider-col{
   margin-bottom: 15% !important;
@@ -719,18 +733,9 @@ color: #fff;
   .all-sv-row{
     margin-left: 0% !important;
   }
-}
-@media(max-width:600px){
-  .bg-text{
-    font-size: 22px !important;
-    width: 38vw !important;
-    margin-left: -7%;
-    margin-top: 15px !important;
+  @media(max-width:480px) {
+    .scroll-motion{
+      right: 25% !important;
+    }
   }
-  .home-bg{
-    height: 53vh !important;
-  }
-  .bg-main{
-    height: 55vh !important;
-  }
-}
+ }

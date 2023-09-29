@@ -8,7 +8,6 @@ import {Mservice,serviceIcons} from '../DataFiles/Mservices';
 import { NavLink } from 'react-router-dom';
 import { FaArrowRight } from 'react-icons/fa';
 import Footer from '../Layouts/Footer';
-import ScrollMotion from '../utils/ScrollMotion';
 const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [servicePerPage] = useState(4);
@@ -27,7 +26,6 @@ const AllServices = () => {
     <>
     <div className='all-services'>
       <Navigation/>
-      <ScrollMotion/>
      {locationPath && <ServicesHeader pathname = {locationPath}/>}
         <div style={{marginRight:'5%'}}  className = 'all-sv-main-div'>
   {displayServices.map((service:any) => (
