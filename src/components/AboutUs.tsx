@@ -79,8 +79,8 @@ const AboutUs=() => {
        initial='hidden'
        animate='visible'
        >
-      <h2>About Us</h2>
-    <p>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
+      <h2 style={{color:'#006266'}}>About Us</h2>
+    <p style={{color:'#0a3d62'}}>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
 <br></br><br></br><p>
 With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
 </p>
@@ -102,8 +102,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   animate={mVV}
   className='about-mvv'
 >
-     <h2>Mission</h2>
-    <p>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
+     <h2 style={{color:'#006266'}}>Mission</h2>
+    <p style={{color:'#0a3d62'}}>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
   </motion.div>
     </Col>
       <Col>
@@ -113,8 +113,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
         variants={popUp(1)}
         animate={mVV}
       >
-        <h2>Vision</h2>
-      <p>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
+        <h2 style={{color:'#006266'}}>Vision</h2>
+      <p style={{color:'#0a3d62'}}>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
       </motion.div>
     </Col>
   <Col>
@@ -124,9 +124,9 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   variants={fadeLeft}
   animate={mVV}
   >
-  <h2>Values</h2>
+  <h2 style={{color:'#006266'}}>Values</h2>
       {coreValues.map((value)=>(
-        <ul>
+        <ul style={{color:'#0a3d62'}}>
       <li>{value}</li>
     </ul>
     ))}
@@ -142,10 +142,6 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
      {whyChoose.map((item:any)=>(
     <Col sm={12} md={12} lg={3}>
       <motion.div
-      animate={iconAnim}
-      variants={popUp(0.5)}
-      id='icons'
-      initial='hidden'
       style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
       <div
       style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
@@ -171,8 +167,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
         {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
-        <h2><CountUp start={0} end={item.number} delay={0.5}/>+</h2>
-        <h5>{item.title}</h5>
+        <h2 style={{color:'#006266'}}><CountUp start={0} end={item.number} delay={0.5}/>+</h2>
+        <h5 style={{color:'#0a3d62'}}>{item.title}</h5>
       </Col>
     ))}
     </Row>

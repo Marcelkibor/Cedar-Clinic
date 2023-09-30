@@ -1,4 +1,4 @@
-import {FaUserNurse,FaHandHoldingMedical,FaWalking,FaCheck, FaComment, FaFileMedical } from 'react-icons/fa';
+import {FaUserNurse,FaHandHoldingMedical} from 'react-icons/fa';
 import { IconType } from "react-icons"
 import { FaPeopleArrows,FaFileMedicalAlt } from 'react-icons/fa';
 import {GiBoltDrop,GiLovers,GiHypodermicTest} from 'react-icons/gi'
@@ -39,13 +39,6 @@ const clinicalNumbers:clinicNumber[]=[
     {id:4,number:1000,title:'Monthly Patients'},
 
 ];
-const processIcons:{[key:number]:IconType} = {
-    1:FaWalking,
-    2:FaCheck,
-    3:FaComment,
-    4:FaFileMedical,
-    5:FaWalking
-};
 const numberIcons:{[key:number]:IconType} = {
     1:FaFileMedicalAlt,
     2:LiaMoneyCheckAltSolid,
@@ -60,4 +53,4 @@ const whyChooseIcons:{[key:number]:IconType} = {
 };
 
 
-export {clinicalProcess,processIcons,whyChoose,whyChooseIcons,clinicalNumbers,numberIcons}
+export {clinicalProcess,whyChoose,whyChooseIcons,clinicalNumbers,numberIcons}

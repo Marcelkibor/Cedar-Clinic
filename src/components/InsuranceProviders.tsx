@@ -43,7 +43,7 @@ const InsuranceProviders = () => {
   return (
     <>
       <div className="ip-intro">
-        <h1>Our Insurance Providers</h1>
+        <h1 style={{color:'#006266'}}>Our Insurance Providers</h1>
       </div>
       <div>
       <Slider {...settings}>

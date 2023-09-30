@@ -35,10 +35,10 @@ const AllServices = () => {
       </div>
       <div style={{ marginLeft: '20%' }}>
         <Card.Body>
-          <Card.Title style={{ color: '#218c74' }}>
-          <NavLink  style={{color:'#22a6b3',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
+          <Card.Title>
+          <NavLink  style={{color:'#006266',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
             </Card.Title>
-          <Card.Text>{service.description}</Card.Text>
+          <Card.Text style={{color:'#0a3d62'}}>{service.description}</Card.Text>
         </Card.Body>
       </div>
     </Card>

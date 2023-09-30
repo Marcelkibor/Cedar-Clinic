@@ -46,7 +46,7 @@ const SliderServices = () => {
   return (
 <div className="main-services">
   <div className="ip-intro">
-  <h1>Explore Our Services </h1>
+  <h1 style={{color:'#006266'}}>Explore Our Services </h1>
   </div>
 <div style={{marginTop:'30px'}}>
   <Slider {...settings}>
@@ -55,14 +55,14 @@ const SliderServices = () => {
             
             <Card className="main-service-card">
   <div className="main-sv-icons-div">
-  {React.createElement(serviceIcons[service.id],{ style: { width: '70%', height: '70%', color:'#218c74' }})}
+  {React.createElement(serviceIcons[service.id],{ style: { width: '70%', height: '70%', color:'#006266' }})}
   </div>
   <div style={{ marginLeft: '20%' }}>
     <Card.Body>
       <h5>
-      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#218c74' }}>{service.name}</NavLink>
+      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#0a3d62' }}>{service.name}</NavLink>
       </h5>
-      <Card.Text>{service.description}</Card.Text>
+      <Card.Text style={{color:'#006266'}}>{service.description}</Card.Text>
     </Card.Body>
   </div>
 </Card>
