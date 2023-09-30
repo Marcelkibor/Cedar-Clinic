@@ -6,7 +6,6 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import { clinicalProcess } from './DataFiles/ClinicalProcess';
 import {FaWalking} from 'react-icons/fa'
-import {RiScales2Line} from 'react-icons/ri'
 import {BiTransfer} from 'react-icons/bi'
 import {BsCapsulePill} from 'react-icons/bs'
 import {GiTalk,GiWeightScale} from 'react-icons/gi'
