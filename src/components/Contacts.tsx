@@ -4,6 +4,7 @@ import {Row,Col} from 'react-bootstrap';
 import {FaAddressBook,FaWalking,FaPhone} from 'react-icons/fa'
 import Footer from './Layouts/Footer'
 import {MdEmail} from 'react-icons/md'
+import EmailPrompt from './Services/EmailPrompt';
 const Contacts = () => {
   return (
     <>
@@ -44,6 +45,9 @@ const Contacts = () => {
         </div>
       </div>
       </>
+      </Col>
+      <Col>
+      <EmailPrompt/>
       </Col>
     </Row>
     <Row>
