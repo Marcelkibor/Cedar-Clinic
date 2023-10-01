@@ -24,27 +24,26 @@ const EmailPrompt: React.FC = () => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    const serviceID = 'default_service';
+    const templateId = 'template_j69bowa';
+    const publicKey = '9Y04cfmAm23umioLP';
     if (formRef.current) {
       const form = formRef.current;
-
       try {
         await emailjs.sendForm(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
+          `${serviceID}`,
+          `${templateId}`,
           `#${form.id}`,
-          "YOUR_PUBLIC_KEY"
+           `${publicKey}`,
         );
-
         console.log("Email sent successfully!");
       } catch (error) {
         console.error("Error sending email:", error);
       }
     }
   };
-
   return (
-<div style={{ maxWidth: "600px" }}>
+<div className="email-prompt">
 <Form onSubmit={sendEmail}>
 <h2>Get In Touch</h2>
 <Form.Group>
@@ -56,7 +55,7 @@ const EmailPrompt: React.FC = () => {
     placeholder="Username"
     name="username"
     value={username}
-  />
+  /><br></br>
   <Form.Control
     onChange={onChange}
     type="email"
@@ -64,7 +63,7 @@ const EmailPrompt: React.FC = () => {
     placeholder="Your Email"
     name="email"
     value={email}
-  />
+  /><br></br>
   <Form.Control
     style={{ height: "120px" }}
     as="textarea"
@@ -85,9 +84,9 @@ const EmailPrompt: React.FC = () => {
 </Form>
 <form ref={formRef} id="hiddenForm" style={{ display: "none" }}>
   <label>Name</label>
-  <input type="text" name="username" value={username} readOnly />
+  <input type="text" name="user_name" value={username} readOnly />
   <label>Email</label>
-  <input type="email" name="email" value={email} readOnly />
+  <input type="email" name="user_email" value={email} readOnly />
   <label>Message</label>
   <textarea name="message" value={message} readOnly />
 </form>

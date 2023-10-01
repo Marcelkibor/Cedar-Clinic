@@ -12,7 +12,7 @@ const Contacts = () => {
         <Navigation/>
         <ServicesHeader pathname = {window.location.pathname}/>
       </div>
-     <Row style = {{margin:'7% 0% 5% 5%'}}>
+     <Row className='contact-main'>
       <h2 style={{color:'#006266'}}>Contact Us</h2>
       <Col md={4} sm={6} lg={4} className="mr-2" style={{height: 'fit-content',marginTop:'2%' }}>
       <>
