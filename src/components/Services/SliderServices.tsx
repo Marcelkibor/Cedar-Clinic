@@ -60,7 +60,7 @@ const SliderServices = () => {
   <div style={{ marginLeft: '20%' }}>
     <Card.Body>
       <h5>
-      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#0a3d62' }}>{service.name}</NavLink>
+      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#006266' }}>{service.name}</NavLink>
       </h5>
       <Card.Text style={{color:'#006266'}}>{service.description}</Card.Text>
     </Card.Body>

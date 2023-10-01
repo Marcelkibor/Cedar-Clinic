@@ -57,58 +57,55 @@ const Navigation: React.FC = () => {
   }, []);
 
   return (
-    <>
-      {menuActive ? (
-        <div
-          style={{
-            height: 'fit-content',
-            position: 'fixed',
-            zIndex: 9999,
-            width: '100vw',
-            top: 0,
-            backgroundColor: 'white',
-          }}
-          ref={navigationRef}
-        >
-          <Menu />
+<>
+{menuActive ? (
+<div
+  style={{
+    height: 'fit-content',
+    position: 'fixed',
+    zIndex: 9999,
+    width: '100vw',
+    top: 0,
+    backgroundColor: 'white',
+  }}
+  ref={navigationRef}
+>
+  <Menu />
+</div>
+) : (
+<div style={{height:'65px'}} className={`navigation ${scrolled ? 'navigation-active' : 'navigation-inactive'}`} ref={navigationRef}>
+  <Navbar>
+    <Container>
+  <div>
+    <Nav className="me-auto">
+      <Nav.Link href="/">Home</Nav.Link>
+      <div
+        className="about-us-wrapper"
+        onMouseLeave={() => setShowLinks(false)}
+      >
+        <Nav.Link onMouseEnter={handleHover} onClick={() => setShowLinks(true)}>
+          About Us
+        </Nav.Link>
+        <div>
+          {showLinks && (
+            <div className="additional-links">
+              <Nav.Link href="/about-us" onClick={handleLinkClick}>
+                About Us
+              </Nav.Link>
+              <Nav.Link href="/our-team" onClick={handleLinkClick}>
+                Our Team
+              </Nav.Link>
+            </div>
+          )}
         </div>
-      ) : (
-        <div className={`navigation ${scrolled ? 'navigation-active' : 'navigation-inactive'}`} ref={navigationRef}>
-          <Navbar>
-            <Container>
-              <div>
-                <Nav className="me-auto">
-                  <Nav.Link href="/">Home</Nav.Link>
-                  <div
-                    className="about-us-wrapper"
-                    onMouseLeave={() => setShowLinks(false)}
-                  >
-                    <Nav.Link
-                      onMouseEnter={handleHover}
-                      onClick={() => setShowLinks(true)}
-                    >
-                      About Us
-                    </Nav.Link>
-                    <div>
-                      {showLinks && (
-                        <div className="additional-links">
-                          <Nav.Link href="/about-us" onClick={handleLinkClick}>
-                            Who We Are
-                          </Nav.Link>
-                          <Nav.Link href="/our-team" onClick={handleLinkClick}>
-                            Our Team
-                          </Nav.Link>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <Nav.Link href="/services">Services</Nav.Link>
-                  <Nav.Link href="/contacts">Contacts</Nav.Link>
-                </Nav>
-              </div>
-            </Container>
-          </Navbar>
-        </div>
+      </div>
+              <Nav.Link href="/services">Services</Nav.Link>
+              <Nav.Link href="/contacts">Contacts</Nav.Link>
+            </Nav>
+          </div>
+        </Container>
+      </Navbar>
+    </div>
       )}
     </>
   );
