@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
 import emailjs from "@emailjs/browser";
-
 interface FormData {
   username: string;
   email: string;
@@ -24,17 +23,15 @@ const EmailPrompt: React.FC = () => {
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const serviceID = 'default_service';
-    const templateId = 'template_j69bowa';
-    const publicKey = '9Y04cfmAm23umioLP';
+    
     if (formRef.current) {
       const form = formRef.current;
       try {
         await emailjs.sendForm(
-          `${serviceID}`,
-          `${templateId}`,
+          `${import.meta.env.VITE_APP_EMAILJS_SERVICE_ID}`,
+          `${import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID}`,
           `#${form.id}`,
-           `${publicKey}`,
+           `${import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY}`,
         );
         console.log("Email sent successfully!");
       } catch (error) {
@@ -84,9 +81,9 @@ const EmailPrompt: React.FC = () => {
 </Form>
 <form ref={formRef} id="hiddenForm" style={{ display: "none" }}>
   <label>Name</label>
-  <input type="text" name="user_name" value={username} readOnly />
+  <input type="text" name="from_name" value={username} readOnly />
   <label>Email</label>
-  <input type="email" name="user_email" value={email} readOnly />
+  <input type="email" name="from_email" value={email} readOnly />
   <label>Message</label>
   <textarea name="message" value={message} readOnly />
 </form>
