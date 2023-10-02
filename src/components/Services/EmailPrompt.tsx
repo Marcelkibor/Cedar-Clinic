@@ -46,7 +46,7 @@ const EmailPrompt: React.FC = () => {
   return (
 <div className="email-prompt">
 <Form onSubmit={sendEmail}>
-<h2>Get In Touch</h2>
+<h2 style={{color:'#006266'}}>Get In Touch</h2>
 <Form.Group>
   <Form.Control
     onChange={onChange}
@@ -76,8 +76,8 @@ const EmailPrompt: React.FC = () => {
   />
 </Form.Group>
 <Button
-  style={{ marginTop: "5%" }}
-  variant="primary"
+  style={{ marginTop: "2%" }}
+  variant="success"
   type="submit"
 >
   Submit
