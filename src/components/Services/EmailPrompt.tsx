@@ -25,12 +25,16 @@ const EmailPrompt: React.FC = () => {
     e.preventDefault();
     
     if (formRef.current) {
-      const form = formRef.current;
+      const formatMessage = `${message}.\n${email}`
       try {
-        await emailjs.sendForm(
+        await emailjs.send(
           `${import.meta.env.VITE_APP_EMAILJS_SERVICE_ID}`,
           `${import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID}`,
-          `#${form.id}`,
+          {
+            from_name:String(username),
+            from_email:String(email),
+            message:String(formatMessage)
+          },
            `${import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY}`,
         );
         console.log("Email sent successfully!");
@@ -81,11 +85,11 @@ const EmailPrompt: React.FC = () => {
 </Form>
 <form ref={formRef} id="hiddenForm" style={{ display: "none" }}>
   <label>Name</label>
-  <input type="text" name="from_name" value={username} readOnly />
+  <input type="text" name="from_name" value={formData.username} readOnly />
   <label>Email</label>
-  <input type="email" name="from_email" value={email} readOnly />
+  <input type="email" name="from_email" value={formData.email} readOnly />
   <label>Message</label>
-  <textarea name="message" value={message} readOnly />
+  <textarea name="message" value={formData.message} readOnly />
 </form>
 </div>
   );
