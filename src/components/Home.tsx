@@ -7,6 +7,7 @@ import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
 import { isInViewport } from "./utils/Functions";
 import ScrollMotion from "./utils/ScrollMotion";
+import BoxLinks from "./BoxLinks";
 const Home: React.FC = () => {
   const [sections] = useState<string[]>([
     "services",
@@ -44,6 +45,9 @@ const Home: React.FC = () => {
       </section>
       <section id="home">
         <LandingPage />
+      </section>
+      <section id="box-links">
+       <BoxLinks/>
       </section>
       <section id="services">
         <motion.div
