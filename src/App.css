@@ -13,7 +13,7 @@
   align-items: center !important;
 }
 .boxlink-main{
-  width:420px !important;
+  min-width:370px !important;
   height: 300px !important;
   margin-bottom: 30px !important;
   position: relative;
@@ -574,9 +574,6 @@ color: #fff;
     bottom: 20% !important;
     right:8% !important
   }
-  .boxlink-text{
-    right: 40% !important;
-  }
   .boxlink-main{
     width: 80vw !important;
     margin-bottom: 20px;
@@ -729,9 +726,8 @@ color: #fff;
   bottom: 25% !important;
  }
  .boxlink-text{
-  
-  bottom: 30% !important;
-  right: 30% !important;
+  width: 100% !important;
+ }
  }
  .provider-col{
   margin-bottom: 15% !important;
@@ -796,4 +792,4 @@ color: #fff;
       right: 30% !important;
     }
   }
- }
+ 
