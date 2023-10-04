@@ -6,10 +6,11 @@
 .boxlink-text{
   position: absolute;
   bottom: 10%!important;
-  right: 31%!important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ text-align: center;
+ width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 .boxlink-main{
   width:420px !important;
@@ -22,7 +23,7 @@
   background-color: #005f66;
 }
 
-.boxlink-main:hover .boxlink-text h3{
+.boxlink-main:hover .boxlink-text .bx{
   display: none;
 }
 .boxlinks{

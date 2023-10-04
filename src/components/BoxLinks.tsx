@@ -3,6 +3,7 @@ import BoxResource from './DataFiles/BoxFileResource';
 import { useAnimation } from 'framer-motion';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { popUp } from './Effects/AnimationsPack';
 
 const BoxLinks = () => {
   const boxAnimate = useAnimation();
@@ -10,7 +11,7 @@ const BoxLinks = () => {
 
   const handleHover = (itemId:any) => {
     setHoveredItemId(itemId);
-    boxAnimate.start({ y: 0 });
+    boxAnimate.start({ opacity:0,y: 0 });
   };
 
   const handleLeave = () => {
@@ -23,10 +24,8 @@ const BoxLinks = () => {
         {BoxResource.map((item) => (
           <Col
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-            key={item.id}
-          >
+            key={item.id}>
             <div
-            onClick={()=>{handleHover(item.id)}}
               onMouseEnter={() => handleHover(item.id)}
               onMouseLeave={handleLeave}
               style={{ position: 'relative' }}
@@ -34,15 +33,9 @@ const BoxLinks = () => {
             >
               <div className='boxlink-text'>
                 <div className='bx-title'>
-                  <h3 style={{ color: 'white' }}>{item.title}</h3>
+                <p className="bx"style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.title}</p>
                   {hoveredItemId === item.id && (
-                  <motion.div
-                    initial={{ y: -1 }}
-                    transition={{ duration: 0.3 }}
-                    animate={boxAnimate}
-                  >
-                    <h4 style={{color:"white"}}>{item.description}</h4>
-                  </motion.div>
+                  <p style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.description}</p>
                 )}
                 </div>  
               </div>
