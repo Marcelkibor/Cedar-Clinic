@@ -21,7 +21,8 @@
 .boxlink-main:hover{
   background-color: #005f66;
 }
-.boxlink-main:hover .boxlink-text{
+
+.boxlink-main:hover .boxlink-text h3{
   display: none;
 }
 .boxlinks{
