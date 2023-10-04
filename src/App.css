@@ -3,6 +3,16 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.boxlink-main{
+  width:400px !important;
+  height: 300px !important;
+  margin-bottom: 30px !important;
+  position: relative;
+  background-color: #16a085;
+}
+.boxlinks{
+  margin: 2% 3% 0% 3% !important;
+}
 .email-prompt{
   max-width: 600px;
 }
@@ -548,6 +558,13 @@ color: #fff;
     bottom: 20% !important;
     right:8% !important
   }
+  .boxlink-main{
+    width: 80vw !important;
+    margin-bottom: 20px;
+  }
+  .boxlinks{
+   margin-left: 27px !important;
+  }
   .email-prompt{
     margin-top: 30px;
     margin-left: -15px !important;
@@ -681,6 +698,9 @@ color: #fff;
 }
 }
 @media(max-width:580px){
+.boxlink-main{
+  width: 110vw !important;
+}
   .main-services{
   margin-top: 0px !important;
  }

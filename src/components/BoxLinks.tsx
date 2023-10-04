@@ -3,13 +3,12 @@ import BoxResource from './DataFiles/BoxFileResource';
 const BoxLinks = () => {
   return (
     <div>
-    <Row style={{margin:'2% 3% 0% 3%'}}>
+    <Row className='boxlinks'>
     {BoxResource.map((item:any)=>(
-        <Col key={item.id}>
-            <div style={{width:'400px',height:'300px',position:'relative'}}>
-            <img src={item.src} style={{width:'100%',height:'100%'}}/>
-            <div style={{position:'absolute',top:'10px', left:'25%'}}>
-            <h3>{item.title}</h3>
+        <Col style = {{display:'flex',justifyContent:'center',alignItems:'center'}}key={item.id}>
+            <div className="boxlink-main">
+            <div style={{marginTop:'20%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <h3 style={{color:'white'}}>{item.title}</h3>
             </div>
             </div>
         </Col>
