@@ -2,9 +2,6 @@ import { Row, Col } from 'react-bootstrap';
 import BoxResource from './DataFiles/BoxFileResource';
 import { useAnimation } from 'framer-motion';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { popUp } from './Effects/AnimationsPack';
-
 const BoxLinks = () => {
   const boxAnimate = useAnimation();
   const [hoveredItemId, setHoveredItemId] = useState(null);
