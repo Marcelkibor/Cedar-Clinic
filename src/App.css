@@ -3,12 +3,26 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.boxlink-text{
+  position: absolute;
+  bottom: 10%!important;
+  right: 31%!important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .boxlink-main{
-  width:400px !important;
+  width:420px !important;
   height: 300px !important;
   margin-bottom: 30px !important;
   position: relative;
-  background-color: #16a085;
+  background-color: #118874;
+}
+.boxlink-main:hover{
+  background-color: #005f66;
+}
+.boxlink-main:hover .boxlink-text{
+  display: none;
 }
 .boxlinks{
   margin: 2% 3% 0% 3% !important;
@@ -558,11 +572,15 @@ color: #fff;
     bottom: 20% !important;
     right:8% !important
   }
+  .boxlink-text{
+    right: 40% !important;
+  }
   .boxlink-main{
     width: 80vw !important;
     margin-bottom: 20px;
   }
   .boxlinks{
+    margin-top: 30px !important;
    margin-left: 27px !important;
   }
   .email-prompt{
@@ -707,6 +725,11 @@ color: #fff;
  .scroll-motion{
   right:20%!important;
   bottom: 25% !important;
+ }
+ .boxlink-text{
+  
+  bottom: 30% !important;
+  right: 30% !important;
  }
  .provider-col{
   margin-bottom: 15% !important;
