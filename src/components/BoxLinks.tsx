@@ -1,14 +1,9 @@
 import { Row, Col } from 'react-bootstrap';
 import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
-import { useState } from 'react';
 import {AiOutlineDoubleRight} from 'react-icons/ai';
 import React from 'react';
 const BoxLinks = () => {
-  const [hoveredItemId, setHoveredItemId] = useState(null);
 
-  const handleHover = (itemId:any) => {
-    setHoveredItemId(itemId);
-  };
   const handleNavigation=(item:any)=>{
     console.log(`item is ${item}`);
     if(item===1){
@@ -23,10 +18,6 @@ const BoxLinks = () => {
 
     }
   }
-  const handleLeave = () => {
-    setHoveredItemId(null);
-  };
-
   return (
     <div>
       <Row className='boxlinks'>
@@ -35,26 +26,21 @@ const BoxLinks = () => {
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             key={item.id}>
             <div
-            onClick={()=>{handleHover(item.id)}}
-              onMouseEnter={() => handleHover(item.id)}
-              onMouseLeave={handleLeave}
               style={{ position: 'relative' }}
               className="boxlink-main">
-                <div  style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'20%'}}className='bx-icon'>
+                <div className='bx-icon'>
                 {React.createElement(BxIcons[item.id], { style: { width: '80px', height: '80px', color: 'white' } })}
                 </div>
               <div className='boxlink-text'>
-                <div className='bx-title'>
-                <p className="bx"style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.title}</p>
-                  {hoveredItemId === item.id && (
-                    <div>
-                      {React.createElement(BxIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
-                        <h3 style={{color:"white"}}>{item.title}</h3>
-                  <p style={{margin:'0% 3% 3% 3%',color:"white", fontSize:'18px'}}>{item.description}</p>
-                    <p onClick={()=>{handleNavigation(item.id)}} style={{cursor:'pointer',color:'white',textDecoration:'underline'}}>Read More <AiOutlineDoubleRight color="white"/></p>
-                    </div>
-                )}
-                </div>  
+                <p className="bx"style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.title}</p> 
+              </div>
+              <div className='boxlink-hov'>
+                <div style={{display:'block'}}>
+                <h3 style={{color:'white'}}>{item.title}</h3>
+                {React.createElement(BxIcons[item.id],{style:{width:'50px',height:'60px',color:'white'}})}
+                <p style={{margin:'2% 5% 3% 5%',fontSize:'18px',color:'white'}}>{item.description}</p>
+                <p onClick={()=>{handleNavigation(item.id)}} style={{ textDecoration:'underline',cursor:'pointer',color: "white" }}>Read More <AiOutlineDoubleRight color="white"/></p>
+                </div>
               </div>
             </div>
           </Col>

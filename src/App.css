@@ -3,8 +3,27 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.boxlink-hov{
+  position:absolute;
+  bottom:10% !important;
+  text-align: center;
+ width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.boxlink-main .boxlink-hov{
+  display: none !important;
+}
+.boxlink-main:hover .boxlink-hov{
+  display: block !important;
+}
+.boxlink-main:hover .boxlink-text{
+  display: none !important;
+}
 .boxlink-text{
   position: absolute;
+  display: visible !important;
   bottom: 10%!important;
  text-align: center;
  width: 100% !important;
@@ -14,6 +33,12 @@
 }
 .boxlink-main:hover .boxlink-text{
   bottom: 20% !important;
+}
+.bx-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
 }
 .boxlink-main:hover .bx-icon{
   display: none !important;
@@ -27,10 +52,6 @@
 }
 .boxlink-main:hover{
   background-color: #005f66 !important;
-}
-
-.boxlink-main:hover .boxlink-text .bx{
-  display: none !important;
 }
 .boxlinks{
   margin: 2% 3% 0% 3% !important;
@@ -581,7 +602,7 @@ color: #fff;
     right:8% !important
   }
   .boxlink-main{
-    min-width: 300px !important;
+    min-width: 320px !important;
   }
   .boxlinks{
     margin-top: 30px !important;
