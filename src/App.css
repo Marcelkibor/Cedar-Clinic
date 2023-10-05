@@ -26,11 +26,11 @@
   background-color: #118874;
 }
 .boxlink-main:hover{
-  background-color: #005f66;
+  background-color: #005f66 !important;
 }
 
 .boxlink-main:hover .boxlink-text .bx{
-  display: none;
+  display: none !important;
 }
 .boxlinks{
   margin: 2% 3% 0% 3% !important;
@@ -581,8 +581,7 @@ color: #fff;
     right:8% !important
   }
   .boxlink-main{
-    width: 80vw !important;
-    margin-bottom: 20px;
+    min-width: 300px !important;
   }
   .boxlinks{
     margin-top: 30px !important;
@@ -722,7 +721,7 @@ color: #fff;
 }
 @media(max-width:580px){
 .boxlink-main{
-  width: 110vw !important;
+  max-width: 30px !important;
 }
   .main-services{
   margin-top: 0px !important;

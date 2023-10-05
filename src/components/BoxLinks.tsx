@@ -43,7 +43,7 @@ const BoxLinks = () => {
               style={{ position: 'relative' }}
               className="boxlink-main">
                 <div  style={{display:'flex',justifyContent:'center',alignItems:'center',marginTop:'20%'}}className='bx-icon'>
-                {React.createElement(BxIcons[item.id], { style: { width: '70px', height: '70px', color: 'white' } })}
+                {React.createElement(BxIcons[item.id], { style: { width: '80px', height: '80px', color: 'white' } })}
                 </div>
               <div className='boxlink-text'>
                 <div className='bx-title'>
