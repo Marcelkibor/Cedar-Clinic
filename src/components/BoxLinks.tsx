@@ -1,16 +1,13 @@
 import { Row, Col } from 'react-bootstrap';
 import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
-import { useAnimation } from 'framer-motion';
 import { useState } from 'react';
 import {AiOutlineDoubleRight} from 'react-icons/ai';
 import React from 'react';
 const BoxLinks = () => {
-  const boxAnimate = useAnimation();
   const [hoveredItemId, setHoveredItemId] = useState(null);
 
   const handleHover = (itemId:any) => {
     setHoveredItemId(itemId);
-    boxAnimate.start({ opacity:0,y: 0 });
   };
   const handleNavigation=(item:any)=>{
     console.log(`item is ${item}`);
@@ -38,6 +35,7 @@ const BoxLinks = () => {
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             key={item.id}>
             <div
+            onClick={()=>{handleHover(item.id)}}
               onMouseEnter={() => handleHover(item.id)}
               onMouseLeave={handleLeave}
               style={{ position: 'relative' }}
