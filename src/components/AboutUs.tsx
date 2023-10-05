@@ -134,13 +134,13 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </Col>
 </Row>
 <div className = 'choice-div'>
-  <div style={{color:'white',textAlign:'center'}}>
+  <div style={{color:'white',textAlign:'center',marginRight:'12%'}}>
       <h1>Why Choose Us</h1>
       <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>
   </div>
-    <Row>
+    <Row style={{marginRight:'10%',display:'flex',justifyContent:'center',alignItems:'center'}}>
      {whyChoose.map((item:any)=>(
-    <Col sm={12} md={12} lg={3}>
+    <Col sm={12} md={12} lg={3} style={{width:'fit-content',marginLeft:'70px'}}>
       <motion.div
       style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
       <div
@@ -174,7 +174,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </Row>
     </motion.div>
   </section>
-<Row style={{paddingBottom:'10%',backgroundColor:'#079992'}}>
+<Row style={{paddingBottom:'10%',backgroundColor:'#079992', width:'111vw',paddingRight:'100px'}}>
 <div style ={{textAlign:'center', margin:'5% 0% 5% 0%',color:'white'}}>
 <h1>Our Clinical Process</h1>
 </div>
