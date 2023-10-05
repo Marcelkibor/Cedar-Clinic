@@ -12,6 +12,12 @@
   justify-content: center !important;
   align-items: center !important;
 }
+.boxlink-main:hover .boxlink-text{
+  bottom: 20% !important;
+}
+.boxlink-main:hover .bx-icon{
+  display: none !important;
+}
 .boxlink-main{
   min-width:370px !important;
   height: 300px !important;
