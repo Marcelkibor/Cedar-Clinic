@@ -1,7 +1,8 @@
 import { Row, Col } from 'react-bootstrap';
-import BoxResource from './DataFiles/BoxFileResource';
+import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
 import { useAnimation } from 'framer-motion';
 import { useState } from 'react';
+import React from 'react';
 const BoxLinks = () => {
   const boxAnimate = useAnimation();
   const [hoveredItemId, setHoveredItemId] = useState(null);
@@ -32,7 +33,11 @@ const BoxLinks = () => {
                 <div className='bx-title'>
                 <p className="bx"style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.title}</p>
                   {hoveredItemId === item.id && (
-                  <p style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.description}</p>
+                    <>
+                      {React.createElement(BxIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
+                        <h3 style={{color:"white"}}>{item.title}</h3>
+                  <p style={{color:"white", fontSize:'18px'}}>{item.description}</p>
+                    </>
                 )}
                 </div>  
               </div>
