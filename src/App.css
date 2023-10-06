@@ -3,6 +3,23 @@
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.review-main{
+  height: 300px;
+  position: relative !important;
+  background-color: #059196;
+  display: flex !important;
+  width: 110vw !important;
+  margin: 5% 0% 5% 0%;
+}
+.review-img{
+  position: absolute !important;
+  left: 10% !important;
+  top: -19% !important;
+  height: 400px;
+  width: 400px;
+  border-radius: 50% !important;
+  background-color: rgb(147, 230, 255);
+}
 .boxlink-hov{
   position:absolute;
   bottom:10% !important;
@@ -44,7 +61,7 @@
   display: none !important;
 }
 .boxlink-main{
-  min-width:370px !important;
+  min-width:390px !important;
   height: 300px !important;
   margin-bottom: 30px !important;
   position: relative;
@@ -602,6 +619,15 @@ color: #fff;
   .scroll-motion{
     bottom: 20% !important;
     right:8% !important
+  }
+  .review-main{
+    height: 280px !important;
+  }
+  .review-img{
+    top:-15% !important;
+    left: 2% !important;
+    width: 350px !important;
+    height: 350px !important;
   }
   .boxlink-main{
     min-width: 320px !important;
