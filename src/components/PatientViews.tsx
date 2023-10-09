@@ -5,7 +5,7 @@ const PatientViews = () => {
     <Row className='review-main'>
       <Col sm={6} md={6} lg={6}>
       <div className='review-img' >
-            <img src={Patient} style={{margin:'5% 0% 0% -5%',width:'110%',height:'70%',justifyContent:'center',display:'flex',alignItems:'center'}}/>
+            <img src={Patient} style={{margin:'5% 0% 0% -5%',width:'100vw',height:'70%',justifyContent:'center',display:'flex',alignItems:'center'}}/>
         </div>
       </Col>
        <Col sm={6} md={6} lg={6}>
