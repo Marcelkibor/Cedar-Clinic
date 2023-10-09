@@ -3,7 +3,6 @@ import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
 import {AiOutlineDoubleRight} from 'react-icons/ai';
 import React from 'react';
 const BoxLinks = () => {
-
   const handleNavigation=(item:any)=>{
     console.log(`item is ${item}`);
     if(item===1){

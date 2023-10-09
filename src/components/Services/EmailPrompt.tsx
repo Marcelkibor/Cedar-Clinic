@@ -1,5 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import emailjs from "@emailjs/browser";
 interface FormData {
   username: string;
@@ -13,17 +15,27 @@ const EmailPrompt: React.FC = () => {
     email: "",
     message: "",
   });
-
-  const { username, email, message } = formData;
-  const formRef = useRef<HTMLFormElement | null>(null);
-
+const notify=()=>{
+  toast.success('Email Sent', {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: false,
+    theme: "light",
+    });
+}
+const { username, email, message } = formData;
+const formRef = useRef<HTMLFormElement | null>(null);
+const [loading,setLoading] = useState(false);
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const sendEmail = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+    setLoading(
+      true
+    )
     if (formRef.current) {
       const formatMessage = `${message}.\n${email}`
       try {
@@ -42,6 +54,8 @@ const EmailPrompt: React.FC = () => {
         console.error("Error sending email:", error);
       }
     }
+    setLoading(false);
+    notify()
   };
   return (
 <div className="email-prompt">
@@ -76,11 +90,22 @@ const EmailPrompt: React.FC = () => {
   />
 </Form.Group>
 <Button
-  style={{ marginTop: "2%" }}
+  style={{ marginTop: "2%",width:'150px' }}
   variant="success"
   type="submit"
 >
-  Submit
+  {loading ? <p>Sending...</p>: <p>Send Email</p>}
+  <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+pauseOnHover ={false}
+theme="light"
+/>
+<ToastContainer />
 </Button>
 </Form>
 <form ref={formRef} id="hiddenForm" style={{ display: "none" }}>
