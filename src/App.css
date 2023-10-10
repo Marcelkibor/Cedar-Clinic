@@ -446,9 +446,8 @@ width: 100vw;
   color: white;
 }
 .service-expand{
-  margin: 10% 3% 0% 3% !important;
   height: 60vh;
-
+  margin: 100px 0px 30px 20px !important;
 }
 .all-sv-banner{
   color: white;
@@ -703,9 +702,6 @@ color: #fff;
   .why-choose-col{
     margin-left: 25% !important;
   }
-  .service-expand{
-    margin-top: 20% !important;
-  }
   .map-col{
     margin-left: -4% !important;
   }
@@ -842,9 +838,6 @@ color: #fff;
  }
  .about-img{
   display: none !important;
-}
- .service-expand{
-  margin-top: 25% !important;
 }
  .all-sv-main-div{
   margin-top: 20% !important;

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
-import { Mservice } from "../DataFiles/Mservices";
+import { Mservice,serviceIcons } from "../DataFiles/Mservices";
 import Navigation from "../Layouts/NavigationBar";
 import ServicesHeader from "./ServicesHeader";
 import { Col, Row } from "react-bootstrap";
 import Footer from "../Layouts/Footer";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 const ServiceExpand = () => {
   useEffect(() => {
     const nav = document.getElementById("navigation");
@@ -31,10 +31,13 @@ const ServiceExpand = () => {
     <Navigation/>
     </section>
     <ServicesHeader pathname = {window.location.pathname}/>
-    <Row lg = {3} className="service-expand">
-        <Col>
+    <Row className="service-expand">
+    <Col lg={3}>
         <div>{selectedService&&<>
-    <h4>{selectedService.name}</h4>
+        <div style={{height:'fit-content',width:'fit-content'}}>
+        {React.createElement(serviceIcons[selectedService.id],{style:{height:'100px',width:'100px',color: '#218c74'}})}
+        </div>
+    <h4 style={{marginTop:'15px'}}>{selectedService.name}</h4>
     <p>{selectedService.description}</p>
     </>}</div>
         </Col>
