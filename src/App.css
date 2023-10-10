@@ -47,6 +47,9 @@ body{
 .boxlink-main .boxlink-hov{
   display: none !important;
 }
+.boxlink-main:hover{
+  background-color: #006266;
+}
 .boxlink-main:hover .boxlink-hov{
   display: block !important;
 }
@@ -56,9 +59,10 @@ body{
 .boxlink-text{
   position: absolute;
   display: visible !important;
-  bottom: 10%!important;
+  bottom: 0%!important;
  text-align: center;
  width: 100% !important;
+ background-color: #18a09b;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -77,13 +81,12 @@ body{
 }
 .boxlink-main{
   min-width:390px !important;
-  height: 300px !important;
+  height: 280px !important;
   margin-bottom: 30px !important;
   position: relative;
-  background-color: #118874;
 }
-.boxlink-main:hover{
-  background-color: #005f66 !important;
+.boxlink-main:hover img{
+ opacity: 0.2 !important;
 }
 .boxlinks{
   margin: 2% 3% 0% 3% !important;
@@ -378,7 +381,7 @@ width: 100vw;
 .main-service-card:hover .main-sv-icons-div{
   transition: transform 0.8s ease;
   transform: rotateY(360deg) !important;
-  background-color: rgb(6, 134, 81);
+  background-color: rgb(16, 151, 168);
 }
 
 .ceda-intro{
@@ -406,7 +409,7 @@ width: 100vw;
   top: 30%;
   color: white;
   left: 3%;
-  background-color: #00b894;
+  background-color: #096164;
   display:flex;
   align-items: center;
   justify-content: center;

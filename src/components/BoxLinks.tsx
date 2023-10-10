@@ -1,6 +1,5 @@
 import { Row, Col } from 'react-bootstrap';
 import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
-import {AiOutlineDoubleRight} from 'react-icons/ai';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 const BoxLinks = () => {
@@ -25,17 +24,15 @@ const BoxLinks = () => {
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             key={item.id}>
             <div
-              style={{ position: 'relative' }}
+              style={{ position: 'relative',display:'flex',justifyContent:'center',alignItems:'center'}}
               className="boxlink-main">
-                <div className='bx-icon'>
-                {React.createElement(BxIcons[item.id], { style: { width: '80px', height: '80px', color: 'white' } })}
-                </div>
+                <img style={{width:'100%',height:'100%'}} autoFocus src={item.src}/>
               <div className='boxlink-text'>
-                <p className="bx"style={{color:"white", fontSize:'25px',fontWeight:'bold'}}>{item.title}</p> 
+                <p className="bx"style={{color:"white", fontSize:'30px',fontWeight:'bold'}}>{item.title}</p> 
               </div>
               <div className='boxlink-hov'>
                 <div style={{display:'block'}}>
-                <h3 style={{color:'white'}}>{item.title}</h3>
+                <h2 style={{color:'white'}}>{item.title}</h2>
                 {React.createElement(BxIcons[item.id],{style:{width:'50px',height:'60px',color:'white'}})}
                 <p style={{margin:'2% 5% 3% 5%',fontSize:'18px',color:'white'}}>{item.description}</p>
                   {handleNavigation(item.id)}

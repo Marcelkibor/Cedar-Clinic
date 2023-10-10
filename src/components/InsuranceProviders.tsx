@@ -58,7 +58,7 @@ const InsuranceProviders = () => {
 ))}
 </Slider>
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
-    <button style = {{backgroundColor:'#00b894',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
+    <button style = {{backgroundColor:'rgb(6, 119, 134)',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
       </div>
     </>
