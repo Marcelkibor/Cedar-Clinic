@@ -28,10 +28,8 @@ const LandingPage = () => {
 
   return (
     <div className = 'bg-main'>
-     <div style={{position:'absolute',height:'100%',width:'100%'}}> 
-      </div>
 <div className='home-bg'>
-<img style={{ height: '100%', width: '100vw', objectFit:'cover' }} src={Bg} autoFocus/>
+<img style={{ height: '140%', width: '100%', objectFit:'cover' }} src={Bg} autoFocus/>
   </div>
   <div className='home-bg-text'>
     <h1 data-text='Cedar-Clinic'>Cedar Clinic</h1>
