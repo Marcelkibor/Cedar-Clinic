@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent, useRef } from "react";
 import { Form, Button } from "react-bootstrap";
-import { ToastContainer, toast } from 'react-toastify';
+import { BarLoader } from "react-spinners";
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from "@emailjs/browser";
 interface FormData {
@@ -10,20 +10,12 @@ interface FormData {
 }
 
 const EmailPrompt: React.FC = () => {
+  const [sent,isSent] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     username: "",
     email: "",
     message: "",
   });
-const notify=()=>{
-  toast.success('Email Sent', {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: false,
-    theme: "light",
-    });
-}
 const { username, email, message } = formData;
 const formRef = useRef<HTMLFormElement | null>(null);
 const [loading,setLoading] = useState(false);
@@ -49,65 +41,91 @@ const [loading,setLoading] = useState(false);
           },
            `${import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY}`,
         );
-        console.log("Email sent successfully!");
+       isSent(true);
+       formData.email="";
+       formData.message="";
+       formData.username="";
       } catch (error) {
-        console.error("Error sending email:", error);
+        throw error
       }
     }
+
     setLoading(false);
-    notify()
   };
   return (
 <div className="email-prompt">
-<Form onSubmit={sendEmail}>
-<h2 style={{color:'#006266'}}>Get In Touch</h2>
-<Form.Group>
-  <Form.Control
-    onChange={onChange}
-    type="text"
-    autoSave="true"
-    autoComplete="true"
-    placeholder="Username"
-    name="username"
-    value={username}
-  /><br></br>
-  <Form.Control
-    onChange={onChange}
-    type="email"
-    autoSave="true"
-    placeholder="Your Email"
-    name="email"
-    value={email}
-  /><br></br>
-  <Form.Control
-    style={{ height: "120px" }}
-    as="textarea"
-    onChange={onChange}
-    autoSave="true"
-    placeholder="Message"
-    name="message"
-    value={message}
-  />
-</Form.Group>
-<Button
-  style={{ marginTop: "2%",width:'150px' }}
-  variant="success"
-  type="submit"
->
-  {loading ? <p>Sending...</p>: <p>Send Email</p>}
-  <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-pauseOnHover ={false}
-theme="light"
-/>
-<ToastContainer />
-</Button>
-</Form>
+  {sent ? 
+  <div style={{height:'400px',minWidth:'400px'}}>
+  <div style={{marginLeft:'-27px',display:'flex',width:'100%',height:'100%',justifyContent:'center',alignItems:'center'}}>
+    <div style={{display:'block'}}>
+      <p>Email has been sent</p>
+      <Button
+      style={{ marginTop: "2%",width:'150px' }}
+      variant="success"
+      onClick={()=>{isSent(false)}}
+      type="submit"> Done </Button>
+    </div>
+  </div>
+</div>
+  :
+  <div className="contact-form">
+    {loading?
+    <div style={{width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+  <div style={{display:'block'}}>
+  <BarLoader
+    loading={loading}
+    speedMultiplier={1}
+    color='#55efc4'
+    height={5}
+    width={150}
+    />
+      <div>
+      <h6>Sending</h6>
+      </div>
+  </div>
+    </div>
+  :
+  <Form onSubmit={sendEmail}>
+  <h2 style={{color:'#006266'}}>Get In Touch</h2>
+  <Form.Group>
+    <Form.Control
+      onChange={onChange}
+      type="text"
+      autoSave="true"
+      autoComplete="true"
+      placeholder="Username"
+      name="username"
+      value={username}
+    /><br></br>
+    <Form.Control
+      onChange={onChange}
+      type="email"
+      autoSave="true"
+      placeholder="Your Email"
+      name="email"
+      value={email}
+    /><br></br>
+    <Form.Control
+      style={{ height: "120px" }}
+      as="textarea"
+      onChange={onChange}
+      autoSave="true"
+      placeholder="Message"
+      name="message"
+      value={message}
+    />
+  </Form.Group>
+  <Button
+    style={{ marginTop: "2%",width:'150px' }}
+    variant="success"
+    type="submit"
+  >Send Email
+  </Button>
+  </Form>
+    }
+ 
+  </div>  
+  }
 <form ref={formRef} id="hiddenForm" style={{ display: "none" }}>
   <label>Name</label>
   <input type="text" name="from_name" value={formData.username} readOnly />

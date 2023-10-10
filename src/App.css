@@ -8,6 +8,10 @@ body{
   height: fit-content;
   margin-bottom: 100px !important;
 }
+.contact-form{
+  width: 400px;
+  height: 400px;
+}
 .review-text{
   max-width: 500px !important;
   text-align: center;
@@ -86,6 +90,9 @@ body{
 }
 .email-prompt{
   max-width: 600px;
+}
+.prompt-loading{
+  backdrop-filter: blur(10px) !important;
 }
 .contact-main{
   margin:0% 0% 5% 5% !important;
@@ -788,7 +795,10 @@ color: #fff;
 .boxlink-main{
   max-width: 30px !important;
 }
-
+.contact-form{
+  height: 340px !important;
+  width: 340px !important;
+}
 .review-main{
   height: 700px !important;
 }
