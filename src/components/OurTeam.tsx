@@ -6,11 +6,17 @@ import Doc from '../assets/doc.png';
 import clinicMembers from "./DataFiles/ClinicMembers";
 import Footer from "./Layouts/Footer";
 import ScrollMotion from "./utils/ScrollMotion";
+import { useEffect } from "react";
 
 const OurTeam = () => {
 const findDoctor = 1;
 const headDoctor = clinicMembers.find((item) => item.id === findDoctor);
-
+useEffect(()=>{
+    const top = document.getElementById("layout");
+    if(top){
+      top.scrollIntoView();
+    }
+  },[])
 if (!headDoctor) {
 return (
 <>
@@ -32,7 +38,7 @@ return (
 );
 }
 return (
-<div>
+<div id="layout">
 <Navigation/>
 <ScrollMotion/>
 <ServicesHeader pathname={window.location.pathname} />

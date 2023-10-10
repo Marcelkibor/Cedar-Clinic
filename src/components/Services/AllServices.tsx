@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../Layouts/NavigationBar';
 import { Card, Col} from 'react-bootstrap';
 import Pagination from './Pagination';
@@ -12,7 +12,12 @@ const AllServices = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [servicePerPage] = useState(4);
   const locationPath = window.location.pathname;
-
+  useEffect(()=>{
+    const top = document.getElementById("layout");
+    if(top){
+      top.scrollIntoView();
+    }
+  },[])
   const lastServiceIndex = currentPage * servicePerPage;
   const firstLocationIndex = lastServiceIndex - servicePerPage;
   const displayServices = Mservice.slice(firstLocationIndex, lastServiceIndex);
@@ -24,7 +29,7 @@ const AllServices = () => {
   }
   return (
     <>
-    <div className='all-services'>
+    <div className='all-services' id='layout'>
       <Navigation/>
      {locationPath && <ServicesHeader pathname = {locationPath}/>}
         <div style={{marginRight:'5%'}}  className = 'all-sv-main-div'>

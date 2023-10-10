@@ -2,20 +2,20 @@ import { Row, Col } from 'react-bootstrap';
 import {BoxResource, BxIcons} from './DataFiles/BoxFileResource';
 import {AiOutlineDoubleRight} from 'react-icons/ai';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 const BoxLinks = () => {
   const handleNavigation=(item:any)=>{
-    console.log(`item is ${item}`);
-    if(item===1){
-      window.location.href="/services"
-    }
-    if(item===2){
-      window.location.href="/contacts"
+  switch(item){
+    case 1:
+      return <NavLink style={{color:'white'}} to="/services">Services</NavLink>
+    case 2:
+    return <NavLink style={{color:'white'}} to="/contacts">Contact Us</NavLink>
+    case 3:
+      return <NavLink style={{color:'white'}} to="/our-team">Doctors</NavLink>
+    default:
+      return<NavLink style={{color:'white'}} to="/">Home</NavLink>
+  }
 
-    }
-    if(item===3){
-      window.location.href="/our-team"
-
-    }
   }
   return (
     <div>
@@ -38,7 +38,7 @@ const BoxLinks = () => {
                 <h3 style={{color:'white'}}>{item.title}</h3>
                 {React.createElement(BxIcons[item.id],{style:{width:'50px',height:'60px',color:'white'}})}
                 <p style={{margin:'2% 5% 3% 5%',fontSize:'18px',color:'white'}}>{item.description}</p>
-                <p onClick={()=>{handleNavigation(item.id)}} style={{ textDecoration:'underline',cursor:'pointer',color: "white" }}>Read More <AiOutlineDoubleRight color="white"/></p>
+                  {handleNavigation(item.id)}
                 </div>
               </div>
             </div>

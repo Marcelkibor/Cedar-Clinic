@@ -5,10 +5,18 @@ import {FaAddressBook,FaWalking,FaPhone} from 'react-icons/fa'
 import Footer from './Layouts/Footer'
 import {MdEmail} from 'react-icons/md'
 import EmailPrompt from './Services/EmailPrompt';
+import { useEffect } from 'react';
 const Contacts = () => {
+  window.scrollTo(0,0)
+  useEffect(()=>{
+    const top = document.getElementById("layout");
+    if(top){
+      top.scrollIntoView();
+    }
+  },[])
   return (
     <>
-      <div>
+      <div id='layout'>
         <Navigation/>
         <ServicesHeader pathname = {window.location.pathname}/>
       </div>
@@ -17,28 +25,28 @@ const Contacts = () => {
       <Col md={4} sm={6} lg={4} className="mr-2" style={{height: 'fit-content',marginTop:'2%' }}>
       <>
       <div style={{display:'flex'}}>
-      <MdEmail  color = "#16a085"size = {30}/>
+      <MdEmail  color = "#16a085"size = {50}/>
       <div style = {{display:'block', marginLeft:'5%'}}>
       <h5 style={{color:'#16a085'}}>Email</h5>
       <p>cedarclinic@gmail.com</p>
       </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>
-        <FaAddressBook color = "#16a085" size = {30}/>
+        <FaAddressBook color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <h5 style={{color:'#16a085'}}>Address</h5>
-      <p>Makasembo Street, Off Nairobi Highway , P.O.Box 2670 30100, Eldoret, Kenya</p>
+      <p>Makasembo Street, Off Nairobi Highway , P.O.Box 2670 50100, Eldoret, Kenya</p>
         </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>
-        <FaPhone color = "#16a085" size = {30}/>
+        <FaPhone color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <h5 style={{color:'#16a085'}}>Call Us</h5>
         <p>0712345678</p>
         </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>
-        <FaWalking color = "#16a085" size = {30}/>
+        <FaWalking color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <h5 style={{color:'#16a085'}}>Visiting Hours</h5>
         <p>8:00am - 5:00pm </p>
