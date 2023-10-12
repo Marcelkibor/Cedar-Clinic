@@ -115,12 +115,10 @@ const [loading,setLoading] = useState(false);
       value={message}
     />
   </Form.Group>
-  <Button
-    style={{ marginTop: "2%",width:'150px' }}
-    variant="success"
-    type="submit"
+  <button
+   className="bt"
   >Send Email
-  </Button>
+  </button>
   </Form>
     }
  

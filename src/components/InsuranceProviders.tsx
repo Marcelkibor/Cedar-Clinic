@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Iproviders from "./DataFiles/IProviders";
 import { Col} from "react-bootstrap";
+import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
-
+  const sliderRef = useRef<Slider | null>(null);
   useEffect(() => {
     const updateSliderSettings = () => {
       const midScreen = 1108;
@@ -31,6 +32,17 @@ const InsuranceProviders = () => {
       window.removeEventListener('resize', updateSliderSettings);
     };
   }, []);
+  const handleSlidePrev = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
+  };
+
+  const handleSlideNext = () => {
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -45,8 +57,8 @@ const InsuranceProviders = () => {
       <div className="ip-intro">
         <h1 style={{color:'#006366'}}>Our Insurance Providers</h1>
       </div>
-      <div>
-      <Slider {...settings}>
+      <div style={{position:'relative',height:'100%',width:'100%'}}>
+      <Slider ref={sliderRef}{...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
             <div  style={{height:'150px',width:'150px',display:'flex',justifyContent:'center',alignItems:'center'}}>
@@ -58,8 +70,14 @@ const InsuranceProviders = () => {
 ))}
 </Slider>
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
-    <button style = {{backgroundColor:'rgb(6, 119, 134)',width:'150px',color:"white",height:'50px',borderRadius:'10px'}}onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
+    <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
+    <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
+          <BsFillArrowLeftCircleFill color='rgb(6, 119, 134)' size={40} />
+        </div>
+        <div style={{ position: 'absolute', bottom: '40%', right: '5px', cursor: 'pointer' }} onClick={handleSlideNext}>
+          <BsFillArrowRightCircleFill color='rgb(6, 119, 134)' size={40} />
+        </div>
       </div>
     </>
   );

@@ -7,19 +7,18 @@ import {MdEmail} from 'react-icons/md'
 import EmailPrompt from './Services/EmailPrompt';
 import { useEffect } from 'react';
 const Contacts = () => {
-  window.scrollTo(0,0)
   useEffect(()=>{
-    const top = document.getElementById("layout");
+    const top = document.getElementById("nav");
     if(top){
       top.scrollIntoView();
     }
   },[])
   return (
     <>
-      <div id='layout'>
+      <div id='nav'>
         <Navigation/>
+        </div>
         <ServicesHeader pathname = {window.location.pathname}/>
-      </div>
      <Row className='contact-main'>
       <h2 style={{color:'#006266'}}>Contact Us</h2>
       <Col md={4} sm={6} lg={4} className="mr-2" style={{height: 'fit-content',marginTop:'2%' }}>

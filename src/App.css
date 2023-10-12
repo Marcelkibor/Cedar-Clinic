@@ -16,24 +16,35 @@ body{
   max-width: 500px !important;
   text-align: center;
   position: absolute !important;
-  top: 50px !important;
-  left: 400px !important;
+  top: 100px !important;
+  left: 500px !important;
   color: white;
 }
+.bt{
+  background-color:rgb(6, 119, 134);
+  width:150px;
+  color:white;
+  margin-top: 10px;
+  height:50px;
+  border-radius:10px
+}
+.bt:hover{
+  background-color:rgb(4, 77, 87);
+}
 .review-main{
-  height: 270px !important;
+  height: 370px !important;
   position: relative !important;
-  background-color: #059196;
+  background-color: rgb(11, 97, 109);
   margin-bottom: 10% !important;
 }
 .review-img{
   position: absolute !important;
   left: 50px !important;
   top: -20px !important;
-  height: 320px;
-  width: 320px;
+  height: 420px;
+  width: 420px;
   border-radius: 50% !important;
-  background-color: rgb(147, 230, 255);
+  background-color: rgb(212, 238, 255);
 }
 .boxlink-hov{
   position:absolute;
@@ -285,7 +296,7 @@ width: 100vw;
 .banner-header{
  width: 260px;
  height: 60px;
- background-color: #218c74;
+ background-color: #0e6e5a;
  display: flex;
  align-items: center;
 }
@@ -403,10 +414,10 @@ width: 100vw;
   transition: background-color 0.5s;
 }
 .main-sv-icons-div {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  top: 30%;
+  top: 10%;
   color: white;
   left: 3%;
   background-color: #096164;
@@ -513,7 +524,7 @@ width: 100vw;
   align-items: center;
 }
 .footer-main{
-  background: #08999e;
+  background: rgb(11, 97, 109);
   padding-bottom: 5%;
   height: fit-content !important;
   width: 100vw !important;
@@ -625,6 +636,9 @@ color: #fff;
   margin-top: 10px;
   margin-left: 20px;
 }
+.service-header-items:hover{
+  background-color: #0d5f4d;
+}
 .rotating-col{
   margin: 5% 0% 0% 5% !important;
 }
@@ -642,8 +656,8 @@ color: #fff;
   }
   .review-text{
    position: absolute !important;
-   top: 380px !important;
-   left: 20% !important;
+   top: 400px !important;
+   left: 18% !important;
   }
   .review-main{
     height: 600px !important;
@@ -651,7 +665,9 @@ color: #fff;
   .review-img{
     position: absolute !important;
     top: 5% !important;
-    left: 30% !important;
+    height:350px;
+    width: 350px;
+    left: 28% !important;
   }
  
   .boxlink-main{
@@ -802,7 +818,7 @@ color: #fff;
   height: 700px !important;
 }
 .review-img{
-  left: 10% !important;
+  left: 7% !important;
 }
 .review-text{
   left: 0% !important;
