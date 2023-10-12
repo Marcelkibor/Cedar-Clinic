@@ -35,8 +35,8 @@ const SliderServices = () => {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 9000,
-    speed: 3000,
+    autoplaySpeed: 8000,
+    speed: 1000,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll
   };

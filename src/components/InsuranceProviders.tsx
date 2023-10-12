@@ -16,11 +16,11 @@ const InsuranceProviders = () => {
         setSlidesToShow(1);
         setSlidesToScroll(1);
       } else if (window.innerWidth <= midScreen) {
-        setSlidesToShow(2);
-        setSlidesToScroll(2);
+        setSlidesToShow(4);
+        setSlidesToScroll(4);
       } else {
-        setSlidesToShow(3);
-        setSlidesToScroll(3);
+        setSlidesToShow(5);
+        setSlidesToScroll(5);
       }
     };
 
@@ -35,21 +35,21 @@ const InsuranceProviders = () => {
     dots: false,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 9000,
-    speed: 500,
+    autoplaySpeed: 8000,
+    speed: 1000,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll
   };
   return (
     <>
       <div className="ip-intro">
-        <h1 style={{color:'#006266'}}>Our Insurance Providers</h1>
+        <h1 style={{color:'#006366'}}>Our Insurance Providers</h1>
       </div>
       <div>
       <Slider {...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
-            <div  style={{height:'200px',width:'200px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div  style={{height:'150px',width:'150px',display:'flex',justifyContent:'center',alignItems:'center'}}>
     <div>
       <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src}/>
     </div>

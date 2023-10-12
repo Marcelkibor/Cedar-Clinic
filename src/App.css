@@ -48,7 +48,7 @@ body{
   display: none !important;
 }
 .boxlink-main:hover{
-  background-color: #006266;
+  background-color: #18a09b;
 }
 .boxlink-main:hover .boxlink-hov{
   display: block !important;
@@ -89,7 +89,7 @@ body{
  opacity: 0.2 !important;
 }
 .boxlinks{
-  margin: 2% 3% 0% 3% !important;
+  margin: 20% 3% 0% 3% !important;
 }
 .email-prompt{
   max-width: 600px;
@@ -174,7 +174,7 @@ width: 100vw;
 
 .home-bg{
   position: absolute;
-  width: 100vw;
+  width: 100%;
   height:100%;
 }
 .image-col {
@@ -513,7 +513,7 @@ width: 100vw;
   align-items: center;
 }
 .footer-main{
-  background: #006266;
+  background: #08999e;
   padding-bottom: 5%;
   height: fit-content !important;
   width: 100vw !important;

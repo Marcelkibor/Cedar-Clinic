@@ -25,7 +25,7 @@ const Home: React.FC = () => {
             controlsServices.start({ opacity: 1, y: 0 });
           }
         } else if (section === "providers") {
-          if (isInViewport(element,10)) {
+          if (isInViewport(element,0)) {
             controlsProviders.start({ opacity: 1, y: 0 });
           }
         }

@@ -6,17 +6,16 @@ const BoxLinks = () => {
   const handleNavigation=(item:any)=>{
   switch(item){
     case 1:
-      return <NavLink style={{color:'white'}} to="/services">Services</NavLink>
+      return <NavLink style={{color:'white'}} to="/services">Find Service</NavLink>
     case 2:
     return <NavLink style={{color:'white'}} to="/contacts">Contact Us</NavLink>
     case 3:
-      return <NavLink style={{color:'white'}} to="/our-team">Doctors</NavLink>
+      return <NavLink style={{color:'white'}} to="/our-team">Find Doctor</NavLink>
     default:
       return<NavLink style={{color:'white'}} to="/">Home</NavLink>
   }
-
   }
-  return (
+  return(
     <div>
       <Row className='boxlinks'>
         {BoxResource.map((item) => (
@@ -24,9 +23,9 @@ const BoxLinks = () => {
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             key={item.id}>
             <div
-              style={{ position: 'relative',display:'flex',justifyContent:'center',alignItems:'center'}}
+              style={{ backgroundColor:'#18a09b',position:'relative',display:'flex',justifyContent:'center',alignItems:'center'}}
               className="boxlink-main">
-                <img style={{width:'100%',height:'100%'}} autoFocus src={item.src}/>
+                <img style={{width:'90%',height:'100%'}} autoFocus src={item.src}/>
               <div className='boxlink-text'>
                 <p className="bx"style={{color:"white", fontSize:'30px',fontWeight:'bold'}}>{item.title}</p> 
               </div>
