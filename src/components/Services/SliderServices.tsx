@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Card, Col } from "react-bootstrap";
 import { Mservice, serviceIcons } from "../DataFiles/Mservices";
 import { NavLink } from "react-router-dom";
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
+import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs';
 
 const SliderServices = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -87,11 +87,11 @@ const SliderServices = () => {
           ))}
         </Slider>
         {/* handle next icons */}
-        <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
-          <BsFillArrowLeftCircleFill color='rgb(6, 119, 134)' size={40} />
+        <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
+          <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
-        <div style={{ position: 'absolute', bottom: '40%', right: '5px', cursor: 'pointer' }} onClick={handleSlideNext}>
-          <BsFillArrowRightCircleFill color='rgb(6, 119, 134)' size={40} />
+        <div style={{ position: 'absolute', bottom: '40%', right: '20px', cursor: 'pointer' }} onClick={handleSlideNext}>
+          <BsFillArrowRightSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>

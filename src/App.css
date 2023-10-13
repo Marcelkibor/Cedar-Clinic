@@ -35,7 +35,7 @@ body{
   height: 370px !important;
   position: relative !important;
   background-color: rgb(11, 97, 109);
-  margin-bottom: 10% !important;
+  margin: 5% 0% 10% 0% !important;
 }
 .review-img{
   position: absolute !important;
@@ -92,7 +92,7 @@ body{
 }
 .boxlink-main{
   min-width:390px !important;
-  height: 280px !important;
+  height: 310px !important;
   margin-bottom: 30px !important;
   position: relative;
 }

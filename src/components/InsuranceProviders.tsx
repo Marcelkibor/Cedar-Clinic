@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import Iproviders from "./DataFiles/IProviders";
 import { Col} from "react-bootstrap";
-import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from "react-icons/bs";
+import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from "react-icons/bs";
 
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -57,7 +57,7 @@ const InsuranceProviders = () => {
       <div className="ip-intro">
         <h1 style={{color:'#006366'}}>Our Insurance Providers</h1>
       </div>
-      <div style={{position:'relative',height:'100%',width:'100%'}}>
+      <div style={{position:'relative',height:'100%',width:'100%',marginTop:'5%'}}>
       <Slider ref={sliderRef}{...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
@@ -72,11 +72,11 @@ const InsuranceProviders = () => {
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
     <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
-    <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
-          <BsFillArrowLeftCircleFill color='rgb(6, 119, 134)' size={40} />
+    <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
+          <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
-        <div style={{ position: 'absolute', bottom: '40%', right: '5px', cursor: 'pointer' }} onClick={handleSlideNext}>
-          <BsFillArrowRightCircleFill color='rgb(6, 119, 134)' size={40} />
+        <div style={{ position: 'absolute', bottom: '40%', right: '20px', cursor: 'pointer' }} onClick={handleSlideNext}>
+          <BsFillArrowRightSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
       </div>
     </>

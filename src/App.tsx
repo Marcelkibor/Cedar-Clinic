@@ -11,6 +11,7 @@ import OurTeam from './components/OurTeam';
 import TeamSelect from './components/TeamSelect';
 import ServiceExpand from './components/Services/ServiceExpand';
 import AllProviders from './components/AllProviders';
+import NewsExpand from './components/NewsExpand';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path = '/our-team' element = {<OurTeam/>}/>
         <Route path="/our-team/:name" element={<TeamSelect/>}/>
         <Route path = '/services/:name' element ={<ServiceExpand/>}/>
+        <Route path = '/article/:id' element ={<NewsExpand/>}/>
         <Route path='/insurance-providers' element={<AllProviders/>}/>
       </Routes>
     </Router>

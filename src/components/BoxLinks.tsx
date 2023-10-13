@@ -25,7 +25,7 @@ const BoxLinks = () => {
             <div
               style={{ backgroundColor:'#18a09b',position:'relative',display:'flex',justifyContent:'center',alignItems:'center'}}
               className="boxlink-main">
-                <img style={{width:'90%',height:'100%'}} autoFocus src={item.src}/>
+                <img style={{width:'98%',height:'100%'}} autoFocus src={item.src}/>
               <div className='boxlink-text'>
                 <p className="bx"style={{color:"white", fontSize:'30px',fontWeight:'bold'}}>{item.title}</p> 
               </div>
