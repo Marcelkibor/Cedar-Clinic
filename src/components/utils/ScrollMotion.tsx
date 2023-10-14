@@ -19,7 +19,7 @@ return (
 <>
 {scroller &&
     <div  onClick={handleScroll}className='scroll-motion' >
-    <BsArrowUpSquareFill style={{color:'gray',outline:'no-outline'}} size ={40}/>
+    <BsArrowUpSquareFill style={{color:'#636e72',outline:'no-outline'}} size ={40}/>
 </div>
 }
 </>

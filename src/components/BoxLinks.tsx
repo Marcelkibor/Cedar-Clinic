@@ -20,23 +20,21 @@ const BoxLinks = () => {
       <Row className='boxlinks'>
         {BoxResource.map((item) => (
           <Col
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             key={item.id}>
             <div
-              style={{ backgroundColor:'#18a09b',position:'relative',display:'flex',justifyContent:'center',alignItems:'center'}}
-              className="boxlink-main">
-                <img style={{width:'98%',height:'100%'}} autoFocus src={item.src}/>
+              className="boxlink-main" style={{width:'100%',height:'100%'}}>
+                <img style={{width:'98%',height:'100%'}} src={item.src}/>
               <div className='boxlink-text'>
                 <p className="bx"style={{color:"white", fontSize:'30px',fontWeight:'bold'}}>{item.title}</p> 
               </div>
-              <div className='boxlink-hov'>
+              {/* <div className='boxlink-hov'>
                 <div style={{display:'block'}}>
                 <h2 style={{color:'white'}}>{item.title}</h2>
                 {React.createElement(BxIcons[item.id],{style:{width:'50px',height:'60px',color:'white'}})}
                 <p style={{margin:'2% 5% 3% 5%',fontSize:'18px',color:'white'}}>{item.description}</p>
                   {handleNavigation(item.id)}
                 </div>
-              </div>
+              </div> */}
             </div>
           </Col>
         ))}

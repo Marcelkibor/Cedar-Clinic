@@ -53,11 +53,13 @@ const InsuranceProviders = () => {
     slidesToScroll: slidesToScroll
   };
   return (
-    <>
-      <div className="ip-intro">
+ 
+    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <div style={{width:'100%',display:'block'}}>
+    <div className="ip-intro">
         <h1 style={{color:'#006366'}}>Our Insurance Providers</h1>
       </div>
-      <div style={{position:'relative',height:'100%',width:'100%',marginTop:'5%'}}>
+      <div style={{position:'relative',height:'100%',width:'97%',marginTop:'5%'}}>
       <Slider ref={sliderRef}{...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
@@ -79,7 +81,8 @@ const InsuranceProviders = () => {
           <BsFillArrowRightSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
       </div>
-    </>
+</div>
+    </div>
   );
 };
 

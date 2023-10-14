@@ -8,8 +8,8 @@ import {ImLocation} from 'react-icons/im'
 const Footer = () => {
   return (
     <div className='footer-main'>
-      <div style = {{marginLeft:'2%',marginRight:'5%', color:"white"}}>
-      <Row style = {{color:"white"}}>
+      <div style = {{color:"white"}}>
+      <Row style = {{color:"white",width:'100%'}}>
         <Col>
         <h4>Contact Info</h4>
         <hr style={{ width:'300px', border: 'none', borderBottom: '1px solid white' }} />
@@ -26,7 +26,7 @@ const Footer = () => {
             <p>Makasembo Street, Off Nairobi Highway , P.O.Box 2670 30100, Eldoret, Kenya</p>
           </div>
         </Col>
-        <Col>
+          <Col>
         <h4>Links</h4>
         <hr style={{ width:'300px', border: 'none', borderBottom: '1px solid white' }} />
         <div>
@@ -37,19 +37,7 @@ const Footer = () => {
         </div>
         </Col>
       </Row>
-      <Row>
-        <Col>
-       <h4>Socialize</h4>
-       <hr style={{ minWidth:'480px', border: 'none', borderBottom: '1px solid white' }} />
-        <div style = {{display:'flex', gap:'10%'}}>
-        <FaFacebook size = {25}/>
-        <FaTwitter size = {25}/>
-        <FaInstagram size = {25}/>
-        </div>
-        </Col>
-      </Row>
       </div>
-      
     </div>
   )
 }

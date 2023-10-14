@@ -61,9 +61,7 @@ const Home: React.FC = () => {
           <SliderServices />
         </motion.div>
       </section>
-      <section id="review">
     <PatientViews/>
-      </section>
       <section id="providers">
         <motion.div
           className="providers-container"
@@ -71,6 +69,7 @@ const Home: React.FC = () => {
           <InsuranceProviders />
         </motion.div>
       </section>
+       
       <section id="news">
         <NewsAndEvents/>
       </section>

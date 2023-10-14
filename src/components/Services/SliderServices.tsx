@@ -63,10 +63,11 @@ const SliderServices = () => {
 
   return (
     <div className="main-services">
+      <div style={{width:'100%',display:'block'}}>
       <div className="ip-intro">
         <h1 style={{ color: '#006266' }}>Explore Our Services</h1>
       </div>
-      <div style={{ marginTop: '30px', position: 'relative', width: '100%', height: '100%' }}>
+      <div style={{ margin: '30px 0px 0px 0px', position: 'relative', width: '97%', height: '100%' }}>
         <Slider {...settings} ref={sliderRef}>
           {Mservice.map(service => (
             <Col key={service.id} style={{ marginBottom: '10px' }}>
@@ -97,6 +98,8 @@ const SliderServices = () => {
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>
         <button className="bt" onClick={getServices}>More Services</button>
       </div>
+      </div>
+    
     </div>
   );
 };

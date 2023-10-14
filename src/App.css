@@ -36,6 +36,7 @@ body{
   position: relative !important;
   background-color: rgb(11, 97, 109);
   margin: 5% 0% 10% 0% !important;
+  width: 100% !important;
 }
 .review-img{
   position: absolute !important;
@@ -95,13 +96,15 @@ body{
   height: 310px !important;
   margin-bottom: 30px !important;
   position: relative;
+ background-color:#18a09b;
+ display: flex !important;
+ justify-content:center;
+ align-items:center
 }
 .boxlink-main:hover img{
  opacity: 0.2 !important;
 }
-.boxlinks{
-  margin: 20% 3% 0% 3% !important;
-}
+
 .email-prompt{
   max-width: 600px;
 }
@@ -200,6 +203,10 @@ width: 100vw;
 }
 .main-services{
   margin-top: 0px;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+  align-items: center !important;
 }
 .insurance-col{
   display: flex !important;
@@ -526,8 +533,11 @@ width: 100vw;
 .footer-main{
   background: rgb(11, 97, 109);
   padding-bottom: 5%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
   height: fit-content !important;
-  width: 100vw !important;
+  width: 100% !important;
   padding-top:5%;
 }
 .intro-cards{
@@ -669,13 +679,8 @@ color: #fff;
     width: 350px;
     left: 28% !important;
   }
- 
-  .boxlink-main{
-    min-width: 320px !important;
-  }
   .boxlinks{
-    margin-top: 30px !important;
-   margin-left: 27px !important;
+    margin-top: 10px !important;
   }
   .email-prompt{
     margin-top: 30px;
@@ -807,9 +812,6 @@ color: #fff;
 }
 }
 @media(max-width:580px){
-.boxlink-main{
-  max-width: 30px !important;
-}
 .contact-form{
   height: 340px !important;
   width: 340px !important;
@@ -818,7 +820,7 @@ color: #fff;
   height: 700px !important;
 }
 .review-img{
-  left: 7% !important;
+  left: 3% !important;
 }
 .review-text{
   left: 0% !important;
@@ -892,7 +894,7 @@ color: #fff;
   }
   @media(max-width:480px) {
     .scroll-motion{
-      right: 30% !important;
+      right: 5% !important;
     }
   }
  

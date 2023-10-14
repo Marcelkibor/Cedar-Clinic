@@ -7,7 +7,7 @@ const NewsAndEvents = () => {
     <div>
         <Row style={{margin:'50px 10px 200px 10px'}}>
         
-    <Col style={{margin:'10px 0px 10px 20px'}}>
+    <Col>
     <h3 style={{margin:'0px 0px 10px 10px',color:'#006266'}}>News</h3>
     <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid gray' }} />
     {NewsArticle.length>0?NewsArticle.map((news:any)=>(
@@ -25,7 +25,7 @@ const NewsAndEvents = () => {
     </div>
 )):<h5>No News</h5>}
 </Col>
-          <Col style={{margin:'10px 0px 10px 20px'}}>
+          <Col>
           <h3 style={{color:'#006266'}}>Events</h3>
           <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid gray' }} />
           {EventItem.length>0? EventItem.map((event:any)=><div>
