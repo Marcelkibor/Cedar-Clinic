@@ -8,6 +8,7 @@ body{
   height: fit-content;
   margin-bottom: 100px !important;
 }
+
 .contact-form{
   width: 400px;
   height: 400px;
@@ -31,6 +32,15 @@ body{
 .bt:hover{
   background-color:rgb(4, 77, 87);
 }
+.boxlink-main{
+  height:100% !important;
+  margin:30px 10px 20px 10px !important;
+}
+.boxlink-items{
+  height: 100%;
+  position: relative !important;
+  width: 97% !important;
+}
 .review-main{
   height: 370px !important;
   position: relative !important;
@@ -46,63 +56,6 @@ body{
   width: 420px;
   border-radius: 50% !important;
   background-color: rgb(212, 238, 255);
-}
-.boxlink-hov{
-  position:absolute;
-  bottom:10% !important;
-  text-align: center;
- width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.boxlink-main .boxlink-hov{
-  display: none !important;
-}
-.boxlink-main:hover{
-  background-color: #18a09b;
-}
-.boxlink-main:hover .boxlink-hov{
-  display: block !important;
-}
-.boxlink-main:hover .boxlink-text{
-  display: none !important;
-}
-.boxlink-text{
-  position: absolute;
-  display: visible !important;
-  bottom: 0%!important;
- text-align: center;
- width: 100% !important;
- background-color: #18a09b;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-.boxlink-main:hover .boxlink-text{
-  bottom: 20% !important;
-}
-.bx-icon{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20%;
-}
-.boxlink-main:hover .bx-icon{
-  display: none !important;
-}
-.boxlink-main{
-  min-width:390px !important;
-  height: 310px !important;
-  margin-bottom: 30px !important;
-  position: relative;
- background-color:#18a09b;
- display: flex !important;
- justify-content:center;
- align-items:center
-}
-.boxlink-main:hover img{
- opacity: 0.2 !important;
 }
 
 .email-prompt{
@@ -189,7 +142,7 @@ width: 100vw;
 .home-bg{
   position: absolute;
   width: 100%;
-  height:100%;
+  height:100% !important;
 }
 .image-col {
   display: flex;
@@ -679,9 +632,6 @@ color: #fff;
     width: 350px;
     left: 28% !important;
   }
-  .boxlinks{
-    margin-top: 10px !important;
-  }
   .email-prompt{
     margin-top: 30px;
     margin-left: -15px !important;
@@ -816,6 +766,11 @@ color: #fff;
   height: 340px !important;
   width: 340px !important;
 }
+.boxlink-main{
+  width: 97vw !important;
+  display: block !important;
+  margin-top: -135px !important;
+}
 .review-main{
   height: 700px !important;
 }
@@ -832,9 +787,6 @@ color: #fff;
  .scroll-motion{
   right:20%!important;
   bottom: 25% !important;
- }
- .boxlink-text{
-  width: 100% !important;
  }
  }
  .provider-col{
