@@ -56,10 +56,6 @@ body{
 .boxlink-items:hover img{
   opacity: 0.1;
 }
-.boxlink-items:hover{
-  transition: 0.1s ease-in !important;
-  transform: scale(1.05) !important;
-}
 .review-main{
   height: 370px !important;
   position: relative !important;
