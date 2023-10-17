@@ -47,6 +47,10 @@ body{
 .boxlink-items:hover img{
   opacity: 0.1;
 }
+.boxlink-items:hover{
+  transform: scale(1.03);
+  transition: ease-out(2);
+}
 .boxlink-items:hover .box-fragment{
   display:inline !important;
 }
