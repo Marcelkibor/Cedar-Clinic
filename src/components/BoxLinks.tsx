@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const BoxLinks = () => {
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-
   const handleNavigation=(item:any)=>{
   switch(item){
     case 1:
@@ -24,9 +22,7 @@ const BoxLinks = () => {
       {BoxResource.map((item) => (
         <Col className="box-col"key={item.id}>
           <div
-            onMouseEnter={() => setHoveredItem(item.id)}
-            onMouseLeave={() => setHoveredItem(null)}
-            className={`boxlink-items ${hoveredItem === item.id ? 'hovered' : ''}`}
+            className="boxlink-items"
           >
             <div
               style={{
@@ -52,8 +48,8 @@ const BoxLinks = () => {
                   textAlign: 'center',
                 }}
               >
-                {hoveredItem === item.id && (
-                  <React.Fragment>
+                <section className='box-fragment'>
+                <React.Fragment>
                     {React.createElement(BxIcons[item.id], {
                       style: {width: '70px', height: '70px',marginTop:'-50px' },
                     })}
@@ -66,8 +62,8 @@ const BoxLinks = () => {
                     <div>
                     {handleNavigation(item.id)}
                     </div>
-                  </React.Fragment>
-                )}
+                  </React.Fragment>   
+                </section>
               </div>
             </div>
           </div>

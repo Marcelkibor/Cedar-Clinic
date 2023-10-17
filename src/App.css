@@ -43,18 +43,15 @@ body{
   width: 97% !important;
   background-color: #01a3a4;
 }
-.boxlink-items:hover .boxlink-text h4{
-  display: none;
-}
-.boxlink-text{
-  color: white;
-  text-align: center;
-  height: 50px;
-  background-color:#16a085;
-  width: 100%;
-}
+
 .boxlink-items:hover img{
   opacity: 0.1;
+}
+.boxlink-items:hover .box-fragment{
+  display:inline !important;
+}
+.boxlink-items .box-fragment{
+  display: none !important;
 }
 .review-main{
   height: 370px !important;
