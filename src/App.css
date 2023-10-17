@@ -29,6 +29,9 @@ body{
   height:50px;
   border-radius:10px
 }
+.box-col{
+  margin-bottom: -40px !important;
+}
 .bt:hover{
   background-color:rgb(4, 77, 87);
 }
@@ -37,9 +40,25 @@ body{
   margin:30px 10px 20px 10px !important;
 }
 .boxlink-items{
-  height: 100%;
-  position: relative !important;
   width: 97% !important;
+  background-color: #01a3a4;
+}
+.boxlink-items:hover .boxlink-text h4{
+  display: none;
+}
+.boxlink-text{
+  color: white;
+  text-align: center;
+  height: 50px;
+  background-color:#16a085;
+  width: 100%;
+}
+.boxlink-items:hover img{
+  opacity: 0.1;
+}
+.boxlink-items:hover{
+  transition: 0.1s ease-in !important;
+  transform: scale(1.05) !important;
 }
 .review-main{
   height: 370px !important;

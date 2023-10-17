@@ -1,5 +1,4 @@
 import { Col, Row } from 'react-bootstrap'
-// import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import {SiGmail} from 'react-icons/si';
 import {BiMessageRounded} from 'react-icons/bi'
 import {ImLocation} from 'react-icons/im'

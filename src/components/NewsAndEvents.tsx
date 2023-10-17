@@ -17,7 +17,7 @@ const NewsAndEvents = () => {
             <h6>{news.date}</h6>
         </div>
         <div style={{position:'relative',width:'100%',height:"fit-content",display:'block'}}>
-            <NavLink to={`article/${encodeURIComponent(news.id)}`} style={{textDecoration:'none',fontSize:'22px',color:'#006266',fontWeight:'bold'}}>{news.title}</NavLink>
+            <NavLink to={`article/${encodeURIComponent(news.id)}`} style={{fontSize:'20px',color:'#006266',fontWeight:'bold'}}>{news.title}</NavLink>
             <div>
             <button onClick={()=>{window.location.pathname=`article/${encodeURIComponent(news.id)}`}}className='bt'>Read More</button>
             </div>
