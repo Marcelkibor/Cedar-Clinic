@@ -65,6 +65,9 @@ const BoxLinks = () => {
                   </React.Fragment>   
                 </section>
               </div>
+              <div className='bx-title'>
+                <h5>{item.title}</h5>
+              </div>
             </div>
           </div>
         </Col>
