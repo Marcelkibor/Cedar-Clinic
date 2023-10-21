@@ -2,6 +2,7 @@ import { Col, Row } from 'react-bootstrap'
 import {SiGmail} from 'react-icons/si';
 import {BiMessageRounded} from 'react-icons/bi'
 import {ImLocation} from 'react-icons/im'
+import { NavLink } from 'react-router-dom';
 
 
 const Footer = () => {
@@ -28,11 +29,11 @@ const Footer = () => {
           <Col>
         <h4>Links</h4>
         <hr style={{ width:'300px', border: 'none', borderBottom: '1px solid white' }} />
-        <div>
-          <p>About Us</p>
-          <p>Medical Services</p>
-          <p>Doctors</p>
-          <p>Book Appointment</p>
+        <div style={{display:'flex',flexDirection:'column'}}>
+          <NavLink style={{color:'white',textDecoration:'none'}} to="/about-us">About Us</NavLink>
+          <NavLink  style={{color:'white',textDecoration:'none'}} to="/services">Medical Services</NavLink>
+          <NavLink  style={{color:'white',textDecoration:'none'}} to="/our-team">Doctors</NavLink>
+          <NavLink   style={{color:'white',textDecoration:'none'}} to="/contacts">Contact Us</NavLink>
         </div>
         </Col>
       </Row>

@@ -6,7 +6,6 @@ import LandingPage from "./LandingPage";
 import Navigation from "./Layouts/NavigationBar";
 import SliderServices from "./Services/SliderServices";
 import { isInViewport } from "./utils/Functions";
-import PatientViews from "./PatientViews";
 import ScrollMotion from "./utils/ScrollMotion";
 import BoxLinks from "./BoxLinks";
 import NewsAndEvents from "./NewsAndEvents";
@@ -61,7 +60,7 @@ const Home: React.FC = () => {
           <SliderServices />
         </motion.div>
       </section>
-    <PatientViews/>
+    {/* <PatientViews/> */}
       <section id="providers">
         <motion.div
           className="providers-container"

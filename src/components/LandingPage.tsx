@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
-import Bg from '../assets/bg.jpg';
+import Bg1 from '../assets/bg1.png';
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
   const autoplayInterval = 6000
@@ -29,7 +29,7 @@ const LandingPage = () => {
   return (
     <div className = 'bg-main'>
 <div className='home-bg'>
-<img style={{ height: '110%', width: '100%', objectFit:'cover' }} src={Bg} autoFocus/>
+<img style={{ height: '110%', width: '100%', objectFit:'cover' }} src={Bg1} autoFocus/>
   </div>
   <div className='home-bg-text'>
     <h1 data-text='Cedar-Clinic'>Cedar Clinic</h1>
