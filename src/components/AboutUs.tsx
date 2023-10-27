@@ -162,10 +162,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 </div>
 <div style={{width:'100%',height:'100%'}}>
 <section id = "counter">
-  <motion.div 
-  animate={counterAnim}
-  initial='hidden'
-  variants={popUp(0.5)}
+  <div 
   style={{width:'100%',height:'100%',background:'white'}} >
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
@@ -176,7 +173,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
       </Col>
     ))}
     </Row>
-    </motion.div>
+    </div>
   </section>
 </div>
 <div style={{width:'100%',height:'100%',backgroundColor:'#2f927e'}}>
