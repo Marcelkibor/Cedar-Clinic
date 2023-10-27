@@ -134,7 +134,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </motion.div>
   </Col>
 </Row>
-<div style={{width:'100%',minHeight:'300px',backgroundColor:'#0d8069',paddingBottom:'10px'}}>
+<div style={{width:'100%',minHeight:'300px',backgroundColor:'#2f927e',paddingBottom:'10px'}}>
 <Row style={{width:'100%'}}>
   <div style={{color:'white',textAlign:'center'}}>
       <h2>Why Choose Us</h2>
@@ -179,8 +179,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </motion.div>
   </section>
 </div>
-<div style={{width:'100%',height:'100%',backgroundColor:'#0d8069'}}>
-<Row style={{paddingBottom:'10%',backgroundColor:'#0d8069', width:'100%'}}>
+<div style={{width:'100%',height:'100%',backgroundColor:'#2f927e'}}>
+<Row style={{paddingBottom:'10%',backgroundColor:'#2f927e', width:'100%'}}>
 <div style ={{textAlign:'center',color:'white'}}>
 <h2 style={{color:'white'}}>Our Clinical Process</h2>
 </div>
