@@ -17,7 +17,7 @@ const BoxLinks = () => {
   }
   }
   return(
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ width: '100%', height: '100%',marginTop:'30px' }}>
     <Row className='boxlink-main g-0'>
       {BoxResource.map((item) => (
         <Col className="box-col"key={item.id}>
@@ -27,7 +27,7 @@ const BoxLinks = () => {
             <div
               style={{
                 width: '100%',
-                height: '290px',
+                height: '300px',
                 marginTop: '50px',
                 position: 'relative',
               }}
@@ -54,10 +54,10 @@ const BoxLinks = () => {
                       style: {width: '70px', height: '70px',marginTop:'-50px' },
                     })}
                     <div>
-                      <h4>{item.title}</h4>
+                      <h4 style={{fontFamily:'Merriweather serif'}}>{item.title}</h4>
                     </div>
                     <div>
-                      <p>{item.description}</p>
+                      <p style={{fontFamily:'Merriweather serif'}}>{item.description}</p>
                     </div>
                     <div>
                     {handleNavigation(item.id)}
@@ -66,7 +66,7 @@ const BoxLinks = () => {
                 </section>
               </div>
               <div className='bx-title'>
-                <h5>{item.title}</h5>
+                <h5 style={{fontFamily:'Merriweather serif',fontWeight:'bold'}}>{item.title}</h5>
               </div>
             </div>
           </div>

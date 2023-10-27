@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className='footer-main'>
+    <div className='footer-main' style={{fontFamily:'Merriweather serif'}}>
       <div style = {{color:"white"}}>
       <Row style = {{color:"white",width:'100%'}}>
         <Col>

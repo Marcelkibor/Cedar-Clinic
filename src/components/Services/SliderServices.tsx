@@ -65,7 +65,7 @@ const SliderServices = () => {
     <div className="main-services">
       <div style={{width:'100%',display:'block'}}>
       <div className="ip-intro">
-        <h1 style={{ color: '#006266' }}>Explore Our Services</h1>
+        <h2  style={{fontFamily:'Merriweather serif',color:'rgb(11, 97, 109)'}} >Explore Our Services</h2>
       </div>
       <div style={{ margin: '30px 0px 0px 0px', position: 'relative', width: '97%', height: '100%' }}>
         <Slider {...settings} ref={sliderRef}>
@@ -77,10 +77,10 @@ const SliderServices = () => {
                 </div>
                 <div style={{ marginLeft: '20%' }}>
                   <Card.Body>
-                    <h5>
-                      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#006266' }}>{service.name}</NavLink>
-                    </h5>
-                    <Card.Text style={{ color: '#006266' }}>{service.description}</Card.Text>
+                    <h6 >
+                      <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#006266',fontFamily:'Merriweather serif',fontWeight:'bold' }}>{service.name}</NavLink>
+                    </h6>
+                    <p style={{ fontSize:'16px',color: '#006266',fontFamily:'Merriweather serif' }}>{service.description}</p>
                   </Card.Body>
                 </div>
               </Card>

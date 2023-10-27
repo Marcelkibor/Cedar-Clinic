@@ -9,6 +9,7 @@ import { isInViewport } from "./utils/Functions";
 import ScrollMotion from "./utils/ScrollMotion";
 import BoxLinks from "./BoxLinks";
 import NewsAndEvents from "./NewsAndEvents";
+import PatientViews from "./PatientViews";
 const Home: React.FC = () => {
   const [sections] = useState<string[]>([
     "services",
@@ -60,7 +61,7 @@ const Home: React.FC = () => {
           <SliderServices />
         </motion.div>
       </section>
-    {/* <PatientViews/> */}
+    <PatientViews/>
       <section id="providers">
         <motion.div
           className="providers-container"

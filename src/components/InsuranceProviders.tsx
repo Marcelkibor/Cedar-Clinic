@@ -54,10 +54,10 @@ const InsuranceProviders = () => {
   };
   return (
  
-    <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#0d8069'}}>
     <div style={{width:'100%',display:'block'}}>
     <div className="ip-intro">
-        <h1 style={{color:'#006366'}}>Our Insurance Providers</h1>
+        <h2 style={{fontFamily:'Merriweather serif',color:'white'}}>Our Insurance Providers</h2>
       </div>
       <div style={{position:'relative',height:'100%',width:'97%',marginTop:'5%'}}>
       <Slider ref={sliderRef}{...settings}>
@@ -75,10 +75,10 @@ const InsuranceProviders = () => {
     <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
     <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
-          <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />
+          <BsFillArrowLeftSquareFill color='white' size={40} />
         </div>
         <div style={{ position: 'absolute', bottom: '40%', right: '20px', cursor: 'pointer' }} onClick={handleSlideNext}>
-          <BsFillArrowRightSquareFill color='rgb(6, 119, 134)' size={40} />
+          <BsFillArrowRightSquareFill color='white' size={40} />
         </div>
       </div>
 </div>

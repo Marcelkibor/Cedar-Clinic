@@ -32,8 +32,8 @@ const LandingPage = () => {
 <img style={{ height: '110%', width: '100%', objectFit:'cover' }} src={Bg1} autoFocus/>
   </div>
   <div className='home-bg-text'>
-    <h1 data-text='Cedar-Clinic'>Cedar Clinic</h1>
-    <h3>Your Health<br></br>Is Our Priority</h3>
+    <p data-text='Cedar-Clinic' style={{color:"white",fontSize:'40px',fontFamily:'Merriweather serif'}}>Cedar Clinic</p>
+    <p  style={{color:"white",fontSize:'30px',fontFamily:'Merriweather serif'}}>Your Health<br></br>Is Our Priority</p>
   </div>
     </div>
 
