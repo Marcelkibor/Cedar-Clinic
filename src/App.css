@@ -126,7 +126,7 @@ color: white !important;
 display: flex !important;
 min-width: 100vw !important;
 height: 20vh !important;;
-background:#005858;
+background:#0d8069;
 position: relative !important;
 top: 60px;
 }
@@ -165,20 +165,6 @@ top: 60px;
   height: fit-content !important;
   margin-top: 20px;
 }
-.choice-div{
-  min-height: fit-content !important;
-  padding-bottom: 100px;
-background-color: #01a3a4 !important;
-width: 100vw;
-}
-.choice-div h1{
-  font-size: 35px;
-  color: #00b894;
-  padding-top: 20px;
-  -webkit-text-stroke: 0.3vw white;
-  text-transform: uppercase;
-}
-
 .home-bg{
   position: absolute;
   width: 100%;
@@ -285,7 +271,7 @@ width: 100vw;
 }
 .counter-row{
   display: flex;
-  margin: 0% 0% 0% 10% !important;
+  margin: 0% 0% 0% 0% !important;
   padding-top: 5%;
   justify-content: center;
 }

@@ -68,11 +68,11 @@ const AboutUs=() => {
     };
   }, [sections, mVV]);
   return (
-<div>
+<div >
   <Navigation/>
   <ScrollMotion/>
     <ServicesHeader pathname = {window.location.pathname}/>
-      <Row style={{margin:'100px 3% 5% 3%'}}>
+      <Row style={{margin:'100px 0% 5% 0%'}}>
       <Col>
        <motion.div
        variants={popUp(0.8)}
@@ -94,6 +94,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </div>
     </Col>
   </Row>
+   
 <Row style = {{margin:'2% 0% 0% 5% '}}>
   <Col>
   <motion.div id = 'mission'  
@@ -133,36 +134,39 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </motion.div>
   </Col>
 </Row>
-<div className = 'choice-div'>
-  <div style={{color:'white',textAlign:'center',marginRight:'12%'}}>
-      <h1>Why Choose Us</h1>
+<div style={{width:'100%',minHeight:'300px',backgroundColor:'#0d8069',paddingBottom:'10px'}}>
+<Row style={{width:'100%'}}>
+  <div style={{color:'white',textAlign:'center'}}>
+      <h2>Why Choose Us</h2>
       <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>
   </div>
-    <Row style={{marginRight:'10%',display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <Row style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
      {whyChoose.map((item:any)=>(
-    <Col sm={12} md={12} lg={3} style={{width:'fit-content',marginLeft:'70px'}}>
+    <Col sm={12} md={12} lg={3}>
       <motion.div
-      style={{display:'block',justifyContent:'center',paddingBottom:'5%'}}>
+      style={{display:'block',justifyContent:'center',paddingBottom:'5%',marginLeft:'40px'}}>
       <div
       style={{display:'flex',justifyContent:'center',marginTop:'10%'}}>
           {React.createElement(whyChooseIcons[item.id], { style: { width: '50px', height: '50px', color: 'white' } })}
              </div>
              <div
              style={{color:'white', textAlign:'center'}} >
-        <h4>{item.title}</h4>
+        <h5>{item.title}</h5>
       </div>
       </motion.div>
     </Col>
   ))
   }
   </Row>
-  </div>
-  <section id = "counter">
+  </Row>
+</div>
+<div style={{width:'100%',height:'100%'}}>
+<section id = "counter">
   <motion.div 
   animate={counterAnim}
   initial='hidden'
   variants={popUp(0.5)}
-  style={{width:'100vw',height:'100%',background:'white'}} >
+  style={{width:'100%',height:'100%',background:'white'}} >
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>
@@ -174,16 +178,18 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     </Row>
     </motion.div>
   </section>
-<Row style={{paddingBottom:'10%',backgroundColor:'#079992', width:'111vw',paddingRight:'100px'}}>
-<div style ={{textAlign:'center', margin:'5% 0% 5% 0%',color:'white'}}>
-<h1>Our Clinical Process</h1>
+</div>
+<div style={{width:'100%',height:'100%',backgroundColor:'#0d8069'}}>
+<Row style={{paddingBottom:'10%',backgroundColor:'#0d8069', width:'100%'}}>
+<div style ={{textAlign:'center',color:'white'}}>
+<h2 style={{color:'white'}}>Our Clinical Process</h2>
 </div>
   <Col>
 <Timeline/>
     </Col>
 </Row>
+</div>  
 <Footer/>
-   
 </div>
   )
 }

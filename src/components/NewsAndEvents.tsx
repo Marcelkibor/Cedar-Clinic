@@ -4,7 +4,7 @@ import {EventItem, NewsArticle} from './DataFiles/News'
 import { NavLink } from 'react-router-dom'
 const NewsAndEvents = () => {
   return (
-    <div style={{backgroundColor:'#0d8069',color:'white',fontFamily:'Merriweather serif'}}>
+    <div style={{backgroundColor:'#2f927e',color:'white',fontFamily:'Merriweather serif'}}>
         <Row style={{margin:'0px 10px 0px 10px',paddingBottom:'20px'}}>
         
     <Col>

@@ -54,7 +54,7 @@ const InsuranceProviders = () => {
   };
   return (
  
-    <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#0d8069'}}>
+    <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#2f927e'}}>
     <div style={{width:'100%',display:'block'}}>
     <div className="ip-intro">
         <h2 style={{fontFamily:'Merriweather serif',color:'white'}}>Our Insurance Providers</h2>
@@ -63,8 +63,8 @@ const InsuranceProviders = () => {
       <Slider ref={sliderRef}{...settings}>
   {Iproviders.map((prov:any) => (
   <Col key={prov.id} className ='insurance-col'>  
-            <div  style={{height:'150px',width:'150px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-    <div>
+            <div  style={{height:'130px',width:'130px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+    <div style={{width:'100%',height:'100%',backgroundColor:'white'}}>
       <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src}/>
     </div>
   </div>
