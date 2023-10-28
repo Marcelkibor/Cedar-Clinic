@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
-import { Card, Col } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { Mservice, serviceIcons } from "../DataFiles/Mservices";
 import { NavLink } from "react-router-dom";
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs';
@@ -67,7 +67,8 @@ const SliderServices = () => {
       <div className="ip-intro">
         <h2  style={{fontFamily:'Merriweather serif',color:'rgb(11, 97, 109)'}} >Explore Our Services</h2>
       </div>
-      <div style={{ margin: '30px 0px 0px 0px', position: 'relative', width: '97%', height: '100%' }}>
+      <div style={{position: 'relative', width: '100%', height: '100%' }}>
+        <Row style={{width:'100%',height:'100%'}}>
         <Slider {...settings} ref={sliderRef}>
           {Mservice.map(service => (
             <Col key={service.id} style={{ marginBottom: '10px' }}>
@@ -87,6 +88,8 @@ const SliderServices = () => {
             </Col>
           ))}
         </Slider>
+        </Row>
+    
         {/* handle next icons */}
         <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
           <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />

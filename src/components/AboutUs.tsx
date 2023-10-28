@@ -163,7 +163,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <div style={{width:'100%',height:'100%'}}>
 <section id = "counter">
   <div 
-  style={{width:'100%',height:'100%',background:'white'}} >
+  style={{width:'100%',height:'100%',background:'white'}}>
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id}>

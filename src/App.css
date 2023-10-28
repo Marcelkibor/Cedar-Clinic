@@ -371,8 +371,7 @@ top: 60px;
 
 .main-service-card{
   height: 300px !important;
-  margin-left: 10px !important;
-  margin-right: 20px !important;
+  margin-left: 25px;
   transition: transform 0.5s ease;
 }
 .main-service-card:hover .main-sv-icons-div{
@@ -799,7 +798,7 @@ color: #fff;
   margin: 0% 5% 0% 5% !important;
 }
   .main-services{
-  margin-top: 0px !important;
+  margin-top: 40px !important;
  }
  .scroll-motion{
   right:20%!important;
