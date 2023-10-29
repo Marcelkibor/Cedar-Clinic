@@ -2,7 +2,6 @@ import { Col, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Navigation from "./Layouts/NavigationBar";
 import ServicesHeader from "./Services/ServicesHeader";
-import Doc from '../assets/doc.png';
 import clinicMembers from "./DataFiles/ClinicMembers";
 import Footer from "./Layouts/Footer";
 import ScrollMotion from "./utils/ScrollMotion";
@@ -42,26 +41,10 @@ return (
 <Navigation/>
 <ScrollMotion/>
 <ServicesHeader pathname={window.location.pathname} />
-<Row style={{ margin: '8% 0% 0% 0%',display:'flex',justifyContent:'center',alignItems:'center', width:'100vw',height:'fit-content'}}>
-<div style={{width: 'fit-content', height: 'fit-content', textAlign: 'center',marginTop:'50px' }}>
-<div style={{backgroundColor:'#22a6b3',display:'flex',justifyContent:'center',alignItems:'center'}}>
-<img src={Doc} style={{ maxHeight: '300px', width: 'auto'}} />
-</div>
-<div style={{ marginTop: '10px' }}>
-    {headDoctor && <>
-        <h4 style={{ textDecoration: 'underline', color: '#1B1464' }}>
-            <NavLink to={`${encodeURIComponent(formatName(headDoctor.name))}`}>
-                {headDoctor.name}
-            </NavLink>
-        </h4>
-        <p>{headDoctor.title}</p>
-    </>}
-</div>
-</div>
-</Row>
-<Row style={{ margin: '2% 3% 0% 3%', textAlign: 'center' }}>
+
+<Row style={{textAlign: 'center',marginTop:'100px' }}>
+    <h2 style={{margin:'5px 0x 10x 0px',fontFamily:'Merriweather serif'}}>Meet Our Team</h2>
 {clinicMembers.map((item, index) => (
-item.id !== 1 ? (
     <Col lg={4} md={6} sm={6} key={index}>
         <div style={{ backgroundColor: `${item.divColor}` }}>
             <div>
@@ -77,7 +60,6 @@ item.id !== 1 ? (
             </div>
         </div>
     </Col>
-) : null
 ))}
 </Row>
 <Footer />
