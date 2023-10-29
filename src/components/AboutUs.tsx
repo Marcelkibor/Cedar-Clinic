@@ -164,7 +164,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <section id = "counter">
   <div 
   style={{width:'100%',height:'100%',display:'flex',justifyContent:'center'}}>
-    <Row className='counter-row' style={{minHeight:'50vh'}}>
+    <Row className='counter-row' style={{height:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id} style={{padding:'0px 50px 0px 50px'}}>
         {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
