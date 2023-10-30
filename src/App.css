@@ -48,9 +48,8 @@ p{
   height:100% !important;
   margin:30px 10px 20px 10px !important;
 }
-.boxlink-items{
+.boxlink-col{
   width: 100% !important;
-  padding-left: 20px !important;
 }
 .bx-title{
   color: white;
@@ -64,21 +63,27 @@ p{
   align-items: center;
   background-color: #0d8069;
 }
+.boxlink-div{
+  max-width: 420px;
+  max-height:300px;
+  position:relative;
+  background-color:#0d8069
+}
 
-.boxlink-items:hover img{
+.boxlink-col:hover img{
   opacity: 0.1;
 }
-/* .boxlink-items:hover{
+/* .boxlink-col:hover{
   transform: scale(1.03);
   transition: ease-out(2);
 } */
-.boxlink-items:hover .bx-title{
+.boxlink-col:hover .bx-title{
   display: none;
 }
-.boxlink-items:hover .box-fragment{
+.boxlink-col:hover .box-fragment{
   display:inline !important;
 }
-.boxlink-items .box-fragment{
+.boxlink-col .box-fragment{
   display: none !important;
 }
 .review-main{
@@ -637,6 +642,20 @@ color: #fff;
   .scroll-motion{
     bottom: 20% !important;
     right:8% !important
+  }
+  .boxlink-div img{
+    display: none !important;
+  }
+  .boxlink-div .box-fragment{
+    display: inline !important;
+  }
+  .bx-title{
+    display: none !important;
+  }
+  .boxlink-div{
+    width: 100% !important;
+    margin-bottom: 10px;
+    height: 350px;
   }
   .review-text{
    position: absolute !important;
