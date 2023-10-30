@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       <section id="box-links">
        <BoxLinks/>
       </section>
-      <section id="services">
+      {/* <section id="services">
         <motion.div
           className="services-container"
           initial={{ opacity: 0, y: 100 }}
@@ -75,7 +75,7 @@ const Home: React.FC = () => {
       </section>
       <section id="footer">
         <Footer />
-      </section>
+      </section> */}
     </div>
   );
 };

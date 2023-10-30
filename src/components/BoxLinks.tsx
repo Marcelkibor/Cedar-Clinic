@@ -17,10 +17,10 @@ const BoxLinks = () => {
   }
   }
   return(
-    <div style={{ width: '100%', height: '100%',marginTop:'30px' }}>
+    <div style={{ width: '100%', height: '100%',backgroundColor:'red' }}>
     <Row className='boxlink-main g-0'>
       {BoxResource.map((item) => (
-        <Col className="box-col"key={item.id}>
+        <Col key={item.id}>
           <div
             className="boxlink-items"
           >

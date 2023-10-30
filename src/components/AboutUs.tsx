@@ -87,14 +87,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   </p>
     </motion.div>
   </Col>
-  <Col md = {12} lg={7} className='about-img'>
-    <div style={{width:'100%',height:'100%'}}
-   >
-    <img  style = {{width:'auto',height:'400px'}}src={Pic}/>
-    </div>
-    </Col>
   </Row>
-   
 <Row style = {{margin:'2% 0% 0% 5% '}}>
   <Col>
   <motion.div id = 'mission'  
@@ -122,7 +115,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   <motion.div
   id='vision'
   initial='hidden'
-  variants={fadeLeft}
+  variants={popUp(0.7)}
   animate={mVV}
   >
   <h2 style={{color:'#006266'}}>Values</h2>
@@ -164,7 +157,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <section id = "counter">
   <div 
   style={{width:'100%',height:'100%',display:'flex',justifyContent:'center'}}>
-    <Row className='counter-row' style={{height:'50vh'}}>
+    <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id} style={{padding:'0px 50px 0px 50px'}}>
         {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
