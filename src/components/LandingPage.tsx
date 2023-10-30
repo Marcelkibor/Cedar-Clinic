@@ -33,7 +33,7 @@ const LandingPage = () => {
       <Col style={{width:'100%',height:'100%'}} >
 <img style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg1} autoFocus/>
   </Col>
-  <div style={{position:'absolute',margin:'14% 0% 0% 0%'}}>
+  <div style={{position:'absolute',margin:'20% 0% 0% 0%'}}>
     <p data-text='Cedar-Clinic' style={{marginLeft:'30px',color:"white",fontSize:'40px',fontFamily:'Merriweather serif'}}>Cedar Clinic</p>
     <p  style={{marginLeft:'30px',color:"white",fontSize:'30px',fontFamily:'Merriweather serif'}}>Your Health<br></br>Is Our Priority</p>
   </div>

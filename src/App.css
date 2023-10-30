@@ -801,15 +801,17 @@ color: #fff;
   align-items: center;
 }
 }
+
 @media(max-width:580px){
 .contact-form{
   height: 340px !important;
   width: 340px !important;
 }
-.boxlink-main{
-  width: 97vw !important;
-  display: block !important;
-  margin-top: -135px !important;
+.boxlink-div{
+  width: 94vw !important;
+}
+.boxlink-main :hover .boxlink-div{
+  background-color: #00b8af;
 }
 .review-main{
   height: 700px !important;
@@ -822,7 +824,7 @@ color: #fff;
   margin: 0% 5% 0% 5% !important;
 }
   .main-services{
-  margin-top: 40px !important;
+  margin-top: 10px !important;
  }
  .scroll-motion{
   right:20%!important;

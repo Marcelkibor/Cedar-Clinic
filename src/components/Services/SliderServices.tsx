@@ -67,9 +67,10 @@ const SliderServices = () => {
       <div className="ip-intro">
         <h2  style={{fontFamily:'Merriweather serif',color:'rgb(11, 97, 109)'}} >Explore Our Services</h2>
       </div>
-      <div style={{position: 'relative', width: '100%', height: '100%' }}>
+      <div style={{position: 'relative', width: '100%', height: '100%',marginTop:'15px' }}>
         <Row style={{width:'100%',height:'100%'}}>
-        <Slider {...settings} ref={sliderRef}>
+          <Col>
+          <Slider {...settings} ref={sliderRef}>
           {Mservice.map(service => (
             <Col key={service.id} style={{ marginBottom: '10px' }}>
               <Card className="main-service-card">
@@ -88,9 +89,9 @@ const SliderServices = () => {
             </Col>
           ))}
         </Slider>
+          </Col>
         </Row>
-    
-        {/* handle next icons */}
+        {/* handle slider icons */}
         <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
           <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />
         </div>
@@ -102,7 +103,6 @@ const SliderServices = () => {
         <button className="bt" onClick={getServices}>More Services</button>
       </div>
       </div>
-    
     </div>
   );
 };

@@ -17,14 +17,13 @@ const BoxLinks = () => {
   }
   }
   return(
-    <div style={{ width: '100%', height: '100%'}}>
     <Row className='boxlink-main g-0'>
       {BoxResource.map((item) => (
-        <Col key={item.id} className="boxlink-col">
+        <Col key={item.id} className="boxlink-col" style={{marginLeft:'2px',marginRight:'2px'}}>
             <div
             className='boxlink-div'
               >
-              <img src={item.src} style={{ width: '100%', height: '100%' }} />
+              <img src={item.src} style={{ width: '100%', height: '300px' }} />
               <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%',
                   width: '100%',position: 'absolute',top: 0,left: 0,color:'white',flexDirection: 'column',
                   textAlign: 'center'}} >
@@ -53,7 +52,6 @@ const BoxLinks = () => {
         </Col>
       ))}
     </Row>
-  </div>
   );
 };
 

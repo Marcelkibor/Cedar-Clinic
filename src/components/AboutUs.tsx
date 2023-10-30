@@ -1,14 +1,13 @@
 import Navigation from './Layouts/NavigationBar';
 import { whyChoose,whyChooseIcons,clinicalNumbers,numberIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
-import Pic from '../assets/doc.png';
 import { Row,Col } from 'react-bootstrap';
 import {motion, useAnimation} from 'framer-motion'
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup';
 import { isInViewport } from './utils/Functions';
 import React, { useEffect, useState } from 'react';
-import {fadeLeft, popUp } from './Effects/AnimationsPack';
+import {popUp } from './Effects/AnimationsPack';
 import Timeline from './Timeline';
 import ScrollMotion from './utils/ScrollMotion';
 
