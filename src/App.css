@@ -276,6 +276,10 @@ top: 60px;
   right: 10%;
   background-color: black;
 }
+.service-tx{
+  width: 500px;
+  margin-bottom: 150px;
+}
 .rotating-parent{
   width: fit-content;
 }
@@ -440,7 +444,6 @@ top: 60px;
   color: white;
 }
 .all-sv-main-div{
-  margin-top: 8% !important;
   margin-left: 30% !important;
   display: flex !important;
   flex-wrap:wrap !important;
@@ -455,8 +458,8 @@ top: 60px;
   color: white;
 }
 .service-expand{
-  height: 60vh;
-  margin: 100px 0px 30px 20px !important;
+  height: fit-content;
+  margin: 100px 0px 30px 10px !important;
 }
 .all-sv-banner{
   color: white;
@@ -806,6 +809,9 @@ color: #fff;
 .contact-form{
   height: 340px !important;
   width: 340px !important;
+}
+.service-tx{
+  width: 340px;
 }
 .boxlink-div{
   width: 94vw !important;

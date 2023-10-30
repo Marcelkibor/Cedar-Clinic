@@ -82,7 +82,7 @@ const SliderServices = () => {
                     <h6 >
                       <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#006266',fontFamily:'Merriweather serif',fontWeight:'bold' }}>{service.name}</NavLink>
                     </h6>
-                    <p style={{ fontSize:'16px',color: '#006266',fontFamily:'Merriweather serif' }}>{service.description}</p>
+                    <p style={{ fontSize:'16px',color: '#006266',fontFamily:'Merriweather serif' }}>{service.description.split(' ').slice(0, 30).join(' ')}...</p>
                   </Card.Body>
                 </div>
               </Card>

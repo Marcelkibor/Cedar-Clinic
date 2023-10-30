@@ -43,7 +43,9 @@ const AllServices = () => {
           <Card.Title>
           <NavLink  style={{color:'#006266',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
             </Card.Title>
-          <Card.Text style={{color:'#0a3d62'}}>{service.description}</Card.Text>
+          <Card.Text style={{color:'#0a3d62'}}>
+          {service.description.split(' ').slice(0, 20).join(' ')}...
+          </Card.Text>
         </Card.Body>
       </div>
     </Card>

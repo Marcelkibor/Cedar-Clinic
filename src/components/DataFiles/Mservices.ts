@@ -9,13 +9,13 @@ type Medical = {
     description:string
 }
 const Mservice:Medical[] = [
-    { id: 1, name: 'Radiology', description: 'Experience exceptional radiation therapy at our clinic: compassionate care, and remarkable outcomes.' },
-    { id: 2, name: 'Oncology Services', description: 'Our Comprehensive Oncology Centre is fully equipped with the latest state of the art equipment for cancer diagnosis and treatment.' },
-    { id: 3, name: 'Histopathology', description: 'New radiology services' },
-    { id: 4, name: 'Palliative Care', description: 'New radiology services' },
-    { id: 5, name: 'Renal Services', description: 'Our clinic offers specialized renal services to support and manage kidney-related conditions and treatments.' },
-    { id: 6, name: 'Tuberculosis (TB)', description: 'Our clinic provides diagnosis, treatment, and management services for tuberculosis (TB) to ensure the health and well-being of our patients.' },
-    { id: 7, name: 'Lab Services', description: 'Our clinic provides comprehensive lab services to meet your healthcare needs.' },
+    { id: 1, name: 'Primary Care Services', description: "Experience comprehensive primary care at our clinic, where your health and well-being are our top priorities. Our primary care services include regular check-ups, diagnosis and treatment of common health conditions" },
+    { id: 2, name: 'Chronic Management', description: "Explore our Chronic Disease Management services at the clinic, designed to provide continuous care and support for individuals with long-term health conditions such as diabetes, hypertension, and heart disease. Our expert team ensures you receive personalized, effective management to help you lead a healthier life." },
+    { id: 3, name: 'Allergy Treatment', description: 'Our comprehensive services include thorough evaluations, allergy testing, and tailored treatment plans, which may involve allergy shots (immunotherapy), medications, or lifestyle adjustments, all aimed at ensuring your comfort and well-being' },
+    { id: 4, name: 'Pharmacy Services', description: 'Our on-site pharmacy team is dedicated to streamlining your healthcare experience by ensuring timely prescription fulfillment. We offer professional guidance, making it hassle-free for you to understand and manage your medications, all while focusing on your health and well-being.' },
+    { id: 5, name: 'Physical Therapy', description: 'Our experienced team offers personalized rehabilitation plans tailored to your unique needs, whether you are recovering from surgery, managing a sports injury, or seeking relief from chronic pain. We employ a range of techniques, including manual therapy, therapeutic exercises' },
+    { id: 6, name: 'Tuberculosis(TB)', description: 'Our clinic provides diagnosis, treatment, and management services for tuberculosis (TB) to ensure the health and well-being of our patients.' },
+    { id: 7, name: 'Lab Services', description: 'Explore our Lab Services at the clinic, providing a wide range of diagnostic tests to aid in your healthcare journey. From routine blood work and cholesterol checks to specialized tests like allergy panels and cancer screenings, our state-of-the-art lab facilities offer precise and timely results to support your well-being' },
     { id: 8, name: 'Vaccine Therapy', description: 'Discover the transformative power of vaccine therapy at our clinic: compassionate guidance, and remarkable results.' }
 ]
 const serviceIcons: { [key: number]: IconType } = {
