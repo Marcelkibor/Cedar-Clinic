@@ -86,7 +86,7 @@ const [loading,setLoading] = useState(false);
     </div>
   :
   <Form onSubmit={sendEmail}>
-  <h2 style={{color:'#006266'}}>Get In Touch</h2>
+  <p className="header1">Get In Touch</p>
   <Form.Group>
     <Form.Control
       onChange={onChange}

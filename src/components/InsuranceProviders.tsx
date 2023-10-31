@@ -57,7 +57,7 @@ const InsuranceProviders = () => {
     <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#2f927e'}}>
     <div style={{width:'100%',display:'block'}}>
     <div className="ip-intro">
-        <h2 style={{fontFamily:'Merriweather serif',color:'white'}}>Our Insurance Providers</h2>
+        <p className="header2">Our Insurance Providers</p>
       </div>
       <div style={{position:'relative',height:'100%',width:'97%',marginTop:'5%'}}>
       <Slider ref={sliderRef}{...settings}>
@@ -74,10 +74,10 @@ const InsuranceProviders = () => {
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
     <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
-    <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
+    <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
           <BsFillArrowLeftSquareFill color='white' size={40} />
         </div>
-        <div style={{ position: 'absolute', bottom: '40%', right: '20px', cursor: 'pointer' }} onClick={handleSlideNext}>
+        <div style={{ position: 'absolute', bottom: '40%', right: '5px', cursor: 'pointer' }} onClick={handleSlideNext}>
           <BsFillArrowRightSquareFill color='white' size={40} />
         </div>
       </div>

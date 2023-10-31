@@ -78,7 +78,7 @@ const AboutUs=() => {
        initial='hidden'
        animate='visible'
        >
-      <h2 style={{color:'#006266'}}>About Us</h2>
+      <p className='header1'>About Us</p>
     <p style={{color:'#0a3d62'}}>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
 <br></br><br></br><p>
 With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
@@ -95,7 +95,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   animate={mVV}
   className='about-mvv'
 >
-     <h2 style={{color:'#006266'}}>Mission</h2>
+     <p className='header1'>Mission</p>
     <p style={{color:'#0a3d62'}}>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
   </motion.div>
     </Col>
@@ -106,7 +106,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
         variants={popUp(1)}
         animate={mVV}
       >
-        <h2 style={{color:'#006266'}}>Vision</h2>
+        <p className='header1'>Vision</p>
       <p style={{color:'#0a3d62'}}>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
       </motion.div>
     </Col>
@@ -117,9 +117,9 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   variants={popUp(0.7)}
   animate={mVV}
   >
-  <h2 style={{color:'#006266'}}>Values</h2>
+  <p className='header1'>Values</p>
       {coreValues.map((value)=>(
-        <ul style={{color:'#0a3d62'}}>
+        <ul style={{color:'#0a3d62',fontFamily:'Merriweather serif'}}>
       <li>{value}</li>
     </ul>
     ))}
@@ -129,8 +129,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <div style={{width:'100%',minHeight:'300px',backgroundColor:'#2f927e',paddingBottom:'10px'}}>
 <Row style={{width:'100%'}}>
   <div style={{color:'white',textAlign:'center'}}>
-      <h2>Why Choose Us</h2>
-      <h6 style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</h6>
+      <p className='header2'>Why Choose Us</p>
+      <p style={{marginTop:'2%'}}> Our experienced team will ensure that your health and well-being are our top priorities.</p>
   </div>
     <Row style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
      {whyChoose.map((item:any)=>(
@@ -143,7 +143,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
              </div>
              <div
              style={{color:'white', textAlign:'center'}} >
-        <h5>{item.title}</h5>
+        <p style={{fontSize:'20px'}}>{item.title}</p>
       </div>
       </motion.div>
     </Col>
@@ -160,8 +160,8 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id} style={{padding:'0px 50px 0px 50px'}}>
         {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
-        <h2 style={{color:'#006266'}}><CountUp start={0} end={item.number} delay={0.5}/>+</h2>
-        <h5 style={{color:'#0a3d62'}}>{item.title}</h5>
+        <p style={{color:'#006266',fontSize:'20px',fontWeight:'bold'}}><CountUp start={0} end={item.number} delay={0.5}/>+</p>
+        <p style={{color:'#0a3d62',fontSize:'20px'}}>{item.title}</p>
       </Col>
     ))}
     </Row>
@@ -171,7 +171,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <div style={{width:'100%',height:'100%',backgroundColor:'#2f927e'}}>
 <Row style={{paddingBottom:'10%',backgroundColor:'#2f927e', width:'100%'}}>
 <div style ={{textAlign:'center',color:'white'}}>
-<h2 style={{color:'white'}}>Our Clinical Process</h2>
+<p className='header2' style={{marginTop:'20px'}}>Our Clinical Process</p>
 </div>
   <Col>
 <Timeline/>

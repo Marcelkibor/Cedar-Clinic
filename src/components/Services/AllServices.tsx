@@ -41,10 +41,14 @@ const AllServices = () => {
       <div style={{ marginLeft: '20%' }}>
         <Card.Body>
           <Card.Title>
-          <NavLink  style={{color:'#006266',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
+            <p>
+            <NavLink  style={{fontSize:'18px',color:'#006266',fontWeight:'bold'}}to={`${encodeURIComponent(formatNames(service.name))}`}>{service.name}</NavLink>
+            </p>
             </Card.Title>
           <Card.Text style={{color:'#0a3d62'}}>
-          {service.description.split(' ').slice(0, 20).join(' ')}...
+            <p style={{color:'#006266'}}>
+            {service.description.split(' ').slice(0, 20).join(' ')}...
+            </p>
           </Card.Text>
         </Card.Body>
       </div>
@@ -55,12 +59,12 @@ const AllServices = () => {
 <div className = 'all-sv-banner'>
         <Col>
           <div className='banner-header'>
-            <h5 style={{ marginLeft: '20px' }}>All Services</h5>
+            <p style={{marginTop:'5px',marginLeft: '20px',fontSize:'20px',fontWeight:'bold' }}>All Services</p>
           </div>
           {Mservice.map((service:any) => (
            
     <div onClick ={()=>{navigate(service.name)}} key={service.id} className='service-header-items'>
-              <h5 style={{ marginLeft: '20px',cursor:'pointer' }}>{service.name}</h5>
+              <p style={{ marginLeft: '20px',cursor:'pointer',fontSize:'17px' }}>{service.name}</p>
               <div style={{margin:'0 3% 0% 0%'}}>
               <FaArrowRight color = 'white'/>
             </div>

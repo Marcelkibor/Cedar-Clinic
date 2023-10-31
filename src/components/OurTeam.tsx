@@ -43,7 +43,7 @@ return (
 <ServicesHeader pathname={window.location.pathname} />
 
 <Row style={{textAlign: 'center',marginTop:'100px' }}>
-    <h2 style={{margin:'5px 0x 10x 0px',fontFamily:'Merriweather serif'}}>Meet Our Team</h2>
+    <p className="header1">Meet Our Team</p>
 {clinicMembers.map((item, index) => (
     <Col lg={4} md={6} sm={6} key={index}>
         <div style={{ backgroundColor: `${item.divColor}` }}>
@@ -51,12 +51,14 @@ return (
                 <img style={{ width: '100%', height: '100%' }} src={item.src} />
             </div>
             <div style={{ paddingTop: '10px', backgroundColor: 'white', outline: 'outline' }}>
-                <h6 style={{ textDecoration: 'underline', color: '#1B1464' }}>
-                    <NavLink to={`${encodeURIComponent(formatName(item.name))}`}>
+                <p>
+                    <NavLink to={`${encodeURIComponent(formatName(item.name))}`}
+                    style={{ textDecoration: 'underline', color: '#0d8069',fontWeight:'bold' }}
+                    >
                         {item.name}
                     </NavLink>
-                </h6>
-                <p>{item.title}</p>
+                </p>
+                <p style={{color:'#0d8069'}}>{item.title}</p>
             </div>
         </div>
     </Col>

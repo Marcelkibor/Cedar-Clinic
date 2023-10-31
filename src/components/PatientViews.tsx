@@ -11,7 +11,7 @@ const PatientViews = () => {
        <Col sm={6} md={6} lg={6}>
        <div className='review-text'>
         <p>
-        "I stayed in the hospital for 3 days and I felt at home. I was anxious before the surgery mostly because of the fear of the unknown, but I have had a smooth recovery post-surgery with no major complications.
+        "When I stayed in the hospital I felt well-taken care of. I was anxious before, mostly because of the fear of the unknown, but later had a smooth recovery with no major complications.
           The nurses, doctors and the entire team at the hospital were very friendly and highly professional."
         </p>
         <p style={{fontWeight:'bold',fontStyle:'italic'}}>~ Allan Waswa</p>

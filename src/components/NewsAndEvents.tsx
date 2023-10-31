@@ -4,29 +4,32 @@ import {EventItem, NewsArticle} from './DataFiles/News'
 import { NavLink } from 'react-router-dom'
 const NewsAndEvents = () => {
   return (
-    <div style={{backgroundColor:'#2f927e',color:'white',fontFamily:'Merriweather serif'}}>
+    <div style={{backgroundColor:'#2f927e'}}>
         <Row style={{margin:'0px 10px 0px 10px',paddingBottom:'20px'}}>
         
     <Col>
-    <h3 style={{margin:'0px 0px 10px 10px'}}>News</h3>
+    <p style={{fontSize:'25px',color:'white',fontWeight:'bold'}}>News</p>
     <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid gray' }} />
     {NewsArticle.length>0?NewsArticle.map((news:any)=>(
     <div id={news.id}>
         <div style={{display:'flex',margin:'10px'}}>
             <AiTwotoneCalendar size={20} color="white"/>
-            <h6 style={{color:'white'}}>{news.date}</h6>
+            <p style={{fontSize:'18px',color:'white',fontWeight:'bold'}}>{news.date}</p>
         </div>
         <div style={{position:'relative',width:'100%',height:"fit-content",display:'block'}}>
-            <NavLink to={`article/${encodeURIComponent(news.id)}`} style={{fontSize:'20px',color:'white'}}>{news.title}</NavLink>
+            <p >
+            <NavLink style={{color:'white',fontSize:'18px'}} to={`article/${encodeURIComponent(news.id)}`}>{news.title}</NavLink>
+              </p>
             <div>
             <button onClick={()=>{window.location.pathname=`article/${encodeURIComponent(news.id)}`}}className='bt'>Read More</button>
             </div>
         </div>
     </div>
-)):<h5>No News</h5>}
+)):<p style={{fontSize:'25px',color:'white',fontWeight:'bold'}}>No News</p>
+}
 </Col>
           <Col>
-          <h3 style={{color:'white'}}>Events</h3>
+          <p style={{fontSize:'25px',color:'white',fontWeight:'bold'}}>Events</p>
           <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid gray' }} />
           {EventItem.length>0? EventItem.map((event:any)=><div>
             <div id={event.id}>
@@ -42,7 +45,8 @@ const NewsAndEvents = () => {
         </div>
     </div>
           </div>):
-            <h5>No Upcoming Events</h5>
+             <p style={{fontSize:'20px',color:'white',fontWeight:'bold'}}>No Upcoming Events</p>
+
           }
           </Col>
         </Row>

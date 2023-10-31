@@ -7,13 +7,13 @@ const BoxLinks = () => {
   const handleNavigation=(item:any)=>{
   switch(item){
     case 1:
-      return <NavLink style={{color:'white'}} to="/services">Find Service</NavLink>
+      return <p><NavLink style={{color:'white'}} to="/services">Find Service</NavLink></p>
     case 2:
-    return <NavLink style={{color:'white'}} to="/contacts">Contact Us</NavLink>
+    return <p><NavLink style={{color:'white'}} to="/contacts">Contact Us</NavLink></p>
     case 3:
-      return <NavLink style={{color:'white'}} to="/our-team">Find Doctor</NavLink>
+      return <p><NavLink style={{color:'white'}} to="/our-team">Find Doctor</NavLink></p>
     default:
-      return<NavLink style={{color:'white'}} to="/">Home</NavLink>
+      return <p><NavLink style={{color:'white'}} to="/">Home</NavLink></p>
   }
   }
   return(
@@ -33,10 +33,10 @@ const BoxLinks = () => {
                       style: {width: '70px', height: '70px',marginTop:'-50px' },
                     })}
                     <div>
-                      <h4 style={{fontFamily:'Merriweather serif'}}>{item.title}</h4>
+                      <p style={{fontSize:'20px'}}>{item.title}</p>
                     </div>
                     <div>
-                      <p style={{fontFamily:'Merriweather serif'}}>{item.description}</p>
+                      <p style={{fontSize:'18px'}}>{item.description}</p>
                     </div>
                     <div>
                     {handleNavigation(item.id)}
@@ -45,7 +45,7 @@ const BoxLinks = () => {
                 </section>
               </div>
               <div className='bx-title'>
-                <h5 style={{fontFamily:'Merriweather serif',fontWeight:'bold'}}>{item.title}</h5>
+                <p style={{fontSize:'20px',fontWeight:'bold'}}>{item.title}</p>
               </div>
             </div>
          

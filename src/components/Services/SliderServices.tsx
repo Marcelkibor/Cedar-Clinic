@@ -65,7 +65,7 @@ const SliderServices = () => {
     <div className="main-services">
       <div style={{width:'100%',display:'block'}}>
       <div className="ip-intro">
-        <h2  style={{fontFamily:'Merriweather serif',color:'rgb(11, 97, 109)'}} >Explore Our Services</h2>
+        <p className="header1">Explore Our Services</p>
       </div>
       <div style={{position: 'relative', width: '100%', height: '100%',marginTop:'15px' }}>
         <Row style={{width:'100%',height:'100%'}}>
@@ -79,9 +79,9 @@ const SliderServices = () => {
                 </div>
                 <div style={{ marginLeft: '20%' }}>
                   <Card.Body>
-                    <h6 >
+                    <p style={{fontSize:'20px',fontWeight:'bold'}} >
                       <NavLink to={`services/${encodeURIComponent(service.name)}`} style={{ color: '#006266',fontFamily:'Merriweather serif',fontWeight:'bold' }}>{service.name}</NavLink>
-                    </h6>
+                    </p>
                     <p style={{ fontSize:'16px',color: '#006266',fontFamily:'Merriweather serif' }}>{service.description.split(' ').slice(0, 30).join(' ')}...</p>
                   </Card.Body>
                 </div>
@@ -92,11 +92,11 @@ const SliderServices = () => {
           </Col>
         </Row>
         {/* handle slider icons */}
-        <div style={{ position: 'absolute', bottom: '40%', left: '20px', cursor: 'pointer' }} onClick={handleSlidePrev}>
-          <BsFillArrowLeftSquareFill color='rgb(6, 119, 134)' size={40} />
+        <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
+          <BsFillArrowLeftSquareFill color='#0d8069' size={40} />
         </div>
-        <div style={{ position: 'absolute', bottom: '40%', right: '20px', cursor: 'pointer' }} onClick={handleSlideNext}>
-          <BsFillArrowRightSquareFill color='rgb(6, 119, 134)' size={40} />
+        <div style={{ position: 'absolute', bottom: '40%', right: '5px', cursor: 'pointer' }} onClick={handleSlideNext}>
+          <BsFillArrowRightSquareFill color='#0d8069' size={40} />
         </div>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '20px' }}>

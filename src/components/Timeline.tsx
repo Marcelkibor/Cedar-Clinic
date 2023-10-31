@@ -32,13 +32,13 @@ const Timeline: React.FC = () => {
         <VerticalTimelineElement
           key={item.id}
           date={item.cardTitle}
-          contentStyle={{ background: '#58B19F', color: '#fff',height:'180px' }}
+          contentStyle={{ background: '#58B19F', color: '#fff',height:'180px',fontFamily:'Merriweather serif' }}
           contentArrowStyle={{ borderRight: '7px solid  #58B19F' }}
           iconStyle={{ background: '#58B19F', color: '#fff' }}
           icon={numberIcons[item.id]}
         >
-          <h4 style={{color:'white'}}>{item.id}. <span>{item.cardTitle}</span></h4>
-          <h6>{item.cardSubtitle}</h6>
+          <p style={{fontSize:'20px',fontWeight:'bold'}}>{item.id}. <span>{item.cardTitle}</span></p>
+          <p>{item.cardSubtitle}</p>
         </VerticalTimelineElement>
       ))}
     </VerticalTimeline>

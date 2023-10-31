@@ -37,7 +37,7 @@ const ServiceExpand = () => {
         <div style={{height:'fit-content',width:'fit-content'}}>
         {React.createElement(serviceIcons[selectedService.id],{style:{height:'100px',width:'100px',color: '#218c74'}})}
         </div>
-    <h4 style={{marginTop:'30px'}}>{selectedService.name}</h4>
+    <p  className="header1"style={{marginTop:'30px'}}>{selectedService.name}</p>
     <p className="service-tx">{selectedService.description}</p>
     </>}</div>
         </Col>
