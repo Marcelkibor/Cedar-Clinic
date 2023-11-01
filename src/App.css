@@ -125,13 +125,7 @@ p{
   bottom: 15% !important;
   right: 5% !important;
 }
-.provider-col{
-  margin-bottom: 7%;
-}
-.extended-providers{
-  margin: 5% 3% 5% 14% !important;
-  text-align: center !important;
-}
+
 .service-header-main{
 color: white !important;
 display: flex !important;
@@ -311,20 +305,6 @@ top: 60px;
   display: block;
   text-align: center;
   margin-left: 5%;
-}
-.provider-card{
-  height: 100px !important;
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100px !important;
-}
-.provider-div{
- height: 180px !important;
- width: 180px !important;
- outline: none !important;
- background-color: #f1f2f6;
-
 }
 .slider-row{
   margin-left: 15%!important;
@@ -692,12 +672,8 @@ color: #fff;
   .all-services{
     margin-bottom: 50px !important;
   }
-  .extended-providers{
-    margin-left: 21% !important;
-  }
   .slider-row{
     margin-left: 33% !important;
-
   }
   .bg-main{
     height: 80vh !important;
@@ -708,10 +684,6 @@ color: #fff;
   .home-bg-text{
     top: 35% !important;
   }
-.provider-div{
-  height: 220px !important;
-  width: 220px !important;
-}
   .rotating-col{
     margin:0% !important;
   }
@@ -816,6 +788,12 @@ color: #fff;
   height: 340px !important;
   width: 340px !important;
 }
+.header1{
+  font-size: 28px !important;
+}
+.header2{
+  font-size: 28px !important;
+}
 .landing-tx{
   margin-top: 170px !important;
 }
@@ -848,13 +826,6 @@ color: #fff;
   right:20%!important;
   bottom: 25% !important;
  }
- }
- .provider-col{
-  margin-bottom: 15% !important;
- }
- .extended-providers{
-  margin-top: 50px !important;
-  margin-left: 31% !important;
  }
  .landing-col{
   padding-bottom: 15%;
