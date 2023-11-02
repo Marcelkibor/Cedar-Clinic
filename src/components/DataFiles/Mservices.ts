@@ -1,7 +1,10 @@
-import { FaRadiation, FaMicroscope, FaHands, FaHeadSideCough } from 'react-icons/fa';
+import { FaHands, FaHeadSideCough } from 'react-icons/fa';
 import { ImLab } from 'react-icons/im';
+import {RiBodyScanFill} from 'react-icons/ri'
+import{MdSick} from 'react-icons/md'
+import {MdOutlineManageAccounts} from 'react-icons/md'
+import {LuTablets} from 'react-icons/lu'
 import { TbVaccine } from 'react-icons/tb';
-import { GiKidneys, GiCancer } from 'react-icons/gi';
 import { IconType } from 'react-icons';
 type Medical = {
     id:number
@@ -19,11 +22,11 @@ const Mservice:Medical[] = [
     { id: 8, name: 'Vaccine Therapy', description: 'Discover the transformative power of vaccine therapy at our clinic: compassionate guidance, and remarkable results.' }
 ]
 const serviceIcons: { [key: number]: IconType } = {
-    1: FaRadiation,
-    2: GiCancer,
-    3: FaMicroscope,
-    4: FaHands,
-    5: GiKidneys,
+    1: FaHands,
+    2: MdOutlineManageAccounts,
+    3: MdSick,
+    4: LuTablets,
+    5: RiBodyScanFill,
     6: FaHeadSideCough,
     7: ImLab,
     8: TbVaccine

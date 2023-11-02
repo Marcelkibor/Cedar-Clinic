@@ -5,6 +5,7 @@ import {NewsArticle} from "./DataFiles/News";
 import { useParams } from "react-router-dom";
 import Footer from "./Layouts/Footer";
 import { useEffect } from "react";
+import ServicesHeader from "./Services/ServicesHeader";
 const NewsExpand = () => {
     useEffect(()=>{
         const nav = document.getElementById("nav");
@@ -26,25 +27,26 @@ const NewsExpand = () => {
 <div>
     <section id="nav">
     <Navigation/>
+    <ServicesHeader pathname={`/News`}/>
     </section>
-<Row>
-    <Col>
-    <div  style={{margin:'150px 0px 20px 50px'}}>
-    {matchedArticle?
+    <Row style={{margin:'100px 0px 0px 0px',width:'100%',height:'100%'}}>
+        <Col>
+        {matchedArticle?
     <>
-    <h3>{matchedArticle.title}</h3>
-        <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid #2c3e50' }} />
+    <p style={{fontSize:'20px',color:'#085a4a',textDecoration:'underline',fontWeight:'bold'}}> News</p>
+    <p className="header1">{matchedArticle.title}</p>
+        <hr style={{ width:'90%', border: 'none', borderBottom: '1px solid #2c3e50' }} />
         <div style={{display:'flex'}} id={String(matchedArticle.id)}>
         <AiTwotoneCalendar size={20} color="gray"/>
-        <h6 style={{marginLeft:'10px'}}>{matchedArticle.date}</h6>
+        <h6>{matchedArticle.date}</h6>
     </div>
     <hr style={{ width:'350px', border: 'none', borderBottom: '1px solid #2c3e50' }} />
     <Col>
-    <div style={{height:'500px',width:'60vw'}}>
+    <div style={{height:'500px',maxWidth:'600px'}}>
     <img style={{height:'100%',width:'100%'}} src={matchedArticle.src}/>
 </div>
-<div style={{margin:'5% 0% 5% 0%'}}>
-<p>{matchedArticle.text}</p>
+<div>
+<p style={{marginTop:'10px',maxWidth:'900px'}}>{matchedArticle.text}</p>
 </div>
 <hr style={{ width:'90vw', border: 'none', borderBottom: '1px solid black' }} />
     </Col>
@@ -52,8 +54,7 @@ const NewsExpand = () => {
     :<p>
     Event not found
     </p>}
-    </div>
-    </Col>
+        </Col>
     </Row>
     <Footer/>
     </div>

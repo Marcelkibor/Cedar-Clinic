@@ -12,7 +12,6 @@
 p{
   font-family: 'Merriweather', serif;
   font-size: 16px;
-
 }
 .all-services{
   position: relative;
@@ -274,12 +273,13 @@ top: 60px;
   height: 500px;
   margin-top: 15%;
   right: 10%;
-  background-color: black;
+  background-color: #096b57;
 }
 .service-tx{
   width: 500px;
   margin-bottom: 150px;
 }
+
 .rotating-parent{
   width: fit-content;
 }
@@ -395,7 +395,7 @@ top: 60px;
   display:flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #04686b;
+  border: 1px solid #04686b;
   transition: background-color 0.5s;
 }
 .main-sv-icons-div {
@@ -789,7 +789,7 @@ color: #fff;
   width: 340px !important;
 }
 .header1{
-  font-size: 28px !important;
+  font-size: 24px !important;
 }
 .header2{
   font-size: 28px !important;

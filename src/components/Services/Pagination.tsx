@@ -6,6 +6,10 @@ const Pagination = (props: any) => {
   }
 
   const handlePageClick = (page: number) => {
+    const layout = window.document.getElementById('layout')
+    if(layout){
+      layout.scrollIntoView();
+    }
     setCurrentPage(page);
   };
 

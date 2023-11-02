@@ -26,24 +26,24 @@ const ServiceExpand = () => {
   }
   const selectedService = checkService(name)
   return (
-    <>
+    <div style={{width:'100%',height:'100%'}}>
     <section id="navigation">
     <Navigation/>
     </section>
     <ServicesHeader pathname = {window.location.pathname}/>
     <Row className="service-expand">
-    <Col lg={3}>
+    <Col>
         <div>{selectedService&&<>
-        <div style={{height:'fit-content',width:'fit-content'}}>
-        {React.createElement(serviceIcons[selectedService.id],{style:{height:'100px',width:'100px',color: '#218c74'}})}
+        <div style={{height:'100%',width:'100%'}}>
+        {React.createElement(serviceIcons[selectedService.id],{style:{height:'80px',width:'80px',color: '#218c74'}})}
         </div>
-    <p  className="header1"style={{marginTop:'30px'}}>{selectedService.name}</p>
+    <p className="header1"style={{marginTop:'30px'}}>{selectedService.name}</p>
     <p className="service-tx">{selectedService.description}</p>
     </>}</div>
         </Col>
     </Row>
     <Footer/>
-    </>
+    </div>
 
   )
 }

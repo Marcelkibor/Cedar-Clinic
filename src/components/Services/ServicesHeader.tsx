@@ -33,6 +33,16 @@ const ServicesHeader: React.FC<ServicesHeaderProps> = ({ pathname }) => {
           </>
         );
       }
+      const news ='News'
+      if(
+        formatUrl[formatUrl.length-1] ==news
+      ){
+        setNewPath(
+          <>
+            <NavLink style={{ color: "white" }} to={`/${formatUrl[formatUrl.length - 2]}`}>{capitalizeFirstLetter(decodeURIComponent(formatUrl[formatUrl.length - 2]))}</NavLink>
+          </>
+        );
+      }
     }
   }, [pathname]);
 

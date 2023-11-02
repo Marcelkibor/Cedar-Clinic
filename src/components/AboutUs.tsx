@@ -79,7 +79,7 @@ const AboutUs=() => {
        animate='visible'
        >
       <p className='header1'>About Us</p>
-    <p style={{color:'#0a3d62'}}>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
+    <p style={{color:'#075243'}}>Welcome to Cedar Clinic, where your health is our priority. At Cedar, we are dedicated to providing comprehensive and compassionate medical care to individuals and families. Our team of experienced healthcare professionals is committed to delivering personalized treatment plans tailored to meet your unique needs. From routine check-ups to specialized treatments, we strive to ensure your well-being at every step.
 <br></br><br></br><p>
 With state-of-the-art facilities and the latest medical advancements, Cedar Clinic is your trusted partner in achieving and maintaining optimal health. Trust us to be your healthcare destination, where quality care and patient satisfaction are at the heart of everything we do.
 </p>
@@ -96,7 +96,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   className='about-mvv'
 >
      <p className='header1'>Mission</p>
-    <p style={{color:'#0a3d62'}}>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
+    <p style={{color:'#075243'}}>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
   </motion.div>
     </Col>
       <Col>
@@ -107,7 +107,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
         animate={mVV}
       >
         <p className='header1'>Vision</p>
-      <p style={{color:'#0a3d62'}}>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
+      <p style={{color:'#075243'}}>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
       </motion.div>
     </Col>
   <Col>
@@ -119,7 +119,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   >
   <p className='header1'>Values</p>
       {coreValues.map((value)=>(
-        <ul style={{color:'#0a3d62',fontFamily:'Merriweather serif'}}>
+        <ul style={{color:'#075243',fontFamily:'Merriweather serif'}}>
       <li>{value}</li>
     </ul>
     ))}
@@ -159,9 +159,9 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
     <Row className='counter-row' style={{minHeight:'50vh'}}>
     {count && clinicalNumbers.map((item:any)=>(
       <Col className='counter-col'key={item.id} style={{padding:'0px 50px 0px 50px'}}>
-        {React.createElement(numberIcons[item.id],{style:{color:'#01a3a4', width:'40px',height:'40px'}})}
+        {React.createElement(numberIcons[item.id],{style:{color:'#096b57', width:'40px',height:'40px'}})}
         <p style={{color:'#006266',fontSize:'20px',fontWeight:'bold'}}><CountUp start={0} end={item.number} delay={0.5}/>+</p>
-        <p style={{color:'#0a3d62',fontSize:'20px'}}>{item.title}</p>
+        <p style={{color:'#075243',fontSize:'20px'}}>{item.title}</p>
       </Col>
     ))}
     </Row>
