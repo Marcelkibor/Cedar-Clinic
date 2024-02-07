@@ -1,9 +1,9 @@
-import apa from '../../assets/apa.png';
-import britam from '../../assets/britam.png';
-import cic from '../../assets/cic.png';
-import jubilee from '../../assets/jubilee.png';
-import madison from '../../assets/madison.png';
-import nhif from '../../assets/nhif.png';
+import apa from '../../assets/apa.avif';
+import britam from '../../assets/britam.avif';
+import cic from '../../assets/cic.avif';
+import jubilee from '../../assets/jubilee.avif';
+import madison from '../../assets/madison.avif';
+import nhif from '../../assets/nhif.avif';
 type Provider = {
     id:number,
     src:string,

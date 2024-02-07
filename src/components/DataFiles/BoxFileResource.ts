@@ -2,8 +2,8 @@ import { IconType } from 'react-icons';
 import {GiMedicalPack} from 'react-icons/gi'
 import {RiTeamFill} from 'react-icons/ri'
 import {PiPhoneCallBold} from 'react-icons/pi';
-import Md from "../../assets/med.png"
-import Cl from '../../assets/call.png'
+import Md from "../../assets/med.avif"
+import Cl from '../../assets/call.avif'
 import Tm from '../../assets/team.jpg'
 type BoxItem = {
     id:number,

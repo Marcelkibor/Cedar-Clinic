@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
-import Bg1 from '../assets/bg1.png';
+import Bg1 from '../assets/bg1.avif';
 import { Col, Row } from 'react-bootstrap';
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
