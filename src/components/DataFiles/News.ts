@@ -1,4 +1,4 @@
-import Tb from '../../assets/tb.jpg'
+import Tb from '../../assets/tb.avif'
 type NewsBody={
     id:number,
     date:string,

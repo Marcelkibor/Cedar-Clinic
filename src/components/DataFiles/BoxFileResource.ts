@@ -4,7 +4,7 @@ import {RiTeamFill} from 'react-icons/ri'
 import {PiPhoneCallBold} from 'react-icons/pi';
 import Md from "../../assets/med.avif"
 import Cl from '../../assets/call.avif'
-import Tm from '../../assets/team.jpg'
+import Tm from '../../assets/team.avif'
 type BoxItem = {
     id:number,
     src:string,
