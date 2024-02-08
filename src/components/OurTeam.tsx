@@ -48,7 +48,7 @@ return (
     <Col lg={4} md={6} sm={6} key={index}>
         <div style={{ backgroundColor: `${item.divColor}` }}>
             <div>
-                <img style={{ width: '100%', height: '100%' }} src={item.src} />
+                <img style={{ width: '100%', height: '100%' }} src={item.src} alt="" />
             </div>
             <div style={{ paddingTop: '10px', backgroundColor: 'white', outline: 'outline' }}>
                 <p>

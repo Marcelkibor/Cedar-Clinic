@@ -32,7 +32,7 @@ const selectedMember = clinicMembers.find((member)=>member.name.split(" ")[0]===
       <Row style = {{margin:'100px 0 0 0'}}>
         <Col style={{margin:'0% '}}sm = {12} md = {7}>
         <div style={{width:'100%',height:'100%', backgroundColor:`${selectedMember?.divColor}`}}>
-        <img style = {{width:'100%',height:'100%'}} src={Doc}/>
+        <img style = {{width:'100%',height:'100%'}} src={Doc} alt=""/>
       </div>
         </Col>
         <Col style={{display:'flex',alignItems:'center'}}>

@@ -31,7 +31,7 @@ const LandingPage = () => {
     <div className = 'bg-main'>
       <Row className="g0"style={{width:'100%',height:'100%',position:'absolute'}}>
       <Col style={{width:'100%',height:'100%'}} >
-<img style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg1} autoFocus/>
+<img style={{ height: '100%', width: '100%', objectFit:'cover' }} src={Bg1} autoFocus alt=''/>
   </Col>
   <div className='landing-tx'>
     <p data-text='Cedar-Clinic' style={{marginLeft:'30px',color:"white",fontSize:'40px',fontFamily:'Merriweather serif'}}>Cedar Clinic</p>

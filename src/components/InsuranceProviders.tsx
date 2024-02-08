@@ -65,7 +65,7 @@ const InsuranceProviders = () => {
   <Col key={prov.id} className ='insurance-col'>  
             <div  style={{height:'130px',width:'130px',display:'flex',justifyContent:'center',alignItems:'center'}}>
     <div style={{width:'100%',height:'100%',backgroundColor:'white'}}>
-      <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src}/>
+      <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src} alt=""/>
     </div>
   </div>
 </Col>

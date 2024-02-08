@@ -23,7 +23,7 @@ const BoxLinks = () => {
             <div
             className='boxlink-div'
               >
-              <img src={item.src} style={{ width: '100%', height: '300px' }} />
+              <img src={item.src} style={{ width: '100%', height: '300px' }} alt='' />
               <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%',
                   width: '100%',position: 'absolute',top: 0,left: 0,color:'white',flexDirection: 'column',
                   textAlign: 'center'}} >

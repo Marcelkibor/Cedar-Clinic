@@ -19,7 +19,7 @@ const AllProviders = () => {
         {Iproviders.map((item: any) => (
           <Col style={{ paddingTop:'60px',display: 'flex', flexDirection: 'column', alignItems: 'center' }} key={item.id} sm={6} md={6} lg={4}>
             <div style={{ backgroundColor:'white',height: '150px', width: '150px', textAlign: 'center' }}>
-              <img style={{ width: '120px', height: '120px' }} src={item.src} />
+              <img style={{ width: '120px', height: '120px' }} src={item.src} alt='' />
               <p style={{ color:'#0a6654',fontWeight: 'bold', marginTop: '10px', textAlign: 'center' }}>{item.name}</p>
             </div>
           </Col>
