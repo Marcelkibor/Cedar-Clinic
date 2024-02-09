@@ -14,7 +14,7 @@ const PatientViews = () => {
         "When I stayed in the hospital I felt well-taken care of. I was anxious before, mostly because of the fear of the unknown, but later had a smooth recovery with no major complications.
           The nurses, doctors and the entire team at the hospital were very friendly and highly professional."
         </p>
-        <p style={{fontWeight:'bold',fontStyle:'italic'}}>~ Allan Waswa</p>
+        <p style={{fontWeight:'bold',fontStyle:'italic'}}>~ Jane Waswa</p>
             </div>
        </Col>
        </Row>

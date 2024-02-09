@@ -48,7 +48,7 @@ const Contacts = () => {
         <FaWalking color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Visiting Hours</p>
-        <p>8:00am - 5:00pm </p>
+        <p>Mon-Sat<br></br>8:00am - 5:00pm </p>
         </div>
       </div>
       </>
