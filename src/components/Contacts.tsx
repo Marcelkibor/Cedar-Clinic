@@ -27,7 +27,7 @@ const Contacts = () => {
       <MdEmail  color = "#16a085"size = {50}/>
       <div style = {{display:'block', marginLeft:'5%'}}>
       <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Email</p>
-      <p>cedarhospitaleldoret@gmail.com</p>
+      <p>cedarclinicalassociates@gmail.com</p>
       </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>

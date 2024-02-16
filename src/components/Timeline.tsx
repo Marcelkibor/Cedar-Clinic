@@ -5,10 +5,10 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { clinicalProcess } from './DataFiles/ClinicalProcess';
-import {FaWalking} from 'react-icons/fa'
-import {BiTransfer} from 'react-icons/bi'
+import {FaMoneyBill, FaWalking} from 'react-icons/fa'
 import {BsCapsulePill} from 'react-icons/bs'
 import {GiTalk,GiWeightScale} from 'react-icons/gi'
+import { RiSpyLine } from 'react-icons/ri';
 clinicalProcess
 
 
@@ -20,9 +20,11 @@ const numberIcons: NumberIcons = {
   1: <FaWalking/>,
   2: <GiWeightScale/>,
   3: <GiTalk/>,
-  4: <BsCapsulePill/>,
-  5: <BiTransfer/>,
-  6:<FaWalking style={{ transform: 'scaleX(-1)' }} />
+  4:<RiSpyLine/>,
+  5:<GiTalk/>,
+  6: <BsCapsulePill/>,
+  7: <FaMoneyBill/>,
+  8:<FaWalking style={{ transform: 'scaleX(-1)' }} />
 };
 
 const Timeline: React.FC = () => {

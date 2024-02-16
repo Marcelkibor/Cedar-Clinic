@@ -26,11 +26,13 @@ const whyChoose:whychoose[]=[
 ];
 const clinicalProcess:Process[]=[
     {id:1,cardTitle:'Check-In', cardSubtitle:'Walk into the clinic'},
-    {id:2,cardTitle:'Vital Assesment', cardSubtitle:'Checking vitals: Pulse,Weight e.t.c'},
-    {id:3,cardTitle:'Consultation', cardSubtitle:'Explain your health issue to the doctor'},
-    {id:4,cardTitle:'Treatment', cardSubtitle:'Recieve treatment and prescription(s)'},
-    {id:5,cardTitle:'Collection & Billing',cardSubtitle:'Collect prescribed drugs and make payment'},
-    {id:6,cardTitle:'Discharge', cardSubtitle:'Leave the clinic'},
+    {id:2,cardTitle:'Triage', cardSubtitle:'Check vitals: Pulse,Weight e.t.c'},
+    {id:3,cardTitle:'Initial Consultation', cardSubtitle:'Explain your health issue to the doctor'},
+    {id:4,cardTitle:'Investigation', cardSubtitle:'Advanced expert assessment: CT Scan, Lab Tests, Ultra Sound, X-Ray e.t.c'},
+    {id:5,cardTitle:'Final Consultation',cardSubtitle:'Get treatment & feedback based on your results'},
+    {id:6,cardTitle:'Pharmacy',cardSubtitle:'Get prescription services for optimal treatment'},
+    {id:7,cardTitle:'Billing',cardSubtitle:'Make payment for drugs/services given'},
+    {id:8,cardTitle:'Discharge', cardSubtitle:'Leave the clinic'},
 ];
 const clinicalNumbers:clinicNumber[]=[
     {id:1,number:30,title:'Specialized services'},
