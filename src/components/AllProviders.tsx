@@ -12,7 +12,7 @@ const AllProviders = () => {
     <div style={{ marginTop:'100px',display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
     <div style={{ textAlign: 'center' }}>
       <p className='header1'>Insurance Providers</p>
-      <p style={{color:'#0a6654'}}>We accept over 10 insurance providers at Cedar Clinic. Take a look at our options.</p>
+      <p style={{color:'#0a6654'}}>We accept over 15 insurance providers at Cedar Clinic. Take a look at our options.</p>
     </div>
     <div style={{ marginBottom:'50px',display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <Row style={{marginTop:'-10px'}}>

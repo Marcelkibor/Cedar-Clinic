@@ -6,6 +6,7 @@ import clinicMembers from "./DataFiles/ClinicMembers";
 import Footer from "./Layouts/Footer";
 import ScrollMotion from "./utils/ScrollMotion";
 import { useEffect } from "react";
+import { ImWoman } from "react-icons/im";
 
 const OurTeam = () => {
 const findDoctor = 1;
@@ -41,14 +42,13 @@ return (
 <Navigation/>
 <ScrollMotion/>
 <ServicesHeader pathname={window.location.pathname} />
-
 <Row style={{textAlign: 'center',marginTop:'100px' }}>
     <p className="header1">Meet Our Team</p>
-{clinicMembers.map((item, index) => (
+    {clinicMembers.map((item, index) => (
     <Col lg={4} md={6} sm={6} key={index}>
         <div style={{ backgroundColor: `${item.divColor}` }}>
-            <div>
-                <img style={{ width: '100%', height: '100%' }} src={item.src} alt="" />
+            <div style={{width:'100%',height:'100%'}}>
+                {item.src === 'ImWoman' ? <ImWoman style={{ width: '150px', height: '200px' }} /> : <img style={{ width: '100%', maxHeight: '500px' }} src={item.src} alt="" />}
             </div>
             <div style={{ paddingTop: '10px', backgroundColor: 'white', outline: 'outline' }}>
                 <p>
