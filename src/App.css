@@ -16,7 +16,7 @@ p{
 .all-services{
   position: relative;
   height: fit-content;
-  margin-bottom: 100px !important;
+  margin-bottom: 250px !important;
 }
 
 .contact-form{
@@ -451,7 +451,7 @@ top: 60px;
   color: white;
   margin-left: 1%;
   position: absolute;
-  top: 30%;
+  top: 29%;
 }
 .all-sv-card{
   width: 350px !important;

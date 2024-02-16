@@ -32,7 +32,7 @@ const AllServices = () => {
     <div className='all-services' id='layout'>
       <Navigation/>
      {locationPath && <ServicesHeader pathname = {locationPath}/>}
-        <div style={{marginRight:'5%'}}  className = 'all-sv-main-div'>
+        <div className = 'all-sv-main-div'>
   {displayServices.map((service:any) => (
     <Card key={service.id} className="all-sv-card" >
       <div className="all-sv-icons-div">
