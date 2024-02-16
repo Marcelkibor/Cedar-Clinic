@@ -25,7 +25,7 @@ const AboutUs=() => {
   ])
 
 
-    const coreValues = ['Patient-Centered Care','Excellence','Integrity','Collaboration','Teamwork']
+    const coreValues = ['Cooperation','Dignity & Reverence','Heritage','Integrity','Teamwork','Trust','Safety']
   useEffect(() => {
     const handleScroll = () => {
       sections.forEach((section) => {
@@ -96,7 +96,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
   className='about-mvv'
 >
      <p className='header1'>Mission</p>
-    <p style={{color:'#075243'}}>Our mission at Cedar Clinic is to enhance the health and well-being of our community by providing exceptional medical care, promoting preventive practices, and fostering a culture of compassion and trust.</p>
+    <p style={{color:'#075243'}}>Dedicated to provision of quality patient care with unrelenting attention to clinical excellence, patient safety and an unparalleled passion and commitment to assure the very best healthcare for those we serve.<br></br>To improve the health and well-being of our community by providing quality health care services with caring, compassion and skill while demonstrating the highest standards of service excellence in all interactions inside and outside the Hospital community.</p>
   </motion.div>
     </Col>
       <Col>
@@ -107,7 +107,7 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
         animate={mVV}
       >
         <p className='header1'>Vision</p>
-      <p style={{color:'#075243'}}>Our vision at Cedar Clinic is to be the leading healthcare provider in our region, recognized for our commitment to excellence, innovation, and patient-centered care. We aim to continuously improve and expand our services to meet the evolving needs of our community.</p>
+      <p style={{color:'#075243'}}>To be exceptional community associate in meeting the healthcare needs of the entire neighborhood through incomparable patient care and wellness programs.</p>
       </motion.div>
     </Col>
   <Col>
