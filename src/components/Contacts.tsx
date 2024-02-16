@@ -27,7 +27,7 @@ const Contacts = () => {
       <MdEmail  color = "#16a085"size = {50}/>
       <div style = {{display:'block', marginLeft:'5%'}}>
       <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Email</p>
-      <p>cedarclinic@gmail.com</p>
+      <p>cedarhospitaleldoret@gmail.com</p>
       </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>
@@ -41,14 +41,14 @@ const Contacts = () => {
         <FaPhone color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Call Us</p>
-        <p>0712345678</p>
+        <p>0711658304</p>
         </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>
         <FaWalking color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Visiting Hours</p>
-        <p>Mon-Sat<br></br>8:00am - 5:00pm </p>
+        <p><b>Monday-Friday</b><br></br>8:00 am - 5:00 pm <br></br><b>Saturday and Public Holidays</b><br></br>8:00 am - 4:00 pm</p>
         </div>
       </div>
       </>
