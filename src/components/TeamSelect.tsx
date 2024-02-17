@@ -5,6 +5,7 @@ import ServicesHeader from "./Services/ServicesHeader";
 import { Row,Col } from "react-bootstrap";
 import Footer from "./Layouts/Footer";
 import { useEffect } from "react";
+import { ImWoman } from "react-icons/im";
 const TeamSelect = () => {
   const { name } = useParams<{ name?:string }>();
 
@@ -28,17 +29,19 @@ const selectedMember = clinicMembers.find((member)=>member.name.split(" ")[0]===
       <Navigation/>
       </section>
       <ServicesHeader pathname = {window.location.pathname}/>
-      <Row style = {{margin:'100px 0 0 0'}}>
+      <Row style = {{margin:'80px 0 0 0'}}>
         <Col style={{margin:'0% '}}sm = {12} md = {7}>
         <div style={{width:'100%',height:'100%', display:'flex',justifyContent:'center',alignItems:'center'}}>
-        <img style = {{width:'50%',maxHeight:'600px'}} src={selectedMember?.src} alt=""/>
+        {selectedMember?.src==="ImWoman"? <ImWoman style={{ width: '150px', height: '300px',color:'#0d8069' }} />:
+            <img src={selectedMember?.src} className="team-select-img" alt=""/>
+        }
       </div>
         </Col>
         <Col style={{display:'flex',alignItems:'center'}}>
         {selectedMember&&<>
         <div style={{display:'block'}}>
-        <h2 style={{fontWeight:'bolder'}}>Bio</h2>
-        <h5 style={{marginTop:'40px'}}>{selectedMember.name}</h5>
+        <p style={{fontWeight:'bolder',fontSize:'25px'}}>Bio</p>
+        <h5 style={{marginTop:'10px'}}>{selectedMember.name}</h5>
         <p>{selectedMember.title}</p>
           </div>
         </>}

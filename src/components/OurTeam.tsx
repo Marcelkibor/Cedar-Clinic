@@ -48,7 +48,7 @@ return (
     <Col lg={4} md={6} sm={6} key={index}>
         <div style={{ backgroundColor: `${item.divColor}` }}>
             <div style={{width:'100%',height:'100%'}}>
-                {item.src === 'ImWoman' ? <ImWoman style={{ width: '150px', height: '200px' }} /> : <img style={{ width: '100%', maxHeight: '500px' }} src={item.src} alt="" />}
+                {item.src === 'ImWoman' ? <ImWoman style={{ width: '150px', height: '200px',color:'gray' }} /> : <img style={{ width: '100%', maxHeight: '500px' }} src={item.src} alt="" />}
             </div>
             <div style={{ paddingTop: '10px', backgroundColor: 'white', outline: 'outline' }}>
                 <p>

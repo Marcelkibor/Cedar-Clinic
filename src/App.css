@@ -23,6 +23,10 @@ p{
   width: 400px;
   height: 400px;
 }
+.team-select-img{
+  height: 500px;
+  width: 450px;
+}
 .review-text{
   max-width: 500px !important;
   text-align: center;
