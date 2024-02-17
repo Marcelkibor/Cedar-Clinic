@@ -15,11 +15,11 @@ const Footer = () => {
         <hr style={{ width:'300px', border: 'none', borderBottom: '1px solid white' }} />
           <div style = {{display:'flex', gap:'10px'}}>
             <SiGmail size = {20}/>
-            <p>cedarclinic@gmail.com</p>
+            <p>cedarclinicalassociates@gmail.com</p>
           </div>
           <div style = {{display:'flex', gap:'10px'}}>
             <BiMessageRounded size = {25}/>
-            <p>0712345678</p>
+            <p>0711658304</p>
           </div>
           <div style = {{display:'flex', gap:'10px'}}>
             <ImLocation size = {30}/>
