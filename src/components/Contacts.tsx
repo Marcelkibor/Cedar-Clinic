@@ -6,7 +6,6 @@ import Footer from './Layouts/Footer'
 import {MdEmail} from 'react-icons/md'
 import EmailPrompt from './Services/EmailPrompt';
 import { useEffect } from 'react';
-import LocationMap from './LocationMap';
 const Contacts = () => {
   useEffect(()=>{
     const top = document.getElementById("nav");
@@ -56,9 +55,6 @@ const Contacts = () => {
       </Col>
       <Col>
       <EmailPrompt/>
-      </Col>
-      <Col>
-      <LocationMap/>
       </Col>
     </Row>
     <Row>

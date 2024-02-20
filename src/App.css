@@ -106,8 +106,8 @@ p{
   position: absolute !important;
   left: 50px !important;
   top: -20px !important;
-  height: 420px;
-  width: 420px;
+  height: 400px;
+  width: 400px;
   border-radius: 50% !important;
   background-color: rgb(212, 238, 255);
 }
