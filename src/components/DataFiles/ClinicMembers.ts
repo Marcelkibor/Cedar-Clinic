@@ -10,6 +10,11 @@ import phyllis from '../../assets/team/phyllis.avif';
 import rael from '../../assets/team/rael.avif';
 import ruth from '../../assets/team/ruth.avif';
 import steve from '../../assets/team/steve.avif';
+import joy from '../../assets/team/joy.avif';
+import hellen from '../../assets/team/hellen.avif';
+import getr from '../../assets/team/getr.avif';
+
+
 type clinicMember = {
     id:number,
     name:string,
@@ -31,11 +36,11 @@ const clinicMembers:clinicMember[] = [
 {id:15,name:'Margaret Watah',src:marg,title:'Cashier',divColor:'#74b9ff',description:''},
 {id:16,name:'Maureen Mwanguizi',src:maur,title:'Sanitation Technician',divColor:'#74b9ff',description:''},
 {id:17,name:'Stephen Otieno',src:steve,title:'Sanitation Technician',divColor:'#74b9ff',description:''},
+{id:6,name:'Joy Baraka',src:joy,title:'Accountant',divColor:'#ffeaa7',description:''},
+{id:9,name:'Getrude Tanui',src:getr,title:'Head Nurse',divColor:'#74b9ff',description:''},
+{id:13,name:'Hellen Kibas',src:hellen,title:'Receptionist',divColor:'#74b9ff',description:''},
 {id:4,name:'Maureen Lugonzo',src:'ImWoman',title:'Lab Technician',divColor:'#55efc4',description:''},
-{id:6,name:'Joy Baraka',src:'ImWoman',title:'Accountant',divColor:'#ffeaa7',description:''},
 {id:8,name:'Jepkurgat Barsitei',src:'ImWoman',title:'Pharmacist',divColor:'#ffeaa7',description:''},
-{id:9,name:'Getrude Tanui',src:'ImWoman',title:'Head Nurse',divColor:'#74b9ff',description:''},
-{id:13,name:'Hellen Kibas',src:'ImWoman',title:'Receptionist',divColor:'#74b9ff',description:''},
 ]
 
 export default clinicMembers;

@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div style = {{display:'flex', gap:'10px'}}>
             <ImLocation size = {30}/>
-            <p>Makasembo Street, Off Nairobi Highway , P.O.Box 2670 30100, Eldoret, Kenya</p>
+            <p>Lumumba Avenue, P.O.Box 2670 30100, Eldoret, Kenya</p>
           </div>
         </Col>
           <Col>
