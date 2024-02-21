@@ -14,7 +14,6 @@ p{
   font-size: 16px;
 }
 .all-services{
-  position: relative;
   height: fit-content;
   margin-bottom: 250px !important;
 }
@@ -57,6 +56,12 @@ p{
 .boxlink-col{
   width: 100% !important;
 }
+.logo-div{
+  height: 250px;
+  width: 600px;
+  margin:200px 0px 0px -300px;
+  border: 30px solid #b2ddd5;
+}
 .bx-title{
   color: white;
   position: absolute;
@@ -82,10 +87,6 @@ p{
 .boxlink-col:hover img{
   opacity: 0.1;
 }
-/* .boxlink-col:hover{
-  transform: scale(1.03);
-  transition: ease-out(2);
-} */
 .boxlink-col:hover .bx-title{
   display: none;
 }
@@ -104,12 +105,15 @@ p{
 }
 .review-img{
   position: absolute !important;
-  left: 50px !important;
-  top: -20px !important;
+  top: -5%;
   height: 400px;
   width: 400px;
   border-radius: 50% !important;
-  background-color: rgb(212, 238, 255);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .email-prompt{
@@ -164,8 +168,8 @@ top: 60px;
 .bg-main{
   position:relative;
   height: 100vh !important;
-  background-color:#006964;
   display: flex;
+  background-color: #0d8069;
   justify-content: center;
   width: 100% !important;
 
@@ -501,7 +505,7 @@ top: 60px;
 }
 .slick-prev:hover:before,
 .slick-next:hover:before {
-  background-color:#16a085/* Change background color to green on hover */
+  background-color:#16a085
 }
 .slick-item{
   height: 10vh;
@@ -528,7 +532,7 @@ top: 60px;
   position: relative;
 }
 .intro-cards:hover {
-  transform: translateY(5px) scale(1.1); /* Adjust the values for desired effect */
+  transform: translateY(5px) scale(1.1);
   top: -5px;
   transition: transform 0.9s, top 0.9s;
   color: #2ed573;
@@ -629,8 +633,6 @@ color: #fff;
   display: flex;
   justify-content: center;
 }
-/* mid-devices */
-
 @media(max-width:900px){
   .scroll-motion{
     bottom: 20% !important;
@@ -680,7 +682,7 @@ color: #fff;
     margin-left: 33% !important;
   }
   .bg-main{
-    height: 80vh !important;
+    height: 55vh !important;
   }
   .home-bg{
     height: 50vh !important;
@@ -785,12 +787,24 @@ color: #fff;
   display: flex;
   align-items: center;
 }
+.logo-div{
+  height: 250px;
+  width: 400px;
+  margin: 180px 0px 0px -70px;
 }
-
+}
 @media(max-width:580px){
 .contact-form{
   height: 340px !important;
   width: 340px !important;
+}
+.bg-main{
+  height: 70vh !important;
+}
+.logo-div{
+  height: 250px;
+  width: 380px;
+  margin: 80% 0px 0px -5%;
 }
 .header1{
   font-size: 24px !important;
@@ -799,7 +813,7 @@ color: #fff;
   font-size: 28px !important;
 }
 .landing-tx{
-  margin-top: 170px !important;
+  margin-top: 130px !important;
 }
 .boxlink-main{
   margin-top: 50px !important;

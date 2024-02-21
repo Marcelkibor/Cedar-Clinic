@@ -22,8 +22,9 @@ const BoxLinks = () => {
         <Col key={item.id} className="boxlink-col" style={{marginLeft:'2px',marginRight:'2px'}}>
             <div
             className='boxlink-div'
+            style={{display:'flex',justifyContent:'center'}}
               >
-              <img src={item.src} style={{ width: '100%', height: '300px' }} alt='' />
+              <img src={item.src} style={{ width: '80%', height: '300px',zoom:1.5 }} alt='' />
               <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%',
                   width: '100%',position: 'absolute',top: 0,left: 0,color:'white',flexDirection: 'column',
                   textAlign: 'center'}} >

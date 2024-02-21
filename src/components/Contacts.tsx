@@ -34,7 +34,7 @@ const Contacts = () => {
         <FaAddressBook color = "#16a085" size = {50}/>
         <div style = {{display:'block', marginLeft:'5%'}}>
         <p style={{color:'#16a085',fontSize:'18px',fontWeight:'bold'}}>Address</p>
-      <p>Lumumba Avenue, P.O.Box 2670 50100, Eldoret, Kenya</p>
+      <p>Off Lumumba Avenue, P.O.Box 2670 50100, Eldoret, Kenya</p>
         </div>
       </div>
       <div style={{display:'flex',marginTop:'50px'}}>

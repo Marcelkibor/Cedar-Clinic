@@ -2,7 +2,8 @@ import Navigation from './Layouts/NavigationBar';
 import { whyChoose,whyChooseIcons,clinicalNumbers,numberIcons } from './DataFiles/ClinicalProcess';
 import ServicesHeader from './Services/ServicesHeader';
 import { Row,Col } from 'react-bootstrap';
-import {motion, useAnimation} from 'framer-motion'
+import {motion, useAnimation} from 'framer-motion';
+import Clinic from '../assets/clin.avif';
 import Footer from './Layouts/Footer';
 import CountUp from 'react-countup';
 import { isInViewport } from './utils/Functions';
@@ -72,7 +73,7 @@ const AboutUs=() => {
   <ScrollMotion/>
     <ServicesHeader pathname = {window.location.pathname}/>
       <Row style={{margin:'100px 0% 5% 0%'}}>
-      <Col>
+      <Col sm={6}>
        <motion.div
        variants={popUp(0.8)}
        initial='hidden'
@@ -85,6 +86,15 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 </p>
   </p>
     </motion.div>
+  </Col>
+  <Col sm={6}>
+  <motion.div 
+   variants={popUp(0.8)}
+   initial='hidden'
+   animate='visible'
+  style={{height:'100%',width:'100%'}}>
+    <img src={Clinic} style={{height:'100%',width:'100%'}}/>
+  </motion.div>
   </Col>
   </Row>
 <Row style = {{margin:'2% 0% 0% 5% '}}>
