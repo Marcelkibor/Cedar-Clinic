@@ -59,7 +59,7 @@ p{
 .logo-div{
   height: 250px;
   width: 600px;
-  margin:200px 0px 0px -300px;
+  margin:230px 0px 0px -200px;
   border: 30px solid white;
 }
 .bx-title{
@@ -682,7 +682,7 @@ color: #fff;
     margin-left: 33% !important;
   }
   .bg-main{
-    height: 55vh !important;
+    height: 50vh !important;
   }
   .home-bg{
     height: 50vh !important;
@@ -790,7 +790,7 @@ color: #fff;
 .logo-div{
   height: 250px;
   width: 400px;
-  margin: 180px 0px 0px -70px;
+  margin: 180px 0px 0px -40px;
 }
 }
 @media(max-width:580px){
@@ -799,12 +799,12 @@ color: #fff;
   width: 340px !important;
 }
 .bg-main{
-  height: 70vh !important;
+  height: 90vh !important;
 }
 .logo-div{
   height: 250px;
   width: 380px;
-  margin: 80% 0px 0px -5%;
+  margin: 90% 0px 0px -2%;
 }
 .header1{
   font-size: 24px !important;
