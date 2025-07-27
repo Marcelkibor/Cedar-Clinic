@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
 import Iproviders from "./DataFiles/IProviders";
 import { Col} from "react-bootstrap";
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from "react-icons/bs";
-
+import Slider from "react-slick";
+const TypedSlider = Slider as unknown as React.FC<any>;
 const InsuranceProviders = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
-  const sliderRef = useRef<Slider | null>(null);
+  const sliderRef = useRef<any>(null);
   useEffect(() => {
     const updateSliderSettings = () => {
       const midScreen = 1108;
@@ -60,17 +60,17 @@ const InsuranceProviders = () => {
         <p className="header2">Our Insurance Providers</p>
       </div>
       <div style={{position:'relative',height:'100%',width:'97%',marginTop:'5%'}}>
-      <Slider ref={sliderRef}{...settings}>
-  {Iproviders.map((prov:any) => (
-  <Col key={prov.id} className ='insurance-col'>  
-            <div  style={{height:'130px',width:'130px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-    <div style={{width:'100%',height:'100%',backgroundColor:'white'}}>
-      <img style={{color: '#218c74',height:'100%',width:'100%'}} src={prov.src} alt=""/>
-    </div>
-  </div>
-</Col>
-))}
-</Slider>
+       <TypedSlider ref={sliderRef} {...settings}>
+        {Iproviders.map((prov: any) => (
+          <Col key={prov.id} className="insurance-col">
+        <div style={{ height: '130px', width: '130px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ width: '100%', height: '100%', backgroundColor: 'white' }}>
+            <img style={{ color: '#218c74', height: '100%', width: '100%' }} src={prov.src} alt="" />
+          </div>
+        </div>
+          </Col>
+        ))}
+      </TypedSlider> 
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
     <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>

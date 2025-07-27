@@ -9,9 +9,8 @@ import CountUp from 'react-countup';
 import { isInViewport } from './utils/Functions';
 import React, { useEffect, useState } from 'react';
 import {popUp } from './Effects/AnimationsPack';
-import Timeline from './Timeline';
 import ScrollMotion from './utils/ScrollMotion';
-
+import Timeline from './Timeline';
 const AboutUs=() => {
   const mVV = useAnimation();
   const counterAnim  =useAnimation();
@@ -182,10 +181,10 @@ With state-of-the-art facilities and the latest medical advancements, Cedar Clin
 <Row style={{paddingBottom:'10%',backgroundColor:'#2f927e', width:'100%'}}>
 <div style ={{textAlign:'center',color:'white'}}>
 <p className='header2' style={{marginTop:'20px'}}>Our Clinical Process</p>
-</div>
-  <Col>
+<Col>
 <Timeline/>
-    </Col>
+</Col>
+</div>
 </Row>
 </div>  
 <Footer/>

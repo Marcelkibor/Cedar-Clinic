@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  VerticalTimeline,
-  VerticalTimelineElement,
+  VerticalTimeline as RawVerticalTimeline,
+  VerticalTimelineElement as RawVerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { clinicalProcess } from './DataFiles/ClinicalProcess';
@@ -11,7 +11,8 @@ import {GiTalk,GiWeightScale} from 'react-icons/gi'
 import { RiSpyLine } from 'react-icons/ri';
 clinicalProcess
 
-
+const VerticalTimeline = RawVerticalTimeline as unknown as React.FC<any>;
+const VerticalTimelineElement = RawVerticalTimelineElement as unknown as React.FC<any>;
 interface NumberIcons {
   [key: number]: React.ReactElement;
 }

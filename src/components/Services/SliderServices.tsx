@@ -4,6 +4,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { Mservice, serviceIcons } from "../DataFiles/Mservices";
 import { NavLink } from "react-router-dom";
 import { BsFillArrowLeftSquareFill, BsFillArrowRightSquareFill } from 'react-icons/bs';
+const TypedSlider = Slider as unknown as React.ComponentType<any>;
 
 const SliderServices = () => {
   const [slidesToShow, setSlidesToShow] = useState(3);
@@ -70,7 +71,7 @@ const SliderServices = () => {
       <div style={{position: 'relative', width: '100%', height: '100%',marginTop:'15px' }}>
         <Row style={{width:'100%',height:'100%'}}>
           <Col>
-          <Slider {...settings} ref={sliderRef}>
+          <TypedSlider {...settings} ref={sliderRef}>
           {Mservice.map(service => (
             <Col key={service.id} style={{ marginBottom: '10px' }}>
               <Card className="main-service-card">
@@ -88,7 +89,7 @@ const SliderServices = () => {
               </Card>
             </Col>
           ))}
-        </Slider>
+        </TypedSlider>
           </Col>
         </Row>
         {/* handle slider icons */}
