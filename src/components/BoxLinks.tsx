@@ -24,7 +24,7 @@ const BoxLinks = () => {
             className='boxlink-div'
             style={{display:'flex',justifyContent:'center'}}
               >
-              <img src={item.src} style={{ width: '80%', height: '300px',zoom:1.5 }} alt='' />
+              <img src={item.src} style={{ width: '80%', height: 'auto',zoom:1.5 }} alt='' />
               <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%',
                   width: '100%',position: 'absolute',top: 0,left: 0,color:'white',flexDirection: 'column',
                   textAlign: 'center'}} >
