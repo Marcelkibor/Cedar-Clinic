@@ -2,7 +2,7 @@
 .header1{
   font-family: 'Merriweather', serif !important;
   font-size: 30px !important;
-  color: #0d8069;
+  color: #004aad;
 }
 .header2{
   font-family: 'Merriweather', serif !important;
@@ -32,10 +32,10 @@ p{
   position: absolute !important;
   top: 100px !important;
   left: 500px !important;
-  color: white;
+  color: black;
 }
 .bt{
-  background-color:#0d8069;
+  background-color:#004aad;
   width:150px;
   border: none !important;
   color:white;
@@ -57,10 +57,13 @@ p{
   width: 100% !important;
 }
 .logo-div{
-  height: 450px;
-  width: 700px;
-  margin:130px 0px 0px -200px;
-  border: 30px solid white;
+  height: 350px;
+  width: 400px;
+   background: #4a6eff;
+   transform: scale(3);
+  margin:0% 10% 10% 70%;
+  margin-top: 550px! important;
+  clip-path: path("M42.8,0 L39.09,2.36 L37.86,4.73 L0,95.94 L0,98.31 L2.47,100 L96.29,100 L97.94,99.32 L100,97.29 L99.58,11.82 L95.47,8.78 L46.50,0 L42.8,0 Z");
 }
 .bx-title{
   color: white;
@@ -72,17 +75,17 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0d8069;
+  background-color: #004aad;
 }
 .boxlink-div{
   max-width: 420px;
   max-height:300px;
   position:relative;
-  background-color:#0d8069
+  background-color:#004aad
 }
 .landing-tx{
   position: absolute;
-  margin: 20% 0% 0% 0% !important;
+  margin: 15% 0% 0% 0% !important;
 }
 .boxlink-col:hover img{
   opacity: 0.1;
@@ -99,7 +102,7 @@ p{
 .review-main{
   height: 370px !important;
   position: relative !important;
-  background-color: #2f927e;
+  background-color: #98f28a;
   margin: 3% 0% 3% 0% !important;
   width: 100% !important;
 }
@@ -169,7 +172,7 @@ top: 60px;
   position:relative;
   height: 100vh !important;
   display: flex;
-  background-color: #0d8069;
+background: linear-gradient(to right,#004aad,#5de0e6);
   justify-content: center;
   width: 100% !important;
 
@@ -516,7 +519,7 @@ top: 60px;
   align-items: center;
 }
 .footer-main{
-  background: rgb(5, 97, 85);
+background: linear-gradient(to right, #0097b2, #7ed957);
   padding-bottom: 5%;
   display: flex !important;
   justify-content: center !important;
@@ -558,7 +561,7 @@ color: #fff;
   position: fixed;
   width: 100%;
   height: 80px;
-  background-color: #429685;
+  background-color: transparent;
   z-index: 1;
 }
 .items{
@@ -577,7 +580,7 @@ color: #fff;
   top: 0;
   width: 100vw;
   z-index: 9999;
-  background-color: rgb(189, 250, 225);
+  background-color: white;
 }
 .process-text{
   text-align: left !important;

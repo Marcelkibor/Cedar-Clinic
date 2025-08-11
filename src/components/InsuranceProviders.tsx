@@ -54,7 +54,7 @@ const InsuranceProviders = () => {
   };
   return (
  
-    <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#2f927e'}}>
+    <div style={{marginTop:'20px',display:'flex',justifyContent:'center',alignItems:'center',backgroundColor:'#0097b2'}}>
     <div style={{width:'100%',display:'block'}}>
     <div className="ip-intro">
         <p className="header2">Our Insurance Providers</p>
@@ -72,7 +72,7 @@ const InsuranceProviders = () => {
         ))}
       </TypedSlider> 
 <div style={{marginBottom:'5%',display:'flex',justifyContent:'center',alignItems:'center', marginTop:'20px'}}>
-    <button className='bt'onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
+    <button className='bt' style={{backgroundColor:'#064c9e'}} onClick={()=>{window.location.href='/insurance-providers'}}>All Providers</button>
     </div>
     <div style={{ position: 'absolute', bottom: '40%', left: '5px', cursor: 'pointer' }} onClick={handleSlidePrev}>
           <BsFillArrowLeftSquareFill color='white' size={40} />

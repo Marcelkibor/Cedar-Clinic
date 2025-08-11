@@ -5,7 +5,7 @@ const PatientViews = () => {
     <Row className='review-main'>
     <Col sm={6} md={6} lg={6}>
       <div className='review-img'>
-      <FaSnapchat size = {200} color="#2f927e"/>
+      <FaSnapchat size = {200} color="#98f28a"/>
         </div>
       </Col>
        <Col sm={6} md={6} lg={6}>

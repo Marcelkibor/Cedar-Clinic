@@ -4,7 +4,7 @@ import {EventItem, NewsArticle} from './DataFiles/News'
 import { NavLink } from 'react-router-dom'
 const NewsAndEvents = () => {
   return (
-    <div style={{backgroundColor:'#2f927e'}}>
+    <div style={{backgroundColor:'#0097b2'}}>
         <Row style={{margin:'0px 10px 0px 10px',paddingBottom:'20px'}}>
         
     <Col>
@@ -21,7 +21,7 @@ const NewsAndEvents = () => {
             <NavLink style={{color:'white',fontSize:'18px'}} to={`article/${encodeURIComponent(news.id)}`}>{news.title}</NavLink>
               </p>
             <div>
-            <button onClick={()=>{window.location.pathname=`article/${encodeURIComponent(news.id)}`}}className='bt'>Read More</button>
+            <button onClick={()=>{window.location.pathname=`article/${encodeURIComponent(news.id)}`}}className='bt' style={{backgroundColor:'#064c9e'}}>Read More</button>
             </div>
         </div>
     </div>

@@ -81,9 +81,9 @@ const SliderServices = () => {
                 <div style={{ marginLeft: '20%' }}>
                   <Card.Body>
                     <p>
-                      <NavLink style={{color:'#0d8069',fontWeight:'bold'}} to={`services/${encodeURIComponent(service.name)}`}>{service.name}</NavLink>
+                      <NavLink style={{color:'#004aad',fontWeight:'bold'}} to={`services/${encodeURIComponent(service.name)}`}>{service.name}</NavLink>
                     </p>
-                    <p style={{ fontSize:'16px',color: '#006266',fontFamily:'Merriweather serif' }}>{service.description.split(' ').slice(0, 30).join(' ')}...</p>
+                    <p style={{ fontSize:'16px',color: 'black',fontFamily:'Merriweather serif' }}>{service.description.split(' ').slice(0, 30).join(' ')}...</p>
                   </Card.Body>
                 </div>
               </Card>

@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import Slider from 'react-slick';
-import cedar from '../assets/cedar.avif';
+import cedar from '../assets/bg1.png';
 import { Col, Row } from 'react-bootstrap';
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
@@ -38,8 +38,12 @@ const LandingPage = () => {
   </div> 
         </Col>
     <Col>
-    <div className='logo-div'>
-      <img src={cedar} style={{height:'100%',width:'100%'}}/>
+    <div className='logo-div' style={{margin:'-10% 0% 0% 100%'}}>
+    </div>
+    </Col>
+    <Col>
+        <div style={{margin:'40% 0% 0% -20%'}}>
+    <img src={cedar} style={{height:'300px',width:'300px'}}/>
     </div>
     </Col>
       </Row>
