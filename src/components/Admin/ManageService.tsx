@@ -36,7 +36,7 @@ const ManageService = () => {
       return;
     }
     try {
-      const res = await PostService({
+      await PostService({
         name,
         description,
       });
