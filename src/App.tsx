@@ -12,6 +12,11 @@ import TeamSelect from './components/TeamSelect';
 import ServiceExpand from './components/Services/ServiceExpand';
 import AllProviders from './components/AllProviders';
 import NewsExpand from './components/NewsExpand';
+import Admin from './components/Admin/Admin';
+import AdminDashboard from './components/Admin/AdminDashboard';
+import ManageTeam from './components/Admin/ManageTeam';
+import ManageService from './components/Admin/ManageService';
+import ManageInsurance from './components/Admin/ManageInsurance'; 
 
 function App() {
   return (
@@ -26,6 +31,11 @@ function App() {
         <Route path = '/services/:name' element ={<ServiceExpand/>}/>
         <Route path = '/article/:id' element ={<NewsExpand/>}/>
         <Route path='/insurance-providers' element={<AllProviders/>}/>
+        <Route path='/admin' element={<Admin/>}/>
+        <Route path ="/admin/dashboard" element={<AdminDashboard/>}/>
+        <Route path="/admin/manage-team" element={<ManageTeam/>}/>
+        <Route path="/admin/manage-service" element={<ManageService/>}/>
+        <Route path="/admin/manage-insurance" element={<ManageInsurance/>}/>  
       </Routes>
     </Router>
   )

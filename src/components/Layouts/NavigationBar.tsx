@@ -66,7 +66,7 @@ const Navigation: React.FC = () => {
     zIndex: 9999,
     width: '100vw',
     top: 0,
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
   }}
   ref={navigationRef}
 >
@@ -101,6 +101,7 @@ const Navigation: React.FC = () => {
       </div>
               <Nav.Link href="/services">Services</Nav.Link>
               <Nav.Link href="/contacts">Contacts</Nav.Link>
+               <Nav.Link href="/admin">Admin</Nav.Link>
             </Nav>
           </div>
         </Container>

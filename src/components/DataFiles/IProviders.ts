@@ -14,6 +14,7 @@ import almasi from '../../assets/almasi.avif';
 import jubilee from '../../assets/jubilee.avif';
 import madison from '../../assets/madison.avif';
 import nhif from '../../assets/nhif.avif';
+import fidelity from '../../assets/fidelity.png';
 type Provider = {
     id:number,
     src:string,
@@ -36,5 +37,6 @@ const Iproviders:Provider[]=[
     { id: 14, src: oldmutual,name:'Old Mutual' },
     { id: 15, src: sanlam,name:'Sanlam'},
     { id: 16, src: almasi,name:'Almasi'},
+    {id:17,src:fidelity,name:"Fidelity"}
 ]
 export default Iproviders;
