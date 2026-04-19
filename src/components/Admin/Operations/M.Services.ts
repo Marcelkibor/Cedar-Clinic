@@ -1,9 +1,9 @@
 export const PostService = async (data:any) => {
     try {
         const requestBody =data;
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
             // const BaseUrl = "http://localhost:5000";
-           const response = await fetch(`/api/add-service`, {
+           const response = await fetch(`${BaseUrl}/api/add-service`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -23,9 +23,8 @@ export const PostService = async (data:any) => {
 }
 export const GetServices = async () => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        // const BaseUrl = "http://localhost:5000";
-        const response = await fetch(`/api/get-services`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/get-services`, {
             headers: {
                 "Content-Type": "application/json",
             },
