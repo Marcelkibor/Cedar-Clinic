@@ -40,3 +40,22 @@ export const GetMembers = async () => {
         console.error("Error fetching services data:", error);
     }
 }
+export const DeleteMember = async (id:number) => {
+    try {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/delete-member/${id}`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "DELETE",
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result;
+    }
+    catch (error) {
+        console.error("Error deleting member data:", error);
+    }
+}

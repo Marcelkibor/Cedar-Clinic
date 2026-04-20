@@ -1,8 +1,8 @@
 export const PostInsurance = async (data:any) => {
     try {
         const requestBody =data;
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/add-insurance`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/add-insurance`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -22,8 +22,8 @@ export const PostInsurance = async (data:any) => {
 }
 export const GetInsurance = async () => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/get-insurances`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/get-insurances`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -38,5 +38,24 @@ export const GetInsurance = async () => {
     }
     catch (error) {
         console.error("Error fetching insurance data:", error);
+    }
+}
+export const DeleteInsurance = async (id:number) => {
+    try {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/delete-insurance/${id}`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "DELETE",
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        return result;
+    }
+    catch (error) {
+        console.error("Error deleting insurance data:", error);
     }
 }

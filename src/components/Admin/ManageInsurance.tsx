@@ -153,7 +153,6 @@ const ManageInsurance = () => {
               <tr style={{ backgroundColor: "#f2f2f2" }}>
                 <th style={thStyle}>#</th>
                 <th style={thStyle}>Name</th>
-                <th style={thStyle}>Image</th>
                 <th style={thStyle}>Actions</th>
               </tr>
             </thead>
@@ -163,8 +162,6 @@ const ManageInsurance = () => {
                 <tr key={item.id}>
                   <td style={tdStyle}>{startIndex + index + 1}</td>
                   <td style={tdStyle}>{item.name}</td>
-                  <td style={tdStyle}>{item.image}</td>
-
                   <td style={tdStyle}>
                     <BiEdit
                       size={22}
