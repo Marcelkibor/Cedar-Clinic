@@ -22,6 +22,7 @@ const ManageService = () => {
   const fetchServices = async (): Promise<void> => {
     try {
       const result: Service[] = await GetServices();
+      console.log("Fetched services:", result);
       setServices(result);
     } catch (error) {
       console.error("Error fetching services:", error);
