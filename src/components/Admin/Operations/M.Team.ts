@@ -14,7 +14,6 @@ export const AddMember = async (data:any) => {
         }
         const result = await response.json();
         return result;
-
     }
     catch (error) {
         console.error("Error posting booking data:", error);
@@ -42,8 +41,8 @@ export const GetMembers = async () => {
 }
 export const DeleteMember = async (id:number) => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`/api/delete-member/${id}`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/delete-member/${id}`, {
             headers: {
                 "Content-Type": "application/json",
             },
