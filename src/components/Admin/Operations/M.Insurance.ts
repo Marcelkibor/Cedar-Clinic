@@ -1,8 +1,8 @@
 export const PostInsurance = async (data:any) => {
     try {
         const requestBody =data;
-        // const BaseUrl = "http://localhost:5000";
-        const response = await fetch(`/api/add-insurance`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/add-insurance`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -22,8 +22,8 @@ export const PostInsurance = async (data:any) => {
 }
 export const GetInsurance = async () => {
     try {
-        // const BaseUrl = "http://localhost:5000";
-        const response = await fetch(`/api/get-insurances`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/get-insurances`, {
             headers: {
                 "Content-Type": "application/json",
             },

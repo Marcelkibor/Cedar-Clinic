@@ -1,9 +1,8 @@
 export const AddMember = async (data:any) => {
     try {
         const requestBody =data;    
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        // const BaseUrl = "http://localhost:5000";
-        const response = await fetch(`/api/add-member`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/add-member`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -23,9 +22,8 @@ export const AddMember = async (data:any) => {
 }
 export const GetMembers = async () => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        // const BaseUrl = "http://localhost:5000";
-        const response = await fetch(`/api/get-members`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/get-members`, {
             headers: {
                 "Content-Type": "application/json",
             },
