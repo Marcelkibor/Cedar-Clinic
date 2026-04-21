@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { BiLogOut, BiEdit, BiTrash } from "react-icons/bi";
+import { BiLogOut, BiTrash } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
-import { AddMember, GetMembers } from "./Operations/M.Team";
+import { AddMember, DeleteMember, GetMembers } from "./Operations/M.Team";
 
 interface TeamMember {
   id: number;
@@ -14,24 +14,36 @@ interface TeamMember {
 const ManageTeam = () => {
   const [members, setMembers] = useState<TeamMember[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
-
   const [name, setName] = useState<string>("");
   const [image, setImage] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [adding, setAdding] = useState<boolean>(false);
+  const [toast, setToast] = useState<string | null>(null);
 
   const itemsPerPage = 5;
 
   useEffect(() => {
     fetchMembers();
   }, []);
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
 
   const fetchMembers = async (): Promise<void> => {
+    setLoading(true);
     try {
       const result: TeamMember[] = await GetMembers();
       setMembers(result);
     } catch (error) {
       console.error("Error fetching members:", error);
+      setToast("Failed to load team members");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -46,30 +58,41 @@ const ManageTeam = () => {
       !title.trim() ||
       !description.trim()
     ) {
-      alert("Please fill all fields");
+      setToast("Please fill all fields");
       return;
     }
 
+    setAdding(true);
     try {
-      await AddMember({
+      let data = {
         name,
         image,
         title,
         description,
-      });
-
-      setName("");
-      setImage("");
-      setTitle("");
-      setDescription("");
+      };
+      let res = await AddMember(data);
+      if(res.status == 200){
+        setToast("Member added successfully");
+       setName("");
+       setImage("");
+       setTitle("");
+       setDescription("");
+      }
+      else{
+        setToast("Failed to add member");
+        setName("");
+        setImage("");
+        setTitle("");
+        setDescription("");
+      }
 
       await fetchMembers();
       setCurrentPage(1);
-
-      alert("Member added successfully");
     } catch (error) {
       console.error("Error adding member:", error);
-      alert("Failed to add member");
+      setToast("Failed to add member");
+    } finally {
+      setAdding(false);
     }
   };
 
@@ -81,21 +104,23 @@ const ManageTeam = () => {
     startIndex + itemsPerPage
   );
 
-  const handleEdit = (member: TeamMember): void => {
-    console.log("Edit:", member);
-  };
-
-  const handleDelete = (member: TeamMember): void => {
-    console.log("Delete:", member);
+  const handleDelete = async (member: TeamMember): Promise<void> => {
+    let res = await DeleteMember(member.id);
+    if(res.status == 200){
+      setLoading(true);
+      setToast("Member deleted successfully");
+      await fetchMembers();
+    }
+    else{
+      setToast("Failed to delete member");
+    }
+    setLoading(false);
   };
 
   return (
     <div className="admin-dashboard">
       {/* SIDEBAR */}
-      <div
-        className="sidebar"
-
-      >
+      <div className="sidebar">
         <div
           className="sidebar-item"
           onClick={() => {
@@ -127,6 +152,27 @@ const ManageTeam = () => {
           <h3>ADMIN DASHBOARD</h3>
         </div>
 
+        {/* ✅ PROGRESS BAR */}
+        {(loading || adding) && (
+          <div
+            style={{
+              width: "100%",
+              height: "4px",
+              backgroundColor: "#ddd",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#08798dff",
+                animation: "loadingBar 1s linear infinite",
+              }}
+            />
+          </div>
+        )}
+
         <div
           style={{
             textAlign: "center",
@@ -151,6 +197,14 @@ const ManageTeam = () => {
 
           <input
             type="text"
+            placeholder="Image URL"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            style={inputStyle}
+          />
+
+          <input
+            type="text"
             placeholder="Title e.g Doctor"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
@@ -166,18 +220,13 @@ const ManageTeam = () => {
           />
 
           <button onClick={handleAddMember} style={btnStyle}>
-            Add Member
+            {adding ? "Adding..." : "Add Member"}
           </button>
         </div>
 
         {/* TABLE */}
         <div style={cardStyle}>
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-            }}
-          >
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ backgroundColor: "#f2f2f2" }}>
                 <th style={thStyle}>#</th>
@@ -202,22 +251,9 @@ const ManageTeam = () => {
                   </td>
 
                   <td style={tdStyle}>
-                    <BiEdit
-                      size={22}
-                      style={{
-                        cursor: "pointer",
-                        color: "#0d6efd",
-                        marginRight: "10px",
-                      }}
-                      onClick={() => handleEdit(member)}
-                    />
-
                     <BiTrash
                       size={22}
-                      style={{
-                        cursor: "pointer",
-                        color: "red",
-                      }}
+                      style={{ cursor: "pointer", color: "red" }}
                       onClick={() => handleDelete(member)}
                     />
                   </td>
@@ -228,12 +264,7 @@ const ManageTeam = () => {
 
           {/* PAGINATION */}
           {totalPages > 1 && (
-            <div
-              style={{
-                textAlign: "center",
-                marginTop: "20px",
-              }}
-            >
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
               <button
                 style={btnStyle}
                 disabled={currentPage === 1}
@@ -244,12 +275,7 @@ const ManageTeam = () => {
                 Prev
               </button>
 
-              <span
-                style={{
-                  margin: "0 15px",
-                  fontWeight: "bold",
-                }}
-              >
+              <span style={{ margin: "0 15px", fontWeight: "bold" }}>
                 {currentPage} / {totalPages}
               </span>
 
@@ -267,6 +293,25 @@ const ManageTeam = () => {
             </div>
           )}
         </div>
+
+        {/* ✅ TOAST */}
+        {toast && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              backgroundColor: "#08798dff",
+              color: "white",
+              padding: "12px 20px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+              zIndex: 1000,
+            }}
+          >
+            {toast}
+          </div>
+        )}
       </div>
     </div>
   );
