@@ -1,52 +1,82 @@
 import { useEffect, useState } from "react";
-import { BiLogOut, BiEdit, BiTrash } from "react-icons/bi";
+import { BiLogOut, BiTrash } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
-import { GetServices, PostService } from "./Operations/M.Services";
+import { DeleteService, GetServices, PostService } from "./Operations/M.Services";
 
 interface Service {
   id: number;
   name: string;
   description: string;
 }
+
 const ManageService = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+
+  // ✅ NEW STATES
+  const [loading, setLoading] = useState<boolean>(false);
+  const [adding, setAdding] = useState<boolean>(false);
+  const [toast, setToast] = useState<string | null>(null);
+
   const itemsPerPage = 5;
 
   useEffect(() => {
     fetchServices();
   }, []);
 
+  // ✅ AUTO HIDE TOAST
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
+
   const fetchServices = async (): Promise<void> => {
+    setLoading(true);
     try {
       const result: Service[] = await GetServices();
-      console.log("Fetched services:", result);
       setServices(result);
     } catch (error) {
       console.error("Error fetching services:", error);
+      setToast("Failed to load services");
+    } finally {
+      setLoading(false);
     }
   };
+
   const logout = (): void => {
     window.location.href = "/";
   };
-  const handleAddService = async (): Promise<void> => {
-    if (!name.trim() || !description.trim()) {
-      alert("Please enter service name and description");
-      return;
-    }
-    try {
-      await PostService({
-        name,
-        description,
-      });
-      setName("");
-      setDescription("");
-    
-    } catch (error) {
-      console.error("error adding service:", error);
-      alert("Failed to add service");
+
+const handleAddService = async (): Promise<void> => {
+  if (!name.trim() || !description.trim()) {
+    setToast("Please enter service name and description");
+    return;
+  }
+  setAdding(true);
+  try {
+     await PostService({ name, description });
+  } 
+  catch (error) {
+    console.error("Error adding service:", error);
+    setToast("Failed to add service");
+  } finally {
+    setAdding(false);
+    setName("");
+    setDescription("");
+    await fetchServices();
+    setToast("Service added successfully");
+  }
+};
+
+  const handleDelete = async (service: Service): Promise<void> => {
+    const res = await DeleteService(service.id);
+    if (res.status === 200) {
+      setToast("Service deleted successfully");
+      await fetchServices();
     }
   };
 
@@ -55,16 +85,8 @@ const ManageService = () => {
   const currentServices = services.slice(
     startIndex,
     startIndex + itemsPerPage
-
   );
 
-  const handleEdit = (service: Service): void => {
-    console.log("Edit:", service);
-  };
-
-  const handleDelete = (service: Service): void => {
-    console.log("Delete:", service);
-  };
   return (
     <div className="admin-dashboard">
       {/* SIDEBAR */}
@@ -96,10 +118,30 @@ const ManageService = () => {
             paddingTop: "3vh",
             color: "white",
           }}
-          
         >
-          <h3>ADMIN DASHBOARD</h3>
+          <h3 style={{cursor: "pointer"}} onClick={() => (window.location.href = "/admin/dashboard")}>ADMIN DASHBOARD</h3>
         </div>
+
+        {/* ✅ PROGRESS BAR */}
+        {(loading || adding) && (
+          <div
+            style={{
+              width: "100%",
+              height: "4px",
+              backgroundColor: "#ddd",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#08798dff",
+                animation: "loadingBar 1s linear infinite",
+              }}
+            />
+          </div>
+        )}
 
         <div
           style={{
@@ -107,7 +149,7 @@ const ManageService = () => {
             marginTop: "15px",
             fontWeight: "bold",
           }}
- >
+        >
           <h5>Manage Services</h5>
         </div>
 
@@ -141,7 +183,7 @@ const ManageService = () => {
           />
 
           <button onClick={handleAddService} style={btnStyle}>
-            Add Service
+            {adding ? "Adding..." : "Add Service"}
           </button>
         </div>
 
@@ -156,12 +198,7 @@ const ManageService = () => {
             boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
           }}
         >
-          <table
-            style={{
-              width: "100%",
-              borderCollapse: "collapse",
-            }}
-          >
+          <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ backgroundColor: "#f2f2f2" }}>
                 <th style={thStyle}>#</th>
@@ -184,22 +221,9 @@ const ManageService = () => {
                   </td>
 
                   <td style={tdStyle}>
-                    <BiEdit
-                      size={22}
-                      style={{
-                        cursor: "pointer",
-                        marginRight: "12px",
-                        color: "#0d6efd",
-                      }}
-                      onClick={() => handleEdit(service)}
-                    />
-
                     <BiTrash
                       size={22}
-                      style={{
-                        cursor: "pointer",
-                        color: "red",
-                      }}
+                      style={{ cursor: "pointer", color: "red" }}
                       onClick={() => handleDelete(service)}
                     />
                   </td>
@@ -210,12 +234,7 @@ const ManageService = () => {
 
           {/* PAGINATION */}
           {totalPages > 1 && (
-            <div
-              style={{
-                marginTop: "20px",
-                textAlign: "center",
-              }}
-            >
+            <div style={{ marginTop: "20px", textAlign: "center" }}>
               <button
                 disabled={currentPage === 1}
                 onClick={() =>
@@ -226,12 +245,7 @@ const ManageService = () => {
                 Prev
               </button>
 
-              <span
-                style={{
-                  margin: "0 15px",
-                  fontWeight: "bold",
-                }}
-              >
+              <span style={{ margin: "0 15px", fontWeight: "bold" }}>
                 {currentPage} / {totalPages}
               </span>
 
@@ -249,6 +263,25 @@ const ManageService = () => {
             </div>
           )}
         </div>
+
+        {/* ✅ TOAST */}
+        {toast && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              backgroundColor: "#08798dff",
+              color: "white",
+              padding: "12px 20px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+              zIndex: 1000,
+            }}
+          >
+            {toast}
+          </div>
+        )}
       </div>
     </div>
   );
