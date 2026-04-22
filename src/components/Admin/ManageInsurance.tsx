@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { BiLogOut, BiEdit, BiTrash } from "react-icons/bi";
+import { BiLogOut, BiTrash } from "react-icons/bi";
 import { HiHome } from "react-icons/hi";
-import { GetInsurance,PostInsurance } from "./Operations/M.Insurance";
+import { DeleteInsurance, GetInsurance, PostInsurance } from "./Operations/M.Insurance";
 
 interface Insurance {
   id: number;
@@ -14,7 +14,13 @@ const ManageInsurance = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const [name, setName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<File | null>(null);
+  const [preview, setPreview] = useState<string | null>(null);
+
+  // ✅ loading + toast
+  const [loading, setLoading] = useState(false);
+  const [adding, setAdding] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
 
   const itemsPerPage = 5;
 
@@ -22,12 +28,24 @@ const ManageInsurance = () => {
     fetchInsurance();
   }, []);
 
+  // ✅ auto hide toast
+  useEffect(() => {
+    if (toast) {
+      const timer = setTimeout(() => setToast(null), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast]);
+
   const fetchInsurance = async (): Promise<void> => {
+    setLoading(true);
     try {
       const result: Insurance[] = await GetInsurance();
       setInsurances(result || []);
     } catch (error) {
       console.error("Error fetching insurance:", error);
+      setToast("Failed to load insurance providers");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -35,28 +53,33 @@ const ManageInsurance = () => {
     window.location.href = "/";
   };
 
+  // ✅ handle file
+  const handleImageChange = (file: File) => {
+    setImage(file);
+    setPreview(URL.createObjectURL(file));
+  };
+
   const handleAddInsurance = async (): Promise<void> => {
-    if (!name.trim() || !image.trim()) {
-      alert("Please fill all fields");
+    if (!name.trim() || !image) {
+      setToast("Please fill all fields");
       return;
     }
-
+    setAdding(true);
     try {
-      await PostInsurance({
-        name,
-        image,
-      });
-
+      const formdata = {name:name, image:image};
+      let res = await PostInsurance(formdata);
+      console.log("Add insurance response:", res);
       setName("");
-      setImage("");
-
+      setImage(null);
+      setPreview(null);
       await fetchInsurance();
       setCurrentPage(1);
-
-      alert("Insurance added successfully");
+      setToast("Insurance added successfully");
     } catch (error) {
       console.error("Error adding insurance:", error);
-      alert("Failed to add insurance");
+      setToast("Failed to add insurance");
+    } finally {
+      setAdding(false);
     }
   };
 
@@ -68,12 +91,18 @@ const ManageInsurance = () => {
     startIndex + itemsPerPage
   );
 
-  const handleEdit = (item: Insurance): void => {
-    console.log("Edit:", item);
-  };
 
-  const handleDelete = (item: Insurance): void => {
-    console.log("Delete:", item);
+  const handleDelete = async (item: Insurance): Promise<void> => {
+    let res = await DeleteInsurance(item.id);
+    if(res.status ===200){
+      setToast("Insurance deleted successfully");
+      setName("");
+      setImage(null);
+      setPreview(null);
+      await fetchInsurance();
+    }else{
+      setToast("Failed to delete insurance");
+    }
   };
 
   return (
@@ -111,6 +140,27 @@ const ManageInsurance = () => {
           <h3>ADMIN DASHBOARD</h3>
         </div>
 
+        {/* ✅ LOADING BAR */}
+        {(loading || adding) && (
+          <div
+            style={{
+              width: "100%",
+              height: "4px",
+              backgroundColor: "#ddd",
+              overflow: "hidden",
+            }}
+          >
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "#08798dff",
+                animation: "loadingBar 1s linear infinite",
+              }}
+            />
+          </div>
+        )}
+
         <div
           style={{
             textAlign: "center",
@@ -133,16 +183,35 @@ const ManageInsurance = () => {
             style={inputStyle}
           />
 
-          {/* <input
-            type="text"
-            placeholder="Image key e.g britam"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+          {/* ✅ IMAGE PICKER */}
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              if (e.target.files?.[0]) {
+                handleImageChange(e.target.files[0]);
+              }
+            }}
             style={inputStyle}
-          /> */}
+          />
+
+          {/* ✅ PREVIEW */}
+          {preview && (
+            <img
+              src={preview}
+              alt="preview"
+              style={{
+                width: "100px",
+                height: "100px",
+                objectFit: "cover",
+                borderRadius: "8px",
+                marginBottom: "15px",
+              }}
+            />
+          )}
 
           <button onClick={handleAddInsurance} style={btnStyle}>
-            Add Provider
+            {adding ? "Adding..." : "Add Provider"}
           </button>
         </div>
 
@@ -163,16 +232,6 @@ const ManageInsurance = () => {
                   <td style={tdStyle}>{startIndex + index + 1}</td>
                   <td style={tdStyle}>{item.name}</td>
                   <td style={tdStyle}>
-                    <BiEdit
-                      size={22}
-                      style={{
-                        cursor: "pointer",
-                        color: "#0d6efd",
-                        marginRight: "10px",
-                      }}
-                      onClick={() => handleEdit(item)}
-                    />
-
                     <BiTrash
                       size={22}
                       style={{
@@ -218,6 +277,25 @@ const ManageInsurance = () => {
             </div>
           )}
         </div>
+
+        {/* ✅ TOAST */}
+        {toast && (
+          <div
+            style={{
+              position: "fixed",
+              bottom: "20px",
+              right: "20px",
+              backgroundColor: "#08798dff",
+              color: "white",
+              padding: "12px 20px",
+              borderRadius: "8px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+              zIndex: 1000,
+            }}
+          >
+            {toast}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 export const PostService = async (data:any) => {
     try {
         const requestBody =data;
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-           const response = await fetch(`${BaseUrl}/api/add-service`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+           const response = await fetch(`/api/add-service`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -13,7 +13,7 @@ export const PostService = async (data:any) => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        return result;
+        return result
         
     }
     catch (error) {
@@ -22,8 +22,8 @@ export const PostService = async (data:any) => {
 }
 export const GetServices = async () => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/get-services`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/get-services`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -41,12 +41,13 @@ export const GetServices = async () => {
 }
 export const DeleteService = async (id:number) => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/delete-service/${id}`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/delete-service`, {
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "DELETE",
+            method: "POST",
+            body: JSON.stringify({ id })
         });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

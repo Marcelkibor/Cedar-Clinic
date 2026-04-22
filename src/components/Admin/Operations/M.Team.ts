@@ -1,8 +1,9 @@
 export const AddMember = async (data:any) => {
+    console.log("Adding member with data:", data);
     try {
         const requestBody =data;    
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/add-member`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/add-member`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -21,8 +22,8 @@ export const AddMember = async (data:any) => {
 }
 export const GetMembers = async () => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/get-members`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/get-members`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -41,12 +42,13 @@ export const GetMembers = async () => {
 }
 export const DeleteMember = async (id:number) => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/delete-member/${id}`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/delete-member`, {
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "DELETE",
+            method: "POST",
+            body: JSON.stringify({ id }),
         });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

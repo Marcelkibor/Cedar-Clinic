@@ -1,29 +1,29 @@
-export const PostInsurance = async (data:any) => {
-    try {
-        const requestBody =data;
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/add-insurance`, {
-            headers: {
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-            body: JSON.stringify(requestBody)
-        });
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const result = await response.json();
-        return result;
+export const PostInsurance = async (data: any) => {
+  try {
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("image", data.image);
 
+    const response = await fetch(`/api/add-insurance`, {
+      method: "POST",
+      body: formData, 
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    catch (error) {
-        console.error("Error posting insurance data:", error);
-    }
-}
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error posting insurance data:", error);
+    throw error;
+  }
+};
 export const GetInsurance = async () => {
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/get-insurances`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/get-insurances`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -41,13 +41,15 @@ export const GetInsurance = async () => {
     }
 }
 export const DeleteInsurance = async (id:number) => {
+    console.log("Deleting insurance with ID:", id);
     try {
-        const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`${BaseUrl}/api/delete-insurance/${id}`, {
+        // const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`/api/delete-insurance`, {
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "DELETE",
+            method: "POST",
+            body: JSON.stringify({ id }),
         });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
