@@ -14,10 +14,13 @@ interface TeamMember {
 const ManageTeam = () => {
   const [members, setMembers] = useState<TeamMember[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
+
   const [name, setName] = useState<string>("");
-  const [image, setImage] = useState<string>("");
+  const [image, setImage] = useState<File | null>(null); // ✅ changed
+  const [preview, setPreview] = useState<string | null>(null); // ✅ new
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
+
   const [loading, setLoading] = useState<boolean>(false);
   const [adding, setAdding] = useState<boolean>(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -27,6 +30,7 @@ const ManageTeam = () => {
   useEffect(() => {
     fetchMembers();
   }, []);
+
   useEffect(() => {
     if (toast) {
       const timer = setTimeout(() => setToast(null), 3000);
@@ -51,10 +55,16 @@ const ManageTeam = () => {
     window.location.href = "/";
   };
 
+  // ✅ handle image selection
+  const handleImageChange = (file: File) => {
+    setImage(file);
+    setPreview(URL.createObjectURL(file));
+  };
+
   const handleAddMember = async (): Promise<void> => {
     if (
       !name.trim() ||
-      !image.trim() ||
+      !image ||
       !title.trim() ||
       !description.trim()
     ) {
@@ -64,28 +74,19 @@ const ManageTeam = () => {
 
     setAdding(true);
     try {
-      let data = {
-        name,
-        image,
-        title,
-        description,
-      };
-      let res = await AddMember(data);
-      if(res.status == 200){
+      const formData = {name:name,image:image,title:title,description:description};
+      let res = await AddMember(formData);
+
+      if (res.status === 200 || res.status === 201) {
         setToast("Member added successfully");
-       setName("");
-       setImage("");
-       setTitle("");
-       setDescription("");
-      }
-      else{
-        setToast("Failed to add member");
         setName("");
-        setImage("");
+        setImage(null);
+        setPreview(null);
         setTitle("");
         setDescription("");
+      } else {
+        setToast("Failed to add member");
       }
-
       await fetchMembers();
       setCurrentPage(1);
     } catch (error) {
@@ -95,23 +96,19 @@ const ManageTeam = () => {
       setAdding(false);
     }
   };
-
   const totalPages = Math.ceil(members.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-
   const currentMembers = members.slice(
     startIndex,
     startIndex + itemsPerPage
   );
-
   const handleDelete = async (member: TeamMember): Promise<void> => {
     let res = await DeleteMember(member.id);
-    if(res.status == 200){
+    if (res.status == 200) {
       setLoading(true);
       setToast("Member deleted successfully");
       await fetchMembers();
-    }
-    else{
+    } else {
       setToast("Failed to delete member");
     }
     setLoading(false);
@@ -173,13 +170,7 @@ const ManageTeam = () => {
           </div>
         )}
 
-        <div
-          style={{
-            textAlign: "center",
-            marginTop: "10px",
-            fontWeight: "bold",
-          }}
-        >
+        <div style={{ textAlign: "center", marginTop: "10px", fontWeight: "bold" }}>
           <h5>Manage Team Members</h5>
         </div>
 
@@ -195,13 +186,32 @@ const ManageTeam = () => {
             style={inputStyle}
           />
 
+          {/* ✅ IMAGE PICKER */}
           <input
-            type="text"
-            placeholder="Image URL"
-            value={image}
-            onChange={(e) => setImage(e.target.value)}
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              if (e.target.files?.[0]) {
+                handleImageChange(e.target.files[0]);
+              }
+            }}
             style={inputStyle}
           />
+
+          {/* ✅ PREVIEW */}
+          {preview && (
+            <img
+              src={preview}
+              alt="preview"
+              style={{
+                width: "80px",
+                height: "80px",
+                objectFit: "cover",
+                borderRadius: "50%",
+                marginBottom: "15px",
+              }}
+            />
+          )}
 
           <input
             type="text"
@@ -294,7 +304,7 @@ const ManageTeam = () => {
           )}
         </div>
 
-        {/* ✅ TOAST */}
+        {/* TOAST */}
         {toast && (
           <div
             style={{
