@@ -25,7 +25,6 @@ export const AddMember = async (data: any) => {
 };
 export const GetMembers = async () => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
         const response = await fetch(`/api/get-members`, {
             headers: {
                 "Content-Type": "application/json",
@@ -42,7 +41,7 @@ export const GetMembers = async () => {
     catch (error) {
         console.error("Error fetching services data:", error);
     }
-}
+};
 export const DeleteMember = async (id:number) => {
     try {
         // const BaseUrl = import.meta.env.VITE_BASE_URL;
