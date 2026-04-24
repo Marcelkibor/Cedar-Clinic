@@ -17,7 +17,7 @@ import AdminDashboard from './components/Admin/AdminDashboard';
 import ManageTeam from './components/Admin/ManageTeam';
 import ManageService from './components/Admin/ManageService';
 import ManageInsurance from './components/Admin/ManageInsurance'; 
-
+import ProtectedRoute from './components/Admin/Operations/ProtectedRoute';
 function App() {
   return (
     <Router>
@@ -32,10 +32,12 @@ function App() {
         <Route path = '/article/:id' element ={<NewsExpand/>}/>
         <Route path='/insurance-providers' element={<AllProviders/>}/>
         <Route path='/admin' element={<Admin/>}/>
-        <Route path ="/admin/dashboard" element={<AdminDashboard/>}/>
+        <Route element={<ProtectedRoute />}>
+         <Route path ="/admin/dashboard" element={<AdminDashboard/>}/>
         <Route path="/admin/manage-team" element={<ManageTeam/>}/>
         <Route path="/admin/manage-service" element={<ManageService/>}/>
         <Route path="/admin/manage-insurance" element={<ManageInsurance/>}/>  
+        </Route>
       </Routes>
     </Router>
   )

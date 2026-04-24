@@ -25,7 +25,8 @@ export const AddMember = async (data: any) => {
 };
 export const GetMembers = async () => {
     try {
-        const response = await fetch(`/api/get-members`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/get-members`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -44,8 +45,8 @@ export const GetMembers = async () => {
 };
 export const DeleteMember = async (id:number) => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`/api/delete-member`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/delete-member`, {
             headers: {
                 "Content-Type": "application/json",
             },

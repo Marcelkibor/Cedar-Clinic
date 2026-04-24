@@ -22,8 +22,8 @@ export const PostInsurance = async (data: any) => {
 };
 export const GetInsurance = async () => {
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`/api/get-insurances`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/get-insurances`, {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -43,8 +43,8 @@ export const GetInsurance = async () => {
 export const DeleteInsurance = async (id:number) => {
     console.log("Deleting insurance with ID:", id);
     try {
-        // const BaseUrl = import.meta.env.VITE_BASE_URL;
-        const response = await fetch(`/api/delete-insurance`, {
+        const BaseUrl = import.meta.env.VITE_BASE_URL;
+        const response = await fetch(`${BaseUrl}/api/delete-insurance`, {
             headers: {
                 "Content-Type": "application/json",
             },

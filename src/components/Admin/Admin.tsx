@@ -10,6 +10,7 @@ const Admin = () => {
 
   const handleLogin = () => {
     if (username === import.meta.env.VITE_ADMIN_USERNAME && password === import.meta.env.VITE_ADMIN_PASSWORD) {
+      localStorage.setItem("authenticated", "true");
       window.location.href = "/admin/dashboard";
     } else {
       setError("Incorrect username or password");

@@ -48,7 +48,8 @@ const AdminDashboard = () => {
   }, []);
 
   const logout = () => {
-    window.location.href = "/";
+    localStorage.removeItem("authenticated");
+    window.location.href = "/admin";
   };
 
   const cardStyle = (color:any) => ({
