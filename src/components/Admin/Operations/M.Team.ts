@@ -2,13 +2,14 @@ export const AddMember = async (data: any) => {
   console.log("Adding member with data:", data);
 
   try {
+     const BaseUrl = import.meta.env.VITE_BASE_URL;
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("title", data.title);
     formData.append("description", data.description);
     formData.append("image", data.image);
 
-    const response = await fetch(`/api/add-member`, {
+    const response = await fetch(`${BaseUrl}/api/add-member`, {
       method: "POST",
       body: formData,
     });

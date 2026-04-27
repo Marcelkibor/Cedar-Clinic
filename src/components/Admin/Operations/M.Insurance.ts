@@ -1,10 +1,10 @@
 export const PostInsurance = async (data: any) => {
   try {
+    const BaseUrl = import.meta.env.VITE_BASE_URL;
     const formData = new FormData();
     formData.append("name", data.name);
     formData.append("image", data.image);
-
-    const response = await fetch(`/api/add-insurance`, {
+    const response = await fetch(`${BaseUrl}/api/add-insurance`, {
       method: "POST",
       body: formData, 
     });
@@ -41,7 +41,7 @@ export const GetInsurance = async () => {
     }
 }
 export const DeleteInsurance = async (id:number) => {
-    console.log("Deleting insurance with ID:", id);
+    // console.log("Deleting insurance with ID:", id);
     try {
         const BaseUrl = import.meta.env.VITE_BASE_URL;
         const response = await fetch(`${BaseUrl}/api/delete-insurance`, {
