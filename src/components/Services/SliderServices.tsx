@@ -66,7 +66,7 @@ const SliderServices = () => {
     <div className="main-services">
       <div style={{width:'100%',display:'block'}}>
       <div className="ip-intro">
-        <p className="header1">Explore Our Services</p>
+        <p className="header1" style={{color:'black'}}>Explore Our Services</p>
       </div>
       <div style={{position: 'relative', width: '100%', height: '100%',marginTop:'15px' }}>
         <Row style={{width:'100%',height:'100%'}}>
@@ -81,7 +81,7 @@ const SliderServices = () => {
                 <div style={{ marginLeft: '20%' }}>
                   <Card.Body>
                     <p>
-                      <NavLink style={{color:'#004aad',fontWeight:'bold'}} to={`services/${encodeURIComponent(service.name)}`}>{service.name}</NavLink>
+                      <NavLink style={{color:'black',fontWeight:'bold'}} to={`services/${encodeURIComponent(service.name)}`}>{service.name}</NavLink>
                     </p>
                     <p style={{ fontSize:'16px',color: 'black',fontFamily:'Merriweather serif' }}>{service.description.split(' ').slice(0, 30).join(' ')}...</p>
                   </Card.Body>

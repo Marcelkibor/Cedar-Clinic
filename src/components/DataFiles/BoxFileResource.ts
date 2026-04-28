@@ -2,9 +2,9 @@ import { IconType } from 'react-icons';
 import {GiMedicalPack} from 'react-icons/gi'
 import {RiTeamFill} from 'react-icons/ri'
 import {PiPhoneCallBold} from 'react-icons/pi';
-import Md from "../../assets/med.avif";
-import nc from '../../assets/dc.avif';
-import Cl from '../../assets/call.avif'
+import Md from "../../assets/services.avif";
+import nc from '../../assets/doc_con.avif';
+import Cl from '../../assets/call-center.avif'
 type BoxItem = {
     id:number,
     src:string,

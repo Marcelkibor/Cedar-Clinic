@@ -1,3 +1,182 @@
+.bg-main {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.hero-section {
+  overflow: hidden;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: "Merriweather", serif;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-family: "Merriweather", serif;
+  opacity: 0.9;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  max-width: 420px;
+  opacity: 0.8;
+}
+
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image {
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0px 10px 30px rgba(0,0,0,0.4));
+}
+
+.testimonial-section {
+  padding: 60px 20px;
+  margin-top: 5%;
+  background: #f8fbff;
+}
+
+/* LEFT SIDE IMAGE */
+.testimonial-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-visual img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.circle-bg {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0.2;
+}
+
+/* CARD */
+.testimonial-card {
+  border: none;
+  padding: 30px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+/* QUOTE ICON */
+.quote-icon {
+  font-size: 30px;
+  color: #0072ff;
+  margin-bottom: 10px;
+}
+
+/* TEXT */
+.testimonial-text {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* NAME */
+.testimonial-name {
+  font-weight: bold;
+  font-style: italic;
+  color: #0d2c54;
+}
+.box-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 280px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.box-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.box-card:hover .box-image {
+  transform: scale(1.1);
+}
+
+/* dark gradient overlay */
+.box-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+/* content on top */
+.box-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  z-index: 2;
+}
+
+.box-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.box-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.box-content p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.box-link a {
+  color: #fff;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.box-link a:hover {
+  color: #00d4ff;
+}
+
+
 @keyframes loadingBar {
   0% {
     transform: translateX(-100%);

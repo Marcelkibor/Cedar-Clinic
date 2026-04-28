@@ -1,55 +1,44 @@
 import { Row, Col } from 'react-bootstrap';
-import {BoxResource,BxIcons} from './DataFiles/BoxFileResource';
+import { BoxResource, BxIcons } from './DataFiles/BoxFileResource';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const BoxLinks = () => {
-  const handleNavigation=(item:any)=>{
-  switch(item){
-    case 1:
-      return <p><NavLink style={{color:'white'}} to="/services">Find Service</NavLink></p>
-    case 2:
-    return <p><NavLink style={{color:'white'}} to="/contacts">Contact Us</NavLink></p>
-    case 3:
-      return <p><NavLink style={{color:'white'}} to="/our-team">Find Doctor</NavLink></p>
-    default:
-      return <p><NavLink style={{color:'white'}} to="/">Home</NavLink></p>
-  }
-  }
-  return(
-    <Row className='boxlink-main g-0'>
+  const handleNavigation = (item: any) => {
+    switch (item) {
+      case 1:
+        return <NavLink to="/services">Find Service</NavLink>;
+      case 2:
+        return <NavLink to="/contacts">Contact Us</NavLink>;
+      case 3:
+        return <NavLink to="/our-team">Find Doctor</NavLink>;
+      default:
+        return <NavLink to="/">Home</NavLink>;
+    }
+  };
+
+  return (
+    <Row className="boxlink-main g-3">
       {BoxResource.map((item) => (
-        <Col key={item.id} className="boxlink-col" style={{marginLeft:'2px',marginRight:'2px'}}>
-            <div
-            className='boxlink-div'
-            style={{display:'flex',justifyContent:'center'}}
-              >
-              <img src={item.src} style={{ width: '95%', height: 'auto',zoom:1.5 }} alt='' />
-              <div style={{display: 'flex',justifyContent: 'center',alignItems: 'center',height: '100%',
-                  width: '100%',position: 'absolute',top: 0,left: 0,color:'white',flexDirection: 'column',
-                  textAlign: 'center'}} >
-                <section className='box-fragment'>
-                <React.Fragment>
-                    {React.createElement(BxIcons[item.id], {
-                      style: {width: '70px', height: '70px',marginTop:'-50px' },
-                    })}
-                    <div>
-                      <p style={{fontSize:'20px'}}>{item.title}</p>
-                    </div>
-                    <div>
-                      <p style={{fontSize:'18px'}}>{item.description}</p>
-                    </div>
-                    <div>
-                    {handleNavigation(item.id)}
-                    </div>
-                  </React.Fragment>   
-                </section>
-              </div>
-              <div className='bx-title'>
-                <p style={{fontSize:'20px',fontWeight:'bold'}}>{item.title}</p>
+        <Col key={item.id} md={4}>
+          <div className="box-card">
+            <img src={item.src} className="box-image" alt="" />
+
+            <div className="box-overlay" />
+
+            <div className="box-content">
+              {React.createElement(BxIcons[item.id], {
+                className: "box-icon",
+              })}
+
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+
+              <div className="box-link">
+                {handleNavigation(item.id)}
               </div>
             </div>
-         
+          </div>
         </Col>
       ))}
     </Row>

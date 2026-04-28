@@ -1,54 +1,57 @@
-import { useRef, useEffect } from 'react';
-import Slider from 'react-slick';
-import cedar from '../assets/bg1.png';
-import { Col, Row } from 'react-bootstrap';
+import { useRef, useEffect } from "react";
+import Slider from "react-slick";
+import { Col, Row, Container } from "react-bootstrap";
+import cedar from "../assets/clin.avif";
+
 const LandingPage = () => {
   const sliderRef = useRef<Slider | null>(null);
-  const autoplayInterval = 6000
+  const autoplayInterval = 6000;
 
   useEffect(() => {
-    let intervalId: any;
+    const intervalId = setInterval(() => {
+      sliderRef.current?.slickNext();
+    }, autoplayInterval);
 
-    const startAutoplay = () => {
-      intervalId = setInterval(() => {
-        if (sliderRef.current) {
-          sliderRef.current.slickNext();
-        }
-      }, autoplayInterval);
-    };
-
-    const stopAutoplay = () => {
-      clearInterval(intervalId);
-    };
-
-    startAutoplay();
-    return () => {
-      stopAutoplay();
-    };
+    return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className = 'bg-main'>
-      <Row className="g0"style={{width:'100%',height:'100%'}}>
-        <Col>
-        <div className='landing-tx' style={{color:"white"}}>
-    <p data-text='Cedar-Clinic' style={{fontWeight:'bolder',marginLeft:'30px',fontSize:'40px',fontFamily:'Merriweather serif'}}>Cedar Clinical <br></br>Associates</p>
-    <p  style={{marginLeft:'30px',fontSize:'22px',fontFamily:'Merriweather serif'}}>Your Health</p>
-    <p style={{marginTop:'-20px',marginLeft:'30px',fontSize:'22px',fontFamily:'Merriweather serif'}}>Is Our Priority</p>
-  </div> 
-        </Col>
-    <Col>
-    <div className='logo-div' style={{margin:'-10% 0% 0% 100%'}}>
-    </div>
-    </Col>
-    <Col>
-        <div style={{margin:'40% 0% 0% -20%'}}>
-    <img src={cedar} style={{height:'300px',width:'300px'}}/>
-    </div>
-    </Col>
-      </Row>
-    </div>
+    <div className="bg-main hero-section">
+      <Container fluid className="h-100">
+        <Row className="align-items-center min-vh-100 px-3 px-md-5">
+          
+          {/* TEXT SECTION */}
+          <Col md={6} className="text-white">
+            <div className="hero-text">
+              <h1 className="hero-title">
+                Cedar Clinical <br />
+                Associates
+              </h1>
 
+              <p className="hero-subtitle">Your Health</p>
+              <p className="hero-subtitle mt-n2">Is Our Priority</p>
+
+              <p className="hero-desc mt-4">
+                Providing compassionate, reliable, and professional healthcare
+                services tailored to your needs.
+              </p>
+            </div>
+          </Col>
+
+          {/* IMAGE SECTION */}
+          <Col md={6} className="text-center mt-4 mt-md-0">
+            <div className="hero-image-wrapper">
+              <img
+                src={cedar}
+                alt="Cedar Clinic"
+                className="img-fluid hero-image"
+              />
+            </div>
+          </Col>
+
+        </Row>
+      </Container>
+    </div>
   );
 };
 
